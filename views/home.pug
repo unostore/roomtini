@@ -840,6 +840,7 @@ html(dir='ltr', lang='en-US')
       return false;
       });
       });
+    script(type='text/javascript').
       jQuery(document).ready(function($){
       $('.videoplay-on-hover').hover( function(){
       if( $(this).find('video').length > 0 ) {
@@ -850,4 +851,6 @@ html(dir='ltr', lang='en-US')
       $(this).find('video').get(0).pause();
       }
       });
+      });
+      jQuery(window).load(function(){
       });
