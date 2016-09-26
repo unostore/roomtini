@@ -222,6 +222,26 @@ html(dir='ltr', lang='en-US')
                       .team-title
                         h4 Josh Clark
                         span Sales
+          section#slider.slider-parallax.full-screen.force-full-screen
+            .slider-parallax-inner
+              .full-screen.force-full-screen.dark.section.nopadding.nomargin.noborder.ohidden
+                .col-xs-6.nopadding.full-screen.force-full-screen.dark.videoplay-on-hover
+                  .vertical-middle.ignore-header.center
+                    h2.nobottommargin.ls1.font-body different.
+                  .video-wrap
+                    video#slide-video(poster='images/videos/1.jpg', preload='auto', loop='', muted='')
+                      source(src='images/videos/1.webm', type='video/webm')
+                      source(src='images/videos/1.mp4', type='video/mp4')
+                    .video-overlay(style='background-color: rgba(0,0,0,0.2);')
+                .col-xs-6.nopadding.full-screen.force-full-screen.dark.videoplay-on-hover
+                  .vertical-middle.ignore-header.center
+                    h2.nobottommargin.ls1.font-body powerful.
+                  .video-wrap
+                    video#slide-video(poster='images/videos/3.jpg', preload='auto', loop='', muted='')
+                      source(src='images/videos/3.webm', type='video/webm')
+                      source(src='images/videos/3.mp4', type='video/mp4')
+                    .video-overlay(style='background-color: rgba(0,0,0,0.3);')
+          // #slider end
           #section-works.page-section.notoppadding
             .section.nomargin
               .container.clearfix
@@ -818,5 +838,16 @@ html(dir='ltr', lang='en-US')
       $faqItems.fadeIn(500);
       }
       return false;
+      });
+      });
+      jQuery(document).ready(function($){
+      $('.videoplay-on-hover').hover( function(){
+      if( $(this).find('video').length > 0 ) {
+      $(this).find('video').get(0).play();
+      }
+      }, function(){
+      if( $(this).find('video').length > 0 ) {
+      $(this).find('video').get(0).pause();
+      }
       });
       });
