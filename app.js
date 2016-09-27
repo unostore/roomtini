@@ -19,6 +19,7 @@ const expressValidator = require('express-validator');
 const sass = require('node-sass-middleware');
 const multer = require('multer');
 const upload = multer({ dest: path.join(__dirname, 'uploads') });
+const config = require('./config/config');
 
 /**
  * Load environment variables from .env file, where API keys and passwords are configured.
@@ -46,7 +47,7 @@ const app = express();
 /**
  * Connect to MongoDB.
  */
-mongoose.connect(process.env.MONGODB_URI || process.env.MONGOLAB_URI);
+mongoose.connect(config.MONGOLAB_URI || process.env.MONGODB_URI || process.env.MONGOLAB_URI);
 mongoose.connection.on('connected', () => {
   console.log('%s MongoDB connection established!', chalk.green('✓'));
 });
@@ -73,9 +74,9 @@ app.use(expressValidator());
 app.use(session({
   resave: true,
   saveUninitialized: true,
-  secret: process.env.SESSION_SECRET,
+  secret: config.SESSION_SECRET ||  process.env.SESSION_SECRET,
   store: new MongoStore({
-    url: process.env.MONGODB_URI || process.env.MONGOLAB_URI,
+    url: config.MONGOLAB_URI || process.env.MONGODB_URI || process.env.MONGOLAB_URI,
     autoReconnect: true
   })
 }));

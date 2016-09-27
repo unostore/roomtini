@@ -11,6 +11,7 @@ const LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
 const OpenIDStrategy = require('passport-openid').Strategy;
 const OAuthStrategy = require('passport-oauth').OAuthStrategy;
 const OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
+const config = require('./config');
 
 const User = require('../models/User');
 
@@ -275,9 +276,9 @@ passport.use(new GoogleStrategy({
  * Sign in with LinkedIn.
  */
 passport.use(new LinkedInStrategy({
-  clientID: process.env.LINKEDIN_ID,
-  clientSecret: process.env.LINKEDIN_SECRET,
-  callbackURL: process.env.LINKEDIN_CALLBACK_URL,
+  clientID: config.LINKEDIN_ID || process.env.LINKEDIN_ID,
+  clientSecret: config.LINKEDIN_SECRET || process.env.LINKEDIN_SECRET,
+  callbackURL: config.LINKEDIN_CALLBACK_URL || process.env.LINKEDIN_CALLBACK_URL,
   scope: ['r_basicprofile', 'r_emailaddress'],
   passReqToCallback: true
 }, (req, accessToken, refreshToken, profile, done) => {
