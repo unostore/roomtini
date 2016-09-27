@@ -120,20 +120,21 @@ html(dir='ltr', lang='en-US')
                 li
                   a(href='#', data-href='#page-title')
                     div FAQ
-                |               if !user
-                li
-                  | (class=title == 'Login' ? 'active' : undefined)
-                  a(href='/Login', data-href='/Login')
-                    div Sign In
-                |               else
-                li
-                  a(href='#', data-href='#page-title')
-                    div FAQ
-                |               if !user
-                li
-                  | (class=title == 'Login' ? 'active' : undefined)
-                  a(href='/Login', data-href='/Login')
-                    div Sign
+                div
+                  | if !user
+                  li
+                    | (class=title == 'Login' ? 'active' : undefined)
+                    a(href='/Login', data-href='/Login')
+                      div Sign In
+                  |               else
+                  li
+                    a(href='#', data-href='#page-title')
+                      div FAQ
+                  |               if !user
+                  li
+                    | (class=title == 'Login' ? 'active' : undefined)
+                    a(href='/Login', data-href='/Login')
+                      div Sign
                 li
                   a.button.button-3d.button-mini.button-rounded.button-teal(href='/contact') Apply Now
                 // <li><a href="#" data-href="#section-contact"><div>Contact</div></a></li>
