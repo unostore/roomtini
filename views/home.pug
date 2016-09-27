@@ -120,21 +120,9 @@ html(dir='ltr', lang='en-US')
                 li
                   a(href='#', data-href='#page-title')
                     div FAQ
-                div
-                  | if !user
-                  li
-                    | (class=title == 'Login' ? 'active' : undefined)
-                    a(href='/Login', data-href='/Login')
-                      div Sign In
-                  |               else
-                  li
-                    a(href='#', data-href='#page-title')
-                      div FAQ
-                  |               if !user
-                  li
-                    | (class=title == 'Login' ? 'active' : undefined)
-                    a(href='/Login', data-href='/Login')
-                      div Sign
+                li
+                  a(href='/Login', data-href='/Login')
+                    div Sign In
                 li
                   a.button.button-3d.button-mini.button-rounded.button-teal(href='/contact') Apply Now
                 // <li><a href="#" data-href="#section-contact"><div>Contact</div></a></li>
@@ -610,3 +598,24 @@ html(dir='ltr', lang='en-US')
       });
       jQuery(window).load(function(){
       });
+    script(type='text/javascript').
+      if !user
+      li(class=(title == 'Login') ? 'active' : undefined)
+      a(href='/login') Login
+      li(class=(title == 'Create Account') ? 'active' : undefined)
+      a(href='/signup') Create Account
+      else
+      li.dropdown(class=(title == 'Account Management') ? 'active' : undefined)
+      a.dropdown-toggle(href='#', data-toggle='dropdown')
+      if user.profile.picture
+      img(src=user.profile.picture)
+      else
+      img(src=user.gravatar(60))
+      span= user.profile.name || user.email || user.id
+      i.caret
+      ul.dropdown-menu
+      li
+      a(href='/account') My Account
+      li.divider
+      li
+      a(href='/logout') Logout
