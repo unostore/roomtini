@@ -228,35 +228,43 @@ html(dir='ltr', lang='en-US')
               .container.clearfix
                 .divcenter.center(style='max-width: 900px;')
                   h2.nobottommargin.t300.ls1
-                    | We create & craft projects that ooze creativity in every aspect. We try to create a benchmark in everything we do. Take a moment to browse through some of our recent completed work.
+                    | Rent is too Dang High! & We at Roomtini create solutions to give renters more for less..
             //
               Portfolio Items
               =============================================
             #section-locations.portfolio.grid-container.portfolio-nomargin.portfolio-full.portfolio-masonry.mixed-masonry.clearfix
               article.portfolio-item.pf-media.pf-icons.wide
                 .portfolio-image
-                  a(href='#')
-                    img(src='images/portfolio/mixed/1.png', alt='L Seven')
-                  .portfolio-overlay
-                    .portfolio-desc
-                      h3
-                        a(href='#') L Seven
-                      span
-                        a(href='#') About
-                        | , 
-                        a(href='#') Gallery
+                  .fslider(data-arrows='false', data-speed='400', data-pause='4000')
+                    a(href='#')
+                      img(src='images/portfolio/mixed/1.png', alt='L Seven')
+                    .portfolio-overlay
+                      .portfolio-desc
+                        h3
+                          a(href='#') L Seven
+                        span
+                          a(href='#') About
+                          | , 
+                          a(href='#') Gallery
               article.portfolio-item.pf-media.pf-icons.wide
                 .portfolio-image
-                  a(href='#')
-                    img(src='images/portfolio/mixed/2.jpg', alt='L Seven')
-                  .portfolio-overlay
-                    .portfolio-desc
-                      h3
-                        a(href='#') Soma Square
-                      span
-                        a(href='#') About
-                        | , 
-                        a(href='#') Gallery
+                  .fslider(data-arrows='false', data-speed='400', data-pause='4000')
+                    .flexslider
+                      .slider-wrap
+                        .slide
+                          a(href='#')
+                            img(src='images/portfolio/mixed/2.jpg', alt='L Seven')
+                        .slide
+                          a(href='portfolio-single-gallery.html')
+                            img(src='images/portfolio/1/4-1.jpg', alt='Morning Dew')
+                        .portfolio-overlay
+                          .portfolio-desc
+                            h3
+                              a(href='#') Soma Square
+                            span
+                              a(href='#') About
+                              | , 
+                              a(href='#') Gallery
             // #portfolio end
             .topmargin.center
               a.button.button-border.button-circle.t600(href='#') View More Projects
