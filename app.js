@@ -58,7 +58,8 @@ var options = {
   key: fs.readFileSync('/home/tally/roomtini.com.key'),
   cert: fs.readFileSync('/home/tally/roomtini_com.crt')
 };
-https.createServer(options, function res req){};
+
+
 
 
 /**
@@ -237,7 +238,7 @@ app.use(errorHandler());
 /**
  * Start Express server.
  */
-app.listen(app.get('port'), () => {
+var server = https.createServer(options, app.listen(app.get('port'), () => {
   console.log('%s Express server listening on port %d in %s mode.', chalk.green('✓'), app.get('port'), app.get('env'));
 });
 
