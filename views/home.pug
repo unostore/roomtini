@@ -122,8 +122,11 @@ html(dir='ltr', lang='en-US')
                   a(href='#', data-href='#page-title')
                     div FAQ
                 li
+                  if(!user)
                   a(title='login', href='/Login', data-href='/Login')
                     div Sign In
+                   if(user)
+                   div = user.profile.name || user.email || user.id
                 li
                   a.button.button-3d.button-mini.button-rounded.button-teal(href='/contact') Apply Now
                 // <li><a href="#" data-href="#section-contact"><div>Contact</div></a></li>
