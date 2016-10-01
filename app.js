@@ -52,6 +52,7 @@ const port = 'port 443';
 
 var https = require('https');
 var fs = require('fs');
+var enforce = require('express-sslify');
 
 var options = {
   ca: fs.readFileSync('/home/tally/roomtini_com.ca-bundle'),
@@ -238,6 +239,8 @@ app.use(errorHandler());
 /**
  * Start Express server.
  */
+ app.use(enforce.HTTPS());
+
 var server = https.createServer(options, app).listen(app.get('port'), () => {
   console.log('%s Express server listening on port %d in %s mode.', chalk.green('✓'), app.get('port'), app.get('env'));
 });
