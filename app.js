@@ -44,6 +44,23 @@ const passportConfig = require('./config/passport');
  */
 const app = express();
 
+
+
+
+const hostname = 'roomtini.com';
+const port = 'port 443';
+
+var https = require('https');
+var fs = require('fs');
+
+var options = {
+  ca: fs.readFileSync('/home/tally/roomtini_com.ca-bundle'),
+  key: fs.readFileSync('/home/tally/roomtini.com.key'),
+  cert: fs.readFileSync('/home/tally/roomtini_com.crt')
+};
+https.createServer(options, function res req){};
+
+
 /**
  * Connect to MongoDB.
  */
