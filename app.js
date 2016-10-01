@@ -103,9 +103,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-http.get('*',function(req,res){  
-    res.redirect('https://roomtini.com'+req.url)
-http.listen(8080);
+
 
 app.use((req, res, next) => {
   if (req.path === '/api/upload') {
