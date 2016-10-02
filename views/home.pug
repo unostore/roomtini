@@ -132,16 +132,20 @@ block content
                           if user.profile.picture
                             img(src=user.profile.picture)
                           else
-                          span= user.profile.name || user.email || user.id
-
-
-
-                  li
-                    a.button.button-3d.button-mini.button-rounded.button-teal(href='/contact') Apply Now
-                  // <li><a href="#" data-href="#section-contact"><div>Contact</div></a></li>
-                #side-panel-trigger.side-panel-trigger
-                  a(href='#')
-                    i.icon-reorder
+                        user.profile.name || user.email || user.id
+                          i.caret
+                        ul.dropdown-menu
+                          li
+                             a(href='/account') My Account
+                           li.divider
+                           li
+                             a(href='/logout') Logout
+                      li
+                        a.button.button-3d.button-mini.button-rounded.button-teal(href='/contact') Apply Now
+                      // <li><a href="#" data-href="#section-contact"><div>Contact</div></a></li>
+                    #side-panel-trigger.side-panel-trigger
+                      a(href='#')
+                        i.icon-reorder
               // #primary-menu end
         // #header end
         //
