@@ -127,19 +127,18 @@ block content
                       li(class=(title == 'Login') ? 'active' : undefined)
                         a(href='/login') Sign In
                     else
-
                       a(href='/login')
                         span.test
 
-                    span= user.email
+                      span= user.email
 
                      i.caret
-                  ul.dropdown-menu
-                    li
-                      a(href='/account') My Account
-                    li.divider
-                    li
-                      a(href='/logout') Logout                          
+                    ul.dropdown-menu
+                      li
+                        a(href='/account') My Account
+                      li.divider
+                      li
+                        a(href='/logout') Logout                          
                           
                   li
                     a.button.button-3d.button-mini.button-rounded.button-teal(href='/contact') Apply Now
