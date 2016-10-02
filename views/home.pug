@@ -131,8 +131,8 @@ block content
                       li
                         a(href='/account')
                           div Hi
-                            span
-                      span= user.email
+                            
+                      div= user.profile.name || user.email || user.id
 
                        i.caret
                       ul.dropdown-menu
