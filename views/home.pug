@@ -128,16 +128,16 @@ block content
                         a(href='/login') Sign In
                     else
                       li.dropdown(class=(title == 'Account Management') ? 'active' : undefined)
-                        a.dropdown-toggle(href='#', data-toggle='dropdown')
+                        a.dropdown-toggle(href='/Account', data-toggle='dropdown')
                           if user.profile.picture
                             img(src=user.profile.picture)
                           else
-                        user.profile.name || user.email || user.id
+                        user.email
                           i.caret
                         ul.dropdown-menu
                           
-                      li
-                        a.button.button-3d.button-mini.button-rounded.button-teal(href='/contact') Apply Now
+                  li
+                    a.button.button-3d.button-mini.button-rounded.button-teal(href='/contact') Apply Now
                       // <li><a href="#" data-href="#section-contact"><div>Contact</div></a></li>
                     #side-panel-trigger.side-panel-trigger
                       a(href='#')
