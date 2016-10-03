@@ -1425,21 +1425,25 @@ html(dir='ltr', lang='en-US')
                 form#register-form.nobottommargin(name='register-form', action='#', method='POST')
                   input(type='hidden', name='_csrf', value=_csrf)
                   .col_full
-                    label(for='name') Name:
+                    label(for='register-form-name') Name:
                     input#register-form-name.form-control(type='text', name='register-form-name', value='')
                   .col_full
                     label(for='email') Email Address:
-                    input#register-form-email.form-control(type='text', 
+                    input#register-form-email.form-control(type='text', name='register-form-email', value='')
                   .col_full
-                    label(for='password') Choose Password:
+                    label(for='register-form-username') Choose a Username:
+                    input#register-form-username.form-control(type='text', name='register-form-username', value='')
+                  .col_full
+                    label(for='register-form-phone') Phone:
+                    input#register-form-phone.form-control(type='text', name='register-form-phone', value='')
+                  .col_full
+                    label(for='register-form-password') Choose Password:
                     input#register-form-password.form-control(type='password', name='register-form-password', value='')
                   .col_full
-                    label(for='confirmPassword') Re-enter Password:
+                    label(for='register-form-repassword') Re-enter Password:
                     input#register-form-repassword.form-control(type='password', name='register-form-repassword', value='')
                   .col_full.nobottommargin
-                    button#register-form-submit.button.button-3d.button-black.nomargin(name='register-form-submit', value='register')
-                    i.fa.fa-user-plus
-                     Register Now
+                    button#register-form-submit.button.button-3d.button-black.nomargin(name='register-form-submit', value='register') Register Now
       // #content end
       //
         Footer
