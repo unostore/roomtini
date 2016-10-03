@@ -43,14 +43,16 @@ html(dir='ltr', lang='en-US')
                   form.nobottommargin(method='POST')
                     input(type='hidden', name='_csrf')
                     h3 Login to your Account
-                    .col_full
+                    .form-group
                       label(for='email') Email:
                       input#email.form-control.not-dark(type='email', name='email', value='')
-                    .col_full
+                    .form-group
                       label(for='login-form-password') Password:
                       input#password.form-control.not-dark(type='password', name='password')
-                    .col_full.nobottommargin
-                      button#login-form-submit.button.button-3d.button-black.nomargin(name='login-form-submit', type='submit') Login
+                    .form-group
+                      button#login-form-submit.button.button-3d.button-black.nomargin(name='login-form-submit', type='submit')
+                        i.fa.fa-user
+                          Login
                       a.fright(href='/forgot') Forgot Password?
                   .line.line-sm
                   .center
