@@ -1,17 +1,345 @@
-extends ../layout
+doctype html
+html(dir='ltr', lang='en-US')
+  head
+    meta(http-equiv='content-type', content='text/html; charset=utf-8')
+    meta(name='author', content='SemiColonWeb')
+    meta(name='csrf-token', content=_csrf)
+    //
+      Stylesheets
+      =============================================
+    link(href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto:300,400,500,700', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='../css/bootstrap.css', type='text/css')
+    link(rel='stylesheet', href='../style.css', type='text/css')
+    // One Page Module Specific Stylesheet
+    link(rel='stylesheet', href='onepage.css', type='text/css')
+    // /
+    link(rel='stylesheet', href='../css/dark.css', type='text/css')
+    link(rel='stylesheet', href='../css/font-icons.css', type='text/css')
+    link(rel='stylesheet', href='css/et-line.css', type='text/css')
+    link(rel='stylesheet', href='../css/animate.css', type='text/css')
+    link(rel='stylesheet', href='../css/magnific-popup.css', type='text/css')
+    link(rel='stylesheet', href='css/fonts.css', type='text/css')
+    link(rel='stylesheet', href='../css/responsive.css', type='text/css')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    //
+      if lt IE 9script(src='http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js')
+    //
+      Document Title
+      =============================================
+    title Login - Layout 3 | Canvas
+  body.stretched
+    if messages.errors
+      .alert.alert-danger.fade.in
+        button.close(type='button', data-dismiss='alert')
+          i.fa.fa-times-circle-o
+        for error in messages.errors
+          div= error.msg
+    if messages.info
+      .alert.alert-info.fade.in
+        button.close(type='button', data-dismiss='alert')
+          i.fa.fa-times-circle-o
+        for info in messages.info
+          div= info.msg
+    if messages.success
+      .alert.alert-success.fade.in
+        button.close(type='button', data-dismiss='alert')
+          i.fa.fa-times-circle-o
+        for success in messages.success
+          div= success.msg    
+    //
+      Document Wrapper
+      =============================================
+    #wrapper.clearfix
+      //
+        Header
+        =============================================
+      header#header.full-header.transparent-header.border-full-header.dark.static-sticky(data-sticky-class='not-dark', data-sticky-offset='full', data-sticky-offset-negative='100')
+        #header-wrap
+          .container.clearfix
+            #primary-menu-trigger
+              i.icon-reorder
+            //
+              Logo
+              =============================================
+            #logo
+              a.standard-logo(href='index.html', data-dark-logo='images/canvasone-dark.png')
+                img(src='images/canvasone.png', alt='Canvas Logo')
+              a.retina-logo(href='index.html', data-dark-logo='images/canvasone-dark@2x.png')
+                img(src='images/canvasone@2x.png', alt='Canvas Logo')
+            // #logo end
+            //
+              Primary Navigation
+              =============================================
+            nav#primary-menu
+              ul.one-page-menu(data-easing='easeInOutExpo', data-speed='1250', data-offset='65')
+                li
+                  a(href='#', data-href='#wrapper')
+                    div Home
+                li
+                  a(href='#', data-href='#section-about')
+                    div About
+                li
+                  a(href='#', data-href='#section-locations')
+                    div Locations
+                li
+                  a(href='#', data-href='#page-title')
+                    div FAQ
+                if !user
+                  li(class=(title == 'Login') ? 'active' : undefined)
+                    a(href='/login') 
+                      div Sign In
+                else    
+                  li.sub-menu
+                    a(href='#')
+                      div='' + ((user.profile && user.profile.name) || user.email || user.id)
+                    ul(style='display: none')
+                      li
+                        a.sf-with-ul(href='/account')
+                          div My account
+                      li
+                        a.sf-with-ul(href='/logout')
+                          div Logout
+                li
+                  a(href='/contact') Apply Now
+                #side-panel-trigger.side-panel-trigger
+                  a(href='#')
+                    i.icon-reorder
+            // #primary-menu end
+      // #header end
 
-block content
-  .col-sm-8.col-sm-offset-2
-    form(method='POST')
-      legend Reset Password
-      input(type='hidden', name='_csrf', value=_csrf)
-      .form-group
-        label(for='password') New Password
-        input.form-control(type='password', name='password', id='password', placeholder='New password', autofocus, required)
-      .form-group
-        label(for='confirm') Confirm Password
-        input.form-control(type='password', name='confirm', id='confirm', placeholder='Confirm password', required)
-      .form-group
-        button.btn.btn-primary.btn-reset(type='submit')
-          i.fa.fa-keyboard-o
-          | Change Password
+        Slider
+        =============================================
+      section#slider.slider-parallax.full-screen.force-full-screen
+        .slider-parallax-inner
+          .full-screen.force-full-screen.dark.section.nopadding.nomargin.noborder.ohidden(style="background-image: url('images/signup.jpg'); background-size: cover; background-position: center center;")
+
+              i.icon-angle-down.infinite.animated.fadeInDown
+      // #slider end
+      //
+        Content
+        =============================================
+
+      section#content
+        .content-wrap
+          .container.clearfix
+            .accordion.accordion-lg.divcenter.nobottommargin.clearfix(style='max-width: 550px;')
+              
+              .acctitle
+                i.acc-closed.icon-user4
+                i.acc-open.icon-ok-sign
+                | Forgot your Password?
+              .acc_content.clearfix
+                form#register-form.nobottommargin(name='register-form', action='#', method='POST')
+                  input(type='hidden', name='_csrf', value=_csrf)
+                  .col_full
+                    label(for='password') New Password:
+                    input.form-control(type='password', name='password', id='password', placeholder='password', autofocus, required)
+                  .col_full
+                    label(for='confirm') Confirm Password:
+                    input.form-control(type='password', name='confirm', id='confirm', placeholder='password', autofocus, required)                    
+                  .col_full.nobottommargin
+                    button#register-form-submit.button.button-3d.button-black.nomargin(name='register-form-submit', value='register', type='submit' ) Change Password
+              .acctitle
+                i.acc-closed.icon-lock3
+                i.acc-open.icon-unlock
+                | Login to your Account
+              .acc_content.clearfix(id='test')
+      // #content end
+      //
+        Footer
+        =============================================
+      footer#footer.dark
+        .container
+          //
+            Footer Widgets
+            =============================================
+          .footer-widgets-wrap.clearfix
+            .col_two_third
+              .col_one_third
+                .widget.clearfix
+                  img.footer-logo(src='images/footer-widget-logo.png', alt='')
+                  p
+                    | We believe in 
+                    strong Simple
+                    | , 
+                    strong Creative
+                    |  & 
+                    strong Flexible
+                    |  Design Standards.
+                  div(style="background: url('images/world-map.png') no-repeat center center; background-size: 100%;")
+                    address
+                      strong Headquarters:
+                      br
+                      |                     795 Folsom Ave, Suite 600
+                      br
+                      |                     San Francisco, CA 94107
+                      br
+                    abbr(title='Phone Number')
+                      strong Phone:
+                    |  (91) 8547 632521
+                    br
+                    abbr(title='Fax')
+                      strong Fax:
+                    |  (91) 11 4752 1433
+                    br
+                    abbr(title='Email Address')
+                      strong Email:
+                    |  info@canvas.com
+              .col_one_third
+                .widget.widget_links.clearfix
+                  h4 Blogroll
+                  ul
+                    li
+                      a(href='http://codex.wordpress.org/') Documentation
+                    li
+                      a(href='http://wordpress.org/support/forum/requests-and-feedback') Feedback
+                    li
+                      a(href='http://wordpress.org/extend/plugins/') Plugins
+                    li
+                      a(href='http://wordpress.org/support/') Support Forums
+                    li
+                      a(href='http://wordpress.org/extend/themes/') Themes
+                    li
+                      a(href='http://wordpress.org/news/') WordPress Blog
+                    li
+                      a(href='http://planet.wordpress.org/') WordPress Planet
+              .col_one_third.col_last
+                .widget.clearfix
+                  h4 Recent Posts
+                  #post-list-footer
+                    .spost.clearfix
+                      .entry-c
+                        .entry-title
+                          h4
+                            a(href='#') Lorem ipsum dolor sit amet, consectetur
+                        ul.entry-meta
+                          li 10th July 2014
+                    .spost.clearfix
+                      .entry-c
+                        .entry-title
+                          h4
+                            a(href='#') Elit Assumenda vel amet dolorum quasi
+                        ul.entry-meta
+                          li 10th July 2014
+                    .spost.clearfix
+                      .entry-c
+                        .entry-title
+                          h4
+                            a(href='#') Debitis nihil placeat, illum est nisi
+                        ul.entry-meta
+                          li 10th July 2014
+            .col_one_third.col_last
+              .widget.clearfix(style='margin-bottom: -20px;')
+                .row
+                  .col-md-6.bottommargin-sm
+                    .counter.counter-small
+                      span(data-from='50', data-to='15065421', data-refresh-interval='80', data-speed='3000', data-comma='true')
+                    h5.nobottommargin Total Downloads
+                  .col-md-6.bottommargin-sm
+                    .counter.counter-small
+                      span(data-from='100', data-to='18465', data-refresh-interval='50', data-speed='2000', data-comma='true')
+                    h5.nobottommargin Clients
+              .widget.subscribe-widget.clearfix
+                h5
+                  strong Subscribe
+                  |  to Our Newsletter to get Important News, Amazing Offers & Inside Scoops:
+                .widget-subscribe-form-result
+                form#widget-subscribe-form.nobottommargin(action='include/subscribe.php', role='form', method='post')
+                  .input-group.divcenter
+                    span.input-group-addon
+                      i.icon-email2
+                    input#widget-subscribe-form-email.form-control.required.email(type='email', name='widget-subscribe-form-email', placeholder='Enter your Email')
+                    span.input-group-btn
+                      button.btn.btn-success(type='submit') Subscribe
+              .widget.clearfix(style='margin-bottom: -20px;')
+                .row
+                  .col-md-6.clearfix.bottommargin-sm
+                    a.social-icon.si-dark.si-colored.si-facebook.nobottommargin(href='#', style='margin-right: 10px;')
+                      i.icon-facebook
+                      i.icon-facebook
+                    a(href='#')
+                      small(style='display: block; margin-top: 3px;')
+                        strong Like us
+                        br
+                        | on Facebook
+                  .col-md-6.clearfix
+                    a.social-icon.si-dark.si-colored.si-rss.nobottommargin(href='#', style='margin-right: 10px;')
+                      i.icon-rss
+                      i.icon-rss
+                    a(href='#')
+                      small(style='display: block; margin-top: 3px;')
+                        strong Subscribe
+                        br
+                        | to RSS Feeds
+          // .footer-widgets-wrap end
+        //
+          Copyrights
+          =============================================
+        #copyrights
+          .container.clearfix
+            .col_half
+              | Copyrights © 2014 All Rights Reserved by Canvas Inc.
+              br
+              .copyright-links
+                a(href='#') Terms of Use
+                |  / 
+                a(href='#') Privacy Policy
+            .col_half.col_last.tright
+              .fright.clearfix
+                a.social-icon.si-small.si-borderless.si-facebook(href='#')
+                  i.icon-facebook
+                  i.icon-facebook
+                a.social-icon.si-small.si-borderless.si-twitter(href='#')
+                  i.icon-twitter
+                  i.icon-twitter
+                a.social-icon.si-small.si-borderless.si-gplus(href='#')
+                  i.icon-gplus
+                  i.icon-gplus
+                a.social-icon.si-small.si-borderless.si-pinterest(href='#')
+                  i.icon-pinterest
+                  i.icon-pinterest
+                a.social-icon.si-small.si-borderless.si-vimeo(href='#')
+                  i.icon-vimeo
+                  i.icon-vimeo
+                a.social-icon.si-small.si-borderless.si-github(href='#')
+                  i.icon-github
+                  i.icon-github
+                a.social-icon.si-small.si-borderless.si-yahoo(href='#')
+                  i.icon-yahoo
+                  i.icon-yahoo
+                a.social-icon.si-small.si-borderless.si-linkedin(href='#')
+                  i.icon-linkedin
+                  i.icon-linkedin
+              .clear
+              i.icon-envelope2
+              |  info@canvas.com 
+              span.middot ·
+              i.icon-headphones
+              |  +91-11-6541-6369 
+              span.middot ·
+              i.icon-skype2
+              |  CanvasOnSkype
+        // #copyrights end
+      // #footer end
+    // #wrapper end
+    //
+      Go To Top
+      =============================================
+    #gotoTop.icon-angle-up
+    //
+      External JavaScripts
+      =============================================
+    script(type='text/javascript', src='js/jquery.js')
+    script(type='text/javascript', src='js/plugins.js')
+
+    script(type='text/javascript').
+      jQuery(document).ready(function($){
+      $("html, body").delay(2000).animate({scrollTop: $('#test').offset().top }, 2000);
+      });
+      jQuery(window).load(function(){
+      });
+
+    //
+      Footer Scripts
+      =============================================
+    script(type='text/javascript', src='js/functions.js')
