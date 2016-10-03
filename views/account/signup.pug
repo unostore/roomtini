@@ -1425,9 +1425,6 @@ html(dir='ltr', lang='en-US')
                 form#register-form.nobottommargin(name='register-form', action='#', method='POST')
                   input(type='hidden', name='_csrf', value=_csrf)
                   .col_full
-                    label(for='register-form-name') Name:
-                    input#register-form-name.form-control(type='text', name='register-form-name', value='')
-                  .col_full
                     label(for='email') Email Address:
                     input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus, required)
                   .col_full
