@@ -41,7 +41,7 @@ html(dir='ltr', lang='en-US')
               .panel.panel-default.divcenter.noradius.noborder(style='max-width: 400px;')
                 .panel-body(style='padding: 40px;')
                   form.nobottommargin(method='POST')
-                    input(type='hidden', name='_csrf')
+                    input(type='hidden', name='_csrf', value=_csrf)
                     h3 Login to your Account
                     .col_full
                       label(for='email') Email:
