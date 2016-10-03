@@ -128,7 +128,7 @@ html(dir='ltr', lang='en-US')
                 else    
                   li.sub-menu
                     a(href='#')
-                      div=('Hi ' +((user.profile && user.profile.name)) + '!' || user.email || user.id)
+                      div='' + ('Hi ' +((user.profile && user.profile.name) + '!') || user.email || user.id)
                     ul(style='display: none')
                       li
                         a.sf-with-ul(href='/account')
