@@ -44,7 +44,7 @@ block content
                 .panel.panel-default.divcenter.noradius.noborder(style='max-width: 400px;')
                   .panel-body(style='padding: 40px;')
                     form.form-horizontal(method='POST')
-                      input(type='hidden', name='_csrf')
+                      input(type='hidden', name='_csrf', value=_csrf)
                       h3 Login to your Account
                       .form-group
                         label.col-sm-3.control-label(for='email') Email
