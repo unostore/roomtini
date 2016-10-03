@@ -1429,17 +1429,15 @@ html(dir='ltr', lang='en-US')
                     input#register-form-name.form-control(type='text', name='register-form-name', value='')
                   .col_full
                     label(for='email') Email Address:
-                    input#register-form-email.form-control(type='text', name='register-form-email', value='')
+                    input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus, required)
                   .col_full
                     label(for='password') Choose Password:
-                    input#register-form-password.form-control(type='password', name='register-form-password', value='')
+                    input.form-control(type='password', name='password', id='password', placeholder='Password', required)
                   .col_full
                     label(for='confirmPassword') Re-enter Password:
-                    input#register-form-repassword.form-control(type='password', name='register-form-repassword', value='')
+                    input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password', required)
                   .col_full.nobottommargin
-                    button#register-form-submit.button.button-3d.button-black.nomargin(name='register-form-submit', value='register', type='submit' )
-                      i.fa.fa-user-plus
-                        Register Now
+                    button#register-form-submit.button.button-3d.button-black.nomargin(name='register-form-submit', value='register', type='submit' ) Register Now
       // #content end
       //
         Footer
