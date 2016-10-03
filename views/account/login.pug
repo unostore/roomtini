@@ -40,19 +40,20 @@ html(dir='ltr', lang='en-US')
                   img(src='images/logo-dark.png', alt='Canvas Logo')
               .panel.panel-default.divcenter.noradius.noborder(style='max-width: 400px;')
                 .panel-body(style='padding: 40px;')
-                  form.nobottommargin(method='POST')
+                  form.form-horizontal(method='POST')
                     input(type='hidden', name='_csrf')
                     h3 Login to your Account
                     .form-group
-                      label(for='email') Email:
-                      input#email.form-control.not-dark(type='email', name='email', value='')
+                      label.col-sm-3.control-label(for='email') Email
+                      input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus, required)
                     .form-group
-                      label(for='login-form-password') Password:
-                      input#password.form-control.not-dark(type='password', name='password')
+                      label.col-sm-3.control-label(for='password') Password
+                      input.form-control(type='password', name='password', id='password', placeholder='Password', required)
                     .form-group
-                      button#login-form-submit.button.button-3d.button-black.nomargin(name='login-form-submit', type='submit')
-                        i.fa.fa-user
-                          Login
+                      .col-sm-offset-3.col-sm-7
+                        button.col-sm-3.btn.btn-primary(type='submit')
+                         i.fa.fa-user
+                         | Login
                       a.fright(href='/forgot') Forgot Password?
                   .line.line-sm
                   .center
