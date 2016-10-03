@@ -129,17 +129,16 @@ html(dir='ltr', lang='en-US')
                 i.acc-open.icon-ok-sign
                 | Change your Password?
               .acc_content.clearfix
-                form#register-form.nobottommargin(name='register-form', action='#', method='POST')
+                form#register-form.nobottommargin(method='POST')
                   input(type='hidden', name='_csrf', value=_csrf)
                   .col_full
-                    label(for='password') Email Address:
-                    input.form-control(type='password', name='password', id='password', placeholder='Email', autofocus, required)
+                    label(for='password') New Password:
+                    input.form-control(type='password', name='password', id='password', placeholder='password', autofocus, required)
+                  .col_full
+                    label(for='confirm') Confirm Password:
+                    input.form-control(type='password', name='confirm', id='confirm', placeholder='password', required)
                   .col_full.nobottommargin
                     button#register-form-submit.button.button-3d.button-black.nomargin(name='register-form-submit', value='register', type='submit' ) Change Password
-              .acctitle
-                i.acc-closed.icon-lock3
-                i.acc-open.icon-unlock
-                | Login to your Account
               .acc_content.clearfix(id='test')
       // #content end
       //
