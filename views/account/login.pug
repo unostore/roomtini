@@ -16,8 +16,8 @@ html(dir='ltr', lang='en-US')
     link(rel='stylesheet', href='css/magnific-popup.css', type='text/css')
     link(rel='stylesheet', href='css/responsive.css', type='text/css')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    //if lt IE 9
-      script(src='http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js')
+    //
+      if lt IE 9script(src='http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js')
     //
       Document Title
       =============================================
@@ -41,7 +41,7 @@ html(dir='ltr', lang='en-US')
               .panel.panel-default.divcenter.noradius.noborder(style='max-width: 400px;')
                 .panel-body(style='padding: 40px;')
                   form.nobottommargin(method='POST')
-                    input(type='hidden', name='_csrf', value=_csrf)
+                    input(type='hidden', name='_csrf')
                     h3 Login to your Account
                     .col_full
                       label(for='email') Email:
@@ -55,9 +55,13 @@ html(dir='ltr', lang='en-US')
                   .line.line-sm
                   .center
                     h4(style='margin-bottom: 15px;') or Login with:
-                    a.button.button-rounded.si-facebook.si-colored(href='/auth/facebook') Facebook
+                    a.button.button-rounded.si-facebook.si-colored(href='/auth/facebook', style='text-transform: none;')
+                      i.icon-facebook
+                      | Facebook
                     span.hidden-xs or
-                    a.button.button-rounded.si-twitter.si-colored(href='/auth/linkedin') Linkedin
+                    a.button.button-rounded.si-twitter.si-colored(href='/auth/linkedin', style='text-transform: none;')
+                      i.icon-linkedin
+                      | Linkedin
               .row.center.dark
                 small Copyrights © All Rights Reserved by Roomtini Inc.
       // #content end
