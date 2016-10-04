@@ -8,10 +8,10 @@ const User = require('../models/User');
  * GET /login
  * Login page.
  */
-exports.getLogin = (req, res) => {
+exports.getLogin = (req, res) => { 
   if (req.user) {
     return res.redirect('/account');
-  }
+  } 
   res.render('account/login', {
     title: 'Login'
   });
@@ -102,7 +102,7 @@ exports.postSignup = (req, res, next) => {
         if (err) {
           return next(err);
         }
-        res.redirect('/');
+        res.redirect('/contact');
       });
     });
   });
