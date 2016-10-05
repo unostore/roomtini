@@ -2,44 +2,153 @@ doctype html
 html(dir='ltr', lang='en-US')
   head
     meta(http-equiv='content-type', content='text/html; charset=utf-8')
-    meta(name='author', content='SemiColonWeb')
-    meta(name='csrf-token', content=_csrf)
+    meta(name='Saad', content='SemiColonWeb')
     //
       Stylesheets
       =============================================
-    link(href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto:300,400,500,700', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic', rel='stylesheet', type='text/css')
     link(rel='stylesheet', href='../css/bootstrap.css', type='text/css')
     link(rel='stylesheet', href='../style.css', type='text/css')
-    // One Page Module Specific Stylesheet
-    link(rel='stylesheet', href='onepage.css', type='text/css')
-    // /
     link(rel='stylesheet', href='../css/dark.css', type='text/css')
     link(rel='stylesheet', href='../css/font-icons.css', type='text/css')
-    link(rel='stylesheet', href='css/et-line.css', type='text/css')
     link(rel='stylesheet', href='../css/animate.css', type='text/css')
     link(rel='stylesheet', href='../css/magnific-popup.css', type='text/css')
-    link(rel='stylesheet', href='css/fonts.css', type='text/css')
     link(rel='stylesheet', href='../css/responsive.css', type='text/css')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    //
-      if lt IE 9script(src='http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js')
+    //if lt IE 9
+      script(src='http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js')
     //
       Document Title
       =============================================
-    title Login - Layout 3 | Canvas
+    title Profile | Canvas
   body.stretched
-
-                form(method='POST')
-                  legend Reset Password
-                  input(type='hidden', name='_csrf', value=_csrf)
-                  .form-group
-                    label(for='password') New Password
-                    input.form-control(type='password', name='password', id='password', placeholder='New password', autofocus, required)
-                  .form-group
-                    label(for='confirm') Confirm Password
-                    input.form-control(type='password', name='confirm', id='confirm', placeholder='Confirm password', required)
-                  .form-group
-                    button.btn.btn-primary.btn-reset(type='submit')
-                      i.fa.fa-keyboard-o
-                      | Change Password
-
+    //
+      Document Wrapper
+      =============================================
+    #wrapper.clearfix
+      //
+        Header
+        =============================================
+      header#header.full-header
+        #header-wrap
+          .container.clearfix
+            #primary-menu-trigger
+              i.icon-reorder
+            //
+              Logo
+              =============================================
+            #logo
+              a.standard-logo(href='/', data-dark-logo='images/logo-dark.png')
+                img(src='/images/logo.png', alt='Canvas Logo')
+              a.retina-logo(href='/', data-dark-logo='images/logo-dark@2x.png')
+                img(src='/images/logo@2x.png', alt='Canvas Logo')
+            // #logo end
+            
+            //
+              Primary Navigation
+              =============================================
+            nav#primary-menu
+            // #primary-menu end
+      // #header end
+      //
+        Content
+        =============================================
+      section#content
+        .content-wrap
+          .container.clearfix
+            
+            .row.clearfix.content-wrap
+              .col-sm-7.nobottommargin.col-sm-offset-2
+                .nobottommargin
+                  form.nobottommargin(method='POST')
+                    input(type='hidden', name='_csrf', value=_csrf)
+                    .row
+                      h3.col-md-12.col-sm-12 Change Password
+                    .row(style='margin-top:15px')
+                      .col-md-3.col-sm-12
+                        label(for='login-form-username') New Password:
+                      .col-md-9.col-sm-12
+                        input.form-control(type='password', name='password', id='password', placeholder='New password', autofocus, required)
+                    .row(style='margin-top:15px')
+                      .col-md-3.col-sm-12
+                        label(for='login-form-username') Confirm Password:
+                      .col-md-9.col-sm-12
+                        input.form-control(type='password', name='confirm', id='confirm', placeholder='Confirm password', required)
+                    .row
+                      .col-md-9.col-sm-12.col-md-offset-3(style='margin-top:15px')
+                        button.button.button-rounded.button-reveal.button-blue.tright(style='margin: 0px', type='submit')
+                          i.icon-lock3
+                          span Change Password
+            
+      // #content end
+      //
+        Footer
+        =============================================
+      footer#footer.dark
+        //
+          Copyrights
+          =============================================
+        #copyrights
+          .container.clearfix
+            .col_half
+              | Copyrights © 2014 All Rights Reserved by Canvas Inc.
+              br
+              .copyright-links
+                a(href='#') Terms of Use
+                |  / 
+                a(href='#') Privacy Policy
+            .col_half.col_last.tright
+              .fright.clearfix
+                a.social-icon.si-small.si-borderless.si-facebook(href='#')
+                  i.icon-facebook
+                  i.icon-facebook
+                a.social-icon.si-small.si-borderless.si-twitter(href='#')
+                  i.icon-twitter
+                  i.icon-twitter
+                a.social-icon.si-small.si-borderless.si-gplus(href='#')
+                  i.icon-gplus
+                  i.icon-gplus
+                a.social-icon.si-small.si-borderless.si-pinterest(href='#')
+                  i.icon-pinterest
+                  i.icon-pinterest
+                a.social-icon.si-small.si-borderless.si-vimeo(href='#')
+                  i.icon-vimeo
+                  i.icon-vimeo
+                a.social-icon.si-small.si-borderless.si-github(href='#')
+                  i.icon-github
+                  i.icon-github
+                a.social-icon.si-small.si-borderless.si-yahoo(href='#')
+                  i.icon-yahoo
+                  i.icon-yahoo
+                a.social-icon.si-small.si-borderless.si-linkedin(href='#')
+                  i.icon-linkedin
+                  i.icon-linkedin
+              .clear
+              i.icon-envelope2
+              |  info@canvas.com 
+              span.middot ·
+              i.icon-headphones
+              |  +91-11-6541-6369 
+              span.middot ·
+              i.icon-skype2
+              |  CanvasOnSkype
+        // #copyrights end
+      // #footer end
+    // #wrapper end
+    //
+      Go To Top
+      =============================================
+    #gotoTop.icon-angle-up
+    //
+      External JavaScripts
+      =============================================
+    script(type='text/javascript', src='../js/jquery.js')
+    script(type='text/javascript', src='../js/plugins.js')
+    //
+      Footer Scripts
+      =============================================
+    script(type='text/javascript', src='../js/functions.js')
+    script.
+      jQuery( "#tabs-profile" ).on( "tabsactivate", function( event, ui ) {
+      jQuery( '.flexslider .slide' ).resize();
+      });
