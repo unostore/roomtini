@@ -121,9 +121,21 @@ html(dir='ltr', lang='en-US')
                 li
                   a(href='#', data-href='#page-title')
                     div FAQ
-                li
-                  a(href='/login')
-                    div Sign In
+                if !user
+                  li(class=(title == 'Login') ? 'active' : undefined)
+                    a(href='/login') 
+                      div Sign In
+                else    
+                  li.sub-menu
+                    a(href='#')
+                      div='' + ((user.profile && user.profile.name) || user.email || user.id)
+                    ul(style='display: none')
+                      li
+                        a.sf-with-ul(href='/account')
+                          div My account
+                      li
+                        a.sf-with-ul(href='/logout')
+                          div Logout
                 li
                   a.button.button-mini.button-rounded.button-teal(href='/signup') Apply Now!
                 #side-panel-trigger.side-panel-trigger
