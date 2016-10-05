@@ -121,23 +121,11 @@ html(dir='ltr', lang='en-US')
                 li
                   a(href='#', data-href='#page-title')
                     div FAQ
-                if !user
-                  li(class=(title == 'Login') ? 'active' : undefined)
-                    a(href='/signup') 
-                      div Apply Now
-                else    
-                  li.sub-menu
-                    a(href='#')
-                      div='' + ((user.profile && user.profile.name) || user.email || user.id)
-                    ul(style='display: none')
-                      li
-                        a.sf-with-ul(href='/account')
-                          div My account
-                      li
-                        a.sf-with-ul(href='/logout')
-                          div Logout
                 li
-                  a(href='#') Book a tour
+                  a(href='/signin')
+                    div Sign In
+                li
+                  a.button.button-mini.button-rounded.button-teal(href='/signup') Apply Now!
                 #side-panel-trigger.side-panel-trigger
                   a(href='#')
                     i.icon-reorder
@@ -257,12 +245,7 @@ html(dir='ltr', lang='en-US')
                       a.hidden(href='images/portfolio/full/35.jpg', data-lightbox='gallery-item')
                       a.hidden(href='images/portfolio/full/36.jpg', data-lightbox='gallery-item')
                       .portfolio-desc
-                        h3
-                          a(href='#') L Seven
-                        span
-                          a(href='#') About
-                          | , 
-                          a(href='images/portfolio/full/30.jpg', data-lightbox='gallery-item') Gallery
+                        a.button.button-border.button-black.button-circle(href='/') Book a Tour!
               article.portfolio-item.pf-media.pf-icons.wide
                 .portfolio-image
                   .fslider(data-arrows='false', data-speed='400', data-pause='4000')
@@ -284,12 +267,7 @@ html(dir='ltr', lang='en-US')
                     a.hidden(href='images/portfolio/full/27.jpg', data-lightbox='gallery-item')
                     a.hidden(href='images/portfolio/full/28.jpg', data-lightbox='gallery-item')
                     .portfolio-desc
-                      h3
-                        a(href='#') Soma Square
-                      span
-                        a(href='#') About
-                        | , 
-                        a(href='images/portfolio/full/29.jpg', data-lightbox='gallery-item') Gallery
+                      a.button.button-border.button-black.button-circle(href='#') Book a Tour!
             // #portfolio end
             .topmargin.center
               a.button.button-border.button-circle.t600(href='#') View More Locations
