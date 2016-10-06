@@ -17,3 +17,13 @@ exports.settings = (req, res) => {
     title: 'Settings'
   });
 };
+exports.billings = (req, res) => {
+  res.render('billings', {
+    title: 'Billings'
+  });
+};
+exports.events = (req, res) => {
+  res.render('events', {
+    title: 'events'
+  });
+};

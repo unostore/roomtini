@@ -134,6 +134,8 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
 app.get('/', homeController.index);
 app.get('/index', homeController.indexOne);
 app.get('/settings', homeController.settings);
+app.get('/billing', homeController.billing);
+app.get('/events', homeController.events);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
