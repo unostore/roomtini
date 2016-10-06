@@ -12,3 +12,8 @@ exports.indexOne = (req, res) => {
     title: 'Landing Page'
   });
 };
+exports.settings = (req, res) => {
+  res.render('settings', {
+    title: 'Settings'
+  });
+};
