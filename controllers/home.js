@@ -24,6 +24,6 @@ exports.billings = (req, res) => {
 };
 exports.events = (req, res) => {
   res.render('events', {
-    title: 'events'
+    title: 'Events'
   });
 };
