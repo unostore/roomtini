@@ -148,9 +148,9 @@ html(dir='ltr', lang='en-US')
                 | Login to your Account
               .acc_content.clearfix(id='test')
                 form#login-form.nobottommargin(name='login-form', action='#', method='post')
+                  input(type='hidden', name='_csrf', value=_csrf)                
                   .col_full
                     label(for='login-form-username') Username:
-                    input(type='hidden', name='_csrf', value=_csrf)
                   .col_full
                     label(for='login-form-password') Password:
                     input#login-form-password.form-control(type='password', name='login-form-password', value='')
