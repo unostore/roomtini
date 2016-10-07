@@ -2,7 +2,7 @@ doctype html
 html(dir='ltr', lang='en-US')
   head
     meta(http-equiv='content-type', content='text/html; charset=utf-8')
-    meta(name='author', content='SemiColonWeb')
+    meta(name='Saad', content='SemiColonWeb')
     //
       Stylesheets
       =============================================
@@ -13,7 +13,6 @@ html(dir='ltr', lang='en-US')
     link(rel='stylesheet', href='../css/font-icons.css', type='text/css')
     link(rel='stylesheet', href='../css/animate.css', type='text/css')
     link(rel='stylesheet', href='../css/magnific-popup.css', type='text/css')
-    link(rel='stylesheet', href='../css/calendar.css', type='text/css')
     link(rel='stylesheet', href='../css/responsive.css', type='text/css')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     //if lt IE 9
@@ -21,104 +20,7 @@ html(dir='ltr', lang='en-US')
     //
       Document Title
       =============================================
-    title Account | Roomtini
-    style.
-      #vertical-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 240px;
-      z-index: 99;
-      background: #F9F9F9;
-      border-right: 1px solid #EEE;
-      height: 100%;
-      overflow: auto;
-      padding: 140px 0 40px;
-      -webkit-transition: padding .4s ease;
-      -o-transition: padding .4s ease;
-      transition: padding .4s ease;
-      }
-      .sticky-header + #vertical-nav { padding-top: 100px; }
-      #vertical-nav nav ul {
-      margin-bottom: 0;
-      list-style: none;
-      }
-      #vertical-nav nav li a {
-      display: block;
-      padding: 10px 30px;
-      color: #333;
-      text-transform: uppercase;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      font-family: 'Raleway', sans-serif;
-      }
-      #vertical-nav nav li i {
-      font-size: 14px;
-      width: 16px;
-      text-align: center;
-      }
-      #vertical-nav nav li i:not(.icon-angle-down) {
-      margin-right: 8px;
-      position: relative;
-      top: 1px;
-      }
-      #vertical-nav nav li a i.icon-angle-down {
-      width: auto;
-      margin-left: 5px;
-      }
-      #vertical-nav nav li:hover > a,
-      #vertical-nav nav li.current > a,
-      #vertical-nav nav li.active > a {
-      background-color: #FFF;
-      color: #1ABC9C;
-      }
-      #vertical-nav nav ul ul { display: none; }
-      #vertical-nav nav ul ul a {
-      font-size: 12px;
-      letter-spacing: 1px;
-      padding-left: 45px;
-      font-family: 'Lato', sans-serif;
-      }
-      #vertical-nav nav ul ul a i.icon-angle-down { font-size: 12px; }
-      #vertical-nav nav ul ul ul a { padding-left: 60px; }
-      #vertical-nav nav ul ul ul ul a { padding-left: 75px; }
-      @media (min-width: 992px) {
-      #header { z-index: 199; }
-      #page-title,
-      #content,
-      #footer { margin-left: 240px; }
-      #page-title .container,
-      #content .container,
-      #footer .container {
-      width: auto;
-      padding: 0 60px;
-      }
-      #vertical-nav .container {
-      width: 100%;
-      padding: 0;
-      }
-      #page-title .breadcrumb { right: 60px !important; }
-      }
-      @media (max-width: 991px) {
-      #vertical-nav {
-      position: relative;
-      width: 100%;
-      z-index: auto;
-      border: none;
-      border-bottom: 1px solid #EEE;
-      height: auto;
-      padding: 0;
-      }
-      #vertical-nav .container { padding: 10px 20px; }
-      #vertical-nav nav li a { padding: 10px 0; }
-      #vertical-nav nav li:hover > a,
-      #vertical-nav nav li.current > a,
-      #vertical-nav nav li.active > a { background-color: transparent; }
-      #vertical-nav nav ul ul a { padding-left: 15px; }
-      #vertical-nav nav ul ul ul a { padding-left: 30px; }
-      #vertical-nav nav ul ul ul ul a { padding-left: 45px; }
-      }
+    title Profile | Roomtini
   body.stretched
     //
       Document Wrapper
@@ -149,49 +51,15 @@ html(dir='ltr', lang='en-US')
                   a(href='#')=((user.profile && user.profile.name) || user.email || user.id)
                 li.divider(role='separator')
                 li
-                  a(href='/settings')
-                    i.icon-settings(style="margin-right:2px; margin-left: 0px")
-                    |  Account
-                li
-                  a(href='/account')
-                    i.icon-user(style="margin-right:2px; margin-left: 0px")
-                    |  Profile
-                li
-                  a(href='/billings')
-                    i.icon-money(style="margin-right:2px; margin-left: 0px")
-                    |  Billings
-                li
                   a(href='/logout')
-                    i.icon-signout(style="margin-right:2px; margin-left: 0px")
-                    |  Logout 
-                    
+                    | Logout 
+                    i.icon-signout
+            //
+              Primary Navigation
+              =============================================
+            nav#primary-menu
+            // #primary-menu end
       // #header end
-      #vertical-nav
-        .container.clearfix
-          nav
-            ul
-              li
-                a(href='/settings')
-                  i.icon-settings
-                  | Account
-              li
-                a(href='/account')
-                  i.icon-user
-                  | Profile
-              li
-                a(href='/Billings')
-                  i.icon-money
-                  | Billings
-              li
-                a(href='/logout')
-                  i.icon-signout
-                  | Lougout
-            
-      //
-        Page Title
-        =============================================
-      
-      // #page-title end
       //
         Content
         =============================================
@@ -199,8 +67,8 @@ html(dir='ltr', lang='en-US')
         .content-wrap
           .container.clearfix
             .row.clearfix
-              .col-md-9.col-md-offset-1
-                .saad
+              .col-sm-9
+                .row
                   if messages.errors
                     .alert.alert-danger.fade.in
                       button.close(type='button', data-dismiss='alert')
@@ -270,9 +138,8 @@ html(dir='ltr', lang='en-US')
                         button.button.button-rounded.button-reveal.button-black.tright(type='submit', style='margin: 0px')
                           i.icon-angle-right
                           span Update Profile
-
             .row.clearfix.content-wrap
-              .col-md-9.col-md-offset-1
+              .col-sm-7.nobottommargin.col-sm-offset-2
                 .nobottommargin
                   form.nobottommargin(action='/settings/password', method='post')
                     input(type='hidden', name='_csrf', value=_csrf)
@@ -294,7 +161,7 @@ html(dir='ltr', lang='en-US')
                           i.icon-lock3
                           span Change Password
             .row.clearfix
-              .col-sm-9.col-md-offset-1.nobottommargin
+              .col-sm-7.nobottommargin.col-sm-offset-2
                 .nobottommargin
                   form.nobottommargin(action='/settings/delete', method='post')
                     input(type='hidden', name='_csrf', value=_csrf)
@@ -311,7 +178,7 @@ html(dir='ltr', lang='en-US')
                           i.icon-trash2
                           span Delete Account
             .row.clearfix.content-wrap
-              .col-sm-9.col-md-offset-1.nobottommargin
+              .col-sm-7.nobottommargin.col-sm-offset-2
                 .nobottommargin
                   .row
                     h3.col-md-12.col-sm-12 Link Accounts
@@ -322,14 +189,102 @@ html(dir='ltr', lang='en-US')
                       br
                       a(href='/auth/facebook') Link your Facebook account
               .line.visible-xs-block
-              
+              .col-sm-3.clearfix
+                .list-group
+                  a.list-group-item.clearfix(href='/accounts')
+                    | Profile 
+                    i.icon-user.pull-right
+                  a.list-group-item.clearfix(href='/events')
+                    | Events & Activities 
+                    i.icon-laptop2.pull-right
+                  a.list-group-item.clearfix(href='#')
+                    | Messages 
+                    i.icon-envelope2.pull-right
+                  a.list-group-item.clearfix(href='/billings')
+                    | Billing 
+                    i.icon-credit-cards.pull-right
+                  a.list-group-item.clearfix(href='/settings')
+                    | Settings 
+                    i.icon-cog.pull-right
+                    i.icon-line2-logout.pull-right
+                .fancy-title.topmargin.title-border
+                  h4 About Me
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum laboriosam, dignissimos veniam obcaecati. Quasi eaque, odio assumenda porro explicabo laborum!
+                .fancy-title.topmargin.title-border
+                  h4 Social Profiles
+                a.social-icon.si-facebook.si-small.si-rounded.si-light(href='#', title='Facebook')
+                  i.icon-facebook
+                  i.icon-facebook
+                a.social-icon.si-gplus.si-small.si-rounded.si-light(href='#', title='Google+')
+                  i.icon-gplus
+                  i.icon-gplus
+                a.social-icon.si-dribbble.si-small.si-rounded.si-light(href='#', title='Dribbble')
+                  i.icon-dribbble
+                  i.icon-dribbble
+                a.social-icon.si-flickr.si-small.si-rounded.si-light(href='#', title='Flickr')
+                  i.icon-flickr
+                  i.icon-flickr
+                a.social-icon.si-linkedin.si-small.si-rounded.si-light(href='#', title='LinkedIn')
+                  i.icon-linkedin
+                  i.icon-linkedin
+                a.social-icon.si-twitter.si-small.si-rounded.si-light(href='#', title='Twitter')
+                  i.icon-twitter
+                  i.icon-twitter
       // #content end
       //
         Footer
         =============================================
-      //
-        <footer id="footer" class="dark">
-        </footer>
+      footer#footer.dark
+        //
+          Copyrights
+          =============================================
+        #copyrights
+          .container.clearfix
+            .col_half
+              | Copyrights © 2016 All Rights Reserved by Roomtini Inc.
+              br
+              .copyright-links
+                a(href='#') Terms of Use
+                |  / 
+                a(href='#') Privacy Policy
+            .col_half.col_last.tright
+              .fright.clearfix
+                a.social-icon.si-small.si-borderless.si-facebook(href='#')
+                  i.icon-facebook
+                  i.icon-facebook
+                a.social-icon.si-small.si-borderless.si-twitter(href='#')
+                  i.icon-twitter
+                  i.icon-twitter
+                a.social-icon.si-small.si-borderless.si-gplus(href='#')
+                  i.icon-gplus
+                  i.icon-gplus
+                a.social-icon.si-small.si-borderless.si-pinterest(href='#')
+                  i.icon-pinterest
+                  i.icon-pinterest
+                a.social-icon.si-small.si-borderless.si-vimeo(href='#')
+                  i.icon-vimeo
+                  i.icon-vimeo
+                a.social-icon.si-small.si-borderless.si-github(href='#')
+                  i.icon-github
+                  i.icon-github
+                a.social-icon.si-small.si-borderless.si-yahoo(href='#')
+                  i.icon-yahoo
+                  i.icon-yahoo
+                a.social-icon.si-small.si-borderless.si-linkedin(href='#')
+                  i.icon-linkedin
+                  i.icon-linkedin
+              .clear
+              i.icon-envelope2
+              |  ask@roomtini.com 
+              span.middot ·
+              i.icon-headphones
+              |  +1-415-6369 
+              span.middot ·
+              i.icon-skype2
+              |  RoomtiniOnSkype
+        // #copyrights end
+      // #footer end
     // #wrapper end
     //
       Go To Top
@@ -344,19 +299,7 @@ html(dir='ltr', lang='en-US')
       Footer Scripts
       =============================================
     script(type='text/javascript', src='../js/functions.js')
-    script(type='text/javascript').
-      jQuery(document).ready(function($){
-      $( '#vertical-nav nav ul li:has(ul)' ).addClass('sub-menu');
-      $( '#vertical-nav nav ul li:has(ul) > a' ).append( ' <i class="icon-angle-down"></i>' );
-      $( '#vertical-nav nav ul li:has(ul) > a' ).click( function(e){
-      var element = $(this);
-      $( '#vertical-nav nav ul li' ).not(element.parents()).removeClass('active');
-      element.parent().children('ul').slideToggle( function(){
-      $(this).find('ul').hide();
-      $(this).find('li.active').removeClass('active');
-      });
-      $( '#vertical-nav nav ul li > ul' ).not(element.parent().children('ul')).not(element.parents('ul')).slideUp();
-      element.parent('li:has(ul)').toggleClass('active');
-      e.preventDefault();
-      });
+    script.
+      jQuery( "#tabs-profile" ).on( "tabsactivate", function( event, ui ) {
+      jQuery( '.flexslider .slide' ).resize();
       });
