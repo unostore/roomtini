@@ -26,26 +26,9 @@ html(dir='ltr', lang='en-US')
     //
       Document Title
       =============================================
-    title Login - Layout 3 | Roomtini
-  body.stretched
-    if messages.errors
-      .alert.alert-danger.fade.in
-        button.close(type='button', data-dismiss='alert')
-          i.fa.fa-times-circle-o
-        for error in messages.errors
-          div= error.msg
-    if messages.info
-      .alert.alert-info.fade.in
-        button.close(type='button', data-dismiss='alert')
-          i.fa.fa-times-circle-o
-        for info in messages.info
-          div= info.msg
-    if messages.success
-      .alert.alert-success.fade.in
-        button.close(type='button', data-dismiss='alert')
-          i.fa.fa-times-circle-o
-        for success in messages.success
-          div= success.msg    
+    title Sign up | Roomtini
+    body.stretched
+  
     //
       Document Wrapper
       =============================================
@@ -123,7 +106,26 @@ html(dir='ltr', lang='en-US')
         .content-wrap
           .container.clearfix
             .accordion.accordion-lg.divcenter.nobottommargin.clearfix(style='max-width: 550px;')
-              
+              .row
+                .col-md-12
+                  if messages.errors
+                    .alert.alert-danger.fade.in
+                      button.close(type='button', data-dismiss='alert')
+                        i.fa.fa-times-circle-o
+                      for error in messages.errors
+                        div= error.msg
+                  if messages.info
+                    .alert.alert-info.fade.in
+                      button.close(type='button', data-dismiss='alert')
+                        i.fa.fa-times-circle-o
+                      for info in messages.info
+                        div= info.msg
+                  if messages.success
+                    .alert.alert-success.fade.in
+                      button.close(type='button', data-dismiss='alert')
+                        i.fa.fa-times-circle-o
+                      for success in messages.success
+                        div= success.msg  
               .acctitle
                 i.acc-closed.icon-user4
                 i.acc-open.icon-ok-sign
@@ -147,14 +149,14 @@ html(dir='ltr', lang='en-US')
                 i.acc-open.icon-unlock
                 | Login to your Account
               .acc_content.clearfix(id='test')
-                form#login-form.nobottommargin(name='login-form', action='#', method='post')
+                form#login-form.nobottommargin(name='login-form', action='/login', method='post')
                   input(type='hidden', name='_csrf', value=_csrf)                
                   .col_full
                     label(for='login-form-username') Username:
-                    input#login-form-password.form-control(type='username', name='username', value='')
+                    input#login-form-password.form-control(type='email', name='email', id='email')
                   .col_full
                     label(for='login-form-password') Password:
-                    input#login-form-password.form-control(type='password', name='login-form-password', value='')
+                    input#login-form-password.form-control(type='password', name='password', id='password')
                   .col_full.nobottommargin
                     button#login-form-submit.button.button-3d.button-black.nomargin(name='login-form-submit', value='login') Login
                     a.fright(href='#') Forgot Password?
