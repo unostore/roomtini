@@ -10,7 +10,7 @@ const User = require('../models/User');
  */
 exports.getLogin = (req, res) => { 
   if (req.user) {
-    return res.redirect('/account');
+    return res.redirect('/settings');
   } 
   res.render('account/login', {
     title: 'Login'
@@ -42,7 +42,7 @@ exports.postLogin = (req, res, next) => {
     req.logIn(user, (err) => {
       if (err) { return next(err); }
       req.flash('success', { msg: 'Success! You are logged in.' });
-      res.redirect('/account');
+      res.redirect('/settings');
     });
   })(req, res, next);
 };
@@ -130,7 +130,7 @@ exports.postUpdateProfile = (req, res, next) => {
 
   if (errors) {
     req.flash('errors', errors);
-    return res.redirect('/account');
+    return res.redirect('/settings');
   }
 
   User.findById(req.user.id, (err, user) => {
@@ -144,12 +144,12 @@ exports.postUpdateProfile = (req, res, next) => {
       if (err) {
         if (err.code === 11000) {
           req.flash('errors', { msg: 'The email address you have entered is already associated with an account.' });
-          return res.redirect('/account');
+          return res.redirect('/settings');
         }
         return next(err);
       }
       req.flash('success', { msg: 'Profile information has been updated.' });
-      res.redirect('/account');
+      res.redirect('/settings');
     });
   });
 };
@@ -166,7 +166,7 @@ exports.postUpdatePassword = (req, res, next) => {
 
   if (errors) {
     req.flash('errors', errors);
-    return res.redirect('/account');
+    return res.redirect('/settings');
   }
 
   User.findById(req.user.id, (err, user) => {
@@ -175,7 +175,7 @@ exports.postUpdatePassword = (req, res, next) => {
     user.save((err) => {
       if (err) { return next(err); }
       req.flash('success', { msg: 'Password has been changed.' });
-      res.redirect('/account');
+      res.redirect('/settings');
     });
   });
 };
@@ -206,7 +206,7 @@ exports.getOauthUnlink = (req, res, next) => {
     user.save((err) => {
       if (err) { return next(err); }
       req.flash('info', { msg: `${provider} account has been unlinked.` });
-      res.redirect('/account');
+      res.redirect('/settings');
     });
   });
 };

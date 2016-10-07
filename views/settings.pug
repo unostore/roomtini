@@ -88,7 +88,7 @@ html(dir='ltr', lang='en-US')
                       for success in messages.success
                         div= success.msg
                   .nobottommargin
-                  form.nobottommargin(action='/account/profile', method='post')
+                  form.nobottommargin(action='/settings/profile', method='post')
                     input(type='hidden', name='_csrf', value=_csrf)
                     .row
                       h3.col-md-12.col-sm-12 Profile Information
@@ -141,7 +141,7 @@ html(dir='ltr', lang='en-US')
             .row.clearfix.content-wrap
               .col-sm-7.nobottommargin.col-sm-offset-2
                 .nobottommargin
-                  form.nobottommargin(action='/account/password', method='post')
+                  form.nobottommargin(action='/settings/password', method='post')
                     input(type='hidden', name='_csrf', value=_csrf)
                     .row
                       h3.col-md-12.col-sm-12 Change Password
@@ -163,7 +163,7 @@ html(dir='ltr', lang='en-US')
             .row.clearfix
               .col-sm-7.nobottommargin.col-sm-offset-2
                 .nobottommargin
-                  form.nobottommargin(action='/account/delete', method='post')
+                  form.nobottommargin(action='/settings/delete', method='post')
                     input(type='hidden', name='_csrf', value=_csrf)
                     .row
                       h3.col-md-12.col-sm-12 Delete Account
