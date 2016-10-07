@@ -41,7 +41,8 @@ const userSchema = new mongoose.Schema({
     cleanliness_scale: String,
     comfortable_gender: String,
     next_event: String
-  }
+  },
+  roommates: Array
 }, { timestamps: true });
 
 /**
