@@ -2,7 +2,7 @@ doctype html
 html(dir='ltr', lang='en-US')
   head
     meta(http-equiv='content-type', content='text/html; charset=utf-8')
-    meta(name='Saad', content='SemiColonWeb')
+    meta(name='author', content='SemiColonWeb')
     //
       Stylesheets
       =============================================
@@ -13,6 +13,7 @@ html(dir='ltr', lang='en-US')
     link(rel='stylesheet', href='../css/font-icons.css', type='text/css')
     link(rel='stylesheet', href='../css/animate.css', type='text/css')
     link(rel='stylesheet', href='../css/magnific-popup.css', type='text/css')
+    link(rel='stylesheet', href='../css/calendar.css', type='text/css')
     link(rel='stylesheet', href='../css/responsive.css', type='text/css')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     //if lt IE 9
@@ -21,6 +22,103 @@ html(dir='ltr', lang='en-US')
       Document Title
       =============================================
     title Profile | Roomtini
+    style.
+      #vertical-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 240px;
+      z-index: 99;
+      background: #F9F9F9;
+      border-right: 1px solid #EEE;
+      height: 100%;
+      overflow: auto;
+      padding: 140px 0 40px;
+      -webkit-transition: padding .4s ease;
+      -o-transition: padding .4s ease;
+      transition: padding .4s ease;
+      }
+      .sticky-header + #vertical-nav { padding-top: 100px; }
+      #vertical-nav nav ul {
+      margin-bottom: 0;
+      list-style: none;
+      }
+      #vertical-nav nav li a {
+      display: block;
+      padding: 10px 30px;
+      color: #333;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-family: 'Raleway', sans-serif;
+      }
+      #vertical-nav nav li i {
+      font-size: 14px;
+      width: 16px;
+      text-align: center;
+      }
+      #vertical-nav nav li i:not(.icon-angle-down) {
+      margin-right: 8px;
+      position: relative;
+      top: 1px;
+      }
+      #vertical-nav nav li a i.icon-angle-down {
+      width: auto;
+      margin-left: 5px;
+      }
+      #vertical-nav nav li:hover > a,
+      #vertical-nav nav li.current > a,
+      #vertical-nav nav li.active > a {
+      background-color: #FFF;
+      color: #1ABC9C;
+      }
+      #vertical-nav nav ul ul { display: none; }
+      #vertical-nav nav ul ul a {
+      font-size: 12px;
+      letter-spacing: 1px;
+      padding-left: 45px;
+      font-family: 'Lato', sans-serif;
+      }
+      #vertical-nav nav ul ul a i.icon-angle-down { font-size: 12px; }
+      #vertical-nav nav ul ul ul a { padding-left: 60px; }
+      #vertical-nav nav ul ul ul ul a { padding-left: 75px; }
+      @media (min-width: 992px) {
+      #header { z-index: 199; }
+      #page-title,
+      #content,
+      #footer { margin-left: 240px; }
+      #page-title .container,
+      #content .container,
+      #footer .container {
+      width: auto;
+      padding: 0 60px;
+      }
+      #vertical-nav .container {
+      width: 100%;
+      padding: 0;
+      }
+      #page-title .breadcrumb { right: 60px !important; }
+      }
+      @media (max-width: 991px) {
+      #vertical-nav {
+      position: relative;
+      width: 100%;
+      z-index: auto;
+      border: none;
+      border-bottom: 1px solid #EEE;
+      height: auto;
+      padding: 0;
+      }
+      #vertical-nav .container { padding: 10px 20px; }
+      #vertical-nav nav li a { padding: 10px 0; }
+      #vertical-nav nav li:hover > a,
+      #vertical-nav nav li.current > a,
+      #vertical-nav nav li.active > a { background-color: transparent; }
+      #vertical-nav nav ul ul a { padding-left: 15px; }
+      #vertical-nav nav ul ul ul a { padding-left: 30px; }
+      #vertical-nav nav ul ul ul ul a { padding-left: 45px; }
+      }
   body.stretched
     //
       Document Wrapper
@@ -38,10 +136,10 @@ html(dir='ltr', lang='en-US')
               Logo
               =============================================
             #logo
-              a.standard-logo(href='/', data-dark-logo='images/canvasone-dark@2x.png')
-                img(src='images/canvasone-dark@2x.png', alt='Roomtini Logo')
-              a.retina-logo(href='/', data-dark-logo='images/canvasone-dark@2x.png')
-                img(src='images/canvasone-dark@2x.png', alt='Roomtini Logo')
+              a.standard-logo(href='/', data-dark-logo='images/logo-dark.png')
+                img(src='images/logo.png', alt='Roomtini Logo')
+              a.retina-logo(href='/', data-dark-logo='images/logo-dark@2x.png')
+                img(src='images/logo@2x.png', alt='Roomtini Logo')
             // #logo end
             #top-account.dropdown
               a.btn.btn-default.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
@@ -51,296 +149,345 @@ html(dir='ltr', lang='en-US')
                   a(href='#')=((user.profile && user.profile.name) || user.email || user.id)
                 li.divider(role='separator')
                 li
+                  a(href='/settings')
+                    i.icon-settings(style="margin-right:2px; margin-left: 0px")
+                    |  Account
+                li
+                  a(href='/account')
+                    i.icon-user(style="margin-right:2px; margin-left: 0px")
+                    |  Profile
+                li
+                  a(href='/billings')
+                    i.icon-money(style="margin-right:2px; margin-left: 0px")
+                    |  Billings
+                li
                   a(href='/logout')
-                    | Logout 
-                    i.icon-signout
-            //
-              Primary Navigation
-              =============================================
-            nav#primary-menu
-            // #primary-menu end
+                    i.icon-signout(style="margin-right:2px; margin-left: 0px")
+                    |  Logout 
+                    
       // #header end
+      #vertical-nav
+        .container.clearfix
+          nav
+            ul
+              li
+                a(href='/settings')
+                  i.icon-settings
+                  | Account
+              li
+                a(href='/account')
+                  i.icon-user
+                  | Profile
+              li
+                a(href='/Billings')
+                  i.icon-money
+                  | Billings
+              li
+                a(href='/logout')
+                  i.icon-signout
+                  | Lougout
+            
+      //
+        Page Title
+        =============================================
+      
+      // #page-title end
       //
         Content
         =============================================
       section#content
-      .content-wrap
         .container.clearfix
-          .row.clearfix
-            .col-sm-9
-              img.alignleft.img-circle.img-thumbnail.notopmargin.nobottommargin(src='images/icons/avatar.jpg', alt='Avatar', style='max-width: 84px;')
-              .heading-block.noborder
-                h3 SemiColonWeb
-                span Your Profile Bio
-              .clear
-              .row.clearfix
-                .col-md-12
-                  #tabs-profile.tabs.tabs-alt.clearfix
-                    ul.tab-nav.clearfix
-                      li
-                        a(href='#tab-feeds')
-                          i.icon-rss2
-                          |  Profile
-                      li
-                        a(href='#tab-replies')
-                          i.icon-reply
-                          |  Roomtini Matches
-                      li
-                        a(href='#tab-connections')
-                          i.icon-users
-                          |  Roommates
-                    .tab-container
-                      #tab-feeds.tab-content.clearfix
-                        p
-                          | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium harum ea quo! Nulla fugiat earum, sed corporis amet iste non, id facilis dolorum, suscipit, deleniti ea. Nobis, temporibus magnam doloribus. Reprehenderit necessitatibus esse dolor tempora ea unde, itaque odit. Quos.
-                        .table-responsive
-                          table.table.table-bordered.table-striped
-                            colgroup
-                              col.col-xs-1
-                              col.col-xs-7
-                            thead
-                              tr
-                                th Time
-                                th Activity
-                            tbody
-                              tr
-                                td
-                                  code 5/23/2016
-                                td Payment for VPS2 completed
-                              tr
-                                td
-                                  code 5/23/2016
-                                td Logged in to the Account at 16:33:01
-                              tr
-                                td
-                                  code 5/22/2016
-                                td Logged in to the Account at 09:41:58
-                              tr
-                                td
-                                  code 5/21/2016
-                                td Logged in to the Account at 17:16:32
-                              tr
-                                td
-                                  code 5/18/2016
-                                td Logged in to the Account at 22:53:41
-                     
-                      #tab-replies.tab-content.clearfix
-                        .clear.topmargin-sm
-                        ol.commentlist.noborder.nomargin.nopadding.clearfix
-                          li#li-comment-1.comment.even.thread-even.depth-1
-                            #comment-1.comment-wrap.clearfix
-                              .comment-meta
-                                .comment-author.vcard
-                                  span.comment-avatar.clearfix
-                                    img.avatar.avatar-60.photo.avatar-default(alt='', src='/images/gravatar.png', height='60', width='60')
-                              .comment-content.clearfix
-                                .comment-author
-                                  | John Doe
-                                  span
-                                    a(href='#', title='Permalink to this comment') April 24, 2012 at 10:46 am
-                                p
-                                  | Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
-                                a.comment-reply-link(href='#')
-                                  i.icon-reply
-                              .clear
-                            ul.children
-                              li#li-comment-3.comment.byuser.comment-author-_smcl_admin.odd.alt.depth-2
-                                #comment-3.comment-wrap.clearfix
+            .row.clearfix
+              .col-sm-9
+                .row
+                  if messages.errors
+                    .alert.alert-danger.fade.in
+                      button.close(type='button', data-dismiss='alert')
+                        i.fa.fa-times-circle-o
+                      for error in messages.errors
+                        div= error.msg
+                  if messages.info
+                    .alert.alert-info.fade.in
+                      button.close(type='button', data-dismiss='alert')
+                        i.fa.fa-times-circle-o
+                      for info in messages.info
+                        div= info.msg
+                  if messages.success
+                    .alert.alert-success.fade.in
+                      button.close(type='button', data-dismiss='alert')
+                        i.fa.fa-times-circle-o
+                      for success in messages.success
+                        div= success.msg
+
+            .row.clearfix.content-wrap
+              .col-sm-12.nobottommargin
+                .nobottommargin
+                  img.alignleft.img-circle.img-thumbnail.notopmargin.nobottommargin(src='images/icons/avatar.jpg', alt='Avatar', style='max-width: 84px;')
+                  .heading-block.noborder
+                    h3 SemiColonWeb
+                    span Your Profile Bio
+                  .clear
+                  .row.clearfix
+                    .col-md-12
+                      #tabs-profile.tabs.tabs-alt.clearfix
+                        ul.tab-nav.clearfix
+                          li
+                            a(href='#tab-feeds')
+                              i.icon-rss2
+                              |  Profile
+                          li
+                            a(href='#tab-replies')
+                              i.icon-reply
+                              |  Roomtini Matches
+                          li
+                            a(href='#tab-connections')
+                              i.icon-users
+                              |  Roommates
+                        .tab-container
+                          #tab-feeds.tab-content.clearfix
+                            .row(style="padding-top:20px")
+                              .col-md-offset-1.col-md-9
+                                form.nobottommargin(action='/settings/profile', method='post')
+                                  input(type='hidden', name='_csrf', value=_csrf)
+                                  .row
+                                    h3.col-md-12.col-sm-12 Profile Information
+                                  .row(style='margin-top:15px')
+                                    .col-md-3.col-sm-12
+                                      label(for='hobbies') What Sports really Interest you?:
+                                    .col-md-9.col-sm-12
+                                      input#hobbies.form-control(type='text', name='hobbies')
+                                  .row(style='margin-top:15px')
+                                    .col-md-3.col-sm-12
+                                      label(for='phone') Phone?*:
+                                    .col-md-9.col-sm-12
+                                      input#phone.form-control(type='text', name='phone')
+                                  .row(style='margin-top:15px')
+                                    .col-md-3.col-sm-12
+                                      label(for='preferred_space') Which Space would you Prefer?*:
+                                    .col-md-9.col-sm-12
+                                      input#preferred_space.form-control(type='text', name='preferred_space')    
+                                  .row(style='margin-top:15px')
+                                    .col-md-3.col-sm-12
+                                      label(for='about') Finally, tell us a little about yourself...:
+                                    .col-md-9.col-sm-12
+                                      input#about.form-control(type='text', name='about')     
+                                  .row(style='margin-top:15px')
+                                    .col-md-3.col-sm-12
+                                      label(for='first_name') First Name:
+                                    .col-md-9.col-sm-12
+                                      input#first_name.form-control(type='text', name='first_name') 
+                                  .row(style='margin-top:15px')
+                                    .col-md-3.col-sm-12
+                                      label(for='last_name') Last Name:
+                                    .col-md-9.col-sm-12
+                                      input#last_name.form-control(type='text', name='last_name')     
+
+                                  .row(style='margin-top:15px')
+                                    .col-md-3.col-sm-12
+                                      label(for='login-form-username') What is your gender?*:
+                                    .col-md-9.col-sm-12
+                                      .col-sm-3
+                                        label.radio
+                                          input(type='radio', name='gender', value='male', data-toggle='radio', checked=user.profile.gender=='male')
+                                          span Male
+                                      .col-sm-3
+                                        label.radio.col-sm-3
+                                          input(type='radio', name='gender', value='female', data-toggle='radio', checked=user.profile.gender=='female')
+                                          span Female
+                                      .col-sm-3
+                                        label.radio.col-sm-3
+                                          input(type='radio', name='gender', value='other', data-toggle='radio', checked=user.profile.gender=='other')
+                                          span Other
+
+                                  .row(style='margin-top:15px')
+                                    .col-md-3.col-sm-12
+                                      label(for='email') What is your Email?:
+                                    .col-md-9.col-sm-12
+                                      input#email.form-control(type='email', name='email')  
+                                  .row(style='margin-top:15px')
+                                    .col-md-3.col-sm-12
+                                      label(for='age') How old are you?*:
+                                    .col-md-9.col-sm-12
+                                      input#age.form-control(type='text', name='age')     
+                                  .row(style='margin-top:15px')
+                                    .col-md-3.col-sm-12
+                                      label(for='country') Where are you from?*:
+                                    .col-md-9.col-sm-12
+                                      input#country.form-control(type='text', name='country')  
+                                  .row(style='margin-top:15px')
+                                    .col-md-3.col-sm-12
+                                      label(for='rating') Overall, how satisfied were you with the event?*:
+                                    .col-md-9.col-sm-12
+                                      input#rating.form-control(type='text', name='rating')  
+                                  .row(style='margin-top:15px')
+                                    .col-md-3.col-sm-12
+                                      label(for='occupation') Which industry do you work in?*:
+                                    .col-md-9.col-sm-12
+                                      input#occupation.form-control(type='text', name='occupation')  
+                                  .row(style='margin-top:15px')
+                                    .col-md-3.col-sm-12
+                                      label(for='move_in_date') Earliest Move in date?*:
+                                    .col-md-9.col-sm-12
+                                      input#move_in_date.form-control(type='text', name='move_in_date')      
+                                  .row(style='margin-top:15px')
+                                    .col-md-3.col-sm-12
+                                      label(for='move_in_date_flexible') How flexible is your move in date from the date you selected?:
+                                    .col-md-9.col-sm-12
+                                      input#move_in_date_flexible.form-control(type='text', name='move_in_date_flexible')  
+                                  .row(style='margin-top:15px')
+                                    .col-md-3.col-sm-12
+                                      label(for='cleanliness_scale') How tidy and clean are you?*:
+                                    .col-md-9.col-sm-12
+                                      input#cleanliness_scale.form-control(type='text', name='cleanliness_scale')     
+                                  .row(style='margin-top:15px')
+                                    .col-md-3.col-sm-12
+                                      label(for='comfortable_gender') Comfortable/perferred living with?:
+                                    .col-md-9.col-sm-12
+                                      input#comfortable_gender.form-control(type='text', name='comfortable_gender')  
+                                  .row(style='margin-top:15px')
+                                    .col-md-3.col-sm-12
+                                      label(for='next_event') If you were to attend, where would you prefer our next event to be?*:
+                                    .col-md-9.col-sm-12
+                                      input#next_event.form-control(type='text', name='next_event')     
+
+                                  .row
+                                    .col-md-9.col-sm-12.col-md-offset-3(style='margin-top:15px')
+                                      button.button.button-rounded.button-reveal.button-black.tright(type='submit', style='margin: 0px')
+                                        i.icon-angle-right
+                                        span Update Profile
+
+                         
+                          #tab-replies.tab-content.clearfix
+                            .clear.topmargin-sm
+                            ol.commentlist.noborder.nomargin.nopadding.clearfix
+                              li#li-comment-1.comment.even.thread-even.depth-1
+                                #comment-1.comment-wrap.clearfix
                                   .comment-meta
                                     .comment-author.vcard
                                       span.comment-avatar.clearfix
-                                        img.avatar.avatar-40.photo(alt='', src='/images/gravatar.png', height='40', width='40')
+                                        img.avatar.avatar-60.photo.avatar-default(alt='', src='/images/gravatar.png', height='60', width='60')
                                   .comment-content.clearfix
                                     .comment-author
-                                      a.url(href='#', rel='external nofollow') SemiColon
+                                      | John Doe
                                       span
-                                        a(href='#', title='Permalink to this comment') April 25, 2012 at 1:03 am
-                                    p Nullam id dolor id nibh ultricies vehicula ut id elit.
+                                        a(href='#', title='Permalink to this comment') April 24, 2012 at 10:46 am
+                                    p
+                                      | Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
                                     a.comment-reply-link(href='#')
                                       i.icon-reply
                                   .clear
-                          li#li-comment-2.comment.byuser.comment-author-_smcl_admin.even.thread-odd.thread-alt.depth-1
-                            .comment-wrap.clearfix
-                              .comment-meta
-                                .comment-author.vcard
-                                  span.comment-avatar.clearfix
-                                    img.avatar.avatar-60.photo(alt='', src='/images/gravatar.png', height='60', width='60')
-                              .comment-content.clearfix
-                                .comment-author
-                                  a.url(href='') Roomtini
-                                  span
-                                    a(href='#', title='Permalink to this comment') April 25, 2012 at 1:03 am
-                                p Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
-                                a.comment-reply-link(href='#')
-                                  i.icon-reply
-                              .clear
-                      #tab-connections.tab-content.clearfix
-                        .row.topmargin-sm
-                          .col-md-3.col-sm-6.bottommargin
-                            .team
-                              .team-image
-                                img(src='images/team/3.jpg', alt='John Doe')
-                              .team-desc
-                                .team-title
-                                  h4 John Doe
-                                  span CEO
-                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-facebook(href='#')
-                                  i.icon-facebook
-                                  i.icon-facebook
-                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-twitter(href='#')
-                                  i.icon-twitter
-                                  i.icon-twitter
-                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-gplus(href='#')
-                                  i.icon-gplus
-                                  i.icon-gplus
-                          .col-md-3.col-sm-6.bottommargin
-                            .team
-                              .team-image
-                                img(src='images/team/2.jpg', alt='Josh Clark')
-                              .team-desc
-                                .team-title
-                                  h4 Josh Clark
-                                  span Co-Founder
-                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-facebook(href='#')
-                                  i.icon-facebook
-                                  i.icon-facebook
-                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-twitter(href='#')
-                                  i.icon-twitter
-                                  i.icon-twitter
-                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-gplus(href='#')
-                                  i.icon-gplus
-                                  i.icon-gplus
-                          .col-md-3.col-sm-6.bottommargin
-                            .team
-                              .team-image
-                                img(src='images/team/8.jpg', alt='Mary Jane')
-                              .team-desc
-                                .team-title
-                                  h4 Mary Jane
-                                  span Sales
-                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-facebook(href='#')
-                                  i.icon-facebook
-                                  i.icon-facebook
-                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-twitter(href='#')
-                                  i.icon-twitter
-                                  i.icon-twitter
-                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-gplus(href='#')
-                                  i.icon-gplus
-                                  i.icon-gplus
-                          .col-md-3.col-sm-6
-                            .team
-                              .team-image
-                                img(src='images/team/4.jpg', alt='Nix Maxwell')
-                              .team-desc
-                                .team-title
-                                  h4 Nix Maxwell
-                                  span Support
-                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-facebook(href='#')
-                                  i.icon-facebook
-                                  i.icon-facebook
-                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-twitter(href='#')
-                                  i.icon-twitter
-                                  i.icon-twitter
-                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-gplus(href='#')
-                                  i.icon-gplus
-                                  i.icon-gplus
-            .line.visible-xs-block
-            .col-sm-3.clearfix
-              .list-group
-                a.list-group-item.clearfix(href='/accounts')
-                  | Profile 
-                  i.icon-user.pull-right
-                a.list-group-item.clearfix(href='/events')
-                  | Events & Activities 
-                  i.icon-laptop2.pull-right
-                a.list-group-item.clearfix(href='#')
-                  | Messages 
-                  i.icon-envelope2.pull-right
-                a.list-group-item.clearfix(href='/billings')
-                  | Billing 
-                  i.icon-credit-cards.pull-right
-                a.list-group-item.clearfix(href='/settings')
-                  | Settings 
-                  i.icon-cog.pull-right
-                  i.icon-line2-logout.pull-right
-              .fancy-title.topmargin.title-border
-                h4 About Me
-              p
-                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum laboriosam, dignissimos veniam obcaecati. Quasi eaque, odio assumenda porro explicabo laborum!
-              .fancy-title.topmargin.title-border
-                h4 Social Profiles
-              a.social-icon.si-facebook.si-small.si-rounded.si-light(href='#', title='Facebook')
-                i.icon-facebook
-                i.icon-facebook
-              a.social-icon.si-gplus.si-small.si-rounded.si-light(href='#', title='Google+')
-                i.icon-gplus
-                i.icon-gplus
-              a.social-icon.si-dribbble.si-small.si-rounded.si-light(href='#', title='Dribbble')
-                i.icon-dribbble
-                i.icon-dribbble
-              a.social-icon.si-flickr.si-small.si-rounded.si-light(href='#', title='Flickr')
-                i.icon-flickr
-                i.icon-flickr
-              a.social-icon.si-linkedin.si-small.si-rounded.si-light(href='#', title='LinkedIn')
-                i.icon-linkedin
-                i.icon-linkedin
-              a.social-icon.si-twitter.si-small.si-rounded.si-light(href='#', title='Twitter')
-                i.icon-twitter
-                i.icon-twitter
+                                ul.children
+                                  li#li-comment-3.comment.byuser.comment-author-_smcl_admin.odd.alt.depth-2
+                                    #comment-3.comment-wrap.clearfix
+                                      .comment-meta
+                                        .comment-author.vcard
+                                          span.comment-avatar.clearfix
+                                            img.avatar.avatar-40.photo(alt='', src='/images/gravatar.png', height='40', width='40')
+                                      .comment-content.clearfix
+                                        .comment-author
+                                          a.url(href='#', rel='external nofollow') SemiColon
+                                          span
+                                            a(href='#', title='Permalink to this comment') April 25, 2012 at 1:03 am
+                                        p Nullam id dolor id nibh ultricies vehicula ut id elit.
+                                        a.comment-reply-link(href='#')
+                                          i.icon-reply
+                                      .clear
+                              li#li-comment-2.comment.byuser.comment-author-_smcl_admin.even.thread-odd.thread-alt.depth-1
+                                .comment-wrap.clearfix
+                                  .comment-meta
+                                    .comment-author.vcard
+                                      span.comment-avatar.clearfix
+                                        img.avatar.avatar-60.photo(alt='', src='/images/gravatar.png', height='60', width='60')
+                                  .comment-content.clearfix
+                                    .comment-author
+                                      a.url(href='') Roomtini
+                                      span
+                                        a(href='#', title='Permalink to this comment') April 25, 2012 at 1:03 am
+                                    p Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+                                    a.comment-reply-link(href='#')
+                                      i.icon-reply
+                                  .clear
+
+                          #tab-connections.tab-content.clearfix
+                            .row.topmargin-sm
+                              .col-md-3.col-sm-6.bottommargin
+                                .team
+                                  .team-image
+                                    img(src='images/team/3.jpg', alt='John Doe')
+                                  .team-desc
+                                    .team-title
+                                      h4 John Doe
+                                      span CEO
+                                    a.social-icon.inline-block.si-small.si-light.si-rounded.si-facebook(href='#')
+                                      i.icon-facebook
+                                      i.icon-facebook
+                                    a.social-icon.inline-block.si-small.si-light.si-rounded.si-twitter(href='#')
+                                      i.icon-twitter
+                                      i.icon-twitter
+                                    a.social-icon.inline-block.si-small.si-light.si-rounded.si-gplus(href='#')
+                                      i.icon-gplus
+                                      i.icon-gplus
+                              .col-md-3.col-sm-6.bottommargin
+                                .team
+                                  .team-image
+                                    img(src='images/team/2.jpg', alt='Josh Clark')
+                                  .team-desc
+                                    .team-title
+                                      h4 Josh Clark
+                                      span Co-Founder
+                                    a.social-icon.inline-block.si-small.si-light.si-rounded.si-facebook(href='#')
+                                      i.icon-facebook
+                                      i.icon-facebook
+                                    a.social-icon.inline-block.si-small.si-light.si-rounded.si-twitter(href='#')
+                                      i.icon-twitter
+                                      i.icon-twitter
+                                    a.social-icon.inline-block.si-small.si-light.si-rounded.si-gplus(href='#')
+                                      i.icon-gplus
+                                      i.icon-gplus
+                              .col-md-3.col-sm-6.bottommargin
+                                .team
+                                  .team-image
+                                    img(src='images/team/8.jpg', alt='Mary Jane')
+                                  .team-desc
+                                    .team-title
+                                      h4 Mary Jane
+                                      span Sales
+                                    a.social-icon.inline-block.si-small.si-light.si-rounded.si-facebook(href='#')
+                                      i.icon-facebook
+                                      i.icon-facebook
+                                    a.social-icon.inline-block.si-small.si-light.si-rounded.si-twitter(href='#')
+                                      i.icon-twitter
+                                      i.icon-twitter
+                                    a.social-icon.inline-block.si-small.si-light.si-rounded.si-gplus(href='#')
+                                      i.icon-gplus
+                                      i.icon-gplus
+                              .col-md-3.col-sm-6
+                                .team
+                                  .team-image
+                                    img(src='images/team/4.jpg', alt='Nix Maxwell')
+                                  .team-desc
+                                    .team-title
+                                      h4 Nix Maxwell
+                                      span Support
+                                    a.social-icon.inline-block.si-small.si-light.si-rounded.si-facebook(href='#')
+                                      i.icon-facebook
+                                      i.icon-facebook
+                                    a.social-icon.inline-block.si-small.si-light.si-rounded.si-twitter(href='#')
+                                      i.icon-twitter
+                                      i.icon-twitter
+                                    a.social-icon.inline-block.si-small.si-light.si-rounded.si-gplus(href='#')
+                                      i.icon-gplus
+                                      i.icon-gplus
+            
+            
+              
       // #content end
       //
         Footer
         =============================================
-      footer#footer.dark
-        //
-          Copyrights
-          =============================================
-        #copyrights
-          .container.clearfix
-            .col_half
-              | Copyrights © 2016 All Rights Reserved by Roomtini Inc.
-              br
-              .copyright-links
-                a(href='#') Terms of Use
-                |  / 
-                a(href='#') Privacy Policy
-            .col_half.col_last.tright
-              .fright.clearfix
-                a.social-icon.si-small.si-borderless.si-facebook(href='#')
-                  i.icon-facebook
-                  i.icon-facebook
-                a.social-icon.si-small.si-borderless.si-twitter(href='#')
-                  i.icon-twitter
-                  i.icon-twitter
-                a.social-icon.si-small.si-borderless.si-gplus(href='#')
-                  i.icon-gplus
-                  i.icon-gplus
-                a.social-icon.si-small.si-borderless.si-pinterest(href='#')
-                  i.icon-pinterest
-                  i.icon-pinterest
-                a.social-icon.si-small.si-borderless.si-vimeo(href='#')
-                  i.icon-vimeo
-                  i.icon-vimeo
-                a.social-icon.si-small.si-borderless.si-github(href='#')
-                  i.icon-github
-                  i.icon-github
-                a.social-icon.si-small.si-borderless.si-yahoo(href='#')
-                  i.icon-yahoo
-                  i.icon-yahoo
-                a.social-icon.si-small.si-borderless.si-linkedin(href='#')
-                  i.icon-linkedin
-                  i.icon-linkedin
-              .clear
-              i.icon-envelope2
-              |  questions@roomtini.com 
-              span.middot ·
-              i.icon-headphones
-              |  +91-11-6541-6369 
-              span.middot ·
-              i.icon-skype2
-              |  RoomtiniOnSkype
-        // #copyrights end
-      // #footer end
+      //
+        <footer id="footer" class="dark">
+        </footer>
     // #wrapper end
     //
       Go To Top
@@ -355,7 +502,19 @@ html(dir='ltr', lang='en-US')
       Footer Scripts
       =============================================
     script(type='text/javascript', src='../js/functions.js')
-    script.
-      jQuery( "#tabs-profile" ).on( "tabsactivate", function( event, ui ) {
-      jQuery( '.flexslider .slide' ).resize();
+    script(type='text/javascript').
+      jQuery(document).ready(function($){
+      $( '#vertical-nav nav ul li:has(ul)' ).addClass('sub-menu');
+      $( '#vertical-nav nav ul li:has(ul) > a' ).append( ' <i class="icon-angle-down"></i>' );
+      $( '#vertical-nav nav ul li:has(ul) > a' ).click( function(e){
+      var element = $(this);
+      $( '#vertical-nav nav ul li' ).not(element.parents()).removeClass('active');
+      element.parent().children('ul').slideToggle( function(){
+      $(this).find('ul').hide();
+      $(this).find('li.active').removeClass('active');
+      });
+      $( '#vertical-nav nav ul li > ul' ).not(element.parent().children('ul')).not(element.parents('ul')).slideUp();
+      element.parent('li:has(ul)').toggleClass('active');
+      e.preventDefault();
+      });
       });

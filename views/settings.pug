@@ -21,7 +21,7 @@ html(dir='ltr', lang='en-US')
     //
       Document Title
       =============================================
-    title Vertical Navigation Tree | Canvas
+    title Account | Roomtini
     style.
       #vertical-nav {
       position: fixed;
@@ -151,9 +151,9 @@ html(dir='ltr', lang='en-US')
                 li
                   a(href='/settings')
                     i.icon-settings(style="margin-right:2px; margin-left: 0px")
-                    |  Settings
+                    |  Account
                 li
-                  a(href='/profile')
+                  a(href='/account')
                     i.icon-user(style="margin-right:2px; margin-left: 0px")
                     |  Profile
                 li
@@ -173,9 +173,9 @@ html(dir='ltr', lang='en-US')
               li
                 a(href='/settings')
                   i.icon-settings
-                  | Settings
+                  | Account
               li
-                a(href='/profile')
+                a(href='/account')
                   i.icon-user
                   | Profile
               li
@@ -199,8 +199,8 @@ html(dir='ltr', lang='en-US')
         .content-wrap
           .container.clearfix
             .row.clearfix
-              .col-sm-9
-                .row
+              .col-md-9.col-md-offset-1
+                .saad
                   if messages.errors
                     .alert.alert-danger.fade.in
                       button.close(type='button', data-dismiss='alert')
@@ -272,7 +272,7 @@ html(dir='ltr', lang='en-US')
                           span Update Profile
 
             .row.clearfix.content-wrap
-              .col-sm-7.nobottommargin.col-sm-offset-2
+              .col-md-9.col-md-offset-1
                 .nobottommargin
                   form.nobottommargin(action='/settings/password', method='post')
                     input(type='hidden', name='_csrf', value=_csrf)
@@ -294,7 +294,7 @@ html(dir='ltr', lang='en-US')
                           i.icon-lock3
                           span Change Password
             .row.clearfix
-              .col-sm-7.nobottommargin.col-sm-offset-2
+              .col-sm-9.col-md-offset-1.nobottommargin
                 .nobottommargin
                   form.nobottommargin(action='/settings/delete', method='post')
                     input(type='hidden', name='_csrf', value=_csrf)
@@ -311,7 +311,7 @@ html(dir='ltr', lang='en-US')
                           i.icon-trash2
                           span Delete Account
             .row.clearfix.content-wrap
-              .col-sm-7.nobottommargin.col-sm-offset-2
+              .col-sm-9.col-md-offset-1.nobottommargin
                 .nobottommargin
                   .row
                     h3.col-md-12.col-sm-12 Link Accounts
