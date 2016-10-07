@@ -16,13 +16,31 @@ const userSchema = new mongoose.Schema({
   linkedin: String,
   steam: String,
   tokens: Array,
-
   profile: {
     name: String,
     gender: String,
     location: String,
     website: String,
     picture: String
+  },
+  typeform: {
+    hobbies: String,
+    phone: String,
+    preferred_space: String,
+    about: String,
+    first_name: String,
+    last_name: String,
+    gender: String,
+    age: String,
+    email: String,
+    country: String,
+    rating: String,
+    move_in_date: String,
+    move_in_date_flexible: String,
+    occupation: String,
+    cleanliness_scale: String,
+    comfortable_gender: String,
+    next_event: String
   }
 }, { timestamps: true });
 
