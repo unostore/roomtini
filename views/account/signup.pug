@@ -135,7 +135,7 @@ html(dir='ltr', lang='en-US')
                   input(type='hidden', name='_csrf', value=_csrf)
                   .col_full
                     label(for='email') Email Address:
-                    input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus, required)
+                    input.form-control(type='email', name='email', placeholder='Email', autofocus, required)
                   .col_full
                     label(for='password') Choose Password:
                     input.form-control(type='password', name='password', id='password', placeholder='Password', required)
@@ -153,10 +153,10 @@ html(dir='ltr', lang='en-US')
                   input(type='hidden', name='_csrf', value=_csrf)                
                   .col_full
                     label(for='login-form-username') Username:
-                    input#login-form-password.form-control(type='email', name='email', id='email')
+                    input.form-control(type='email', name='email')
                   .col_full
                     label(for='login-form-password') Password:
-                    input#login-form-password.form-control(type='password', name='password', id='password')
+                    input.form-control(type='password', name='password')
                   .col_full.nobottommargin
                     button#login-form-submit.button.button-3d.button-black.nomargin(name='login-form-submit', value='login') Login
                     a.fright(href='#') Forgot Password?
