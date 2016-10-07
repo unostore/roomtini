@@ -61,7 +61,15 @@ var options = {
 };
 
 
+//for favicon
+var favicon = require('serve-favicon');
 
+
+
+app.configure(function() {
+  app.use(express.favicon(__dirname + '/favicon.ico'));
+  app.use(express.static(__dirname, '/'));
+});
 
 /**
  * Connect to MongoDB.
