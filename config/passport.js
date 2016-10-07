@@ -276,9 +276,9 @@ passport.use(new GoogleStrategy({
  * Sign in with LinkedIn.
  */
 passport.use(new LinkedInStrategy({
-  clientID: config.LINKEDIN_ID || process.config.LINKEDIN_ID,
-  clientSecret: config.LINKEDIN_SECRET || process.config.LINKEDIN_SECRET,
-  callbackURL: config.LINKEDIN_CALLBACK_URL || process.config.LINKEDIN_CALLBACK_URL,
+  clientID: config.LINKEDIN_ID || config.LINKEDIN_ID,
+  clientSecret: config.LINKEDIN_SECRET || config.LINKEDIN_SECRET,
+  callbackURL: config.LINKEDIN_CALLBACK_URL || config.LINKEDIN_CALLBACK_URL,
   scope: ['r_basicprofile', 'r_emailaddress'],
   passReqToCallback: true
 }, (req, accessToken, refreshToken, profile, done) => {
