@@ -66,7 +66,7 @@ var favicon = require('serve-favicon');
 
 
 
-app.use(favicon(path.join(__dirname,'public','images','favicon.ico'));
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
 /**
  * Connect to MongoDB.
  */
