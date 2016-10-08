@@ -61,12 +61,8 @@ var options = {
 };
 
 
-var fs = require('fs');
-var access_logfile = fs.createWriteStream('./access.log', {flags: 'a'});
-
-
-app.use(express.logger({stream: access_logfile }));
-app.set('views', __dirname + '/views');
+var logger = require('express-logger');
+server.use(logger({path: "/path/to/logfile.txt"}));
 
 
 
