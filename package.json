@@ -1,6 +1,6 @@
 {
   "watch": {
-  "test": "{src,test}/*.js"
+  "test": "{}/*.js"
   },
   "name": "hackathon-starter",
   "version": "4.2.1",
