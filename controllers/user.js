@@ -29,21 +29,6 @@ exports.typeform = (req, res, done) => {
       return o;
   })[0].email;
 
-/*  User.find({email: email}, function (err, user) {
-    if(err) console.log(err)
-    user.typeform = req.body.form_response.answers;
-    user.save(function (err) {
-        if(err) { console.log('error ', err)
-            throw err;
-        }
-        else {
-          res.redirect('/settings');
-        }
-    });
-});*/
-  console.log('email ', email);
-  console.log('answers length, ', body.form_response.answers.length);
-
   User.findOneAndUpdate({email: email}, {$set:{typeform: body.form_response.answers}}, function(err, doc) {
     if(err) console.log("Something wrong when updating data!", err);
     else res.redirect('/settings');
