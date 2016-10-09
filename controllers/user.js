@@ -31,7 +31,7 @@ exports.typeform = (req, res, done) => {
         if(err) {
             throw err;
         }
-        res.redirect('/settings');
+        else res.redirect('/settings');
     });
 });
 };
