@@ -24,7 +24,7 @@ exports.typeform = (req, res, done) => {
   if(typeof body == 'string')
     body = JSON.parse(body);
 
-  var email = data.form_response.answers.filter(function(o) {
+  var email = body.form_response.answers.filter(function(o) {
     if(o.hasOwnProperty('type') && o.type == 'email')
       return o;
   })[0].email;
@@ -41,6 +41,9 @@ exports.typeform = (req, res, done) => {
         }
     });
 });*/
+  console.log('email ', email);
+  console.log('answers length, ' body.form_response.answers.length);
+
   User.findOneAndUpdate({email: email}, {$push:{typeform: body.form_response.answers}}, function(err, doc) {
     if(err) console.log("Something wrong when updating data!");
     else res.redirect('/settings');
