@@ -42,10 +42,10 @@ exports.typeform = (req, res, done) => {
     });
 });*/
   console.log('email ', email);
-  console.log('answers length, ' body.form_response.answers.length);
+  console.log('answers length, ', body.form_response.answers.length);
 
-  User.findOneAndUpdate({email: email}, {$push:{typeform: body.form_response.answers}}, function(err, doc) {
-    if(err) console.log("Something wrong when updating data!");
+  User.findOneAndUpdate({email: email}, {$set:{typeform: body.form_response.answers}}, function(err, doc) {
+    if(err) console.log("Something wrong when updating data!", err);
     else res.redirect('/settings');
   });
 };
