@@ -17,6 +17,25 @@ exports.getLogin = (req, res) => {
   });
 };
 
+exports.typeform = (req, res, done) => {
+
+  var emailId = "29878717";
+  var email = req.body.form_response.answers.filter(function(o) {
+    return o.type == "email";
+  }).email;
+
+  User.find({email: email}, function (err, user) {
+    
+    user.typeform = req.body.form_response.answers;
+    user.save(function (err) {
+        if(err) {
+            throw err;
+        }
+        res.redirect('/settings');
+    });
+});
+};
+
 /**
  * POST /login
  * Sign in using email and password.

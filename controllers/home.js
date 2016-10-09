@@ -24,7 +24,7 @@ exports.settings = (req, res) => {
 exports.billings = (req, res) => {
   res.render('billings', {
     title: 'Billings'
-  });
+  }); 
 };
 
 exports.events = (req, res) => {
@@ -33,7 +33,3 @@ exports.events = (req, res) => {
   });
 };
 
-exports.typeform = (req, res, done) => {
-  var fs = require("fs");
-  fs.appendFile('../test.js', JSON.stringify(req.body));
-};

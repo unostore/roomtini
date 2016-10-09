@@ -23,25 +23,25 @@ const userSchema = new mongoose.Schema({
     website: String,
     picture: String
   },
-  typeform: {
-    hobbies: String,
-    phone: String,
-    preferred_space: String,
-    about: String,
-    first_name: String,
-    last_name: String,
-    gender: String,
-    age: String,
-    email: String,
-    country: String,
-    rating: String,
-    move_in_date: String,
-    move_in_date_flexible: String,
-    occupation: String,
-    cleanliness_scale: String,
-    comfortable_gender: String,
-    next_event: String
-  },
+  typeform: [],
+  /*typeform: {
+    "29877944": String,
+    "29877937": String,
+    "29878703": String,
+    "29877953": String,
+    "29879066": String,
+    "29878581": String,
+    "29877943": String,
+    "29878535": String,
+    "29878717": String,
+    "29878649": String,
+    "29879310": String,
+    "29877945": String,
+    "29877946": String,
+    "29877951": String,
+    "29877954": String,
+    "29879208": String
+  },*/
   roommates: Array
 }, { timestamps: true });
 
