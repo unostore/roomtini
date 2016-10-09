@@ -1,11 +1,11 @@
 {
+  "watch": {
+  "test": "{src,test}/*.js"
   "name": "hackathon-starter",
   "version": "4.2.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/sahat/hackathon-starter.git"
-   "watch": {
-   "test": "{src,test}/*.js"
   },
   "scripts": {
     "start": "node app.js",
