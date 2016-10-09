@@ -48,7 +48,10 @@ exports.typeform = (req, res, done) => {
 
   User.findOneAndUpdate({email: email}, {$set:{typeform: body.form_response.answers}}, function(err, doc) {
     if(err) console.log("Something wrong when updating data!", err);
-    else res.redirect('/settings');
+    else {
+      console.log('redirecting')
+      res.redirect('/settings');
+    }
   });
 };
 
