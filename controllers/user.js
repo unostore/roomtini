@@ -24,10 +24,11 @@ exports.typeform = (req, res, done) => {
   var emailId = "29878717";
   var email = req.body.form_response.answers.filter(function(o) {
     return o.type == "email";
-  }).email;
+  });
 
   console.log('email ', email);
-
+  console.log();
+  console.log('body', JSON.stringify(req.body));
 /*  User.find({email: email}, function (err, user) {
     if(err) console.log(err)
     user.typeform = req.body.form_response.answers;
