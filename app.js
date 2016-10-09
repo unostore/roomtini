@@ -62,7 +62,7 @@ var options = {
 
 
 var loggers = require('express-logger');
-app.use(loggers({path: "/logfile.txt"}));
+app.use(loggers({path: "/var/log.log"}));
 
 
 
