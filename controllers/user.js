@@ -19,21 +19,31 @@ exports.getLogin = (req, res) => {
 
 exports.typeform = (req, res, done) => {
 
+  console.log('In typeform controller');
+
   var emailId = "29878717";
   var email = req.body.form_response.answers.filter(function(o) {
     return o.type == "email";
   }).email;
 
-  User.find({email: email}, function (err, user) {
-    
+  console.log('email ', email);
+
+/*  User.find({email: email}, function (err, user) {
+    if(err) console.log(err)
     user.typeform = req.body.form_response.answers;
     user.save(function (err) {
-        if(err) {
+        if(err) { console.log('error ', err)
             throw err;
         }
-        else res.redirect('/settings');
+        else {
+          res.redirect('/settings');
+        }
     });
-});
+});*/
+  User.findOneAndUpdate({email: email}, {$push:{typeform: req.body.form_response.answers}}, function(err, doc){
+    if(err) console.log("Something wrong when updating data!");
+    else res.redirect('/settings');
+  });
 };
 
 /**
