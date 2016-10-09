@@ -114,7 +114,11 @@ app.use(flash());
 app.use((req, res, next) => {
   if (req.path === '/api/upload') {
     next();
-  } else {
+  } 
+  if (req.path == '/typeform') {
+    return next();
+  }
+  else {
     lusca.csrf()(req, res, next);
   }
 });
