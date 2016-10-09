@@ -75,7 +75,7 @@ app.use(favicon(__dirname + '/public/images/favicon.ico'));
 /**
  * Connect to MongoDB.
  */
-mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGODB_URI);
+mongoose.connect('mongodb://saad:saad@ds045011.mlab.com:45011/meanjs' || process.env.MONGOLAB_URI || process.env.MONGODB_URI);
 mongoose.connection.on('connected', () => {
   console.log('%s MongoDB connection established!', chalk.green('✓'));
 });
@@ -104,7 +104,7 @@ app.use(session({
   saveUninitialized: true,
   secret: process.env.SESSION_SECRET,
   store: new MongoStore({
-    url: process.env.MONGODB_URI || process.env.MONGODB_URI,
+    url: 'mongodb://saad:saad@ds045011.mlab.com:45011/meanjs' || process.env.MONGODB_URI || process.env.MONGODB_URI,
     autoReconnect: true
   })
 }));
