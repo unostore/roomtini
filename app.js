@@ -243,7 +243,7 @@ app.get('/auth/pinterest', passport.authorize('pinterest', { scope: 'read_public
 app.get('/auth/pinterest/callback', passport.authorize('pinterest', { failureRedirect: '/login' }), (req, res) => {
   res.redirect('/api/pinterest');
 });
-app.post('/typeform', homeController.typeform);
+app.post('/typeform', userController.typeform);
 /**
  * Error Handler.
  */
