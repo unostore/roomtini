@@ -19,16 +19,16 @@ exports.getLogin = (req, res) => {
 
 exports.typeform = (req, res, done) => {
 
-  console.log('In typeform controller');
+  var body = req.body;
+  
+  if(typeof body == 'string')
+    body = JSON.parse(body);
 
-  var emailId = "29878717";
-  var email = req.body.form_response.answers.filter(function(o) {
-    return o.type == "email";
-  });
+  var email = data.form_response.answers.filter(function(o) {
+    if(o.hasOwnProperty('type') && o.type == 'email')
+      return o;
+  })[0].email;
 
-  console.log('email ', email);
-  console.log();
-  console.log('body', JSON.stringify(req.body));
 /*  User.find({email: email}, function (err, user) {
     if(err) console.log(err)
     user.typeform = req.body.form_response.answers;
@@ -41,7 +41,7 @@ exports.typeform = (req, res, done) => {
         }
     });
 });*/
-  User.findOneAndUpdate({email: email}, {$push:{typeform: req.body.form_response.answers}}, function(err, doc){
+  User.findOneAndUpdate({email: email}, {$push:{typeform: body.form_response.answers}}, function(err, doc) {
     if(err) console.log("Something wrong when updating data!");
     else res.redirect('/settings');
   });
