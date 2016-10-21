@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
     website: String,
     picture: String
   },
-  typeform: [],
+  typeform: {},
   /*typeform: {
     "29877944": String,
     "29877937": String,

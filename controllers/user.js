@@ -46,7 +46,16 @@ exports.typeform = (req, res, done) => {
   console.log('email ', email);
   console.log('answers length, ', body.form_response.answers.length);
 
-  User.findOneAndUpdate({email: email}, {$set:{typeform: body.form_response.answers}}, function(err, doc) {
+  /*var t = body.form_response.answers.map(function(o) { 
+    return { id :o.field.id , value: typeof o[o.type] === 'object' ? o[o.type].label || o[o.type].labels : o[o.type] }
+  });*/
+
+  var t = body.form_response.answers.reduce(function(f, o) { 
+    f[o.field.id] = typeof o[o.type] === 'object' ? o[o.type].label || o[o.type].labels : o[o.type];
+    return f;
+  }, {});
+
+  User.findOneAndUpdate({email: email}, {$set:{typeform: t }}, function(err, doc) {
     if(err) console.log("Something wrong when updating data!", err);
     else {
       console.log('redirecting')
@@ -152,10 +161,220 @@ exports.postSignup = (req, res, next) => {
  */
 exports.getAccount = (req, res) => {
   res.render('account/profile', {
-    title: 'Account Management'
+    title: 'Account Management',
+    space: ['Split Bedroom', 'Converted Living Room', 'Private Bedroom'],
+    age : ['18-24', '25-34', '35-49', '50-64', '65+'],
+    hobbies: ['Swimming', 'Surfing', 'Basketball'],
+    comfortable_gender: ['Straight', 'Bi', 'Gay', 'Other', 'All'],
+    next_event: ['Berlin', 'London', 'Barcelona', 'New York'],
+    move_in_date_flexible: ['1-5 Days', '6-10 Days', '11-15 Days' ,'16-20 Days' ,'21-35 Days' ,'26-31 Days'],
+    countries: ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas"
+    ,"Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil","British Virgin Islands"
+    ,"Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Cape Verde","Cayman Islands","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica"
+    ,"Cote D Ivoire","Croatia","Cruise Ship","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea"
+    ,"Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana"
+    ,"Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India"
+    ,"Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kuwait","Kyrgyz Republic","Laos","Latvia"
+    ,"Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania"
+    ,"Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Namibia","Nepal","Netherlands","Netherlands Antilles","New Caledonia"
+    ,"New Zealand","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal"
+    ,"Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre &amp; Miquelon","Samoa","San Marino","Satellite","Saudi Arabia","Senegal","Serbia","Seychelles"
+    ,"Sierra Leone","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","St Kitts &amp; Nevis","St Lucia","St Vincent","St. Lucia","Sudan"
+    ,"Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia"
+    ,"Turkey","Turkmenistan","Turks &amp; Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","Uruguay","Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)"
+    ,"Yemen","Zambia","Zimbabwe"],
+    industry: ['Accounting'
+              ,'Airlines / Aviation'
+              ,'Alternative Dispute Resolution'
+              ,'Alternative Medicine'
+              ,'Animation'
+              ,'Apparel & Fashion'
+              ,'Architecture & Planning'
+              ,'Arts & Crafts'
+              ,'Automotive'
+              ,'Aviation & Aerospace'
+              ,'Banking', 'Biotechnology'
+              ,'Broadcast Media'
+              ,'Building Materials'
+              ,'Business Supplies & Equipment'
+              ,'Capital Markets'
+              ,'Chemicals'
+              ,'Civic & Social Organization'
+              ,'Civil Engineering'
+              ,'Commercial Real Estate'
+              ,'Computer & Network Security'
+              ,'Computer Games'
+              ,'Computer Hardware'
+              ,'Computer Networking'
+              ,'Computer Software'
+              ,'Construction'
+              ,'Consumer Electronics'
+              ,'Consumer Goods'
+              ,'Consumer Services'
+              ,'Cosmetics', 'Dairy'
+              ,'Defense & Space'
+              ,'Design'
+              ,'Education Management'
+              ,'E-Learning'
+              ,'Electrical / Electronic Manufacturing'
+              ,'Entertainment'
+              ,'Environmental Services'
+              ,'Events Services'
+              ,'Executive Office'
+              ,'Facilities Services'
+              ,'Farming'
+              ,'Financial Services'
+              ,'Fine Art'
+              ,'Fishery'
+              ,'Food & Beverages'
+              ,'Food Production'
+              ,'Fund-Raising'
+              ,'Furniture'
+              ,'Gambling & Casinos'
+              ,'Glass, Ceramics & Concrete'
+              ,'Government Administration'
+              ,'Government Relations'
+              ,'Graphic Design'
+              ,'Health, Wellness & Fitness'
+              ,'Higher Education'
+              ,'Hospital & Health Care'
+              ,'Hospitality'
+              ,'Human Resources'
+              ,'Import & Export'
+              ,'Individual & Family Services'
+              ,'Industrial Automation'
+              ,'Information Services'
+              ,'Information Technology & Services'
+              ,'Insurance'
+              ,'International Affairs'
+              ,'International Trade & Development'
+              ,'Internet'
+              ,'Investment Banking'
+              ,'Investment Management'
+              ,'Judiciary'
+              ,'Law Enforcement'
+              ,'Law Practice'
+              ,'Legal Services'
+              ,'Legislative Office'
+              ,'Leisure, Travel & Tourism'
+              ,'Libraries'
+              ,'Logistics & Supply Chain'
+              ,'Luxury Goods & Jewelry'
+              ,'Machinery'
+              ,'Management Consulting'
+              ,'Maritime'
+              ,'Market Research'
+              ,'Marketing & Advertising'
+              ,'Mechanical or Industrial Engineering'
+              ,'Media Production'
+              ,'Medical Devices'
+              ,'Medical Practice'
+              ,'Mental Health Care'
+              ,'Military'
+              ,'Mining & Metals'
+              ,'Motion Pictures & Film'
+              ,'Museums & Institutions'
+              ,'Music'
+              ,'Nanotechnology'
+              ,'Newspapers'
+              ,'Non-Profit Organization Management'
+              ,'Oil & Energy'
+              ,'Online Media'
+              ,'Outsourcing / Offshoring'
+              ,'Package / Freight Delivery'
+              ,'Packaging & Containers'
+              ,'Paper & Forest Products'
+              ,'Performing Arts'
+              ,'Pharmaceuticals'
+              ,'Philanthropy'
+              ,'Photography'
+              ,'Plastics'
+              ,'Political Organization'
+              ,'Primary / Secondary Education'
+              ,'Printing'
+              ,'Professional Training & Coaching'
+              ,'Program Development'
+              ,'Public Policy'
+              ,'Public Relations & Communications'
+              ,'Public Safety'
+              ,'Publishing'
+              ,'Railroad Manufacture'
+              ,'Ranching'
+              ,'Real Estate'
+              ,'Recreational Facilities & Services'
+              ,'Religious Institutions'
+              ,'Renewables & Environment', 'Research'
+              ,'Restaurants'
+              ,'Retail'
+              ,'Security & Investigations'
+              ,'Semiconductors'
+              ,'Shipbuilding'
+              ,'Sporting Goods'
+              ,'Sports'
+              ,'Staffing & Recruiting'
+              ,'Supermarkets'
+              ,'Telecommunications'
+              ,'Textiles'
+              ,'Think Tanks'
+              ,'Tobacco'
+              ,'Translation & Localization'
+              ,'Transportation / Trucking / Railroad'
+              ,'Utilities'
+              ,'Venture Capital & Private Equity'
+              ,'Veterinary'
+              ,'Warehousing'
+              ,'Wholesale'
+              ,'Wine & Spirits'
+              ,'Wireless'
+              ,'Writing & Editing']
   });
 };
 
+/*exports.postTypeformInfo = (req, res) => {
+
+  var hobbies = [];
+  var comfortable_gender = [];
+  var scale= { 'zero': 0 'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10 };
+  var comfortable_gender_list: ['Straight', 'Bi', 'Gay', 'Other', 'All'];
+
+  if(req.params.hasOwnProperty('Swimming') && req.params.Swimming == 'on') hobbies.push('Swimming');
+  if(req.params.hasOwnProperty('Surfing') && req.params.Surfing == 'on') hobbies.push('Surfing');
+  if(req.params.hasOwnProperty('Basketball') && req.params.Basketball =='on') hobbies.push('Basketball');
+  if(req.params.hasOwnProperty('hobbies_extension_check') && req.params.hobbies_extension_check =='on' req.params.hasOwnProperty('hobbies_extension')) hobbies.push(req.params.hobbies_extension);
+
+  
+
+  for(var i in comfortable_gender)
+    if(req.params.hasOwnProperty[i] && req.params[i] == 'on') comfortable_gender.push(i);
+
+  User.findById(req.user.id, (err, user) => {
+    if (err) { return next(err); }
+
+    user.typeform['29877937'] = scale[req.params.cleanliness_scale];
+    user.typeform['29877951'] = req.params.age;
+    user.typeform['29877944'] = req.params.preferred_space;
+    user.typeform['29877945'] = req.params.next_event;
+    user.typeform['29877946'] = req.params.gender;
+    user.typeform['29877953'] = req.params.country;
+    user.typeform['29877944'] = req.params.preferred_space;
+    user.typeform['29877944'] = req.params.preferred_space;
+    user.typeform['29877944'] = req.params.preferred_space;
+
+    user.save((err) => {
+      if (err) {
+        if (err.code === 11000) {
+          req.flash('errors', { msg: 'The email address you have entered is already associated with an account.' });
+          return res.redirect('/account');
+        }
+        return next(err);
+      }
+      req.flash('success', { msg: 'Profile information has been updated.' });
+      res.redirect('/account');
+    });
+  });
+
+
+};*/
 /**
  * POST /account/profile
  * Update profile information.
@@ -408,4 +627,19 @@ exports.postForgot = (req, res, next) => {
     if (err) { return next(err); }
     res.redirect('/forgot');
   });
+};
+
+
+exports.getTypeform = (req, res, next) => {
+
+  User.findOne({ email: req.user.email }, (err, user) => {
+        if (!user) {
+          req.flash('errors', { msg: 'Account with that email address does not exist.' });
+          return res.redirect('/');
+        }
+        else {
+          res.json(user.typeform);
+        }
+      });
+
 };
