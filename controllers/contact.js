@@ -13,7 +13,8 @@ const transporter = nodemailer.createTransport({
  */
 exports.getContact = (req, res) => {
   res.render('contact', {
-    title: 'Contact'
+    title: 'Contact',
+    src: 'https://jo279.typeform.com/to/lVE3Qm?email=' + req.user.email
   });
 };
 
