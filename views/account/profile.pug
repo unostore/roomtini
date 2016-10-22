@@ -292,7 +292,7 @@ html(dir='ltr', lang='en-US')
                                       label(for='preferred_space') Which Space would you Prefer?*:
                                     .col-md-8.col-sm-12
                                       //input#preferred_space.form-control(type='text', name='preferred_space')   
-                                      select(class='sm-form-control show-tick')
+                                      select(class='sm-form-control show-tick', name='preferred_space')
                                         for _item in space
                                           option(selected=typeform['29877944'] == _item) #{_item} 
                                   .row(style='margin-top:30px')
@@ -373,7 +373,7 @@ html(dir='ltr', lang='en-US')
                                       label(for='move_in_date_flexible') How flexible is your move in date from the date you selected?:
                                     .col-md-8.col-sm-12
                                       //input#move_in_date_flexible.form-control(type='text', name='move_in_date_flexible') 
-                                      select(class='sm-form-control show-tick')
+                                      select(class='sm-form-control show-tick', name='move_in_date_flexible')
                                         for items in move_in_date_flexible
                                           option(selected=typeform['29878703'] == items) #{items} 
                                   .row(style='margin-top:30px')

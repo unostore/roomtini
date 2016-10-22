@@ -368,7 +368,7 @@ exports.postTypeformInfo = (req, res) => {
 
     user.typeform['29879208'] = scale[req.body.cleanliness_scale];
     user.typeform['29877951'] = req.body.age;
-    user.typeform['29877944'] = req.body.preferred_space;
+    user.typeform['29877954'] = req.body.preferred_space;
     user.typeform['29877945'] = req.body.next_event;
     user.typeform['29877946'] = req.body.gender;
     user.typeform['29877953'] = req.body.country;
@@ -399,7 +399,6 @@ exports.postTypeformInfo = (req, res) => {
   var t = {};
   t['29879066'] = hobbies;
   t['29878581'] = req.body.phone;
-
   t['29879208'] = scale[req.body.cleanliness_scale];
   t['29877951'] = req.body.age;
   t['29877944'] = req.body.preferred_space;
@@ -409,10 +408,9 @@ exports.postTypeformInfo = (req, res) => {
   t['29877937'] = parseInt(req.body.rating);
   t['29877954'] = req.body.occupation;
   t['29878649'] = req.body.move_in_date;
-
+  t['29878717'] = req.body.email;
   t['29878703'] = req.body.move_in_date_flexible;
   t['29879310'] = comfortable_gender;
-  
   t['29877943'] = req.body.first_name;
   t['29878535'] = req.body.last_name;
 
