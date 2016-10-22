@@ -160,208 +160,231 @@ exports.postSignup = (req, res, next) => {
  * Profile page.
  */
 exports.getAccount = (req, res) => {
-  res.render('account/profile', {
-    title: 'Account Management',
-    space: ['Split Bedroom', 'Converted Living Room', 'Private Bedroom'],
-    age : ['18-24', '25-34', '35-49', '50-64', '65+'],
-    hobbies: ['Swimming', 'Surfing', 'Basketball'],
-    comfortable_gender: ['Straight', 'Bi', 'Gay', 'Other', 'All'],
-    next_event: ['Berlin', 'London', 'Barcelona', 'New York'],
-    move_in_date_flexible: ['1-5 Days', '6-10 Days', '11-15 Days' ,'16-20 Days' ,'21-35 Days' ,'26-31 Days'],
-    countries: ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas"
-    ,"Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil","British Virgin Islands"
-    ,"Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Cape Verde","Cayman Islands","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica"
-    ,"Cote D Ivoire","Croatia","Cruise Ship","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea"
-    ,"Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana"
-    ,"Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India"
-    ,"Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kuwait","Kyrgyz Republic","Laos","Latvia"
-    ,"Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania"
-    ,"Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Namibia","Nepal","Netherlands","Netherlands Antilles","New Caledonia"
-    ,"New Zealand","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal"
-    ,"Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre &amp; Miquelon","Samoa","San Marino","Satellite","Saudi Arabia","Senegal","Serbia","Seychelles"
-    ,"Sierra Leone","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","St Kitts &amp; Nevis","St Lucia","St Vincent","St. Lucia","Sudan"
-    ,"Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia"
-    ,"Turkey","Turkmenistan","Turks &amp; Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","Uruguay","Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)"
-    ,"Yemen","Zambia","Zimbabwe"],
-    industry: ['Accounting'
-              ,'Airlines / Aviation'
-              ,'Alternative Dispute Resolution'
-              ,'Alternative Medicine'
-              ,'Animation'
-              ,'Apparel & Fashion'
-              ,'Architecture & Planning'
-              ,'Arts & Crafts'
-              ,'Automotive'
-              ,'Aviation & Aerospace'
-              ,'Banking', 'Biotechnology'
-              ,'Broadcast Media'
-              ,'Building Materials'
-              ,'Business Supplies & Equipment'
-              ,'Capital Markets'
-              ,'Chemicals'
-              ,'Civic & Social Organization'
-              ,'Civil Engineering'
-              ,'Commercial Real Estate'
-              ,'Computer & Network Security'
-              ,'Computer Games'
-              ,'Computer Hardware'
-              ,'Computer Networking'
-              ,'Computer Software'
-              ,'Construction'
-              ,'Consumer Electronics'
-              ,'Consumer Goods'
-              ,'Consumer Services'
-              ,'Cosmetics', 'Dairy'
-              ,'Defense & Space'
-              ,'Design'
-              ,'Education Management'
-              ,'E-Learning'
-              ,'Electrical / Electronic Manufacturing'
-              ,'Entertainment'
-              ,'Environmental Services'
-              ,'Events Services'
-              ,'Executive Office'
-              ,'Facilities Services'
-              ,'Farming'
-              ,'Financial Services'
-              ,'Fine Art'
-              ,'Fishery'
-              ,'Food & Beverages'
-              ,'Food Production'
-              ,'Fund-Raising'
-              ,'Furniture'
-              ,'Gambling & Casinos'
-              ,'Glass, Ceramics & Concrete'
-              ,'Government Administration'
-              ,'Government Relations'
-              ,'Graphic Design'
-              ,'Health, Wellness & Fitness'
-              ,'Higher Education'
-              ,'Hospital & Health Care'
-              ,'Hospitality'
-              ,'Human Resources'
-              ,'Import & Export'
-              ,'Individual & Family Services'
-              ,'Industrial Automation'
-              ,'Information Services'
-              ,'Information Technology & Services'
-              ,'Insurance'
-              ,'International Affairs'
-              ,'International Trade & Development'
-              ,'Internet'
-              ,'Investment Banking'
-              ,'Investment Management'
-              ,'Judiciary'
-              ,'Law Enforcement'
-              ,'Law Practice'
-              ,'Legal Services'
-              ,'Legislative Office'
-              ,'Leisure, Travel & Tourism'
-              ,'Libraries'
-              ,'Logistics & Supply Chain'
-              ,'Luxury Goods & Jewelry'
-              ,'Machinery'
-              ,'Management Consulting'
-              ,'Maritime'
-              ,'Market Research'
-              ,'Marketing & Advertising'
-              ,'Mechanical or Industrial Engineering'
-              ,'Media Production'
-              ,'Medical Devices'
-              ,'Medical Practice'
-              ,'Mental Health Care'
-              ,'Military'
-              ,'Mining & Metals'
-              ,'Motion Pictures & Film'
-              ,'Museums & Institutions'
-              ,'Music'
-              ,'Nanotechnology'
-              ,'Newspapers'
-              ,'Non-Profit Organization Management'
-              ,'Oil & Energy'
-              ,'Online Media'
-              ,'Outsourcing / Offshoring'
-              ,'Package / Freight Delivery'
-              ,'Packaging & Containers'
-              ,'Paper & Forest Products'
-              ,'Performing Arts'
-              ,'Pharmaceuticals'
-              ,'Philanthropy'
-              ,'Photography'
-              ,'Plastics'
-              ,'Political Organization'
-              ,'Primary / Secondary Education'
-              ,'Printing'
-              ,'Professional Training & Coaching'
-              ,'Program Development'
-              ,'Public Policy'
-              ,'Public Relations & Communications'
-              ,'Public Safety'
-              ,'Publishing'
-              ,'Railroad Manufacture'
-              ,'Ranching'
-              ,'Real Estate'
-              ,'Recreational Facilities & Services'
-              ,'Religious Institutions'
-              ,'Renewables & Environment', 'Research'
-              ,'Restaurants'
-              ,'Retail'
-              ,'Security & Investigations'
-              ,'Semiconductors'
-              ,'Shipbuilding'
-              ,'Sporting Goods'
-              ,'Sports'
-              ,'Staffing & Recruiting'
-              ,'Supermarkets'
-              ,'Telecommunications'
-              ,'Textiles'
-              ,'Think Tanks'
-              ,'Tobacco'
-              ,'Translation & Localization'
-              ,'Transportation / Trucking / Railroad'
-              ,'Utilities'
-              ,'Venture Capital & Private Equity'
-              ,'Veterinary'
-              ,'Warehousing'
-              ,'Wholesale'
-              ,'Wine & Spirits'
-              ,'Wireless'
-              ,'Writing & Editing']
-  });
-};
-
-/*exports.postTypeformInfo = (req, res) => {
-
-  var hobbies = [];
-  var comfortable_gender = [];
-  var scale= { 'zero': 0 'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10 };
-  var comfortable_gender_list: ['Straight', 'Bi', 'Gay', 'Other', 'All'];
-
-  if(req.params.hasOwnProperty('Swimming') && req.params.Swimming == 'on') hobbies.push('Swimming');
-  if(req.params.hasOwnProperty('Surfing') && req.params.Surfing == 'on') hobbies.push('Surfing');
-  if(req.params.hasOwnProperty('Basketball') && req.params.Basketball =='on') hobbies.push('Basketball');
-  if(req.params.hasOwnProperty('hobbies_extension_check') && req.params.hobbies_extension_check =='on' req.params.hasOwnProperty('hobbies_extension')) hobbies.push(req.params.hobbies_extension);
-
-  
-
-  for(var i in comfortable_gender)
-    if(req.params.hasOwnProperty[i] && req.params[i] == 'on') comfortable_gender.push(i);
 
   User.findById(req.user.id, (err, user) => {
+    if (err) { return res.redirect('/signup'); }
+    else {
+      res.render('account/profile', {
+        typeform: user.typeform,
+        title: 'Account Management',
+        space: ['Split Bedroom', 'Converted Living Room', 'Private Bedroom'],
+        age : ['18-24', '25-34', '35-49', '50-64', '65+'],
+        hobbies: ['swimming', 'surfing', 'basketball'],
+        comfortable_gender: ['Straight', 'Bi', 'Gay', 'Other', 'All'],
+        next_event: ['Berlin', 'London', 'Barcelona', 'New York'],
+        move_in_date_flexible: ['1-5 Days', '6-10 Days', '11-15 Days' ,'16-20 Days' ,'21-35 Days' ,'26-31 Days'],
+        countries: ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas"
+        ,"Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil","British Virgin Islands"
+        ,"Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Cape Verde","Cayman Islands","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica"
+        ,"Cote D Ivoire","Croatia","Cruise Ship","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea"
+        ,"Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana"
+        ,"Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India"
+        ,"Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kuwait","Kyrgyz Republic","Laos","Latvia"
+        ,"Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania"
+        ,"Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Namibia","Nepal","Netherlands","Netherlands Antilles","New Caledonia"
+        ,"New Zealand","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal"
+        ,"Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre &amp; Miquelon","Samoa","San Marino","Satellite","Saudi Arabia","Senegal","Serbia","Seychelles"
+        ,"Sierra Leone","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","St Kitts &amp; Nevis","St Lucia","St Vincent","St. Lucia","Sudan"
+        ,"Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia"
+        ,"Turkey","Turkmenistan","Turks &amp; Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","Uruguay","Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)"
+        ,"Yemen","Zambia","Zimbabwe"],
+        industry: ['Accounting'
+                  ,'Airlines / Aviation'
+                  ,'Alternative Dispute Resolution'
+                  ,'Alternative Medicine'
+                  ,'Animation'
+                  ,'Apparel & Fashion'
+                  ,'Architecture & Planning'
+                  ,'Arts & Crafts'
+                  ,'Automotive'
+                  ,'Aviation & Aerospace'
+                  ,'Banking', 'Biotechnology'
+                  ,'Broadcast Media'
+                  ,'Building Materials'
+                  ,'Business Supplies & Equipment'
+                  ,'Capital Markets'
+                  ,'Chemicals'
+                  ,'Civic & Social Organization'
+                  ,'Civil Engineering'
+                  ,'Commercial Real Estate'
+                  ,'Computer & Network Security'
+                  ,'Computer Games'
+                  ,'Computer Hardware'
+                  ,'Computer Networking'
+                  ,'Computer Software'
+                  ,'Construction'
+                  ,'Consumer Electronics'
+                  ,'Consumer Goods'
+                  ,'Consumer Services'
+                  ,'Cosmetics', 'Dairy'
+                  ,'Defense & Space'
+                  ,'Design'
+                  ,'Education Management'
+                  ,'E-Learning'
+                  ,'Electrical / Electronic Manufacturing'
+                  ,'Entertainment'
+                  ,'Environmental Services'
+                  ,'Events Services'
+                  ,'Executive Office'
+                  ,'Facilities Services'
+                  ,'Farming'
+                  ,'Financial Services'
+                  ,'Fine Art'
+                  ,'Fishery'
+                  ,'Food & Beverages'
+                  ,'Food Production'
+                  ,'Fund-Raising'
+                  ,'Furniture'
+                  ,'Gambling & Casinos'
+                  ,'Glass, Ceramics & Concrete'
+                  ,'Government Administration'
+                  ,'Government Relations'
+                  ,'Graphic Design'
+                  ,'Health, Wellness & Fitness'
+                  ,'Higher Education'
+                  ,'Hospital & Health Care'
+                  ,'Hospitality'
+                  ,'Human Resources'
+                  ,'Import & Export'
+                  ,'Individual & Family Services'
+                  ,'Industrial Automation'
+                  ,'Information Services'
+                  ,'Information Technology & Services'
+                  ,'Insurance'
+                  ,'International Affairs'
+                  ,'International Trade & Development'
+                  ,'Internet'
+                  ,'Investment Banking'
+                  ,'Investment Management'
+                  ,'Judiciary'
+                  ,'Law Enforcement'
+                  ,'Law Practice'
+                  ,'Legal Services'
+                  ,'Legislative Office'
+                  ,'Leisure, Travel & Tourism'
+                  ,'Libraries'
+                  ,'Logistics & Supply Chain'
+                  ,'Luxury Goods & Jewelry'
+                  ,'Machinery'
+                  ,'Management Consulting'
+                  ,'Maritime'
+                  ,'Market Research'
+                  ,'Marketing & Advertising'
+                  ,'Mechanical or Industrial Engineering'
+                  ,'Media Production'
+                  ,'Medical Devices'
+                  ,'Medical Practice'
+                  ,'Mental Health Care'
+                  ,'Military'
+                  ,'Mining & Metals'
+                  ,'Motion Pictures & Film'
+                  ,'Museums & Institutions'
+                  ,'Music'
+                  ,'Nanotechnology'
+                  ,'Newspapers'
+                  ,'Non-Profit Organization Management'
+                  ,'Oil & Energy'
+                  ,'Online Media'
+                  ,'Outsourcing / Offshoring'
+                  ,'Package / Freight Delivery'
+                  ,'Packaging & Containers'
+                  ,'Paper & Forest Products'
+                  ,'Performing Arts'
+                  ,'Pharmaceuticals'
+                  ,'Philanthropy'
+                  ,'Photography'
+                  ,'Plastics'
+                  ,'Political Organization'
+                  ,'Primary / Secondary Education'
+                  ,'Printing'
+                  ,'Professional Training & Coaching'
+                  ,'Program Development'
+                  ,'Public Policy'
+                  ,'Public Relations & Communications'
+                  ,'Public Safety'
+                  ,'Publishing'
+                  ,'Railroad Manufacture'
+                  ,'Ranching'
+                  ,'Real Estate'
+                  ,'Recreational Facilities & Services'
+                  ,'Religious Institutions'
+                  ,'Renewables & Environment', 'Research'
+                  ,'Restaurants'
+                  ,'Retail'
+                  ,'Security & Investigations'
+                  ,'Semiconductors'
+                  ,'Shipbuilding'
+                  ,'Sporting Goods'
+                  ,'Sports'
+                  ,'Staffing & Recruiting'
+                  ,'Supermarkets'
+                  ,'Telecommunications'
+                  ,'Textiles'
+                  ,'Think Tanks'
+                  ,'Tobacco'
+                  ,'Translation & Localization'
+                  ,'Transportation / Trucking / Railroad'
+                  ,'Utilities'
+                  ,'Venture Capital & Private Equity'
+                  ,'Veterinary'
+                  ,'Warehousing'
+                  ,'Wholesale'
+                  ,'Wine & Spirits'
+                  ,'Wireless'
+                  ,'Writing & Editing']
+      });
+    }
+    
+  });
+
+
+
+
+
+};
+
+exports.postTypeformInfo = (req, res) => {
+
+  String.prototype.capitalize = function() { return this.charAt(0).toUpperCase() + this.slice(1); }
+  var hobbies = [];
+  var comfortable_gender = [];
+  var scale= {}; scale['one'] = 1 ; scale['two'] = 2 ; scale['three'] = 3 ; scale['four'] = 4 ; scale['five'] = 5 ; scale['six'] = 6 ; scale['seven'] = 7 ; scale['eight'] = 8 ; scale['nine'] = 9 ; scale['ten'] = 10; 
+  var comfortable_gender_list = ['Straight', 'Bi', 'Gay', 'Other', 'All'];
+
+  if(req.body.hasOwnProperty('swimming') && req.body.swimming == 'on') hobbies.push('swimming');
+  if(req.body.hasOwnProperty('surfing') && req.body.surfing == 'on') hobbies.push('surfing');
+  if(req.body.hasOwnProperty('basketball') && req.body.basketball =='on') hobbies.push('basketball');
+  if(req.body.hasOwnProperty('hobbies_extension_check') && req.body.hobbies_extension_check =='on' && req.body.hasOwnProperty('hobbies_extension')) hobbies.push(req.body.hobbies_extension);
+
+  for(var i in comfortable_gender_list)
+    if(req.body.hasOwnProperty[i] && req.body[i] == 'on') comfortable_gender.push(i);
+
+  /*User.findById(req.user.id, (err, user) => {
     if (err) { return next(err); }
+    console.log(req.body, 'after')
+    
+    user.typeform['29879066'] = hobbies;
+    user.typeform['29878581'] = req.body.phone;
 
-    user.typeform['29877937'] = scale[req.params.cleanliness_scale];
-    user.typeform['29877951'] = req.params.age;
-    user.typeform['29877944'] = req.params.preferred_space;
-    user.typeform['29877945'] = req.params.next_event;
-    user.typeform['29877946'] = req.params.gender;
-    user.typeform['29877953'] = req.params.country;
-    user.typeform['29877944'] = req.params.preferred_space;
-    user.typeform['29877944'] = req.params.preferred_space;
-    user.typeform['29877944'] = req.params.preferred_space;
+    user.typeform['29879208'] = scale[req.body.cleanliness_scale];
+    user.typeform['29877951'] = req.body.age;
+    user.typeform['29877944'] = req.body.preferred_space;
+    user.typeform['29877945'] = req.body.next_event;
+    user.typeform['29877946'] = req.body.gender;
+    user.typeform['29877953'] = req.body.country;
+    user.typeform['29877937'] = parseInt(req.body.rating);
+    user.typeform['29877954'] = req.body.occupation;
+    user.typeform['29878649'] = req.body.move_in_date;
 
+    user.typeform['29878703'] = req.body.move_in_date_flexible;
+    user.typeform['29879310'] = comfortable_gender;
+    
+    user.typeform['29877943'] = req.body.first_name;
+    user.typeform['29878535'] = req.body.last_name;
+    //user.typeform['29878717'] = req.params.email;
+    console.log(user);
     user.save((err) => {
-      if (err) {
+      if (err) { console.log('err', err);
         if (err.code === 11000) {
           req.flash('errors', { msg: 'The email address you have entered is already associated with an account.' });
           return res.redirect('/account');
@@ -371,10 +394,40 @@ exports.getAccount = (req, res) => {
       req.flash('success', { msg: 'Profile information has been updated.' });
       res.redirect('/account');
     });
+  }); */
+
+  var t = {};
+  t['29879066'] = hobbies;
+  t['29878581'] = req.body.phone;
+
+  t['29879208'] = scale[req.body.cleanliness_scale];
+  t['29877951'] = req.body.age;
+  t['29877944'] = req.body.preferred_space;
+  t['29877945'] = req.body.next_event;
+  t['29877946'] = req.body.gender.capitalize();
+  t['29877953'] = req.body.country;
+  t['29877937'] = parseInt(req.body.rating);
+  t['29877954'] = req.body.occupation;
+  t['29878649'] = req.body.move_in_date;
+
+  t['29878703'] = req.body.move_in_date_flexible;
+  t['29879310'] = comfortable_gender;
+  
+  t['29877943'] = req.body.first_name;
+  t['29878535'] = req.body.last_name;
+
+  User.findOneAndUpdate({_id: req.user.id}, {$set:{typeform: t }}, function(err, doc) {
+    if(err) {
+      console.log('err', err)
+      req.flash('errors', { msg: 'Something went wrong' });
+          return res.redirect('/account');
+    }
+    else {
+      console.log('redirecting', doc)
+      res.redirect('/account');
+    }
   });
-
-
-};*/
+};
 /**
  * POST /account/profile
  * Update profile information.

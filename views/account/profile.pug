@@ -266,8 +266,8 @@ html(dir='ltr', lang='en-US')
                           #tab-feeds.tab-content.clearfix
                             .row(style="padding-top:20px")
                               .col-md-offset-1.col-md-9
-                                form.nobottommargin(action='http://requestb.in/19ajhou1', method='post')
-                                  //input(type='hidden', name='_csrf', value=_csrf)
+                                form.nobottommargin(action='typeforms', method='post')
+                                  input(type='hidden', name='_csrf', value=_csrf)
                                   .row
                                     h3.col-md-12.col-sm-12 Profile Information
                                   .row(style='margin-top:30px')
@@ -276,7 +276,7 @@ html(dir='ltr', lang='en-US')
                                     .col-md-8.col-sm-12
                                       for items in hobbies
                                         div
-                                          input.checkbox-style(name=items, type='checkbox', id=items)
+                                          input.checkbox-style(name=items, type='checkbox', id=items, checked=typeform['29879066'].includes(items.toLowerCase()))
                                           label.checkbox-style-2-label.checkbox-small(for=items) #{items}
                                       div
                                           input.checkbox-style(name='hobbies_extension_check', type='checkbox', id='hobbies_extension_check')
@@ -286,7 +286,7 @@ html(dir='ltr', lang='en-US')
                                     .col-md-4.col-sm-12
                                       label(for='phone') Phone?*:
                                     .col-md-8.col-sm-12
-                                      input#phone.sm-form-control(type='text', name='phone')
+                                      input#phone.sm-form-control(type='text', name='phone', value=typeform['29878581'])
                                   .row(style='margin-top:30px')
                                     .col-md-4.col-sm-12
                                       label(for='preferred_space') Which Space would you Prefer?*:
@@ -294,17 +294,17 @@ html(dir='ltr', lang='en-US')
                                       //input#preferred_space.form-control(type='text', name='preferred_space')   
                                       select(class='sm-form-control show-tick')
                                         for _item in space
-                                          option(selected='Private Bedroom' == _item) #{_item} 
+                                          option(selected=typeform['29877944'] == _item) #{_item} 
                                   .row(style='margin-top:30px')
                                     .col-md-4.col-sm-12
                                       label(for='first_name') First Name:
                                     .col-md-8.col-sm-12
-                                      input#first_name.sm-form-control(type='text', name='first_name') 
+                                      input#first_name.sm-form-control(type='text', name='first_name', value=typeform['29877943']) 
                                   .row(style='margin-top:30px')
                                     .col-md-4.col-sm-12
                                       label(for='last_name') Last Name:
                                     .col-md-8.col-sm-12
-                                      input#last_name.sm-form-control(type='text', name='last_name')     
+                                      input#last_name.sm-form-control(type='text', name='last_name', value=typeform['29878535'])     
 
                                   .row(style='margin-top:30px')
                                     .col-md-4.col-sm-12
@@ -312,22 +312,22 @@ html(dir='ltr', lang='en-US')
                                     .col-md-8.col-sm-12
                                       .col-sm-3
                                         label.radio
-                                          input(type='radio', name='gender', value='male', data-toggle='radio', checked=user.profile.gender=='male')
+                                          input(type='radio', name='gender', value='male', data-toggle='radio', checked=typeform['29877946'].toLowerCase() == 'male')
                                           span Male
                                       .col-sm-3
                                         label.radio.col-sm-3
-                                          input(type='radio', name='gender', value='female', data-toggle='radio', checked=user.profile.gender=='female')
+                                          input(type='radio', name='gender', value='female', data-toggle='radio', checked=typeform['29877946'].toLowerCase() == 'female')
                                           span Female
                                       .col-sm-3
                                         label.radio.col-sm-3
-                                          input(type='radio', name='gender', value='other', data-toggle='radio', checked=user.profile.gender=='other')
+                                          input(type='radio', name='gender', value='other', data-toggle='radio', checked=typeform['29877946'].toLowerCase() == 'other')
                                           span Other
 
                                   .row(style='margin-top:30px')
                                     .col-md-4.col-sm-12
                                       label(for='email') What is your Email?:
                                     .col-md-8.col-sm-12
-                                      input#email.required.sm-form-control(type='email', name='email', value='', aria-required='true') 
+                                      input#email.required.sm-form-control(type='email', name='email', value=typeform['29878717'], aria-required='true') 
                                   .row(style='margin-top:30px')
                                     .col-md-4.col-sm-12
                                       label(for='age') How old are you?*:
@@ -335,7 +335,7 @@ html(dir='ltr', lang='en-US')
                                       //input#age.form-control(type='text', name='age')    
                                       select(class='sm-form-control show-tick', name='age')
                                         for item in age
-                                          option(selected='18-24' == item) #{item} 
+                                          option(selected=typeform['29877951'] == item) #{item} 
                                   .row(style='margin-top:30px')
                                     .col-md-4.col-sm-12
                                       label(for='country') Where are you from?*:
@@ -343,13 +343,13 @@ html(dir='ltr', lang='en-US')
                                       //input#country.sm-form-control(type='text', name='country')  
                                       select(class='sm-form-control show-tick', name='country')
                                         for _item in countries
-                                          option(selected='Afghanistan' == _item) #{_item}
+                                          option(selected=typeform['29877953'] == _item) #{_item}
                                   .row(style='margin-top:30px')
                                     .col-md-4.col-sm-12
                                       label(for='rating') Overall, how satisfied were you with the event?*:
                                     .col-md-8.col-sm-12
                                       //input#rating.form-control(type='text', name='rating')  
-                                      input.rating(name='rating', type='number', max='5', data-step='1', data-stars='5', data-size='sm', data-glyphicon='false', data-rating-class='fontawesome-icon', value='5')
+                                      input.rating(name='rating', type='number', max='5', data-step='1', data-stars='5', data-size='sm', data-glyphicon='false', data-rating-class='fontawesome-icon', value=typeform['29877937'].toString())
 
                                   .row(style='margin-top:30px')
                                     .col-md-4.col-sm-12
@@ -358,14 +358,14 @@ html(dir='ltr', lang='en-US')
                                       //input#occupation.form-control(type='text', name='occupation') 
                                       select(class='sm-form-control show-tick', name='industry')
                                         for items in industry
-                                          option(selected='Animation' == items) #{items} 
+                                          option(selected=typeform['29877954'] == items) #{items} 
                                   .row(style='margin-top:30px')
                                     .col-md-4.col-sm-12
                                       label(for='move_in_date') Earliest Move in date?*:
                                     .col-md-8.col-sm-12
                                       //input#move_in_date.form-control(type='text', name='move_in_date')
                                       .input-group
-                                        input(class='sm-form-control tleft default' type='text', value='12-12-2016', placeholder='MM-DD-YYYY', name='move_in_date')
+                                        input(class='sm-form-control tleft default' type='text', value=typeform['29878649'], placeholder='MM-DD-YYYY', name='move_in_date')
                                         span.input-group-addon(style='padding: 9px 12px;')
                                           i.icon-calendar2      
                                   .row(style='margin-top:30px')
@@ -375,12 +375,12 @@ html(dir='ltr', lang='en-US')
                                       //input#move_in_date_flexible.form-control(type='text', name='move_in_date_flexible') 
                                       select(class='sm-form-control show-tick')
                                         for items in move_in_date_flexible
-                                          option(selected='1-5 Days' == items) #{items} 
+                                          option(selected=typeform['29878703'] == items) #{items} 
                                   .row(style='margin-top:30px')
                                     .col-md-4.col-sm-12
                                       label(for='cleanliness_scale') How tidy and clean are you?*:
                                     .col-md-8.col-sm-12
-                                      input.cleanliness_scale.form-control(name='cleanliness_scale', value=5, data-from=5) 
+                                      input.cleanliness_scale.form-control(name='cleanliness_scale', value=typeform['29879208'], data-from=typeform['29879208']) 
                                   .row(style='margin-top:30px')
                                     .col-md-4.col-sm-12
                                       label(for='comfortable_gender') Comfortable / perferred living with?:
@@ -392,7 +392,7 @@ html(dir='ltr', lang='en-US')
                                           //label.checkbox-style-2-label.checkbox-small(for='bi') #{items} 
                                       for items in comfortable_gender
                                         div
-                                          input.checkbox-style(name=items, type='checkbox', id=items)
+                                          input.checkbox-style(name=items, type='checkbox', id=items, checked=typeform['29879310'].includes(items))
                                           label.checkbox-style-2-label.checkbox-small(for=items) #{items}
                                               
                                   .row(style='margin-top:30px')
@@ -402,7 +402,7 @@ html(dir='ltr', lang='en-US')
                                       //input#next_event.form-control(type='text', name='next_event')     
                                       select(class='sm-form-control show-tick', name='next_event')
                                         for items in next_event
-                                          option(selected='Berlin' == items) #{items} 
+                                          option(selected=typeform['29877945'] == items) #{items} 
                                   .row
                                     .col-md-8.col-sm-12.col-md-offset-4(style='margin-top:30px')
                                       button.button.button-rounded.button-reveal.button-black.tright(type='submit', style='margin: 0px')
