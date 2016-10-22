@@ -406,7 +406,7 @@ exports.postTypeformInfo = (req, res) => {
   t['29877946'] = req.body.gender.capitalize();
   t['29877953'] = req.body.country;
   t['29877937'] = parseInt(req.body.rating);
-  t['29877954'] = req.body.occupation;
+  t['29877954'] = req.body.industry;
   t['29878649'] = req.body.move_in_date;
   t['29878717'] = req.body.email;
   t['29878703'] = req.body.move_in_date_flexible;
