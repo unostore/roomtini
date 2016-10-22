@@ -26,10 +26,7 @@ exports.typeform = (req, res, done) => {
 
   if(Object.keys(body).length === 0) done();
 
-  var email = body.form_response.answers.filter(function(o) {
-    if(o.hasOwnProperty('type') && o.type == 'email')
-      return o;
-  })[0].email;
+  var email = body.form_response.hidden.email;
 
 /*  User.find({email: email}, function (err, user) {
     if(err) console.log(err)
@@ -52,6 +49,7 @@ exports.typeform = (req, res, done) => {
 
   var t = body.form_response.answers.reduce(function(f, o) { 
     f[o.field.id] = typeof o[o.type] === 'object' ? o[o.type].label || o[o.type].labels : o[o.type];
+    if(o[o.type].hasOwnProperty('other') f[o.field.id].labels.push(o[o.type].other);
     return f;
   }, {});
 
@@ -408,7 +406,7 @@ exports.postTypeformInfo = (req, res) => {
   t['29877937'] = parseInt(req.body.rating);
   t['29877954'] = req.body.industry;
   t['29878649'] = req.body.move_in_date;
-  t['29878717'] = req.body.email;
+  //t['29878717'] = req.body.email;
   t['29878703'] = req.body.move_in_date_flexible;
   t['29879310'] = comfortable_gender;
   t['29877943'] = req.body.first_name;
