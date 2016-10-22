@@ -166,6 +166,7 @@ app.post('/settings/profile', passportConfig.isAuthenticated, userController.pos
 app.post('/settings/password', passportConfig.isAuthenticated, userController.postUpdatePassword);
 app.post('/settings/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/settings/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
+app.post('/typeforms', userController.postTypeformInfo);
 
 /**
  * API examples routes.
