@@ -49,7 +49,7 @@ exports.typeform = (req, res, done) => {
 
   var t = body.form_response.answers.reduce(function(f, o) { 
     f[o.field.id] = typeof o[o.type] === 'object' ? o[o.type].label || o[o.type].labels : o[o.type];
-    if(o[o.type].hasOwnProperty('other') f[o.field.id].labels.push(o[o.type].other);
+    if(typeof o[o.type] === 'object' && o[o.type].hasOwnProperty('other')) f[o.field.id].labels.push(o[o.type].other);
     return f;
   }, {});
 
