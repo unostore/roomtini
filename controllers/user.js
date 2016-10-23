@@ -404,7 +404,7 @@ exports.postTypeformInfo = (req, res) => {
   t['29879208'] = scale[req.body.cleanliness_scale];
   t['29877951'] = req.body.age;
   t['29877944'] = req.body.preferred_space;
-  t['29877945'] = req.body.next_event;
+  //t['29877945'] = req.body.next_event;
   t['29877946'] = req.body.gender.capitalize();
   t['29877953'] = req.body.country;
   t['29877937'] = parseInt(req.body.rating);
