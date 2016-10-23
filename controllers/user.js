@@ -49,7 +49,7 @@ exports.typeform = (req, res, done) => {
 
   var t = body.form_response.answers.reduce(function(f, o) { 
     f[o.field.id] = typeof o[o.type] === 'object' ? o[o.type].label || o[o.type].labels : o[o.type];
-    if(typeof o[o.type] === 'object' && o[o.type].hasOwnProperty('other')) f[o.field.id].labels.push(o[o.type].other);
+    if(o[o.type].hasOwnProperty('other')) f[o.field.id].push(o[o.type].other);
     return f;
   }, {});
 
@@ -412,6 +412,15 @@ exports.postTypeformInfo = (req, res) => {
   t['29877943'] = req.body.first_name;
   t['29878535'] = req.body.last_name;
 
+
+  t['34694257'] = req.body.weekend
+  t["34694303"] = req.body.sleep
+  t["34694062"] = req.body.expect_visitors;
+  t["34693974"] = req.body.cook;
+  t["34694137"] = req.body.working_time
+  t["34719475"] = req.body.facebook;
+  t["34719491"] = req.body.linkedin;
+  
   User.findOneAndUpdate({_id: req.user.id}, {$set:{typeform: t }}, function(err, doc) {
     if(err) {
       console.log('err', err)
