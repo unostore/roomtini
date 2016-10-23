@@ -167,6 +167,10 @@ exports.getAccount = (req, res) => {
         title: 'Account Management',
         space: ['Split Bedroom', 'Converted Living Room', 'Private Bedroom'],
         age : ['18-24', '25-34', '35-49', '50-64', '65+'],
+        work_time_list: ['7-9 AM', '10-1 PM', '2-6 PM', '7-11 PM'],
+        weekend_list: ['Go out with Friends', 'Stay inside', 'Work', 'Invite Friends Over'],
+        sleep_time_list: ['Before 10PM', '10PM - Midnight', 'Midnight to 3AM', 'Almost Never'],
+        expect_visitors_list: ['Almost every day', 'Every Week', 'Few times a Year', 'Never'],
         hobbies: ['swimming', 'surfing', 'basketball'],
         comfortable_gender: ['Straight', 'Bi', 'Gay', 'Other', 'All'],
         next_event: ['Berlin', 'London', 'Barcelona', 'New York'],
@@ -413,14 +417,14 @@ exports.postTypeformInfo = (req, res) => {
   t['29878535'] = req.body.last_name;
 
 
-  t['34694257'] = req.body.weekend
-  t["34694303"] = req.body.sleep
+  t['34694257'] = req.body.weekend;
+  t["34694303"] = req.body.sleep;
   t["34694062"] = req.body.expect_visitors;
-  t["34693974"] = req.body.cook;
-  t["34694137"] = req.body.working_time
+  t["34693974"] = scale[req.body.cook];
+  t["34694137"] = req.body.working_time;
   t["34719475"] = req.body.facebook;
   t["34719491"] = req.body.linkedin;
-  
+
   User.findOneAndUpdate({_id: req.user.id}, {$set:{typeform: t }}, function(err, doc) {
     if(err) {
       console.log('err', err)

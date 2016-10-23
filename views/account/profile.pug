@@ -403,13 +403,66 @@ html(dir='ltr', lang='en-US')
                                       select(class='sm-form-control show-tick', name='next_event')
                                         for items in next_event
                                           option(selected=typeform['29877945'] == items) #{items} 
+
+
+                                  .row(style='margin-top:30px')
+                                    .col-md-4.col-sm-12
+                                      label(for='next_event') How many Days do you cook a week?*:
+                                    .col-md-8.col-sm-12
+                                      input.cook_in_a_week.form-control(name='cook', value=typeform['34693974'], data-from=typeform['34693974'])  
+
+                                  .row(style='margin-top:30px')
+                                    .col-md-4.col-sm-12
+                                      label(for='next_event') What time do you go to work?*:
+                                    .col-md-8.col-sm-12   
+                                      select(class='sm-form-control show-tick', name='working_time')
+                                        for items in work_time_list
+                                          option(selected=typeform['34694137'] == items) #{items} 
+                                          
+                                  .row(style='margin-top:30px')
+                                    .col-md-4.col-sm-12
+                                      label(for='next_event') What best describes your weekend?*:
+                                    .col-md-8.col-sm-12   
+                                      select(class='sm-form-control show-tick', name='weekend')
+                                        for items in weekend_list
+                                          option(selected=typeform['34694257'] == items) #{items} 
+
+                                  .row(style='margin-top:30px')
+                                    .col-md-4.col-sm-12
+                                      label(for='next_event') What time do you go to sleep?*:
+                                    .col-md-8.col-sm-12   
+                                      select(class='sm-form-control show-tick', name='sleep')
+                                        for items in sleep_time_list
+                                          option(selected=typeform['34694303'] == items) #{items}         
+
+                                  .row(style='margin-top:30px')
+                                    .col-md-4.col-sm-12
+                                      label(for='next_event') Do you expect a lot of Visitors?*:
+                                    .col-md-8.col-sm-12   
+                                      select(class='sm-form-control show-tick', name='expect_visitors')
+                                        for items in expect_visitors_list
+                                          option(selected=typeform['34694062'] == items) #{items}
+
+                                  .row(style='margin-top:30px')
+                                    .col-md-4.col-sm-12
+                                      label(for='first_name') Please provide a link to your facebook profile below (if you don't have one, you can leave blank):
+                                    .col-md-8.col-sm-12
+                                      input.sm-form-control(type='text', name='facebook', value=typeform['34719475']) 
+                                  
+                                  .row(style='margin-top:30px')
+                                    .col-md-4.col-sm-12
+                                      label(for='first_name') Please provide a link to your Linkedin profile below (if you don't have one, you can leave blank):
+                                    .col-md-8.col-sm-12
+                                      input.sm-form-control(type='text', name='linkedin', value=typeform['34719491'])
+
+
                                   .row
                                     .col-md-8.col-sm-12.col-md-offset-4(style='margin-top:30px')
                                       button.button.button-rounded.button-reveal.button-black.tright(type='submit', style='margin: 0px')
                                         i.icon-angle-right
                                         span Update Profile
 
-                         
+                                  
                           #tab-replies.tab-content.clearfix
                             .clear.topmargin-sm
                             ol.commentlist.noborder.nomargin.nopadding.clearfix
@@ -612,6 +665,19 @@ html(dir='ltr', lang='en-US')
             "six", "seven",
             "eight", "nine",
             "ten"
+          ],
+          grid: true,
+        });
+
+        $(".cook_in_a_week").ionRangeSlider({
+          min: 1,
+          max: 7,
+          step: 1,
+          values: [
+            "zero", "one",
+            "two", "three",
+            "four", "five",
+            "six", "seven"
           ],
           grid: true,
         });
