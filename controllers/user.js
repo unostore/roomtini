@@ -6,7 +6,7 @@ const User = require('../models/User');
 
 /**
  * GET /login
- * Login page.
+ * Login page.s
  */
 exports.getLogin = (req, res) => { 
   if (req.user) {
