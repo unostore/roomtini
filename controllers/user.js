@@ -164,6 +164,8 @@ exports.getAccount = (req, res) => {
     else {
       res.render('account/profile', {
         typeform: user.typeform,
+        //hobbies_extension_check: user.typeform['']
+        predefined_css: user.typeform['29879066'].filter(function(o){ return o !== 'swimming' && o !== 'surfing' && o !== 'basketball'; }).lenght > 0 ? 'display: inline-block; margin-top:15px' : 'display: inline-block; margin-top:15px',
         title: 'Account Management',
         space: ['Split Bedroom', 'Converted Living Room', 'Private Bedroom'],
         age : ['18-24', '25-34', '35-49', '50-64', '65+'],
@@ -349,7 +351,7 @@ exports.postTypeformInfo = (req, res) => {
 
   String.prototype.capitalize = function() { return this.charAt(0).toUpperCase() + this.slice(1); }
   var hobbies = [];
-  var comfortable_gender = [];
+  var comfortable_genders = [];
   var scale= {}; scale['one'] = 1 ; scale['two'] = 2 ; scale['three'] = 3 ; scale['four'] = 4 ; scale['five'] = 5 ; scale['six'] = 6 ; scale['seven'] = 7 ; scale['eight'] = 8 ; scale['nine'] = 9 ; scale['ten'] = 10; 
   var comfortable_gender_list = ['Straight', 'Bi', 'Gay', 'Other', 'All'];
 
@@ -358,8 +360,8 @@ exports.postTypeformInfo = (req, res) => {
   if(req.body.hasOwnProperty('basketball') && req.body.basketball =='on') hobbies.push('basketball');
   if(req.body.hasOwnProperty('hobbies_extension_check') && req.body.hobbies_extension_check =='on' && req.body.hasOwnProperty('hobbies_extension')) hobbies.push(req.body.hobbies_extension);
 
-  for(var i in comfortable_gender_list)
-    if(req.body.hasOwnProperty[i] && req.body[i] == 'on') comfortable_gender.push(i);
+  for(var i of comfortable_gender_list)
+    if(req.body.hasOwnProperty(i) && req.body[i] == 'on') comfortable_genders.push(i);
 
   /*User.findById(req.user.id, (err, user) => {
     if (err) { return next(err); }
@@ -412,7 +414,7 @@ exports.postTypeformInfo = (req, res) => {
   t['29878649'] = req.body.move_in_date;
   //t['29878717'] = req.body.email;
   t['29878703'] = req.body.move_in_date_flexible;
-  t['29879310'] = comfortable_gender;
+  t['29879310'] = comfortable_genders;
   t['29877943'] = req.body.first_name;
   t['29878535'] = req.body.last_name;
 
@@ -424,7 +426,7 @@ exports.postTypeformInfo = (req, res) => {
   t["34694137"] = req.body.working_time;
   t["34719475"] = req.body.facebook;
   t["34719491"] = req.body.linkedin;
-
+  
   User.findOneAndUpdate({_id: req.user.id}, {$set:{typeform: t }}, function(err, doc) {
     if(err) {
       console.log('err', err)

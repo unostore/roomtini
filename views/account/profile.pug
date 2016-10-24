@@ -279,9 +279,9 @@ html(dir='ltr', lang='en-US')
                                           input.checkbox-style(name=items, type='checkbox', id=items, checked=typeform['29879066'].includes(items.toLowerCase()))
                                           label.checkbox-style-2-label.checkbox-small(for=items) #{items}
                                       div
-                                          input.checkbox-style(name='hobbies_extension_check', type='checkbox', id='hobbies_extension_check')
+                                          input.checkbox-style(name='hobbies_extension_check', type='checkbox', id='hobbies_extension_check', checked=typeform['29879066'].filter(function(o){ return o !== 'swimming' && o !== 'surfing' && o !== 'basketball'; }).length > 0 ? true : false)
                                           label.checkbox-style-2-label.checkbox-small(for='hobbies_extension_check') Other  
-                                      input.sm-form-control(type='text', name='hobbies_extension', style='display:none;margin-top:15px', id='hobbies_extension')  
+                                      input.sm-form-control(type='text', name='hobbies_extension', style=predefined_css, id='hobbies_extension', value=typeform['29879066'].filter(function(o){ return o !== 'swimming' && o !== 'surfing' && o !== 'basketball'; })[0])  
                                   .row(style='margin-top:30px')
                                     .col-md-4.col-sm-12
                                       label(for='phone') Phone?*:
