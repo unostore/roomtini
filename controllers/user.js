@@ -165,7 +165,8 @@ exports.getAccount = (req, res) => {
       res.render('account/profile', {
         typeform: user.typeform,
         //hobbies_extension_check: user.typeform['']
-        predefined_css: user.typeform['29879066'].filter(function(o){ return o !== 'swimming' && o !== 'surfing' && o !== 'basketball'; }).lenght > 0 ? 'display: inline-block; margin-top:15px' : 'display: inline-block; margin-top:15px',
+        predefined_css: (user.typeform['29879066'].filter(function(o){ return o !== 'swimming' && o !== 'surfing' && o !== 'basketball'; })).length > 0 ? 'display: inline-block; margin-top:15px' : 'display: none; margin-top:15px',
+        //predefined_css: user.typeform['29879066'].filter(function(o){ return o !== 'swimming' && o !== 'surfing' && o !== 'basketball'; }).lenght > 0 ? 'display: inline-block; margin-top:15px' : 'display: inline-block; margin-top:15px',
         title: 'Account Management',
         space: ['Split Bedroom', 'Converted Living Room', 'Private Bedroom'],
         age : ['18-24', '25-34', '35-49', '50-64', '65+'],
