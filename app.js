@@ -111,17 +111,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-app.use((req, res, next) => {
-  if (req.path === '/api/upload') {
-    next();
-  } 
-  if (req.path == '/typeform') {
-    return next();
-  }
-  else {
-    lusca.csrf()(req, res, next);
-  }
-});
+
 //app.use(lusca.xframe('SAMEORIGIN'));
 //app.use(lusca.xssProtection(true));
 app.use((req, res, next) => {
@@ -140,6 +130,23 @@ app.use(function(req, res, next) {
   next();
 });
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
+
+app.get('/Et2TupiuqxcPH6F3YxefgAVzI3zwQjiUMgh/users/search', userController.get_users_search);
+app.get('/douvG64nHlGDzT1anA1kYn8huGZMUCnaVQe/users', userController.get_users_all);
+app.put('/VpwukbSKnTVwTwYr8nVrw5MC3xwIybl5XnQ/user/:id', userController.users_edit);
+app.get('/bFI6ge1Y9oChMiFmXwzMDEs2z4ZcjWAemdE/user/:id', userController._users);
+app.get('/lO9RiTFjiARFLT4awSr34X3DmaP7BR65MfZ/admin', homeController.admin)
+app.use((req, res, next) => {
+  if (req.path === '/api/upload') {
+    next();
+  } 
+  else if (req.path == '/typeform') {
+    return next();
+  }
+  else {
+    lusca.csrf()(req, res, next);
+  }
+});
 
 /**
  * Primary app routes.
@@ -167,7 +174,8 @@ app.post('/settings/password', passportConfig.isAuthenticated, userController.po
 app.post('/settings/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/settings/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 app.post('/typeforms', userController.postTypeformInfo);
-
+app.get('/matches', passportConfig.isAuthenticated, userController.get_matches);
+app.get('/roommates', passportConfig.isAuthenticated, userController.get_roommates);
 /**
  * API examples routes.
  */
