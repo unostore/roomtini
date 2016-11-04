@@ -17,6 +17,118 @@ exports.getLogin = (req, res) => {
   });
 };
 
+/**
+ * GET /matches
+ * get matches
+ */
+
+exports.get_matches = (req, res, done) => {
+
+  User.findById(req.user.id)
+      .select('typeform possible_candidates roommates email profile')
+      .populate('possible_candidates', 'typeform possible_candidates roommates email profile')
+      //.populate('roommates', 'typeform possible_candidates roommates email profile')
+      .exec(function(error, user) {
+        if(error) res.status(404).json(error);
+        else {
+          var data = user.toJSON();
+          data.gravatar = user.gravatar();
+          //data.roommates = data.roommates.map(function(_r, index) { _r.gravatar = user.roommates[index].gravatar(); return _r; });
+          data.possible_candidates = data.possible_candidates.map(function(_c, index) { _c.gravatar = user.possible_candidates[index].gravatar(); return _c; });
+          res.render('matches', {
+            title: 'Possible Candidates',
+            //roommates: data.roommates,
+            possible_candidates: data.possible_candidates
+          });
+        }
+      }); 
+};
+
+exports.get_roommates = (req, res, done) => {
+
+  User.findById(req.user.id)
+      .select('typeform possible_candidates roommates email profile')
+      //.populate('possible_candidates', 'typeform possible_candidates roommates email profile')
+      .populate('roommates', 'typeform possible_candidates roommates email profile')
+      .exec(function(error, user) {
+        if(error) res.status(404).json(error);
+        else {
+          var data = user.toJSON();
+          data.gravatar = user.gravatar();
+          data.roommates = data.roommates.map(function(_r, index) { _r.gravatar = user.roommates[index].gravatar(); return _r; });
+          //data.possible_candidates = data.possible_candidates.map(function(_c, index) { _c.gravatar = user.possible_candidates[index].gravatar(); return _c; });
+          res.render('roommates', {
+            title: 'Possible Candidates',
+            roommates: data.roommates,
+            //possible_candidates: data.possible_candidates
+          });
+        }
+      }); 
+};
+exports.get_users_search = (req, res, done) => {
+
+    User.find({}, 'typeform possible_candidates roommates email profile', function (err, doc) {
+      
+      var data = (doc.map(function(o) { return { data: o._id, value: (o.typeform["29877943"] + ' ' + o.typeform["29878535"]) }  })).filter(function(s) { 
+        return s.value.toLowerCase().indexOf((req.query.query).toLowerCase()) !== -1; 
+      });
+      //var data = (doc.map(function(o) { return { data: o._id, value: (o.typeform["29877943"] + ' ' + o.typeform["29878535"]) }  }));
+      res.json({ query: "Unit", suggestions: data});
+    });
+};
+
+exports.get_users_all = (req, res, done) => {
+
+    User.find({}, 'typeform possible_candidates roommates email profile', function (err, user) {  
+      if(err) res.status(500).json(err)
+      else {
+        var data = user.map(function(o) { 
+          var _ = o.toJSON();
+          _.gravatar = o.gravatar();
+          return _;
+        });
+        res.json(data)
+      }
+    });
+};
+
+exports.users_edit = (req, res, done) => {
+
+  var query = {};
+
+  if(req.query.type == 'remove-roommate') query = { $pull: { 'roommates': req.query.which } };
+  if(req.query.type == 'remove-candidate') query = { $pull: { 'possible_candidates': req.query.which } };
+  if(req.query.type == 'add-roommate') query = { $push: { 'roommates': req.query.which } };
+  if(req.query.type == 'add-candidate') query = { $push: { 'possible_candidates': req.query.which } };
+  console.log(query);
+  User.findByIdAndUpdate(req.params.id, query, {new: true}, function(err, doc){
+      if(err){
+          console.log("Something wrong when updating data!");
+          res.status(500).json(err);
+      }
+      else {
+        res.json(req.params.id)
+      }
+  });
+};
+
+exports._users = (req, res, done) => {
+
+    User.findById(req.params.id)
+      .select('typeform possible_candidates roommates email profile')
+      .populate('possible_candidates', 'typeform possible_candidates roommates email profile')
+      .populate('roommates', 'typeform possible_candidates roommates email profile')
+      .exec(function(error, user) {
+        if(error) res.status(500).json(error);
+        else {
+          var data = user.toJSON();
+          data.gravatar = user.gravatar();
+          data.roommates = data.roommates.map(function(_r, index) { _r.gravatar = user.roommates[index].gravatar(); return _r; });
+          data.possible_candidates = data.possible_candidates.map(function(_c, index) { _c.gravatar = user.possible_candidates[index].gravatar(); return _c; });
+          res.json(data);
+        }
+      })
+};
 exports.typeform = (req, res, done) => {
 
   var body = req.body;
@@ -165,7 +277,7 @@ exports.getAccount = (req, res) => {
       res.render('account/profile', {
         typeform: user.typeform,
         //hobbies_extension_check: user.typeform['']
-        predefined_css: (user.typeform['29879066'].filter(function(o){ return o !== 'swimming' && o !== 'surfing' && o !== 'basketball'; })).length > 0 ? 'display: inline-block; margin-top:15px' : 'display: none; margin-top:15px',
+        predefined_css: user.typeform['29879066'] && (user.typeform['29879066'].filter(function(o){ return o !== 'swimming' && o !== 'surfing' && o !== 'basketball'; })).length > 0 ? 'display: inline-block; margin-top:15px' : 'display: none; margin-top:15px',
         //predefined_css: user.typeform['29879066'].filter(function(o){ return o !== 'swimming' && o !== 'surfing' && o !== 'basketball'; }).lenght > 0 ? 'display: inline-block; margin-top:15px' : 'display: inline-block; margin-top:15px',
         title: 'Account Management',
         space: ['Split Bedroom', 'Converted Living Room', 'Private Bedroom'],

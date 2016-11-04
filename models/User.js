@@ -16,6 +16,7 @@ const userSchema = new mongoose.Schema({
   linkedin: String,
   steam: String,
   tokens: Array,
+  possible_candidates: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   profile: {
     name: String,
     gender: String,
@@ -42,7 +43,7 @@ const userSchema = new mongoose.Schema({
     "29877954": String,
     "29879208": String
   },*/
-  roommates: Array
+  roommates:  [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]
 }, { timestamps: true });
 
 /**

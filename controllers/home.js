@@ -9,6 +9,13 @@ exports.index = (req, res) => {
   });
 };
 
+exports.admin = (req, res) => {
+  res.render('admin', {
+    title: 'Home'
+  });
+};
+
+
 exports.indexOne = (req, res) => {
   res.render('index', {
     title: 'Landing Page'
