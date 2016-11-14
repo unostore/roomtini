@@ -24,6 +24,8 @@ const userSchema = new mongoose.Schema({
     website: String,
     picture: String
   },
+  apartment:{ type: String, default: null },
+  property: { type: String, default: null },
   typeform: {},
   /*typeform: {
     "29877944": String,

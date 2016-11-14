@@ -79,7 +79,7 @@ exports.get_users_search = (req, res, done) => {
 
 exports.get_users_all = (req, res, done) => {
 
-    User.find({}, 'typeform possible_candidates roommates email profile', function (err, user) {  
+    User.find({}, 'typeform possible_candidates roommates email profile apartment property', function (err, user) {  
       if(err) res.status(500).json(err)
       else {
         var data = user.map(function(o) { 
@@ -102,6 +102,20 @@ exports.users_edit = (req, res, done) => {
   if(req.query.type == 'add-candidate') query = { $push: { 'possible_candidates': req.query.which } };
   console.log(query);
   User.findByIdAndUpdate(req.params.id, query, {new: true}, function(err, doc){
+      if(err){
+          console.log("Something wrong when updating data!");
+          res.status(500).json(err);
+      }
+      else {
+        res.json(req.params.id)
+      }
+  });
+};
+
+exports.users_edit_second = (req, res, done) => {
+
+  console.log(req.body);
+  User.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(err, doc){
       if(err){
           console.log("Something wrong when updating data!");
           res.status(500).json(err);

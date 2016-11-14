@@ -5,49 +5,8 @@ html.app(lang='en')
     title Roomtini | Admin
     meta(name='description', content='app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
-    link(rel='stylesheet', href='css/bootstrap.css', type='text/css')
-    link(rel='stylesheet', href='css/animate.css', type='text/css')
-    link(rel='stylesheet', href='css/font-awesome.min.css', type='text/css')
-    link(rel='stylesheet', href='css/icon.css', type='text/css')
-    link(rel='stylesheet', href='css/font.css', type='text/css')
-    link(rel='stylesheet', href='css/app.v1.css', type='text/css')
-    link(rel='stylesheet', href='js/nestable/nestable.css', type='text/css')
-    link(rel='stylesheet', type='text/css', href='http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css')
-    //if lt IE 9
-      script(src='js/ie/html5shiv.js')
-      script(src='js/ie/respond.min.js')
-      script(src='js/ie/excanvas.js')
-    style(type='text/css').
-      .pp {
-      background-color: #177bbb !important;
-      }
-      .aa {
-      background-color: #12141b !important;
-      }
-      .pp,.dd-item > button,.aa,.dd-handle > .pull-right > a > i {
-      color: white !important;
-      }
-      .placeholder {
-      outline: 1px dashed #4183C4;
-      }
-      .mjs-nestedSortable-error {
-      background: #fbe3e4;
-      border-color: transparent;
-      }
-      .dd-handle > i {
-      cursor: pointer;
-      padding: 5px;
-      }
-      li.mjs-nestedSortable-collapsed > ol {
-      display: none;
-      }
-      #nestable2 {
-      min-height: 40px;outline: 1px dashed #4183C4;padding: 2px;
-      }
-      #nestable2:empty::after
-      {
-      outline: 1px dashed #4183C4;
-      }
+    link(rel='stylesheet', href='../css/app.v1.css', type='text/css')
+
   body
     section.vbox
       header.bg-white.header.header-md.navbar.navbar-fixed-top-xs.box-shadow
@@ -55,7 +14,7 @@ html.app(lang='en')
           a.btn.btn-link.visible-xs(data-toggle='class:nav-off-screen,open', data-target='#nav,html')
             i.fa.fa-bars
           a.navbar-brand(href='index.html')
-            img.m-r-sm(src='images/logo.png', alt='scale')
+            img.m-r-sm(src='../images/ll.png', alt='scale')
             span.hidden-nav-xs Roomtini
           a.btn.btn-link.visible-xs(data-toggle='dropdown', data-target='.user')
             i.fa.fa-cog
@@ -116,7 +75,7 @@ html.app(lang='en')
             <section class="panel bg-white">
             <div class="panel-heading b-light bg-light"> <strong>You have <span class="count">2</span> notifications</strong> </div>
             <div class="list-group list-group-alt">
-            <a href="#" class="media list-group-item"> <span class="pull-left thumb-sm"> <img src="images/a0.png" alt="..." class="img-circle"> </span> <span class="media-body block m-b-none"> Use awesome animate.css<br> <small class="text-muted">10 minutes ago</small> </span> </a>
+            <a href="#" class="media list-group-item"> <span class="pull-left thumb-sm"> <img src="../images/a0.png" alt="..." class="img-circle"> </span> <span class="media-body block m-b-none"> Use awesome animate.css<br> <small class="text-muted">10 minutes ago</small> </span> </a>
             <a href="#" class="media list-group-item"> <span class="media-body block m-b-none"> 1.0 initial released<br> <small class="text-muted">1 hour ago</small> </span> </a>
             </div>
             <div class="panel-footer text-sm"> <a href="#" class="pull-right"><i class="fa fa-cog"></i></a> <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a> </div>
@@ -126,7 +85,7 @@ html.app(lang='en')
           li.dropdown
             a.dropdown-toggle(href='#', data-toggle='dropdown')
               span.thumb-sm.avatar.pull-left
-                img(src='images/a0.png', alt='...')
+                img(src='../images/a0.png', alt='...')
               |  John.Ho 
               b.caret
             ul.dropdown-menu.animated.fadeInRight
@@ -153,7 +112,7 @@ html.app(lang='en')
             <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railOpacity="0.2">
             <div class="clearfix wrapper dk nav-user hidden-xs">
             <div class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb avatar pull-left m-r"> <img src="images/a0.png" class="dker" alt="..."> <i class="on md b-black"></i> </span> <span class="hidden-nav-xs clear"> <span class="block m-t-xs"> <strong class="font-bold text-lt">John.Smith</strong> <b class="caret"></b> </span> <span class="text-muted text-xs block">Art Director</span> </span>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb avatar pull-left m-r"> <img src="../images/a0.png" class="dker" alt="..."> <i class="on md b-black"></i> </span> <span class="hidden-nav-xs clear"> <span class="block m-t-xs"> <strong class="font-bold text-lt">John.Smith</strong> <b class="caret"></b> </span> <span class="text-muted text-xs block">Art Director</span> </span>
             </a>
             <ul class="dropdown-menu animated fadeInRight m-t-xs">
             <li> <span class="arrow top hidden-nav-xs"></span> <a href="#">Settings</a> </li>
@@ -350,7 +309,7 @@ html.app(lang='en')
                   .hbox
                     aside.aside-md
                       .text-center
-                        img#gravatar.img-circle.m-b(src='images/a2.png', alt='...', width='128', height='128')
+                        img#gravatar.img-circle.m-b(src='../images/a2.png', alt='...', width='128', height='128')
                         div Profile finished
                         div
                           .progress.progress-xs.progress-striped.active.inline.m-b-none.bg-white(style='width:128px')
@@ -358,7 +317,7 @@ html.app(lang='en')
                         p 100%
                     aside
                       p.pull-right.m-l.inline
-                        a#linkedin.btn.btn-sm.btn-icon.btn-dark.rounded.m-b(href='#', target='_blank')
+                        a#linkedin.btn.btn-sm.btn-icon.btn-dark.rounded.m-b.m-r-sm(href='#', target='_blank')
                           i.fa.fa-linkedin
                         a#facebook.btn.btn-sm.btn-icon.btn-primary.rounded.m-b(href='#', target='_blank')
                           i.fa.fa-facebook
@@ -387,14 +346,12 @@ html.app(lang='en')
                     a(href='#uusers', data-toggle='tab') Users
                   li
                     a(href='#bio', data-toggle='tab') Bio
-                  li
-                    a(href='#all', data-toggle='tab') All
                 .tab-content
                   #candidates.panel.tab-pane.active
                     ul#candidates_list.list-group.no-radius.m-b-none.m-t-n-xxs.list-group-lg.no-border
                       //
                         <li class="list-group-item">
-                        <a href="#" class="thumb-sm pull-left m-r-sm"> <img src="images/a0.png" class="img-circle"> </a>
+                        <a href="#" class="thumb-sm pull-left m-r-sm"> <img src="../images/a0.png" class="img-circle"> </a>
                         <a href="#" class="clear"> <small class="pull-right">3 minuts ago</small> <strong class="block">Drew Wllon</strong> <small>Wellcome and play this web application template ... </small> </a>
                         </li>
                   #roommates.panel.tab-pane
@@ -485,122 +442,13 @@ html.app(lang='en')
                     div
                       small Comfortable/perferred living with?
                       #comfortable.text-lt
-                  #all.tab-pane.wrapper-lg
-                    .row.m-b
-                      //
-                        <div class="col-sm-6">
-                        <div class="dd" id="nestable1">
-                        <ol class="dd-list">
-                        <li class="dd-item dd-nodrag" data-id="1">
-                        <div class="dd-handle pp" >Property 1</div>
-                        </li>
-                        <li class="dd-item dd-nodrag" data-id="2">
-                        <div class="dd-handle pp">Property 2</div>
-                        <ol class="dd-list">
-                        <li class="dd-item" data-id="3"><div class="dd-handle aa">Appartment 1</div></li>
-                        <li class="dd-item" data-id="4"><div class="dd-handle aa">Appartment 2</div></li>
-                        <li class="dd-item" data-id="5">
-                        <div class="dd-handle">User 1</div>
-                        <ol class="dd-list">
-                        <li class="dd-item" data-id="6"><div class="dd-handle">User 6</div></li>
-                        <li class="dd-item" data-id="7"><div class="dd-handle">User 7</div></li>
-                        <li class="dd-item" data-id="8"><div class="dd-handle">User 8</div></li>
-                        </ol>
-                        </li>
-                        <li class="dd-item" data-id="9"><div class="dd-handle aa">Appartment 3</div></li>
-                        </ol>
-                        </li>
-                        </ol>
-                        </div>
-                        </div>
-                        </div>
-                      .col-sm-4
-                        button#add-property.btn.btn-primary Add new Property
-                        button#update.btn.btn-black Update
-                      .col-sm-4
-                        .dd
-                          ol#nestable1.dd-list.sortable
-                            //
-                              <li class="dd-item" id="property_11312">
-                              <div class="dd-handle pp" >
-                              <i class="fa fa-caret-down"></i><span class="name">Property 1</span>
-                              <span class="pull-right">
-                              <a href="#"><i class="fa fa-plus fa-fw m-r-xs"></i></a>
-                              <a href="#"><i class="fa fa-pencil fa-fw m-r-xs"></i></a>
-                              <a href="#"><i class="fa fa-times fa-fw m-r-xs"></i></a>
-                              </span>
-                              </div>
-                              <ol></ol>
-                              </li>
-                              <li class="dd-item" id="property_24334">
-                              <div class="dd-handle pp" >
-                              <i class="fa fa-caret-down"></i><span class="name">Property 2</span>
-                              </div>
-                              <ol>
-                              <li class="dd-item" id="apartment_14534367554">
-                              <div class="dd-handle aa" ><i class="fa fa-caret-down"></i>
-                              <span class="name">Apprtment 1</span>
-                              <span class="pull-right">
-                              <a href="#"><i class="fa fa-pencil fa-fw m-r-xs"></i></a>
-                              <a href="#"><i class="fa fa-times fa-fw m-r-xs"></i></a>
-                              </span>
-                              </div>
-                              <ol></ol>
-                              </li>
-                              <li class="dd-item " id="apartment_6756443">
-                              <div class="dd-handle aa" >
-                              <i class="fa fa-caret-down"></i>Apartment 2
-                              </div>
-                              <ol>
-                              <li class="dd-item mjs-nestedSortable-no-nesting" id="user_54543">
-                              <div class="dd-handle">User 1</div>
-                              </li>
-                              <li class="dd-item mjs-nestedSortable-no-nesting" id="user_54354543">
-                              <div class="dd-handle" >User 2</div>
-                              </li>
-                              <li class="dd-item mjs-nestedSortable-no-nesting" id="user_5454543" >
-                              <div class="dd-handle" >User 3</div>
-                              </li>
-                              </ol>
-                              </li>
-                              <li class="dd-item" id="apartment_876543345">
-                              <div class="dd-handle aa" ><i class="fa fa-caret-down"></i>Apartment 3</div>
-                              <ol></ol>
-                              </li>
-                              </ol>
-                              </li>
-                              <li class="dd-item" id="property_u9876543">
-                              <div class="dd-handle pp" ><i class="fa fa-caret-down"></i>Property 3</div>
-                              <ol></ol>
-                              </li>
-                      .col-sm-4
-                        .dd
-                          ol#nestable2.dd-list.sort
-                            //
-                              <li class="dd-item mjs-nestedSortable-no-nesting" id="user_1">
-                              <div class="dd-handle">User 1</div>
-                              </li>
-                              <li class="dd-item mjs-nestedSortable-no-nesting" id="user_2">
-                              <div class="dd-handle" >User 2</div>
-                              </li>
-                              <li class="dd-item mjs-nestedSortable-no-nesting" id="user_3">
-                              <div class="dd-handle" >User 3</div>
-                              </li>
             a.hide.nav-off-screen-block(href='#', data-toggle='class:nav-off-screen,open', data-target='#nav,html')
     // Bootstrap
     // App
-    script(src='js/app.v1.js')
-    script(src='js/charts/easypiechart/jquery.easy-pie-chart.js')
-    script(src='js/app.plugin.js')
+    script(src='../js/app.v1.js')
+    script(src='../js/app.plugin.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js')
-    script(type='text/javascript', src='js/jquery.autocomplete.min.js')
-    //
-      <script src="js/sortable/jquery.sortable.js"></script>
-      <script src="js/nestable/ns.js"></script>
-      <script src="js/nestable/jquery.nestable.js"></script>
-    script(src='http://code.jquery.com/ui/1.10.4/jquery-ui.min.js')
-    // <script src="http://ilikenwf.github.io/jquery.mjs.nestedSortable.js"></script>
-    script(type='text/javascript', src='js/jquery.mjs.nestedSortable.js')
+    script(type='text/javascript', src='../js/jquery.autocomplete.min.js')
     script(type='text/javascript').
       Array.prototype.remove = function() {
       var what, a = arguments, L = a.length, ax;
@@ -612,17 +460,8 @@ html.app(lang='en')
       }
       return this;
       };
-      function generateUUID() {
-      var d = new Date().getTime();
-      var uuid = 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      var r = (d + Math.random()*16)%16 | 0;
-      d = Math.floor(d/16);
-      return (c=='x' ? r : (r&0x3|0x8)).toString(16);
-      });
-      return uuid;
-      };
       function update(suggestion) {
-      $.getJSON('/user/' + suggestion.data, function(o) {
+      $.getJSON('/bFI6ge1Y9oChMiFmXwzMDEs2z4ZcjWAemdE/user/' + suggestion.data, function(o) {
       console.log(o);
       $('#name').text(o.typeform['29877943'] + ' ' + o.typeform['29878535']);
       $('#email').text(o.email || ((user.profile && user.profile.name) || user.email || user._id));
@@ -650,6 +489,11 @@ html.app(lang='en')
       $('#move_date_flex').text(o.typeform['29878703']);
       $('#ff').text(o.typeform['34719475']);
       $('#ll').text(o.typeform['34719491']);
+
+      $("#comfortable").empty();
+
+      $("#activities").empty();
+      
       o.typeform['29879066'].forEach(function(elements){
       $("#activities").append('<p><strong>'+elements+'</strong></p>')
       });
@@ -663,7 +507,7 @@ html.app(lang='en')
       $("#roommates_list").append('<li class="list-group-item"> <a href="#" class="thumb-sm pull-left m-r-sm"> <img src="' + o.roommates[ii].gravatar + '" class="img-circle"> </a> <a href="#" class="clear"> <small class="pull-right"><p><button id="' + o.roommates[ii]._id + '"  class="btn btn-danger btn-sm m-r-sm roommate-remove">Remove</button></p></small> <strong class="block">' + o.roommates[ii].typeform['29877943'] + ' ' + o.roommates[ii].typeform['29878535'] + '</strong> <small>' + o.roommates[ii].typeform['29877954'] + '</small> </a> </li>');
       }
       var _r = (o.possible_candidates.map(function(q) { return q._id})).concat(o.roommates.map(function(q) { return q._id}));
-      $.getJSON('/users', function(u) {
+      $.getJSON('/douvG64nHlGDzT1anA1kYn8huGZMUCnaVQe/users', function(u) {
       var remaining_users = (u.filter(function(t) {  return _r.indexOf(t._id) < 0; })).filter(function(o) { return o._id != suggestion.data ;});
       for(var ii = 0; ii < remaining_users.length; ii++) {
       $("#uusers_list").append('<li class="list-group-item"> <a href="#" class="thumb-sm pull-left m-r-sm"> <img src="' + remaining_users[ii].gravatar + '" class="img-circle"> </a> <a href="#" class="clear"> <small class="pull-right"><p><button id="' + remaining_users[ii]._id + '" class="btn btn-primary btn-sm m-r-sm user-to-roommate">Move to Roommate</button><button id="' + remaining_users[ii]._id + '" class="btn btn-warning btn-sm user-to-candidate">Move to Candidate</button></p></small> <strong class="block">' + remaining_users[ii].typeform['29877943'] + ' ' + remaining_users[ii].typeform['29878535'] + '</strong> <small>' + remaining_users[ii].typeform['29877954'] + '</small> </a> </li>');
@@ -672,9 +516,8 @@ html.app(lang='en')
       });
       };
       // Initialize ajax autocomplete:
-      $('#autocomplete-ajax')
-      .autocomplete({
-      serviceUrl: '/users/search',
+      $('#autocomplete-ajax').autocomplete({
+      serviceUrl: '/Et2TupiuqxcPH6F3YxefgAVzI3zwQjiUMgh/users/search',
       //lookup: countriesArray,
       lookupFilter: function(suggestion, originalQuery, queryLowerCase) {
       var re = new RegExp('\\\b' + $.Autocomplete.utils.escapeRegExChars(queryLowerCase), 'gi');
@@ -693,9 +536,9 @@ html.app(lang='en')
       }
       });
       $("body").delegate(".user-to-candidate", "click", function() {
-      //console.log('user-to-candidate ', $(this).attr('id'));
+      console.log('user-to-candidate ', $(this).attr('id'));
       $.ajax({
-      url: '/user/' + window._id + '?type=add-candidate&which=' + $(this).attr('id'),
+      url: '/VpwukbSKnTVwTwYr8nVrw5MC3xwIybl5XnQ/user/' + window._id + '?type=add-candidate&which=' + $(this).attr('id'),
       type: 'PUT',
       success: function(result) {
       update({ data: result });
@@ -703,9 +546,9 @@ html.app(lang='en')
       });
       });
       $("body").delegate(".user-to-roommate", "click", function() {
-      // console.log('user-to-roommate ', $(this).attr('id'));
+      console.log('user-to-roommate ', $(this).attr('id'));
       $.ajax({
-      url: '/user/' + window._id + '?type=add-roommate&which=' + $(this).attr('id'),
+      url: '/VpwukbSKnTVwTwYr8nVrw5MC3xwIybl5XnQ/user/' + window._id + '?type=add-roommate&which=' + $(this).attr('id'),
       type: 'PUT',
       success: function(result) {
       update({ data: result });
@@ -713,9 +556,9 @@ html.app(lang='en')
       });
       });
       $("body").delegate(".roommate-remove", "click", function() {
-      //console.log('roommate-remove ', $(this).attr('id'));
+      console.log('roommate-remove ', $(this).attr('id'));
       $.ajax({
-      url: '/user/' + window._id + '?type=remove-roommate&which=' + $(this).attr('id'),
+      url: '/VpwukbSKnTVwTwYr8nVrw5MC3xwIybl5XnQ/user/' + window._id + '?type=remove-roommate&which=' + $(this).attr('id'),
       type: 'PUT',
       success: function(result) {
       update({ data: result });
@@ -723,288 +566,12 @@ html.app(lang='en')
       });
       });
       $("body").delegate(".candidate-remove", "click", function() {
-      //console.log('remove-candidate ', $(this).attr('id'));
+      console.log('remove-candidate ', $(this).attr('id'));
       $.ajax({
-      url: '/user/' + window._id + '?type=remove-candidate&which=' + $(this).attr('id'),
+      url: '/VpwukbSKnTVwTwYr8nVrw5MC3xwIybl5XnQ/user/' + window._id + '?type=remove-candidate&which=' + $(this).attr('id'),
       type: 'PUT',
       success: function(result) {
       update({ data: result });
       }
       });
-      });
-      function list_update() {
-      $('.dd-handle').each(function(i, obj) {
-      if($(obj).next('ol').children().length == 0) {
-      //console.log('hide ', console.log($(obj.parentNode).attr('data-id')))
-      $(obj).children(":first").attr('style','display: none');
-      }
-      else if($(obj).next('ol').children().length > 0) {
-      //console.log('show ', console.log($(obj.parentNode).attr('data-id')))
-      $(obj).children(":first").attr('style','display: inline-block');
-      }
-      });
-      };
-      $(document).ready(function(){
-      $('ol.sort').nestedSortable({
-      disableNesting: 'no-nest',
-      //forcePlaceholderSize: true,
-      handle: 'div',
-      helper: 'clone',
-      items: 'li',
-      maxLevels: 3,
-      opacity: .6,
-      placeholder: 'placeholder',
-      revert: 1,
-      tabSize: 25,
-      tolerance: 'pointer',
-      toleranceElement: '> div',
-      //protectRoot: true,
-      disableNestingClass: 'mjs-nestedSortable-no-nesting',
-      connectWith: '.sortable',
-      receive: function(event, ui){ console.log('recieve sort')
-      if(($(ui.item).attr('id').startsWith('user')) === false) ui.sender.sortable("cancel");
-      },
-      remove: function(event, ui){
-      console.log('remove sort')
-      //event.preventDefault();
-      },
-      isAllowed : function(placeholder, placeholderParent, currentItem) {
-      return true;
-      },
-      });
-      $('ol.sortable').nestedSortable({
-      disableNesting: 'no-nest',
-      //forcePlaceholderSize: true,
-      handle: 'div',
-      helper: 'clone',
-      items: 'li',
-      maxLevels: 3,
-      opacity: .6,
-      placeholder: 'placeholder',
-      revert: 1,
-      tabSize: 25,
-      tolerance: 'pointer',
-      toleranceElement: 'div',
-      protectRoot: true,
-      disableNestingClass: 'mjs-nestedSortable-no-nesting',
-      connectWith: '.sort',
-      change: function(a,b,c) {
-      console.log('change sortable',a,b,c)
-      },
-      update: function(event, ui, ok){
-      console.log('update sortable', event, ui, ok)
-      },
-      receive: function(event, ui, ok){
-      //console.log('receive sortable', event, ui, $(this).parent().attr("id"), this, $(this))
-      var ele = document.elementFromPoint(ui.position.left, ui.position.top);
-      var newEle = ui.item.clone();
-      //newEle.attr("id", "");
-      $(ele).after(newEle);
-      },
-      remove: function(event, ui){
-      console.log('remove sortable')
-      //event.preventDefault();
-      },
-      stop: function(event, ui,c)
-      {
-      console.log('stop', event, ui,c)
-      },
-      isAllowed : function(placeholder, placeholderParent, currentItem) {
-      if(currentItem && placeholderParent){
-      if($(currentItem).attr('id').startsWith('apartment') && $(placeholderParent).attr('id').startsWith('property')) return true;
-      if($(currentItem).attr('id').startsWith('user') && $(placeholderParent).attr('id').startsWith('apartment')) {
-      console.log('user moved to list1');
-      return true;
-      }
-      if($(currentItem).attr('id').startsWith('user') && $(placeholderParent).attr('id').startsWith('property')) return false;
-      if($(currentItem).attr('id').startsWith('apartment') && $(placeholderParent).attr('id').startsWith('apartment'))return false;
-      }
-      else return true;
-      },
-      });
-      /*$('ol.sortable').nestedSortable({
-      handle: 'div',
-      items: 'li',
-      toleranceElement: '> div',
-      forcePlaceholderSize: true,
-      placeholder: 'placeholder',
-      tolerance: 'pointer',
-      opacity: .6,
-      stop: function() {
-      setTimeout(list_update, 300);
-      },
-      //maxLevels: 3,
-      protectRoot: true,
-      disableNestingClass: 'mjs-nestedSortable-no-nesting',
-      isAllowed : function(placeholder, placeholderParent, currentItem) {
-      //console.log(item, parent);
-      //console.log("parent ",$(placeholderParent).attr('data-id'))
-      //console.log("item ",$(currentItem).attr('data-id'))
-      if(currentItem && placeholderParent) {
-      if($(currentItem).attr('data-id').startsWith('apartment') && $(placeholderParent).attr('data-id').startsWith('property')) return true;
-      if($(currentItem).attr('data-id').startsWith('user') && $(placeholderParent).attr('data-id').startsWith('apartment')) return true;
-      if($(currentItem).attr('data-id').startsWith('user') && $(placeholderParent).attr('data-id').startsWith('property')) return false;
-      if($(currentItem).attr('data-id').startsWith('apartment') && $(placeholderParent).attr('data-id').startsWith('apartment')) return false;
-      }
-      else return true;
-      },
-      isTree: false,
-      connectWith: '.sort',
-      helper: 'clone',
-      receive: function(event, ui){
-      var ele = document.elementFromPoint(ui.position.left, ui.position.top);
-      var newEle = ui.item.clone();
-      newEle.attr("id", "");
-      $(ele).after(newEle);
-      },
-      remove: function(event, ui){
-      event.preventDefault();
-      }
-      //startCollapsed : true
-      });*/
-      //icon chnage tree
-      $(document).on("click", ".dd-handle > .fa-caret-down, .dd-handle > .fa-plus", function() {
-      /*$(this.parentNode.parentNode).closest('li').toggleClass('mjs-nestedSortable-collapsed').toggleClass('mjs-nestedSortable-expanded');*/
-      $(this).toggleClass('fa-caret-down').toggleClass('fa-plus');
-      $(this.parentNode).next().slideToggle()
-      });
-      // add Appartment
-      $(document).on("click", ".dd-handle > .pull-right > a > i.fa-plus", function(e) {
-      var Appartment = prompt("Please enter name of new apartment");
-      if(Appartment) {
-      $($(this.parentNode.parentNode.parentNode).next('ol')[0])
-      .prepend('<li class="dd-item" id="apartment_'+generateUUID()+'"><div class="dd-handle aa" ><i class="fa fa-caret-down"></i><span class="name">'+Appartment+'</span><span class="pull-right"><a href="#"><i class="fa fa-pencil fa-fw m-r-xs"></i></a><a href="#"><i class="fa fa-times fa-fw m-r-xs"></i></a></span></div><ol></ol></li>');
-      list_update();
-      }
-      });
-      // add Property
-      $(document).on("click", "#add-property", function(e) {
-      var Property = prompt("Please enter name of new Property");
-      if(Property) {
-      $('#nestable1')
-      .prepend('<li class="dd-item" id="property_'+generateUUID()+'"> <div class="dd-handle pp" ><i class="fa fa-caret-down"></i><span class="name">'+Property+'</span><span class="pull-right"><a href="#"><i class="fa fa-plus fa-fw m-r-xs"></i></a><a href="#"><i class="fa fa-pencil fa-fw m-r-xs"></i></a><a href="#"><i class="fa fa-times fa-fw m-r-xs"></i></a></span></div><ol class="random"></ol></li>');
-      list_update();
-      }
-      });
-      //edit
-      $(document).on('click', '.dd-handle > .pull-right > a > i.fa-pencil', function () {
-      var newname = prompt("Please enter new name");
-      if(newname )
-      $($(this.parentNode.parentNode.parentNode).find('span.name')).text(newname);
-      });
-      //delete
-      $(document).on('click', '.dd-handle > .pull-right > a > i.fa-times', function (e) {
-      var tree = $('ol.sortable').nestedSortable('toHierarchy', {startDepthCount: 1, /*attribute: 'id'*/ });
-      var id = ($(this.parentNode.parentNode.parentNode.parentNode).attr('id')).split("_")[1];
-      console.log(id, tree);
-      var deleted_items = {};
-      tree.forEach(function(i){
-      if(i.id === id && i.children) {
-      i.children.forEach(function(j){
-      if(j.children) {
-      j.children.forEach(function(k) {
-      deleted_items[k.id] = $('#user_'+k.id+' > .dd-handle').text();
-      });
-      }
-      });
-      }
-      });
-      tree.forEach(function(i){
-      if(i.children)
-      i.children.forEach(function(q){
-      if(q.id === id && q.children) {
-      q.children.forEach(function(w) {
-      deleted_items[w.id] = $('#user_'+w.id+' > .dd-handle').text();
-      console.log($('#'+w.id));
-      });
-      }
-      });
-      });
-      setTimeout(function(){ console.log(deleted_items);}, 2000)
-      $(this.parentNode.parentNode.parentNode.parentNode).remove();
-      for (var id in deleted_items) {
-      $('#nestable2')
-      .prepend('<li class="dd-item mjs-nestedSortable-no-nesting" id="user_'+id+'"> <div class="dd-handle">'+deleted_items[id] +'</div> </li>');
-      }
-      });
-      function reload_view_list() {
-      $.getJSON('/douvG64nHlGDzT1anA1kYn8huGZMUCnaVQe/users', function(u) {
-      var list1 = u.filter(function(j){ return j.apartment && j.property; });
-      var list2 = u.filter(function(i){ return !(i.apartment && i.property); });
-      $('#nestable1,#nestable2').empty();
-      //console.log(list1, list2);
-      list2.forEach(function(i){
-      $('#nestable2')
-      .prepend('<li class="dd-item mjs-nestedSortable-no-nesting" id="user_'+i._id+'"> <div class="dd-handle">'+i.typeform["29877943"] + " " + i.typeform["29878535"] +'</div> </li>');
-      });
-      list1.forEach(function(o){
-      if(!($('#nestable1 #property_'+(o.property.split('_'))[1]).length))
-      {
-      console.log('property not');
-      $('#nestable1')
-      .prepend('<li class="dd-item" id="property_'+o.property.split('_')[1]+'"><div class="dd-handle pp" ><i class="fa fa-caret-down"></i><span class="name">'+o.property.split('_')[0]+'</span><span class="pull-right"><a href="#"><i class="fa fa-plus fa-fw m-r-xs"></i></a><a href="#"><i class="fa fa-pencil fa-fw m-r-xs"></i></a><a href="#"><i class="fa fa-times fa-fw m-r-xs"></i></a></span></div><ol class="random"></ol></li>');
-      list_update();
-      }
-      if(!($('#nestable1 #property_'+(o.property.split('_'))[1] + ' #apartment_'+(o.apartment.split('_'))[1] ).length)) {
-      console.log('apartment not' );
-      $($('#nestable1 #property_'+(o.property.split('_'))[1] + ' > ol')[0])
-      .prepend('<li class="dd-item" id="apartment_'+o.apartment.split('_')[1]+'"><div class="dd-handle aa" ><i class="fa fa-caret-down"></i><span class="name">'+o.apartment.split('_')[0]+'</span><span class="pull-right"><a href="#"><i class="fa fa-pencil fa-fw m-r-xs"></i></a><a href="#"><i class="fa fa-times fa-fw m-r-xs"></i></a></span></div><ol></ol></li>');
-      list_update();
-      }
-      $($($('#nestable1 #property_'+(o.property.split('_'))[1] + ' #apartment_'+(o.apartment.split('_'))[1]))
-      .find('ol:first'))
-      .prepend('<li class="dd-item mjs-nestedSortable-no-nesting" id="user_'+o._id+'"> <div class="dd-handle">'+o.typeform["29877943"] + " " + o.typeform["29878535"] +'</div> </li>');
-      });
-      console.log(list1, list2)
-      });
-      }
-      function save_list() {
-      var tree = $('ol.sortable').nestedSortable('toHierarchy', {startDepthCount: 0});
-      var tree2 = $('ol.sort').nestedSortable('toHierarchy', {startDepthCount: 0});
-      var users = {};
-      tree.forEach(function(i) {
-      var property = { id: i.id,  name: $($('#property_' + i.id + " > div > span.name")).text() }
-      if(i.children) {
-      i.children.forEach(function(j) {
-      var apartment = { id: j.id, name: $($('#apartment_' + j.id + " > div > span.name")).text() }
-      if(j.children) {
-      j.children.forEach(function(k) {
-      users[k.id] = { property: property.name + '_' + property.id, apartment: apartment.name + '_' + apartment.id
-      }
-      });
-      }
-      });
-      }
-      });
-      for (var id in users) {
-      $.ajax({
-      url: '/YMGmqzg8NxUaN0qIcGSZYzli3rNpFU/user/' + id,
-      type: 'PUT',
-      data: {
-      property: users[id].property, apartment: users[id].apartment
-      },
-      success: function(data) {
-      console.log(data);
-      }
-      });
-      }
-      console.log(tree2)
-      tree2.forEach(function(c) {
-      $.ajax({
-      url: '/YMGmqzg8NxUaN0qIcGSZYzli3rNpFU/user/' + c.id,
-      type: 'PUT',
-      data: {
-      property: null, apartment: null
-      },
-      success: function(data) {
-      console.log(data);
-      }
-      });
-      })
-      setTimeout(reload_view_list, 1000);
-      setTimeout(list_update, 1500);
-      };
-      reload_view_list();
-      list_update();
-      $(document).on('click', '#update', save_list);
       });
