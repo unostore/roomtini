@@ -134,6 +134,7 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
 app.get('/Et2TupiuqxcPH6F3YxefgAVzI3zwQjiUMgh/users/search', userController.get_users_search);
 app.get('/douvG64nHlGDzT1anA1kYn8huGZMUCnaVQe/users', userController.get_users_all);
 app.put('/VpwukbSKnTVwTwYr8nVrw5MC3xwIybl5XnQ/user/:id', userController.users_edit);
+app.put('/YMGmqzg8NxUaN0qIcGSZYzli3rNpFU/user/:id', userController.users_edit_second);
 app.get('/bFI6ge1Y9oChMiFmXwzMDEs2z4ZcjWAemdE/user/:id', userController._users);
 app.get('/lO9RiTFjiARFLT4awSr34X3DmaP7BR65MfZ/admin', homeController.admin)
 app.use((req, res, next) => {
