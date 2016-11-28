@@ -55,7 +55,7 @@ html.app(lang='en')
           a.btn.btn-link.visible-xs(data-toggle='class:nav-off-screen,open', data-target='#nav,html')
             i.fa.fa-bars
           a.navbar-brand(href='index.html')
-            img.m-r-sm(src='images/logo.png', alt='scale')
+            img.m-r-sm(src='/images/logo.png', alt='scale')
             span.hidden-nav-xs Roomtini
           a.btn.btn-link.visible-xs(data-toggle='dropdown', data-target='.user')
             i.fa.fa-cog
@@ -116,7 +116,7 @@ html.app(lang='en')
             <section class="panel bg-white">
             <div class="panel-heading b-light bg-light"> <strong>You have <span class="count">2</span> notifications</strong> </div>
             <div class="list-group list-group-alt">
-            <a href="#" class="media list-group-item"> <span class="pull-left thumb-sm"> <img src="images/a0.png" alt="..." class="img-circle"> </span> <span class="media-body block m-b-none"> Use awesome animate.css<br> <small class="text-muted">10 minutes ago</small> </span> </a>
+            <a href="#" class="media list-group-item"> <span class="pull-left thumb-sm"> <img src="/images/a0.png" alt="..." class="img-circle"> </span> <span class="media-body block m-b-none"> Use awesome animate.css<br> <small class="text-muted">10 minutes ago</small> </span> </a>
             <a href="#" class="media list-group-item"> <span class="media-body block m-b-none"> 1.0 initial released<br> <small class="text-muted">1 hour ago</small> </span> </a>
             </div>
             <div class="panel-footer text-sm"> <a href="#" class="pull-right"><i class="fa fa-cog"></i></a> <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a> </div>
@@ -126,7 +126,7 @@ html.app(lang='en')
           li.dropdown
             a.dropdown-toggle(href='#', data-toggle='dropdown')
               span.thumb-sm.avatar.pull-left
-                img(src='images/a0.png', alt='...')
+                img(src='/images/a0.png', alt='...')
               |  John.Ho 
               b.caret
             ul.dropdown-menu.animated.fadeInRight
@@ -153,7 +153,7 @@ html.app(lang='en')
             <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railOpacity="0.2">
             <div class="clearfix wrapper dk nav-user hidden-xs">
             <div class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb avatar pull-left m-r"> <img src="images/a0.png" class="dker" alt="..."> <i class="on md b-black"></i> </span> <span class="hidden-nav-xs clear"> <span class="block m-t-xs"> <strong class="font-bold text-lt">John.Smith</strong> <b class="caret"></b> </span> <span class="text-muted text-xs block">Art Director</span> </span>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb avatar pull-left m-r"> <img src="/images/a0.png" class="dker" alt="..."> <i class="on md b-black"></i> </span> <span class="hidden-nav-xs clear"> <span class="block m-t-xs"> <strong class="font-bold text-lt">John.Smith</strong> <b class="caret"></b> </span> <span class="text-muted text-xs block">Art Director</span> </span>
             </a>
             <ul class="dropdown-menu animated fadeInRight m-t-xs">
             <li> <span class="arrow top hidden-nav-xs"></span> <a href="#">Settings</a> </li>
@@ -350,7 +350,7 @@ html.app(lang='en')
                   .hbox
                     aside.aside-md
                       .text-center
-                        img#gravatar.img-circle.m-b(src='images/a2.png', alt='...', width='128', height='128')
+                        img#gravatar.img-circle.m-b(src='/images/a2.png', alt='...', width='128', height='128')
                         div Profile finished
                         div
                           .progress.progress-xs.progress-striped.active.inline.m-b-none.bg-white(style='width:128px')
@@ -394,21 +394,21 @@ html.app(lang='en')
                     ul#candidates_list.list-group.no-radius.m-b-none.m-t-n-xxs.list-group-lg.no-border
                       //
                         <li class="list-group-item">
-                        <a href="#" class="thumb-sm pull-left m-r-sm"> <img src="images/a0.png" class="img-circle"> </a>
+                        <a href="#" class="thumb-sm pull-left m-r-sm"> <img src="/images/a0.png" class="img-circle"> </a>
                         <a href="#" class="clear"> <small class="pull-right">3 minuts ago</small> <strong class="block">Drew Wllon</strong> <small>Wellcome and play this web application template ... </small> </a>
                         </li>
                   #roommates.panel.tab-pane
                     ul#roommates_list.list-group.no-radius.m-b-none.m-t-n-xxs.list-group-lg.no-border
                       //
                         <li class="list-group-item">
-                        <a href="#" class="thumb-sm pull-left m-r-sm"> <img src="images/a0.png" class="img-circle"> </a>
+                        <a href="#" class="thumb-sm pull-left m-r-sm"> <img src="/images/a0.png" class="img-circle"> </a>
                         <a href="#" class="clear"> <small class="pull-right">3 minuts ago</small> <strong class="block">Drew Wllon</strong> <small>Wellcome and play this web application template ... </small> </a>
                         </li>
                   #uusers.panel.tab-pane
                     ul#uusers_list.list-group.no-radius.m-b-none.m-t-n-xxs.list-group-lg.no-border
                       li.list-group-item
                         //
-                          <a href="#" class="thumb-sm pull-left m-r-sm"> <img src="images/a0.png" class="img-circle"> </a>
+                          <a href="#" class="thumb-sm pull-left m-r-sm"> <img src="/images/a0.png" class="img-circle"> </a>
                           <a href="#" class="clear"> <small class="pull-right">
                           <p>
                           <button id="" data-type="user-to-roommate" class="btn btn-primary btn-sm">Move to Roommate</button>
@@ -674,7 +674,7 @@ html.app(lang='en')
       // Initialize ajax autocomplete:
       $('#autocomplete-ajax')
       .autocomplete({
-      serviceUrl: '/users/search',
+      serviceUrl: '/Et2TupiuqxcPH6F3YxefgAVzI3zwQjiUMgh/users/search',
       //lookup: countriesArray,
       lookupFilter: function(suggestion, originalQuery, queryLowerCase) {
       var re = new RegExp('\\\b' + $.Autocomplete.utils.escapeRegExChars(queryLowerCase), 'gi');
@@ -695,7 +695,7 @@ html.app(lang='en')
       $("body").delegate(".user-to-candidate", "click", function() {
       //console.log('user-to-candidate ', $(this).attr('id'));
       $.ajax({
-      url: '/user/' + window._id + '?type=add-candidate&which=' + $(this).attr('id'),
+      url: '/VpwukbSKnTVwTwYr8nVrw5MC3xwIybl5XnQ/user/' + window._id + '?type=add-candidate&which=' + $(this).attr('id'),
       type: 'PUT',
       success: function(result) {
       update({ data: result });
@@ -705,7 +705,7 @@ html.app(lang='en')
       $("body").delegate(".user-to-roommate", "click", function() {
       // console.log('user-to-roommate ', $(this).attr('id'));
       $.ajax({
-      url: '/user/' + window._id + '?type=add-roommate&which=' + $(this).attr('id'),
+      url: '/VpwukbSKnTVwTwYr8nVrw5MC3xwIybl5XnQ/user/' + window._id + '?type=add-roommate&which=' + $(this).attr('id'),
       type: 'PUT',
       success: function(result) {
       update({ data: result });
@@ -715,7 +715,7 @@ html.app(lang='en')
       $("body").delegate(".roommate-remove", "click", function() {
       //console.log('roommate-remove ', $(this).attr('id'));
       $.ajax({
-      url: '/user/' + window._id + '?type=remove-roommate&which=' + $(this).attr('id'),
+      url: '/VpwukbSKnTVwTwYr8nVrw5MC3xwIybl5XnQ/user/' + window._id + '?type=remove-roommate&which=' + $(this).attr('id'),
       type: 'PUT',
       success: function(result) {
       update({ data: result });
@@ -725,7 +725,7 @@ html.app(lang='en')
       $("body").delegate(".candidate-remove", "click", function() {
       //console.log('remove-candidate ', $(this).attr('id'));
       $.ajax({
-      url: '/user/' + window._id + '?type=remove-candidate&which=' + $(this).attr('id'),
+      url: '/VpwukbSKnTVwTwYr8nVrw5MC3xwIybl5XnQ/user/' + window._id + '?type=remove-candidate&which=' + $(this).attr('id'),
       type: 'PUT',
       success: function(result) {
       update({ data: result });
