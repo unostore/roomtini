@@ -13,6 +13,7 @@ html.app(lang='en')
     link(rel='stylesheet', href='/css/app.v1.css', type='text/css')
     link(rel='stylesheet', href='/css/nestable.css', type='text/css')
     link(rel='stylesheet', type='text/css', href='/css/jquery-ui.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.4.0/balloon.min.css')
     //if lt IE 9
       script(src='js/ie/html5shiv.js')
       script(src='js/ie/respond.min.js')
@@ -575,18 +576,11 @@ html.app(lang='en')
                               <ol></ol>
                               </li>
                       .col-sm-4
+                        h5.m-t Filter Clients
+                        select#clients_list_dropdown.form-control.m-b(name='account')
+                          option(value='None') None
                         .dd
                           ol#nestable2.dd-list.sort
-                            //
-                              <li class="dd-item mjs-nestedSortable-no-nesting" id="user_1">
-                              <div class="dd-handle">User 1</div>
-                              </li>
-                              <li class="dd-item mjs-nestedSortable-no-nesting" id="user_2">
-                              <div class="dd-handle" >User 2</div>
-                              </li>
-                              <li class="dd-item mjs-nestedSortable-no-nesting" id="user_3">
-                              <div class="dd-handle" >User 3</div>
-                              </li>
             a.hide.nav-off-screen-block(href='#', data-toggle='class:nav-off-screen,open', data-target='#nav,html')
     // Bootstrap
     // App
@@ -623,7 +617,7 @@ html.app(lang='en')
       return uuid;
       };
       function update(suggestion) {
-      $.getJSON('/user/' + suggestion.data, function(o) {
+      $.getJSON('/Et2TupiuqxcPH6F3YxefgAVzI3zwQjiUMgh/users/search/' + suggestion.data, function(o) {
       console.log(o);
       $('#name').text(o.typeform['29877943'] + ' ' + o.typeform['29878535']);
       $('#email').text(o.email || ((user.profile && user.profile.name) || user.email || user._id));
@@ -696,7 +690,7 @@ html.app(lang='en')
       $("body").delegate(".user-to-candidate", "click", function() {
       //console.log('user-to-candidate ', $(this).attr('id'));
       $.ajax({
-      url: '/VpwukbSKnTVwTwYr8nVrw5MC3xwIybl5XnQ/user/' + window._id + '?type=add-candidate&which=' + $(this).attr('id'),
+      url: '/user/' + window._id + '?type=add-candidate&which=' + $(this).attr('id'),
       type: 'PUT',
       success: function(result) {
       update({ data: result });
@@ -706,7 +700,7 @@ html.app(lang='en')
       $("body").delegate(".user-to-roommate", "click", function() {
       // console.log('user-to-roommate ', $(this).attr('id'));
       $.ajax({
-      url: '/VpwukbSKnTVwTwYr8nVrw5MC3xwIybl5XnQ/user/' + window._id + '?type=add-roommate&which=' + $(this).attr('id'),
+      url: '/user/' + window._id + '?type=add-roommate&which=' + $(this).attr('id'),
       type: 'PUT',
       success: function(result) {
       update({ data: result });
@@ -716,7 +710,7 @@ html.app(lang='en')
       $("body").delegate(".roommate-remove", "click", function() {
       //console.log('roommate-remove ', $(this).attr('id'));
       $.ajax({
-      url: '/VpwukbSKnTVwTwYr8nVrw5MC3xwIybl5XnQ/user/' + window._id + '?type=remove-roommate&which=' + $(this).attr('id'),
+      url: '/user/' + window._id + '?type=remove-roommate&which=' + $(this).attr('id'),
       type: 'PUT',
       success: function(result) {
       update({ data: result });
@@ -726,7 +720,7 @@ html.app(lang='en')
       $("body").delegate(".candidate-remove", "click", function() {
       //console.log('remove-candidate ', $(this).attr('id'));
       $.ajax({
-      url: '/VpwukbSKnTVwTwYr8nVrw5MC3xwIybl5XnQ/user/' + window._id + '?type=remove-candidate&which=' + $(this).attr('id'),
+      url: '/user/' + window._id + '?type=remove-candidate&which=' + $(this).attr('id'),
       type: 'PUT',
       success: function(result) {
       update({ data: result });
@@ -795,8 +789,7 @@ html.app(lang='en')
       update: function(event, ui, ok){
       console.log('update sortable', event, ui, ok)
       },
-      receive: function(event, ui, ok){
-      //console.log('receive sortable', event, ui, $(this).parent().attr("id"), this, $(this))
+      receive: function(event, ui, ok) {
       var ele = document.elementFromPoint(ui.position.left, ui.position.top);
       var newEle = ui.item.clone();
       //newEle.attr("id", "");
@@ -823,46 +816,6 @@ html.app(lang='en')
       else return true;
       },
       });
-      /*$('ol.sortable').nestedSortable({
-      handle: 'div',
-      items: 'li',
-      toleranceElement: '> div',
-      forcePlaceholderSize: true,
-      placeholder: 'placeholder',
-      tolerance: 'pointer',
-      opacity: .6,
-      stop: function() {
-      setTimeout(list_update, 300);
-      },
-      //maxLevels: 3,
-      protectRoot: true,
-      disableNestingClass: 'mjs-nestedSortable-no-nesting',
-      isAllowed : function(placeholder, placeholderParent, currentItem) {
-      //console.log(item, parent);
-      //console.log("parent ",$(placeholderParent).attr('data-id'))
-      //console.log("item ",$(currentItem).attr('data-id'))
-      if(currentItem && placeholderParent) {
-      if($(currentItem).attr('data-id').startsWith('apartment') && $(placeholderParent).attr('data-id').startsWith('property')) return true;
-      if($(currentItem).attr('data-id').startsWith('user') && $(placeholderParent).attr('data-id').startsWith('apartment')) return true;
-      if($(currentItem).attr('data-id').startsWith('user') && $(placeholderParent).attr('data-id').startsWith('property')) return false;
-      if($(currentItem).attr('data-id').startsWith('apartment') && $(placeholderParent).attr('data-id').startsWith('apartment')) return false;
-      }
-      else return true;
-      },
-      isTree: false,
-      connectWith: '.sort',
-      helper: 'clone',
-      receive: function(event, ui){
-      var ele = document.elementFromPoint(ui.position.left, ui.position.top);
-      var newEle = ui.item.clone();
-      newEle.attr("id", "");
-      $(ele).after(newEle);
-      },
-      remove: function(event, ui){
-      event.preventDefault();
-      }
-      //startCollapsed : true
-      });*/
       //icon chnage tree
       $(document).on("click", ".dd-handle > .fa-caret-down, .dd-handle > .fa-plus", function() {
       /*$(this.parentNode.parentNode).closest('li').toggleClass('mjs-nestedSortable-collapsed').toggleClass('mjs-nestedSortable-expanded');*/
@@ -886,6 +839,18 @@ html.app(lang='en')
       .prepend('<li class="dd-item" id="property_'+generateUUID()+'"> <div class="dd-handle pp" ><i class="fa fa-caret-down"></i><span class="name">'+Property+'</span><span class="pull-right"><a href="#"><i class="fa fa-plus fa-fw m-r-xs"></i></a><a href="#"><i class="fa fa-pencil fa-fw m-r-xs"></i></a><a href="#"><i class="fa fa-times fa-fw m-r-xs"></i></a></span></div><ol class="random"></ol></li>');
       list_update();
       }
+      });
+      //move
+      $(document).on('click', '.spanasli', function () {
+      //var newname = prompt("Please enter new name");
+      var p_id = $(this.parentNode.parentNode.parentNode.parentNode.parentNode).attr('id');
+      var ol = $(this.parentNode.parentNode.parentNode.parentNode.nextSibling.childNodes);
+      var target_property = $(this).find('a').attr('id');
+      ol.each(function(idx, li) {
+      $($('#nestable1 #property_'+target_property + ' > ol')[0]).prepend(li);
+      console.log($(li))
+      });
+      $('#'+p_id).remove();
       });
       //edit
       $(document).on('click', '.dd-handle > .pull-right > a > i.fa-pencil', function () {
@@ -928,35 +893,70 @@ html.app(lang='en')
       .prepend('<li class="dd-item mjs-nestedSortable-no-nesting" id="user_'+id+'"> <div class="dd-handle">'+deleted_items[id] +'</div> </li>');
       }
       });
+      $('select').on('change', function() {
+      //alert( this.value );
+      var select = this.value;
+      $("#nestable2 > li").each(function(idx, li) {
+      if(select == 'None') {
+      $(this).show();
+      return;
+      }
+      else if(($(this).attr('data-balloon')).includes(select)) {
+      $(this).show();
+      }
+      else {
+      $(this).hide();
+      }
+      console.log($(this).attr('data-balloon'));
+      });
+      });
       function reload_view_list() {
       $.getJSON('/douvG64nHlGDzT1anA1kYn8huGZMUCnaVQe/users', function(u) {
       var list1 = u.filter(function(j){ return j.apartment && j.property; });
       var list2 = u.filter(function(i){ return !(i.apartment && i.property); });
-      $('#nestable1,#nestable2').empty();
-      //console.log(list1, list2);
-      list2.forEach(function(i){
+      var list2_survey_list = list2.reduce(function(a, b) {
+      return a.concat(b.typeform['37603382']);
+      }, []);
+      var list2_survey_list = list2_survey_list.filter(function (item, pos) {return list2_survey_list.indexOf(item) == pos});
+      //console.log('list2_survey_list', list2_survey_list);
+      list2_survey_list.forEach(function(i) {
+      $('#clients_list_dropdown').append('<option value="'+i+'">'+i+'</option>');
+      });
+      var properties = list1.map(function(i){ return i.property; });
+      var properties = properties.filter(function (item, pos) {return properties.indexOf(item) == pos});
+      list2.forEach(function(i) {
+      var tooltip = i.typeform['37603382'].reduce(function(a, b) { return a == '' ? a + b : a + ' | ' + b; }, '');
       $('#nestable2')
-      .prepend('<li class="dd-item mjs-nestedSortable-no-nesting" id="user_'+i._id+'"> <div class="dd-handle">'+i.typeform["29877943"] + " " + i.typeform["29878535"] +'</div> </li>');
+      .prepend('<li class="dd-item mjs-nestedSortable-no-nesting" data-balloon="'+tooltip+'" data-balloon-pos="up" data-html="true" id="user_'+i._id+'"> <div class="dd-handle">'+i.typeform["29877943"] + " " + i.typeform["29878535"] +'</div> </li>');
       });
       list1.forEach(function(o){
       if(!($('#nestable1 #property_'+(o.property.split('_'))[1]).length))
       {
-      console.log('property not');
+      //console.log('property not');
+      let li = "";
+      for (var i = 0; i < properties.length; i++) {
+      if(properties[i] == o.property) continue;
+      li+='<span class="spanasli"><a id="'+(properties[i].split('_'))[1]+'" href="#" >'+(properties[i].split('_'))[0]+'</a></span>';
+      }
       $('#nestable1')
-      .prepend('<li class="dd-item" id="property_'+o.property.split('_')[1]+'"><div class="dd-handle pp" ><i class="fa fa-caret-down"></i><span class="name">'+o.property.split('_')[0]+'</span><span class="pull-right"><a href="#"><i class="fa fa-plus fa-fw m-r-xs"></i></a><a href="#"><i class="fa fa-pencil fa-fw m-r-xs"></i></a><a href="#"><i class="fa fa-times fa-fw m-r-xs"></i></a></span></div><ol class="random"></ol></li>');
+      .prepend('<li class="dd-item" id="property_'+o.property.split('_')[1]+'"><div class="dd-handle pp" ><i class="fa fa-caret-down"></i><span class="name">'+o.property.split('_')[0]+'</span><span class="pull-right"><a href="#"><i class="fa fa-plus fa-fw m-r-xs"></i></a><a href="#"><i class="fa fa-pencil fa-fw m-r-xs"></i></a><a href="#"><i class="fa fa-times fa-fw m-r-xs"></i></a><div class="btn-group dropup"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-retweet"></i></a><div class="dropdown-menu pull-right">'+li+'</div></div></span></div><ol class="random"></ol></li>');
       list_update();
       }
       if(!($('#nestable1 #property_'+(o.property.split('_'))[1] + ' #apartment_'+(o.apartment.split('_'))[1] ).length)) {
-      console.log('apartment not' );
+      //console.log('apartment not' );
       $($('#nestable1 #property_'+(o.property.split('_'))[1] + ' > ol')[0])
       .prepend('<li class="dd-item" id="apartment_'+o.apartment.split('_')[1]+'"><div class="dd-handle aa" ><i class="fa fa-caret-down"></i><span class="name">'+o.apartment.split('_')[0]+'</span><span class="pull-right"><a href="#"><i class="fa fa-pencil fa-fw m-r-xs"></i></a><a href="#"><i class="fa fa-times fa-fw m-r-xs"></i></a></span></div><ol></ol></li>');
       list_update();
       }
+      /*var tooltip = o.typeform['37603382'].reduce(function(a, b) { return a == '' ? a + b : a + ' | ' + b; }, '');*/
+      var _tool = '';
+      if(o.typeform['37603382'])
+      var _tool = o.typeform['37603382'].reduce(function(a, b) { return a == '' ? a + b : a + ' | ' + b; }, '');
       $($($('#nestable1 #property_'+(o.property.split('_'))[1] + ' #apartment_'+(o.apartment.split('_'))[1]))
       .find('ol:first'))
-      .prepend('<li class="dd-item mjs-nestedSortable-no-nesting" id="user_'+o._id+'"> <div class="dd-handle">'+o.typeform["29877943"] + " " + o.typeform["29878535"] +'</div> </li>');
+      .prepend('<li class="dd-item mjs-nestedSortable-no-nesting" data-balloon="'+_tool+'" data-balloon-pos="up" title="'+_tool+'" id="user_'+o._id+'"> <div class="dd-handle">'+o.typeform["29877943"] + " " + o.typeform["29878535"] +'</div> </li>');
       });
-      console.log(list1, list2)
+      //console.log(list1, list2)
       });
       }
       function save_list() {
@@ -1009,3 +1009,4 @@ html.app(lang='en')
       list_update();
       $(document).on('click', '#update', save_list);
       });
+

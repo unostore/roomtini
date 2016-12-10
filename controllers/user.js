@@ -551,7 +551,6 @@ exports.postTypeformInfo = (req, res) => {
   t['29877943'] = req.body.first_name;
   t['29878535'] = req.body.last_name;
 
-
   t['34694257'] = req.body.weekend;
   t["34694303"] = req.body.sleep;
   t["34694062"] = req.body.expect_visitors;
@@ -561,6 +560,7 @@ exports.postTypeformInfo = (req, res) => {
   t["34719491"] = req.body.linkedin;
   
   t['37603382'] = survey;
+
   User.findOneAndUpdate({_id: req.user.id}, {$set:{typeform: t }}, function(err, doc) {
     if(err) {
       console.log('err', err)
