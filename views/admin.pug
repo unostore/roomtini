@@ -25,7 +25,7 @@ html.app(lang='en')
       .aa {
       background-color: #12141b !important;
       }
-      .pp,.dd-item > button,.aa,.dd-handle > .pull-right > a > i {
+      .pp, .dd-item > button, .aa, .dd-handle > .pull-right > a > i, .fa-retweet {
       color: white !important;
       }
       .placeholder {
@@ -49,6 +49,9 @@ html.app(lang='en')
       {
       outline: 1px dashed #4183C4;
       }
+      div.btn-group.dropup {
+      margin-top: -4px;
+      }
   body
     section.vbox
       header.bg-white.header.header-md.navbar.navbar-fixed-top-xs.box-shadow
@@ -56,7 +59,7 @@ html.app(lang='en')
           a.btn.btn-link.visible-xs(data-toggle='class:nav-off-screen,open', data-target='#nav,html')
             i.fa.fa-bars
           a.navbar-brand(href='index.html')
-            img.m-r-sm(src='/images/logo.png', alt='scale')
+            //img.m-r-sm(src='/images/logo.png', alt='scale')
             span.hidden-nav-xs Roomtini
           a.btn.btn-link.visible-xs(data-toggle='dropdown', data-target='.user')
             i.fa.fa-cog
@@ -588,7 +591,7 @@ html.app(lang='en')
     //script(src='/js/charts/easypiechart/jquery.easy-pie-chart.js')
     script(src='/js/app.plugin.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js')
-    script(type='text/javascript', src='/js/jquery.autocomplete.min.js')
+    
     //
       <script src="/js/sortable/jquery.sortable.js"></script>
       <script src="/js/nestable/ns.js"></script>
@@ -596,6 +599,7 @@ html.app(lang='en')
     script(src='/js/jquery-ui.min.js')
     // <script src="http://ilikenwf.github.io/jquery.mjs.nestedSortable.js"></script>
     script(type='text/javascript', src='/js/jquery.mjs.nestedSortable.js')
+    script(type='text/javascript', src='/js/jquery.autocomplete.min.js')
     script(type='text/javascript').
       Array.prototype.remove = function() {
       var what, a = arguments, L = a.length, ax;
@@ -617,7 +621,7 @@ html.app(lang='en')
       return uuid;
       };
       function update(suggestion) {
-      $.getJSON('/Et2TupiuqxcPH6F3YxefgAVzI3zwQjiUMgh/users/search/' + suggestion.data, function(o) {
+      $.getJSON('/bFI6ge1Y9oChMiFmXwzMDEs2z4ZcjWAemdE/user/' + suggestion.data, function(o) {
       console.log(o);
       $('#name').text(o.typeform['29877943'] + ' ' + o.typeform['29878535']);
       $('#email').text(o.email || ((user.profile && user.profile.name) || user.email || user._id));
