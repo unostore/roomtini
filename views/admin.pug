@@ -928,6 +928,7 @@ html.app(lang='en')
       });
       var properties = list1.map(function(i){ return i.property; });
       var properties = properties.filter(function (item, pos) {return properties.indexOf(item) == pos});
+      $('#nestable1,#nestable2').empty();
       list2.forEach(function(i) {
       var tooltip = i.typeform['37603382'].reduce(function(a, b) { return a == '' ? a + b : a + ' | ' + b; }, '');
       $('#nestable2')
