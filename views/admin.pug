@@ -662,7 +662,7 @@ html.app(lang='en')
       $("#roommates_list").append('<li class="list-group-item"> <a href="#" class="thumb-sm pull-left m-r-sm"> <img src="' + o.roommates[ii].gravatar + '" class="img-circle"> </a> <a href="#" class="clear"> <small class="pull-right"><p><button id="' + o.roommates[ii]._id + '"  class="btn btn-danger btn-sm m-r-sm roommate-remove">Remove</button></p></small> <strong class="block">' + o.roommates[ii].typeform['29877943'] + ' ' + o.roommates[ii].typeform['29878535'] + '</strong> <small>' + o.roommates[ii].typeform['29877954'] + '</small> </a> </li>');
       }
       var _r = (o.possible_candidates.map(function(q) { return q._id})).concat(o.roommates.map(function(q) { return q._id}));
-      $.getJSON('/users', function(u) {
+      $.getJSON('/douvG64nHlGDzT1anA1kYn8huGZMUCnaVQe/users', function(u) {
       var remaining_users = (u.filter(function(t) {  return _r.indexOf(t._id) < 0; })).filter(function(o) { return o._id != suggestion.data ;});
       for(var ii = 0; ii < remaining_users.length; ii++) {
       $("#uusers_list").append('<li class="list-group-item"> <a href="#" class="thumb-sm pull-left m-r-sm"> <img src="' + remaining_users[ii].gravatar + '" class="img-circle"> </a> <a href="#" class="clear"> <small class="pull-right"><p><button id="' + remaining_users[ii]._id + '" class="btn btn-primary btn-sm m-r-sm user-to-roommate">Move to Roommate</button><button id="' + remaining_users[ii]._id + '" class="btn btn-warning btn-sm user-to-candidate">Move to Candidate</button></p></small> <strong class="block">' + remaining_users[ii].typeform['29877943'] + ' ' + remaining_users[ii].typeform['29878535'] + '</strong> <small>' + remaining_users[ii].typeform['29877954'] + '</small> </a> </li>');
