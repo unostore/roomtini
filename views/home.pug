@@ -3,153 +3,87 @@ html(dir='ltr', lang='en-US')
   head
     meta(http-equiv='content-type', content='text/html; charset=utf-8')
     meta(name='author', content='SemiColonWeb')
+    link(rel='shortcut icon', href='/favicon.png')
     //
       Stylesheets
       =============================================
-    link(href='http://fonts.googleapis.com/css?family=Poppins:300,400,400italic,600,700|Montserrat:400,700|Merriweather', rel='stylesheet', type='text/css')
-    link(rel='stylesheet', href='/new/bootstrap.css', type='text/css')
-    link(rel='stylesheet', href='/new/style.css', type='text/css')
-    link(rel='stylesheet', href='/new/dark.css', type='text/css')
-    // <link rel="stylesheet" type="text/css" href="one-page/onepage.css">
-    // Media Agency Demo Specific Stylesheet
-    link(rel='stylesheet', href='/new/app-landing.css', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto:300,400,500,700', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='../css/bootstrap.css', type='text/css')
+    link(rel='stylesheet', href='../style.css', type='text/css')
+    // One Page Module Specific Stylesheet
+    link(rel='stylesheet', href='onepage.css', type='text/css')
     // /
-    link(rel='stylesheet', href='/new/font-icons.css', type='text/css')
-    link(rel='stylesheet', href='/new/et-line.css', type='text/css')
-    link(rel='stylesheet', href='/new/animate.css', type='text/css')
-    link(rel='stylesheet', href='/new/magnific-popup.css', type='text/css')
-    link(rel='stylesheet', href='/new/fonts.css', type='text/css')
-    // Bootstrap Switch CSS
-    link(rel='stylesheet', href='css/components/bs-switches.css', type='text/css')
-    link(rel='stylesheet', href='css/responsive.css', type='text/css')
+    link(rel='stylesheet', href='../css/dark.css', type='text/css')
+    link(rel='stylesheet', href='../css/font-icons.css', type='text/css')
+    link(rel='stylesheet', href='css/et-line.css', type='text/css')
+    link(rel='stylesheet', href='../css/animate.css', type='text/css')
+    link(rel='stylesheet', href='../css/magnific-popup.css', type='text/css')
+    link(rel='stylesheet', href='css/fonts.css', type='text/css')
+    link(rel='stylesheet', href='../css/responsive.css', type='text/css')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    //if lt IE 9
-      script(src='http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js')
-    link(rel='stylesheet', href='/new/colors.css', type='text/css')
-    // Core CSS file
-    link(rel='stylesheet', href='/new/photoswipe.css')
     //
-      Skin CSS file (styling of UI - buttons, caption, etc.)
-      In the folder of skin CSS file there are also:
-      - .png and .svg icons sprite,
-      - preloader.gif (for browsers that do not support CSS animations)
-    link(rel='stylesheet', href='/new/default-skin.css')
+      if lt IE 9script(src='http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js')
     //
       Document Title
       =============================================
-    title App Landing | Canvas
-    style(type='text/css').
-      .big-video-button {
-      display: inline-block;
-      width: 64px;
-      height: 64px;
-      line-height: 64px;
-      border-radius: 50%;
-      background-color: #333;
-      color: #F5F5F5 !important;
-      font-size: 24px;
-      text-align: center;
-      text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
-      opacity: 1;
-      -webkit-transition: opacity .3s ease;
-      -o-transition: opacity .3s ease;
-      transition: opacity .3s ease;
-      }
-      .big-video-button:hover { opacity: 0.9; }
-      .dark .big-video-button,
-      .big-video-button.dark {
-      background-color: #F5F5F5;
-      color: #333 !important;
-      text-shadow: none;
-      }
-      .big-video-button i:nth-of-type(1) {
-      position: relative;
-      left: 3px;
-      }
-      .big-video-button i:nth-of-type(2),
-      .big-video-button.video-played i:nth-of-type(1) { display: none; }
-      .big-video-button.video-played i:nth-of-type(2) { display: block; }
-      .big-video-button.video-played { opacity: 0.1; }
-      #slider:hover .big-video-button.video-played { opacity: 1; }
-      .videoplay-on-hover .vertical-middle { z-index: 2; }
-      .videoplay-on-hover .video-wrap { z-index: 1; }
-      .videoplay-on-hover .vertical-middle h2 {
-      font-size: 40px;
-      font-weight: bold;
-      }
-      .device-xs .videoplay-on-hover .vertical-middle h2 { font-size: 32px; }
-      .device-xxs .videoplay-on-hover .vertical-middle h2 { font-size: 26px; }
-      .accordion.accordion-border {
-      border: 0px solid #DDD;
-      border-radius: 0px;
-      }
-      .accordion {
-      margin-bottom: 0px;
-      }
-      .panel-body {
-      padding: 0px;
-      }
-      .panel-heading {
-      background-color: #267DF4 !important;
-      color: white !important;
-      }
-      .panel-heading > span {
-      font-weight: bold;
-      padding-left: 22px;
-      }
-      .pricing-box {
-      padding: 0px;
-      margin: 0px;
-      height: 650px;
-      }
-      .property-img {
-      height: 230px; width: 100%;
-      }
-      .property-info {
-      background-color: white;
-      text-align: left;
-      padding-left: 20px;
-      padding-right: 20px;
-      padding-top: 26px;
-      padding-bottom: 13px;
-      color: #4a4a4a;
-      height: 270px;
-      }
-      .property-button {
-      height: 54px;
-      background-color: #267DF4;
-      color: black;
-      line-height: 54px;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.8px;
-      position: relative;
-      }
-      .property-button > a {
-      color: white;
-      }
-      .border-form-control {
-      height: 48px;
-      padding: 8px 4px;
-      font-size: 16px;
-      letter-spacing: 1px;
-      background-color: transparent !important;
-      border-top: transparent;
-      border-right: transparent;
-      border-left: transparent;
-      border-bottom-width: 1px;
-      font-family: 'Montserrat', sans-serif;
-      }
-      textarea.border-form-control {
-      resize: none;
-      overflow: hidden;
-      word-wrap: break-word;
-      }
-      #g181,#gLS { cursor: pointer; cursor: hand; color: #267DF4; }
-      #applynow:hover {
-      background-color:white !important;
-      }
-  body.stretched
+    title Roomtini | High class living without the high Price
+  body.stretched.side-push-panel
+    .fb-like(data-share='true', data-width='450', data-show-faces='true')
+    .body-overlay
+    #side-panel.dark
+      #side-panel-trigger-close.side-panel-trigger
+        a(href='#')
+          i.icon-line-cross
+      .side-panel-wrap
+        .widget.widget_links.clearfix
+          h4 About Roomtini
+          div(style='font-size: 14px; line-height: 1.7;')
+            address(style='line-height: 1.7;')
+              | 900 Folsom Ave, Suite 600
+              br
+              |             San Francisco, CA 94107
+              br
+            .clear.topmargin-sm
+            abbr(title='Phone Number') Phone:
+            |  (91) 8547 632521
+            br
+            abbr(title='Fax') Fax:
+            |  (91) 11 4752 1433
+            br
+            abbr(title='Email Address') Email:
+            |  support@roomtini.com
+        .widget.quick-contact-widget.clearfix
+          h4 Connect Socially
+          a.social-icon.si-small.si-colored.si-facebook(href='#', title='Facebook')
+            i.icon-facebook
+            i.icon-facebook
+          a.social-icon.si-small.si-colored.si-twitter(href='#', title='Twitter')
+            i.icon-twitter
+            i.icon-twitter
+          a.social-icon.si-small.si-colored.si-github(href='#', title='Github')
+            i.icon-github
+            i.icon-github
+          a.social-icon.si-small.si-colored.si-pinterest(href='#', title='Pinterest')
+            i.icon-pinterest
+            i.icon-pinterest
+          a.social-icon.si-small.si-colored.si-forrst(href='#', title='Forrst')
+            i.icon-forrst
+            i.icon-forrst
+          a.social-icon.si-small.si-colored.si-linkedin(href='#', title='LinkedIn')
+            i.icon-linkedin
+            i.icon-linkedin
+          a.social-icon.si-small.si-colored.si-gplus(href='#', title='Google Plus')
+            i.icon-gplus
+            i.icon-gplus
+          a.social-icon.si-small.si-colored.si-instagram(href='#', title='Instagram')
+            i.icon-instagram
+            i.icon-instagram
+          a.social-icon.si-small.si-colored.si-flickr(href='#', title='Flickr')
+            i.icon-flickr
+            i.icon-flickr
+          a.social-icon.si-small.si-colored.si-skype(href='#', title='Skype')
+            i.icon-skype
+            i.icon-skype
     //
       Document Wrapper
       =============================================
@@ -157,7 +91,7 @@ html(dir='ltr', lang='en-US')
       //
         Header
         =============================================
-      header#header.split-menu.transparent-header.dark(data-sticky-class='not-dark', data-responsive-class='not-dark')
+      header#header.full-header.transparent-header.border-full-header.dark.static-sticky(data-sticky-class='not-dark', data-sticky-offset='full', data-sticky-offset-negative='100')
         #header-wrap
           .container.clearfix
             #primary-menu-trigger
@@ -166,277 +100,419 @@ html(dir='ltr', lang='en-US')
               Logo
               =============================================
             #logo
-              a.standard-logo(href='index.html', data-dark-logo='/new/roomtini_logo_dark.png')
-                img(src='/new/roomtini_logo.png', alt='Canvas Logo', style='height: 65px; width:300px; margin-top: 10px;')
-              // <a href="index.html" class="retina-logo" data-dark-logo="demos/app-landing/images/logo-dark@2x.png"><img src="demos/app-landing/images/logo@2x.png" alt="Canvas Logo"></a>
+              a.standard-logo(href='index.html', data-dark-logo='images/canvasone-dark.png')
+                img(src='images/canvasone.png', alt='Canvas Logo')
+              a.retina-logo(href='index.html', data-dark-logo='images/canvasone-dark@2x.png')
+                img(src='images/canvasone@2x.png', alt='Canvas Logo')
             // #logo end
             //
               Primary Navigation
               =============================================
-            nav#primary-menu.with-arrows.clearfix.not-dark
-              ul.one-page-menu(data-easing='easeInOutExpo', data-speed='1250', data-offset='160')
+            nav#primary-menu
+              ul.one-page-menu(data-easing='easeInOutExpo', data-speed='1250', data-offset='65')
                 li
                   a(href='#', data-href='#wrapper')
                     div Home
-                //
-                  <li><a href="#" data-href="#section-nextgen"><div>Explore</div></a>
-                  <ul>
-                  <li><a href="#" data-href="#section-nextgen"><div>NextGen Framework</div></a></li>
-                  <li><a href="#" data-href="#section-stunning-graphics"><div>Stunning Graphics</div></a></li>
-                  <li><a href="#" data-href="#section-secured-solutions"><div>Secured Solutions</div></a></li>
-                  </ul>
-                  </li>
-                  <li><a href="#" data-href="#section-pricing"><div>Pricing</div></a></li>
-              ul.one-page-menu(data-easing='easeInOutExpo', data-speed='1250', data-offset='160')
                 li
-                  a(href='#', data-href='#section-faqs')
-                    div FAQs
+                  a(href='#', data-href='#section-about')
+                    div About
+                li
+                  a(href='#', data-href='#section-locations')
+                    div Locations
+                li
+                  a(href='#', data-href='#page-title')
+                    div FAQ
                 if !user
-                  li.menu-item-emphasis
-                    a(href='/login')
-                      div Login
-                else 
-                  li
+                  li(class=(title == 'Login') ? 'active' : undefined)
+                    a(href='/login') 
+                      div Sign In
+                else    
+                  li.sub-menu
                     a(href='#')
                       div='' + ((user.profile && user.profile.name) || user.email || user.id)
-                    ul
+                    ul(style='display: none')
                       li
-                        a(href='/account')
+                        a.sf-with-ul(href='/account')
                           div My account
                       li
-                        a(href='/logout')
+                        a.sf-with-ul(href='/logout')
                           div Logout
-                if !user
-                  li.menu-item-emphasis(style='padding-left: 20px ')
-                    a(href='/signup', style='background-color: black;', id="applynow")
-                      div Apply Now
+                li
+                  a.button.button-mini.button-rounded.button-teal(href='/signup') Apply Now!
+                #side-panel-trigger.side-panel-trigger
+                  a(href='#')
+                    i.icon-reorder
             // #primary-menu end
       // #header end
-      section#slider.full-screen.slider-parallax
-        .slider-parallax-inner(style="background: url('/new/4517757-san-francisco-wallpapers.jpg') center center no-repeat; background-size: cover;")
-          .vertical-middle(style='z-index: 2;')
-            .container.dark.clearfix
-              .row.clearfix
-                .col-md-12.col-sm-8
-                  .emphasis-title(style='text-align: right')
-                    // <h1 class="font-body">Beautiful Websites.<br>Increased Conversions.</h1>
-                    h1
-                      span.text-rotater.nocolor(data-separator='|', data-rotate='fadeIn', data-speed='4000')
-                        span.t-rotate.t700.font-body.opm-large-word Downtown |San Francisco |Starting at $1149 |Luxury |Close to Work 
-                  a.button.button-large.button-white.button-light.capitalize(href='#section-map', data-scrollto='#section-map', data-easing='easeInOutExpo', data-speed='1250', data-offset='160', style='border-radius: 23px; float: right; margin-right: 0px') Explore Locations
-                  a.hero-action-link(style='float: right;margin-top: 12px;margin-right: 10px;', href='https://www.youtube.com/watch?v=N_r349riLEE', data-lightbox='iframe')
-                    | Watch the Video 
-                    i.icon-play-sign
-          .video-wrap(style='position: absolute; height: 100%; z-index: 1;')
-            .video-overlay(style='background: rgba(0,0,0,0.2);')
+      //
+        Slider
+        =============================================
+      section#slider.slider-parallax.full-screen.force-full-screen
+        .slider-parallax-inner
+          .full-screen.force-full-screen.dark.section.nopadding.nomargin.noborder.ohidden(style="background-image: url('images/page/main.jpg'); background-size: cover; background-position: center center;")
+            .container.center
+              .vertical-middle
+                .emphasis-title
+                  h1
+                    span.text-rotater.nocolor(data-separator='|', data-rotate='fadeIn', data-speed='2000')
+                      span.t-rotate.t700.font-body.opm-large-word Luxury.|Close to Work.|Downtown.|San Francisco.|Starting at 1,149.
+                a.button.button-border.button-light.button-circle(href='#', data-scrollto='#section-works', data-easing='easeInOutExpo', data-speed='1250', data-offset='70') Book a Tour!
+            .video-wrap
+              .video-overlay(style='background-color: rgba(0,0,0,0.55);')
+            a.one-page-arrow.dark(href='#', data-scrollto='#section-about', data-easing='easeInOutExpo', data-speed='1250', data-offset='65')
+              i.icon-angle-down.infinite.animated.fadeInDown
+      // #slider end
       //
         Content
         =============================================
       section#content
-        .content-wrap
-          // Modal
-          #modal-login.modal1.mfp-hide
-            .block.divcenter(style='background-color: #FFF; max-width: 400px;')
-              div(style='padding: 50px;')
-                h3.font-body Login to your Account
-                form.nobottommargin(action='#', method='post')
-                  .col_full
-                    label.font-body.capitalize(for='login-form-modal-username') Username:
-                    input#login-form-modal-username.form-control(type='text', name='login-form-modal-username', value='')
-                  .col_full
-                    label.font-body.capitalize(for='login-form-modal-password') Password:
-                    input#login-form-modal-password.form-control(type='password', name='login-form-modal-password', value='')
-                  .col_full.nobottommargin
-                    button#login-form-modal-submit.button.button-rounded.nomargin(name='login-form-modal-submit', value='login') Login
-                    a.fright(href='#') Forgot Password?
-                .line.line-sm
-                a.button.button-rounded.btn-block.t400.center.capitalize.si-facebook.si-colored.noleftmargin.norightmargin(href='#') Login with Facebook
-                a.button.button-rounded.btn-block.t400.center.capitalize.si-gplus.si-colored.nomargin(href='#') Login with Google
-          .clear
-          #section-first_para.page-section.nopadding.nomargin
-            .container.topmargin.bottommargin-lg.center.clearfix
-              h3.ls1.t400(style='font-size: 32px; margin-bottom: 10px;') Making City Living Amazingly Affordable
-              p.lead.divcenter(style='max-width: 600px')
-                | We are on a journey to make city living affordable again. Bringing in residents full of increasing Culture, diversity, and Energy back into the city!
-              a.button.button-circle.capitalize(href='#section-map', data-scrollto='#section-map') Explore Locations
-          .clear
-          #section-second_para.section(style='color: #999; background-color: #F8FAFB; border-top: 1px solid #E5E5E5; border-bottom: 1px solid #E5E5E5;')
+        .content-wrap.nopadding
+          #section-about.center.page-section
             .container.clearfix
-              .row.topmargin-lg.clearfix
-                .col-md-4.bottommargin
-                  i.i-plain.i-large.icon-et-calendar.inline-block(style='margin-bottom: 30px; color: #999;')
-                  .heading-block.nobottomborder(style='margin-bottom: 15px;')
-                    h4(style='font-size: 16px;') Book a Tour!
-                  p(style='line-height: 26px;')
-                    | Canvas 4 Loads Faster & Smoother than the Previous Versions providing an Optimal Experience for your Users.
-                .col-md-4.bottommargin
-                  i.i-plain.i-large.icon-et-adjustments.inline-block(style='margin-bottom: 30px; color: #999;')
-                  .heading-block.nobottomborder(style='margin-bottom: 15px;')
-                    h4(style='font-size: 16px;') Apply to be Matched!
-                  p(style='line-height: 26px;')
-                    | Unleash the Power of Mega Menus by adding Widgets & Mixed Columns powered by the Bootstrap Grid.
-                .col-md-4.bottommargin
-                  i.i-plain.i-large.icon-et-cloud.inline-block(style='margin-bottom: 30px; color: #999;')
-                  .heading-block.nobottomborder(style='margin-bottom: 15px;')
-                    h4(style='font-size: 16px;') Move In!
-                  p(style='line-height: 26px;')
-                    | Amazing set of New Components giving you Opportunity to Create an Interactive Website for your Business.
-          .clear
-          #section-third_para.page-section.nopadding.nomargin
-            .container.topmargin.bottommargin-lg.center.clearfix
-              h3.ls1.t400(style='font-size: 32px; margin-bottom: 10px;') Rent is too Dang High!
-              p.lead.divcenter(style='max-width: 600px') We at Roomtini create solutions to give renters more for less ...
-          .clear
-          // Properties Section
-          #section-fourth_para.page-section.nopadding.nomargin
-            .col-xs-6.nopadding.full-screen.force-full-screen.dark(style="background-image: url('/new/181Fremont.jpg'); background-size: cover;")
-              .vertical-middle(style='z-index: 2;text-align: center; ')
-                .inline-block
-                  a#play-hero-video.big-video-button.bottommargin(href='https://www.youtube.com/watch?v=oJRl_G0KqOw', data-lightbox='iframe')
-                    i.icon-line-play
-                .emphasis-title.divcenter.hidden-xs(style='max-width: 450px;')
-                  h1.t700.font-body.ls1(style='font-size: 34px;') 181 Fremont
-                  h4#g181 View Gallery
-                .clear
-                a.button.button-border.button-light.button-circle.hidden-xs(href='https://jo279.typeform.com/to/FmAr3H', target='_blank') Book a Tour!
-              .video-wrap(style='z-index: 1;')
-                .video-overlay(style='background-color: rgba(0,0,0,0.7);')
-            .col-xs-6.nopadding.full-screen.force-full-screen.dark(style="background-image: url('/new/LSeven.jpg'); background-size: cover;background-position: center; ")
-              .vertical-middle(style='z-index: 2;text-align: center !important;')
-                .inline-block
-                  a#play-hero-video.big-video-button.bottommargin(href='http://vimeo.com/117770305', data-lightbox='iframe')
-                    i.icon-line-play
-                .emphasis-title.divcenter.hidden-xs(style='max-width: 450px;')
-                  h1.t700.font-body.ls1(style='font-size: 34px;') L Seven
-                  h4#gLS View Gallery
-                .clear
-                a.button.button-border.button-light.button-circle.hidden-xs(href='https://jo279.typeform.com/to/BakX72', target='_blank') Book a Tour!
-              .video-wrap(style='z-index: 1;')
-                .video-overlay(style='background-color: rgba(0,0,0,0.7);')
-          .clear
-          // FAQ Section
-          .clear
-          #section-faqs.section.page-section.nomargin(style='border-bottom: 1px solid #E5E5E5;')
-            .row.topmargin-sm.clearfix
-              h2.center.font-body.bottommargin-lg Frequently Asked Questions
-              .col-md-8.col-md-offset-2.col-sm-6.bottommargin-sm
-                .panel.panel-default
-                  .panel-heading
-                    span General
-                  .panel-body
-                    .accordion.accordion-border.clearfix(style='')
-                      .acctitle What is Roomtini?
-                      .acc_content.clearfix
-                        | Roomtini enables elegent use of apartment layouts to create affordable living for everyone. We provide smart furntiure arrangments to create additional rooms allowing rent to superbly low. Luxury amentities once only available to high income earners are now available to everyone.
-                      .acctitle Do you run Credit?
-                      .acc_content.clearfix
-                        | The leasing office will a credit check on everyone producing a combined score to qualify for the apartment. This makes it easy to qualify, as the combined score means not everyone needs good credit.
-                      .acctitle How much is Utilities?
-                      .acc_content.clearfix
-                        | Many of our selection of our apartments have highly effecient appliances. Utilities costs are split 3 or 4 ways bringing it down to very affordable levels.
-                      .acctitle How much is parking?
-                      .acc_content.clearfix
-                        | Parking is always free on the streets. If you would like attached garage parking, fees range from $200-$300 / per month.
-                      .acctitle How long are the lease terms?
-                      .acc_content.clearfix We currently offer 12 to 18 month leases.
-                      .acctitle How does Roomtini make money?
-                      .acc_content.clearfix
-                        | Roomtini charges a nominal monthly fees for our matching and happines services. This helps cover the cost of partition and late payment protections we provide.
-                      .acctitle Who's name is on the lease?
-                      .acc_content.clearfix All individuals living in the apartment will all be on the lease.
-                      .acctitle What if I want to get out of my lease early?
-                      .acc_content.clearfix
-                        | You would have to find replacements typical of many apartment leases. In limited circumstances we will work with the leasing office to come with a solution that works for everyone.
-                      .acctitle Who will I be paying?
-                      .acc_content.clearfix
-                        | All members on the lease will be remiting payent to Roomtini who will be paying the apartment on your behalf.
-                      .acctitle What can fit in the room?
-                      .acc_content.clearfix
-                        | Split rooms will fit a full bed and in some rooms will fit a queen. A deks and dressor may also fit depending on the setup.
-                      .acctitle Will there be any stoarge?
-                      .acc_content.clearfix
-                        | Yes, additional storage can be rented for $75 a month or you can be creative and raise your bed to provide additional storage right under your bed!
-                      .acctitle Are pets allowed?
-                      .acc_content.clearfix
-                        | No, happiness is our #1 priority and many of our matches have shown to have a no pet prefrence. If opinions change, we would be happy to reconsider.
-                      .acctitle Can couples share a partitioned room?
-                      .acc_content.clearfix
-                        | Unfortunatly we can not. However, couples can choose to rent out an entire room in a roomtini home.
-                      .acctitle  Are there any community events?
-                      .acc_content.clearfix Yes, roomtini plans on hosting many community events as our community grows!.
+              h2.divcenter.bottommargin.font-body(style='max-width: 700px; font-size: 40px;') Making City Living Amazingly Affordable &  City Living is full of Adventure!
+              p.lead.divcenter.bottommargin(style='max-width: 800px;')
+                | We are on a journey to make city living affordable again. Bringing in residents full of increasing Culture, diversity, and Energy back into the city!
+              p.bottommargin(style='font-size: 16px;')
+                a.more-link(href='#', data-scrollto='#section-services', data-easing='easeInOutExpo', data-speed='1250', data-offset='70')
+                  | Learn more 
+                  i.icon-angle-right
+              
+              .col_full.bottommargin-lg.common-height
+                .col-md-4.dark.col-padding.ohidden(style='background-color: #1abc9c;')
+                  div
+                    h3.uppercase(style='font-weight: 600;') Book a Tour!
+                    p(style='line-height: 1.8;')
+                      | Transform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security Rosa.
+                    a.button.button-border.button-light.button-rounded.button-reveal.tright.uppercase.nomargin(href='#')
+                      i.icon-angle-right
+                      span Read More
+                    i.icon-bulb.bgicon
+                .col-md-4.dark.col-padding.ohidden(style='background-color: #34495e;')
+                  div
+                    h3.uppercase(style='font-weight: 600;') Apply to be Matched!
+                    p(style='line-height: 1.8;')
+                      | Frontline respond, visionary collaborative cities advancement overcome injustice, UNHCR public-private partnerships cause. Giving, country educate rights-based approach; leverage disrupt solution.
+                    a.button.button-border.button-light.button-rounded.uppercase.nomargin(href='#') Read More
+                    i.icon-cog.bgicon
+                .col-md-4.dark.col-padding.ohidden(style='background-color: #e74c3c;')
+                  div
+                    h3.uppercase(style='font-weight: 600;') Move In!!!
+                    p(style='line-height: 1.8;')
+                      | Sustainability involvement fundraising campaign connect carbon rights, collaborative cities convener truth. Synthesize change lives treatment fluctuation participatory monitoring underprivileged equal.
+                    a.button.button-border.button-light.button-rounded.uppercase.nomargin(href='#') Read More
+                    i.icon-thumbs-up.bgicon
+                  .clear
+
+          #section-works.page-section.notoppadding
+            .section.nomargin
+              .container.clearfix
+                .divcenter.center(style='max-width: 900px;')
+                  h2.nobottommargin.t300.ls1
+                    | Rent is too Dang High! & We at Roomtini create solutions to give renters more for less..
+            //
+              Portfolio Items
+              =============================================
+            #section-locations.portfolio.grid-container.portfolio-nomargin.portfolio-full.portfolio-masonry.mixed-masonry.clearfix
+              article.portfolio-item.pf-media.pf-icons.wide
+                .portfolio-image
+                  .fslider(data-arrows='false', data-speed='400', data-pause='4000')
+                    a(href='#')
+                      img(src='images/portfolio/mixed/1.png', alt='L Seven')
+                    .portfolio-overlay(data-lightbox='gallery')
+                      a.hidden(href='images/portfolio/full/31.jpg', data-lightbox='gallery-item')
+                      a.hidden(href='images/portfolio/full/32.jpg', data-lightbox='gallery-item')
+                      a.hidden(href='images/portfolio/full/33.jpg', data-lightbox='gallery-item')
+                      a.hidden(href='images/portfolio/full/34.jpg', data-lightbox='gallery-item')
+                      a.hidden(href='images/portfolio/full/35.jpg', data-lightbox='gallery-item')
+                      a.hidden(href='images/portfolio/full/36.jpg', data-lightbox='gallery-item')
+                      .portfolio-desc
+                        h3
+                          a(href='#') L Seven
+                        span
+                          a(href='#myModal4', data-lightbox='inline') About  |
+                          | , 
+                          a(href='images/portfolio/full/30.jpg', data-lightbox='gallery-item') Gallery
+                        a.button.button-border.button-black.button-circle(href='#myModal1', data-lightbox='inline') Book a Tour!
+              article.portfolio-item.pf-media.pf-icons.wide
+                .portfolio-image
+                  .fslider(data-arrows='false', data-speed='400', data-pause='4000')
+                    .flexslider
+                      .slider-wrap
+                        .slide
+                          a(href='#')
+                            img(src='images/portfolio/mixed/2.jpg', alt='L Seven')
+                        .slide
+                          a(href='')
+                            img(src='images/portfolio/full/31.jpg', alt='')
+                  .portfolio-overlay(data-lightbox='gallery')
+                    a.hidden(href='images/portfolio/full/21.jpg', data-lightbox='gallery-item')
+                    a.hidden(href='images/portfolio/full/22.jpg', data-lightbox='gallery-item')
+                    a.hidden(href='images/portfolio/full/23.jpg', data-lightbox='gallery-item')
+                    a.hidden(href='images/portfolio/full/24.jpg', data-lightbox='gallery-item')
+                    a.hidden(href='images/portfolio/full/25.jpg', data-lightbox='gallery-item')
+                    a.hidden(href='images/portfolio/full/26.jpg', data-lightbox='gallery-item')
+                    a.hidden(href='images/portfolio/full/27.jpg', data-lightbox='gallery-item')
+                    a.hidden(href='images/portfolio/full/28.jpg', data-lightbox='gallery-item')
+                    .portfolio-desc
+                      h3
+                        a(href='#') Soma Square
+                      span
+                        a(href='#myModal3', data-lightbox='inline') About |
+                        | , 
+                        a(href='images/portfolio/full/29.jpg', data-lightbox='gallery-item') Gallery
+                      a.button.button-border.button-black.button-circle(href='#myModal2', data-lightbox='inline') Book a Tour!
+            // #portfolio end
+            .topmargin.center
+              a.button.button-border.button-circle.t600(href='#') View More Locations
+          #section-services.page-section.notoppadding
+            .section.nomargin
+              .container.clearfix
+                .divcenter.center(style='max-width: 900px;')
+                  h2.nobottommargin.t300.ls1 We are on a mission to bring the culture back into the city!
+            .section.parallax.nomargin.dark(style="background-image: url('images/page/testimonials.jpg'); padding: 150px 0;", data-stellar-background-ratio='0.3')
+              .container.clearfix
+                .col_two_fifth.nobottommargin  
+                .col_three_fifth.nobottommargin.col_last
+                  .fslider.testimonial.testimonial-full.nobgcolor.noborder.noshadow.nopadding(data-arrows='false')
+                    .flexslider
+                      .slider-wrap
+                        .slide
+                          .testi-content
+                            p
+                              | Roomtini has given me the opportunity to enjoy many exciting expereinces in the City!
+                            .testi-meta
+                              | Mark Jodie
+                              span Academey of Arts Student
+                        .slide
+                          .testi-content
+                            p No more long traffic commutes! Amazing!
+                            .testi-meta
+                              | Patrick Massionic
+                              span Twillo
+                        .slide
+                          .testi-content
+                            p
+                              | Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!
+                            .testi-meta
+                              | Mallary Zacherium
+                              span Zynga
+          section#page-title
+            .container.clearfix
+              h1 FAQs
+              span All your Questions answered in one place
+          // #page-title end
+          .content-wrap
+            .container.clearfix
               //
-                <div class="col-md-5 col-sm-6 bottommargin-sm">
-                <div class="panel panel-default">
-                <div class="panel-heading">
-                <span>     General</span>
-                </div>
-                <div class="panel-body">
-                <div class="accordion accordion-border clearfix" style="">
-                <div class="acctitle">What is Roomtini?</div>
-                <div class="acc_content clearfix">Roomtini enables elegent use of apartment layouts to create affordable living for everyone. We provide smart furntiure arrangments to create additional rooms allowing rent to superbly low. Luxury amentities once only available to high income earners are now available to everyone.</div>
-                <div class="acctitle">Do you run Credit?</div>
-                <div class="acc_content clearfix">The leasing office will a credit check on everyone producing a combined score to qualify for the apartment. This makes it easy to qualify, as the combined score means not everyone needs good credit.</div>
-                <div class="acctitle">How much is Utilities?</div>
-                <div class="acc_content clearfix">Many of our selection of our apartments have highly effecient appliances. Utilities costs are split 3 or 4 ways bringing it down to very affordable levels.</div>
-                <div class="acctitle">How much is parking?</div>
-                <div class="acc_content clearfix">Parking is always free on the streets. If you would like attached garage parking, fees range from $200-$300 / per month.</div>
-                <div class="acctitle">How long are the lease terms?</div>
-                <div class="acc_content clearfix">We currently offer 12 to 18 month leases.</div>
-                <div class="acctitle">How does Roomtini make money?</div>
-                <div class="acc_content clearfix">Roomtini charges a nominal monthly fees for our matching and happines services. This helps cover the cost of partition and late payment protections we provide.</div>
-                <div class="acctitle">Who's name is on the lease?</div>
-                <div class="acc_content clearfix">All individuals living in the apartment will all be on the lease.</div>
-                <div class="acctitle">What if I want to get out of my lease early?</div>
-                <div class="acc_content clearfix">You would have to find replacements typical of many apartment leases. In limited circumstances we will work with the leasing office to come with a solution that works for everyone.</div>
-                <div class="acctitle">Who will I be paying?</div>
-                <div class="acc_content clearfix">All members on the lease will be remiting payent to Roomtini who will be paying the apartment on your behalf.</div>
-                <div class="acctitle">What can fit in the room?</div>
-                <div class="acc_content clearfix">Split rooms will fit a full bed and in some rooms will fit a queen. A deks and dressor may also fit depending on the setup.</div>
-                <div class="acctitle">Will there be any stoarge?</div>
-                <div class="acc_content clearfix">Yes, additional storage can be rented for $75 a month or you can be creative and raise your bed to provide additional storage right under your bed!</div>
-                <div class="acctitle">Are pets allowed?</div>
-                <div class="acc_content clearfix">No, happiness is our #1 priority and many of our matches have shown to have a no pet prefrence. If opinions change, we would be happy to reconsider.</div>
-                <div class="acctitle">Can couples share a partitioned room?</div>
-                <div class="acc_content clearfix">Unfortunatly we can not. However, couples can choose to rent out an entire room in a roomtini home.</div>
-                <div class="acctitle"> Are there any community events?</div>
-                <div class="acc_content clearfix">Yes, roomtini plans on hosting many community events as our community grows!.</div>
-                </div>
-                </div>
-                </div>
-                </div>
-          .clear
-          #section-map.page-section(style='padding-top: 0px;')
-            .container.topmargin.bottommargin-lg.center.clearfix
-              div
-                h3(style='text-align: center;') FEATURED LOCATIONS
-                .col-md-4
-                  .pricing-box(style='height: auto')
-                    div
-                      img.property-img(src='/new/181Fremont.jpg')
-                    .property-info
-                      h4 181 Fremont Apartments
-                      p
-                        | 181 Fremont's top 17 stories encompass residences from two-bedrooms to the full-floor Penthouse—each with spectacular Bay and City views.
-                    .property-button
-                      a(href='https://jo279.typeform.com/to/FmAr3H') Book a tour!
-                .col-md-4
-                  .pricing-box(style='height: auto')
-                    div
-                      img.property-img(src='/new/LSeven.jpg')
-                    .property-info
-                      h4 L Seven Apartments
-                      p
-                        | Brand new studio, 1 and 2 bedroom apartments and lofts in San Francisco. Our downtown SOMA location is just four blocks from the Civic Center & UN Plaza Bart Station and walking distance to major employers including Zynga, Adobe, Twitter, Thumbtack, and more.
-                    .property-button
-                      a(href='https://jo279.typeform.com/to/BakX72') Book a tour!
-                .col-md-4
-                  #map.pricing-box(style='height: 556px;')
-          .line.topmargin-lg.bottommargin-lg
-          #section-contact.page-section
-            .container.topmargin.bottommargin-lg.center.clearfix
-              h2.bottommargin Get in Touch.
-              .row.clearfix(style='padding-left: 80px;padding-right: 80px;')
-                .col-md-8
+                Post Content
+                =============================================
+              .postcontent.nobottommargin.clearfix
+                ul#portfolio-filter.portfolio-filter.clearfix
+                  li.activeFilter
+                    a(href='#', data-filter='all') All
+                  li
+                    a(href='#', data-filter='.faq-general') General
+                  li
+                    a(href='#', data-filter='.faq-expenses') Expenses
+                  li
+                    a(href='#', data-filter='.faq-steps') Process
+                  li
+                    a(href='#', data-filter='.faq-lease') Lease Terms
+                  li
+                    a(href='#', data-filter='.faq-matching') Matching
+                  li
+                    a(href='#', data-filter='.faq-miscellaneous') Miscellaneous
+                .clear
+                #faqs.faqs
+                  .toggle.faq.faq-general
+                    .togglet
+                      i.toggle-closed.icon-question-sign
+                      i.toggle-open.icon-question-sign
+                      | What is Roomtini?
+                    .togglec
+                      | Roomtini enables elegent use of apartment layouts to create affordable living for everyone. We provide smart furntiure arrangments to create additional rooms allowing rent to superbly low. Luxury amentities once only available to high income earners are now available to everyone.
+                  .toggle.faq.faq-steps
+                    .togglet
+                      i.toggle-closed.icon-comments-alt
+                      i.toggle-open.icon-comments-alt
+                      | Do you run Credit?
+                    .togglec
+                      | The leasing office will a credit check on everyone producing a combined score to qualify for the apartment. This makes it easy to qualify, as the combined score means not everyone needs good credit.
+                  .toggle.faq.faq-expenses
+                    .togglet
+                      i.toggle-closed.icon-lock3
+                      i.toggle-open.icon-lock3
+                      | How much is Utilities?
+                    .togglec
+                      | Many of our selection of our apartments have highly effecient appliances. Utilities costs are split 3 or 4 ways bringing it down to very affordable levels.
+                  .toggle.faq.faq-expenses
+                    .togglet
+                      i.toggle-closed.icon-download-alt
+                      i.toggle-open.icon-download-alt
+                      | How much is parking?
+                    .togglec
+                      | Parking is always free on the streets. If you would like attached garage parking, fees range from $200-$300 / per month.
+                  .toggle.faq.faq-lease
+                    .togglet
+                      i.toggle-closed.icon-ok
+                      i.toggle-open.icon-ok
+                      | How long are the lease terms?
+                    .togglec We currently offer 12 to 18 month leases. 
+                  .toggle.faq.faq-general
+                    .togglet
+                      i.toggle-closed.icon-money
+                      i.toggle-open.icon-money
+                      | How does Roomtini make money?
+                    .togglec
+                      | Roomtini charges a nominal monthly fees for our matching and happines services. This helps cover the cost of partition and late payment protections we provide.
+                  .toggle.faq.faq-legal
+                    .togglet
+                      i.toggle-closed.icon-picture
+                      i.toggle-open.icon-picture
+                      | Who's name is on the lease?
+                    .togglec All individuals living in the apartment will all be on the lease.
+                  .toggle.faq.faq-lease
+                    .togglet
+                      i.toggle-closed.icon-file3
+                      i.toggle-open.icon-file3
+                      | What if I want to get out of my lease early?
+                    .togglec
+                      | You would have to find replacements typical of many apartment leases. In limited circumstances we will work with the leasing office to come with a solution that works for everyone.
+                  .toggle.faq.faq-expenses
+                    .togglet
+                      i.toggle-closed.icon-bar-chart
+                      i.toggle-open.icon-bar-chart
+                      | Who will I be paying?
+                    .togglec
+                      | All members on the lease will be remiting payent to Roomtini who will be paying the apartment on your behalf.
+                  .toggle.faq.faq-general
+                    .togglet
+                      i.toggle-closed.icon-phone3
+                      i.toggle-open.icon-phone3
+                      | What can fit in the room?
+                    .togglec
+                      | Split rooms will fit a full bed and in some rooms will fit a queen. A deks and dressor may also fit depending on the setup.
+                  .toggle.faq.faq-expenses
+                    .togglet
+                      i.toggle-closed.icon-credit
+                      i.toggle-open.icon-credit
+                      | Will there be any stoarge?
+                    .togglec
+                      | Yes, additional storage can be rented for $75 a month or you can be creative and raise your bed to provide additional storage right under your bed!
+                  .toggle.faq.faq-lease
+                    .togglet
+                      i.toggle-closed.icon-credit
+                      i.toggle-open.icon-credit
+                      | Are pets allowed?
+                    .togglec
+                      | No, happiness is our #1 priority and many of our matches have shown to have a no pet prefrence. If opinions change, we would be happy to reconsider.
+                  .toggle.faq.faq-matching
+                    .togglet
+                      i.toggle-closed.icon-credit
+                      i.toggle-open.icon-credit
+                      | Can couples share a partitioned room?
+                    .togglec
+                      | Unfortunatly we can not. However, couples can choose to rent out an entire room in a roomtini home.
+                  .toggle.faq.faq-miscellaneous
+                    .togglet
+                      i.toggle-closed.icon-credit
+                      i.toggle-open.icon-credit
+                      | Are there any community events?
+                    .togglec Yes, roomtini plans on hosting many community events as our community grows!.
+              // .postcontent end
+              // Modal
+              #myModal1.modal1.mfp-hide(style='height: 100%')
+                .block.divcenter(style='background-color: #FFF; max-width: 80%; height: 100%;')
+                  .center.clearfix
+                    iframe#typeform-full(width='100%', height='400px', frameborder='0', src='https://jo279.typeform.com/to/BakX72')
+                // Modal
+                #myModal2.modal2.mfp-hide(style='height: 100%')
+                  .block.divcenter(style='background-color: #FFF; max-width: 80%; height: 100%;')
+                    .center.clearfix
+                      iframe#typeform-full(width='100%', height='400px', frameborder='0', src='https://jo279.typeform.com/to/FmAr3H')
+                // Modal
+                #myModal3.modal3.mfp-hide(style='height: 100%')
+                  .block.divcenter(style='background-color: #FFF; max-width: 80%; height: 100%;')
+                    .center.clearfix
+                                       
+                      .col_one_third.nobottommargin
+                        .feature-box.media-box
+                          .fbox-media
+                            img(src='images/services/1.jpg', alt='Why choose Us?')
+                          .fbox-desc
+                            h3
+                              | Book a Tour!
+                              span.subtitle Because we are Reliable.
+                            p
+                              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi rem, facilis nobis voluptatum est voluptatem accusamus molestiae eaque perspiciatis mollitia.
+                      .col_one_third.nobottommargin
+                        .feature-box.media-box
+                          .fbox-media
+                            img(src='images/services/2.jpg', alt='Why choose Us?')
+                          .fbox-desc
+                            h3
+                              | Apply & get Matched!
+                              span.subtitle To Redefine your Brand.
+                            p
+                              | Quos, non, esse eligendi ab accusantium voluptatem. Maxime eligendi beatae, atque tempora ullam. Vitae delectus quia, consequuntur rerum molestias quo.
+                      .col_one_third.nobottommargin.col_last
+                        .feature-box.media-box
+                          .fbox-media
+                            img(src='images/services/3.jpg', alt='Why choose Us?')
+                          .fbox-desc
+                            h3
+                              | Move In!!!
+                              span.subtitle Make our Customers Happy.
+                            p
+                              | Porro repellat vero sapiente amet vitae quibusdam necessitatibus consectetur, labore totam. Accusamus perspiciatis asperiores labore esse ab accusantium ea modi ut.
+   
+                // Modal
+                #myModal4.modal4.mfp-hide(style='height: 100%')
+                  .block.divcenter(style='background-color: #FFF; max-width: 80%; height: 100%;')
+                    .center.clearfix
+                                       
+                      .col_one_third.nobottommargin
+                        .feature-box.media-box
+                          .fbox-media
+                            img(src='images/services/1.jpg', alt='Why choose Us?')
+                          .fbox-desc
+                            h3
+                              | Location.
+                              span.subtitle Because we are Reliable.
+                            p
+                              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi rem, facilis nobis voluptatum est voluptatem accusamus molestiae eaque perspiciatis mollitia.
+                      .col_one_third.nobottommargin
+                        .feature-box.media-box
+                          .fbox-media
+                            img(src='images/services/2.jpg', alt='Why choose Us?')
+                          .fbox-desc
+                            h3
+                              | Apartment.
+                              span.subtitle To Redefine your Brand.
+                            p
+                              | Quos, non, esse eligendi ab accusantium voluptatem. Maxime eligendi beatae, atque tempora ullam. Vitae delectus quia, consequuntur rerum molestias quo.
+                      .col_one_third.nobottommargin.col_last
+                        .feature-box.media-box
+                          .fbox-media
+                            img(src='images/services/3.jpg', alt='Why choose Us?')
+                          .fbox-desc
+                            h3
+                              | Amentities.
+                              span.subtitle Make our Customers Happy.
+                            p
+                              | Porro repellat vero sapiente amet vitae quibusdam necessitatibus consectetur, labore totam. Accusamus perspiciatis asperiores labore esse ab accusantium ea modi ut.
+   
+  
+                  //
+                    Sidebar
+                    =============================================
+                  .sidebar.nobottommargin.col_last.clearfix
+                    .sidebar-widgets-wrap
+                      .widget.widget_links.clearfix
+                        h4 Pages
+                  // .sidebar end
+              .container.clearfix
+                .divcenter.topmargin(style='max-width: 850px;')
                   .contact-widget
                     .contact-form-result
                     form#template-contactform.nobottommargin(name='template-contactform', action='include/sendemail.php', method='post')
@@ -446,116 +522,75 @@ html(dir='ltr', lang='en-US')
                       .col_half.col_last
                         input#template-contactform-email.required.email.sm-form-control.border-form-control(type='email', name='template-contactform-email', value='', placeholder='Email Address')
                       .clear
-                      .col_full
+                      .col_one_third
+                        input#template-contactform-phone.sm-form-control.border-form-control(type='text', name='template-contactform-phone', value='', placeholder='Phone')
+                      .col_two_third.col_last
                         input#template-contactform-subject.required.sm-form-control.border-form-control(type='text', name='template-contactform-subject', value='', placeholder='Subject')
+                      .clear
                       .col_full
                         textarea#template-contactform-message.required.sm-form-control.border-form-control(name='template-contactform-message', rows='7', cols='30', placeholder='Your Message')
-                      .col_full
-                        button#template-contactform-submit.button.button-black.noleftmargin.topmargin-sm(type='submit', name='template-contactform-submit', value='submit') Send Message
+                      .col_full.center
+                        button#template-contactform-submit.button.button-border.button-circle.t500.noleftmargin.topmargin-sm(type='submit', name='template-contactform-submit', value='submit') Send Message
+                        br
+                        small(style='display: block; font-size: 13px; margin-top: 15px;') We'll do our best to get back to you within 6-8 working hours.
                       .clear
                       .col_full.hidden
                         input#template-contactform-botcheck.sm-form-control(type='text', name='template-contactform-botcheck', value='')
-                .col-md-4
-                  h4 Headquarters.
-                  div(style='font-size: 16px; line-height: 1.7;')
-                    address(style='line-height: 1.7;')
-                      | 795 Folsom Ave, Suite 600
-                      br
-                      |                       San Francisco, CA 94107
-                      br
-                    .clear.topmargin
-                    abbr(title='Phone Number')
-                      strong Phone:
-                    |  (91) 8547 632521
-                    br
-                    abbr(title='Fax')
-                      strong Fax:
-                    |  (91) 11 4752 1433
-                    br
-                    abbr(title='Email Address')
-                      strong Email:
-                    |  info@canvas.com
-      // #content end
-      //
-        Footer
-        =============================================
-      footer#footer(style='background-color: #FFF;margin-top: -60px;')
-        .container
-          //
-            Footer Widgets
-            =============================================
-          .footer-widgets-wrap.clearfix
-            .row.clearfix
-              .col-md-5
-                .widget.clearfix
-                  .row.clearfix
-                    .col-md-8.bottommargin-sm.clearfix(style='color:#888;')
-                      img.bottommargin-sm(src='/new/roomtini_logo_dark.png', alt='Canvas Logo', style='display: block; height: 40px')
-                      p
-                        | Roomtini enables elegent use of apartment layouts to create affordable living for everyone.
-                      a.social-icon.si-small.si-borderless.si-colored.si-rounded.si-facebook(href='#')
-                        i.icon-facebook
-                        i.icon-facebook
-                      a.social-icon.si-small.si-borderless.si-colored.si-rounded.si-twitter(href='#')
-                        i.icon-twitter
-                        i.icon-twitter
-                      a.social-icon.si-small.si-borderless.si-colored.si-rounded.si-gplus(href='#')
-                        i.icon-gplus
-                        i.icon-gplus
-                      a.social-icon.si-small.si-borderless.si-colored.si-rounded.si-pinterest(href='#')
-                        i.icon-pinterest
-                        i.icon-pinterest
-                      a.social-icon.si-small.si-borderless.si-colored.si-rounded.si-vimeo(href='#')
-                        i.icon-vimeo
-                        i.icon-vimeo
-        //
-          Copyrights
-          =============================================
-        #copyrights.nobg.notoppadding
-          .container.clearfix
-            .col_half
-              | Copyrights © 2017 All Rights Reserved by Unonovor Inc.
-              br
-        // #copyrights end
-      // #footer end
+    // #content end
+    //
+      Footer
+      =============================================
+    footer#footer.dark.noborder
+      .container.center
+        .footer-widgets-wrap
+          .row.divcenter.clearfix
+            .col-md-4
+              .widget.clearfix
+                h4 Site Links
+                ul.list-unstyled.footer-site-links.nobottommargin
+                  li
+                    a(href='#', data-scrollto='#wrapper', data-easing='easeInOutExpo', data-speed='1250', data-offset='70') Top
+                  li
+                    a(href='#', data-scrollto='#section-about', data-easing='easeInOutExpo', data-speed='1250', data-offset='70') About
+                  li
+                    a(href='#', data-scrollto='#section-works', data-easing='easeInOutExpo', data-speed='1250', data-offset='70') Works
+                  li
+                    a(href='#', data-scrollto='#section-services', data-easing='easeInOutExpo', data-speed='1250', data-offset='70') Services
+                  li
+                    a(href='#', data-scrollto='#section-blog', data-easing='easeInOutExpo', data-speed='1250', data-offset='70') Blog
+                  li
+                    a(href='#', data-scrollto='#section-contact', data-easing='easeInOutExpo', data-speed='1250', data-offset='70') Contact
+            .col-md-4
+              .widget.subscribe-widget.clearfix(data-loader='button')
+                h4 Subscribe
+                .widget-subscribe-form-result
+                form#widget-subscribe-form.nobottommargin(action='../include/subscribe.php', role='form', method='post')
+                  input#widget-subscribe-form-email.form-control.input-lg.not-dark.required.email(type='email', name='widget-subscribe-form-email', placeholder='Your Email Address')
+                  button.button.button-border.button-circle.button-light.topmargin-sm(type='submit') Subscribe Now
+            .col-md-4
+              .widget.clearfix
+                h4 Contact
+                p.lead
+                  | 795 Folsom Ave, Suite 600
+                  br
+                  | San Francisco, CA 94107
+                .center.topmargin-sm
+                  a.social-icon.inline-block.noborder.si-small.si-facebook(href='#', title='Facebook')
+                    i.icon-facebook
+                    i.icon-facebook
+                  a.social-icon.inline-block.noborder.si-small.si-twitter(href='#', title='Twitter')
+                    i.icon-twitter
+                    i.icon-twitter
+                  a.social-icon.inline-block.noborder.si-small.si-github(href='#', title='Github')
+                    i.icon-github
+                    i.icon-github
+                  a.social-icon.inline-block.noborder.si-small.si-pinterest(href='#', title='Pinterest')
+                    i.icon-pinterest
+                    i.icon-pinterest
+      #copyrights
+        .container.center.clearfix Copyright Roomtini 2016 | All Rights Reserved
+    // #footer end
     // #wrapper end
-    // Root element of PhotoSwipe. Must have class pswp.
-    .pswp(tabindex='-1', role='dialog', aria-hidden='true')
-      //
-        Background of PhotoSwipe.
-        It's a separate element as animating opacity is faster than rgba().
-      .pswp__bg
-      // Slides wrapper with overflow:hidden.
-      .pswp__scroll-wrap
-        //
-          Container that holds slides.
-          PhotoSwipe keeps only 3 of them in the DOM to save memory.
-          Don't modify these 3 pswp__item elements, data is added later on.
-        .pswp__container
-          .pswp__item
-          .pswp__item
-          .pswp__item
-        // Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed.
-        .pswp__ui.pswp__ui--hidden
-          .pswp__top-bar
-            // Controls are self-explanatory. Order can be changed.
-            .pswp__counter
-            button.pswp__button.pswp__button--close(title='Close (Esc)')
-            button.pswp__button.pswp__button--share(title='Share')
-            button.pswp__button.pswp__button--fs(title='Toggle fullscreen')
-            button.pswp__button.pswp__button--zoom(title='Zoom in/out')
-            // Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR
-            // element will get class pswp__preloader--active when preloader is running
-            .pswp__preloader
-              .pswp__preloader__icn
-                .pswp__preloader__cut
-                  .pswp__preloader__donut
-          .pswp__share-modal.pswp__share-modal--hidden.pswp__single-tap
-            .pswp__share-tooltip
-          button.pswp__button.pswp__button--arrow--left(title='Previous (arrow left)')
-          button.pswp__button.pswp__button--arrow--right(title='Next (arrow right)')
-          .pswp__caption
-            .pswp__caption__center
     //
       Go To Top
       =============================================
@@ -563,189 +598,142 @@ html(dir='ltr', lang='en-US')
     //
       External JavaScripts
       =============================================
-    script(type='text/javascript', src='/new/jquery.js')
-    script(type='text/javascript', src='/new/plugins.js')
+    script(type='text/javascript', src='../js/jquery.js')
+    script(type='text/javascript', src='../js/plugins.js')
+    //
+      Google Map JavaScripts
+      =============================================
+    script(type='text/javascript', src='https://maps.google.com/maps/api/js')
+    script(type='text/javascript', src='../js/jquery.gmap.js')
     //
       Footer Scripts
       =============================================
-    script(type='text/javascript', src='/new/functions.js')
-    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDUi2u0Dyy7s0cOUpNynJjfgG8MofUiAQ8&callback=initMap', async='', defer='')
-    // Core JS file
-    script(src='/new/photoswipe.min.js')
-    // UI JS file
-    script(src='/new/photoswipe-ui-default.min.js')
-    script.
-      var map;
-      function initMap() {
-      var places = [{
-      position : { lat: 37.7738069, lng: -122.4088216 },
-      name: 'L Seven Apartments'
-      }, {
-      position : { lat: 37.7897947, lng: -122.3953209 },
-      name: '181 Fremont Street'
-      }]
-      map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 37.773972, lng: -122.431297},
-      zoom: 12,
+    script(type='text/javascript', src='../js/functions.js')
+    //script(type='text/javascript').
+      jQuery(window).load(function(){
+      // Google Map
+      jQuery('#headquarters-map').gMap({
+      address: 'Melbourne, Australia',
+      maptype: 'ROADMAP',
+      zoom: 14,
+      markers: [
+      {
+      address: "Melbourne, Australia",
+      html: "Melbourne, Australia",
+      icon: {
+      image: "images/icons/map-icon-red.png",
+      iconsize: [32, 32],
+      iconanchor: [14,44]
+      }
+      }
+      ],
+      doubleclickzoom: false,
+      controls: {
+      panControl: false,
       zoomControl: false,
+      mapTypeControl: false,
       scaleControl: false,
-      scrollwheel: false,
-      disableDoubleClickZoom: true
-      });
-      places.forEach(function(p) {
-      var marker = new google.maps.Marker({
-      position: p.position,
-      map: map,
-      title: p.name
-      });
-      });
-      }
-      jQuery(document).ready( function($){
-      var logo = $('#logo > a > img');
-      $(document).scroll(function() {
-      $(logo).css({ "margin-top" : $(this).scrollTop()>0 ? "0px":"10px"});
-      });
-      $(document).ready(function() {
-      $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-      disableOn: 700,
-      type: 'iframe',
-      mainClass: 'mfp-fade',
-      removalDelay: 160,
-      preloader: false,
-      fixedContentPos: false
-      });
-      });
-      var pswpElement = document.querySelectorAll('.pswp')[0];
-      // build items array
-      var _181Fremont = [
-      {
-      src: 'http://djs00nylhf7co.cloudfront.net/assets/img--gallery-interior-10_xl-8f27bfc1a99905062f7cf8d148a78a4661267513c58a127cdac92955662a22ba.jpg',
-      w: 964,
-      h: 1024
+      streetViewControl: false,
+      overviewMapControl: false
       },
-      {
-      src: 'http://djs00nylhf7co.cloudfront.net/assets/img--gallery-interior-17_sm-74669a6bc41d8d6bebf6c49185be14f1dfbf594e02d48327e4e8c563b3bf80da.jpg',
-      w: 1024,
-      h: 683
-      },
-      /*{
-      src: 'http://djs00nylhf7co.cloudfront.net/assets/img--gallery-interior-12_sm-a5cf24016ac05e8d5f14804aaa3fcc964aff2f4fb356357201b5971ff5c6ee76.jpg'
-      },
-      {
-      src: 'http://djs00nylhf7co.cloudfront.net/assets/img--gallery-interior-11_xl-28e8731218e410aca6608b4fbf3a2855151990044038cefd5ec3f09577a76cc1.jpg'
-      },
-      {
-      src: 'http://djs00nylhf7co.cloudfront.net/assets/img--gallery-interior-19_sm-a8597501e5038fafcd1315c0d1c5b5142fdcc1906c59527f02047685539639f7.jpg'
-      },
-      {
-      src: 'http://djs00nylhf7co.cloudfront.net/assets/img--gallery-interior-2_xl-78155ad68f3bcca140b7fe5851de1318e940cf4b61a6a5a9bb38b96c229bec86.jpg'
-      }*/
-      ];
-      var _LSeven = [
-      {
-      src: 'http://djs00nylhf7co.cloudfront.net/assets/img--gallery-interior-10_xl-8f27bfc1a99905062f7cf8d148a78a4661267513c58a127cdac92955662a22ba.jpg',
-      w: 964,
-      h: 1024
-      },
-      /*{
-      src: 'http://djs00nylhf7co.cloudfront.net/assets/img--gallery-interior-12_sm-a5cf24016ac05e8d5f14804aaa3fcc964aff2f4fb356357201b5971ff5c6ee76.jpg'
-      },
-      {
-      src: 'http://djs00nylhf7co.cloudfront.net/assets/img--gallery-interior-11_xl-28e8731218e410aca6608b4fbf3a2855151990044038cefd5ec3f09577a76cc1.jpg'
-      },
-      {
-      src: 'http://djs00nylhf7co.cloudfront.net/assets/img--gallery-interior-19_sm-a8597501e5038fafcd1315c0d1c5b5142fdcc1906c59527f02047685539639f7.jpg'
-      },
-      {
-      src: 'http://djs00nylhf7co.cloudfront.net/assets/img--gallery-interior-2_xl-78155ad68f3bcca140b7fe5851de1318e940cf4b61a6a5a9bb38b96c229bec86.jpg'
-      }*/
-      ];
-      // define options (if needed)
-      var options = {
-      // history & focus options are disabled on CodePen
-      history: false,
-      focus: false,
-      closeOnScroll: false,
-      showAnimationDuration: 0,
-      hideAnimationDuration: 0
-      };
-      var gallery1 = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, _181Fremont, options);
-      var gallery2 = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, _LSeven, options);
-      $(document).on("click", "#g181", function() {
-      gallery1.init();
-      });
-      $(document).on("click", "#gLS", function() {
-      gallery2.init();
-      });
-      //document.getElementById("g181").onclick = openPhotoSwipe;
-      function pricingSwitcher( elementCheck, elementParent, elementPricing ) {
-      elementParent.find('.pts-left,.pts-right').removeClass('pts-switch-active');
-      elementPricing.find('.pts-switch-content-left,.pts-switch-content-right').addClass('hidden');
-      if( elementCheck.filter(':checked').length > 0 ) {
-      elementParent.find('.pts-right').addClass('pts-switch-active');
-      elementPricing.find('.pts-switch-content-right').removeClass('hidden');
-      } else {
-      elementParent.find('.pts-left').addClass('pts-switch-active');
-      elementPricing.find('.pts-switch-content-left').removeClass('hidden');
-      }
-      }
-      $('.pts-switcher').each( function(){
-      var element = $(this),
-      elementCheck = element.find(':checkbox'),
-      elementParent = $(this).parents('.pricing-tenure-switcher'),
-      elementPricing = $( elementParent.attr('data-container') );
-      pricingSwitcher( elementCheck, elementParent, elementPricing );
-      elementCheck.on( 'change', function(){
-      pricingSwitcher( elementCheck, elementParent, elementPricing );
+      styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"administrative","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"administrative.country","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"administrative.country","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"administrative.country","elementType":"labels.text","stylers":[{"visibility":"simplified"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.locality","elementType":"all","stylers":[{"visibility":"simplified"},{"saturation":"-100"},{"lightness":"30"}]},{"featureType":"administrative.neighborhood","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.land_parcel","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"visibility":"simplified"},{"gamma":"0.00"},{"lightness":"74"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"lightness":"3"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
       });
       });
-      // Get Started From Validation
-      var getStartedForm = $('#get-started-form'),
-      getStartedFormAlert = getStartedForm.attr('data-alert-type'),
-      getStartedFormLoader = getStartedForm.attr('data-loader'),
-      getStartedFormResult = getStartedForm.find('.contact-form-result'),
-      getStartedFormRedirect = getStartedForm.attr('data-redirect');
-      getStartedForm.validate({
-      submitHandler: function(form) {
-      getStartedFormResult.hide();
-      if( getStartedFormLoader == 'button' ) {
-      var defButton = $(form).find('button'),
-      defButtonText = defButton.html();
-      defButton.html('<i class="icon-line-loader icon-spin nomargin"></i>');
-      } else {
-      $(form).find('.form-process').fadeIn();
-      }
-      $(form).ajaxSubmit({
-      target: getStartedFormResult,
-      dataType: 'json',
-      resetForm: true,
-      success: function( data ) {
-      if( getStartedFormLoader == 'button' ) {
-      defButton.html( defButtonText );
-      } else {
-      $(form).find('.form-process').fadeOut();
-      }
-      if( data.alert != 'error' && getStartedFormRedirect ){
-      window.location.replace( getStartedFormRedirect );
-      return true;
-      }
-      if( getStartedFormAlert == 'inline' ) {
-      if( data.alert == 'error' ) {
-      var alertType = 'alert-danger';
-      } else {
-      var alertType = 'alert-success';
-      }
-      getStartedFormResult.addClass( 'alert ' + alertType ).html( data.message ).slideDown( 400 );
-      } else {
-      getStartedFormResult.attr( 'data-notify-type', data.alert ).attr( 'data-notify-msg', data.message ).html('');
-      SEMICOLON.widget.notifications( getStartedFormResult );
-      }
-      }
+    script(type='text/javascript').
+      jQuery(document).ready(function($) {
+
+        var $faqItems = $('#faqs .faq');
+        if( window.location.hash != '' ) {
+          var getFaqFilterHash = window.location.hash;
+          var hashFaqFilter = getFaqFilterHash.split('#');
+        
+          if( $faqItems.hasClass( hashFaqFilter[1] ) ) {
+          
+            $('#portfolio-filter li').removeClass('activeFilter');
+            $( '[data-filter=".'+ hashFaqFilter[1] +'"]').parent('li').addClass('activeFilter');
+            var hashFaqSelector = '.' + hashFaqFilter[1];
+        
+            $faqItems.css('display', 'none');
+            if( hashFaqSelector != 'all' ) {
+              $( hashFaqSelector ).fadeIn(500);
+            } else {
+              $faqItems.fadeIn(500);
+            }
+          }
+        }
+
+        $('#portfolio-filter a').click(function() {
+          $('#portfolio-filter li').removeClass('activeFilter');
+          $(this).parent('li').addClass('activeFilter');
+          var faqSelector = $(this).attr('data-filter');
+          $faqItems.css('display', 'none');
+          if( faqSelector != 'all' ) {
+            $( faqSelector ).fadeIn(500);
+          } else {
+            $faqItems.fadeIn(500);
+          }
+          return false;
+        });
+
+        $('.videoplay-on-hover').hover( function(){
+          if( $(this).find('video').length > 0 ) {
+            $(this).find('video').get(0).play();
+          }
+        }, function(){
+          if( $(this).find('video').length > 0 ) {
+            $(this).find('video').get(0).pause();
+          }
+        });
+
       });
-      }
+
+
+    //script(type='text/javascript').
+      jQuery(document).ready(function($) {
+        $('.videoplay-on-hover').hover( function(){
+          if( $(this).find('video').length > 0 ) {
+            $(this).find('video').get(0).play();
+          }
+        }, function(){
+          if( $(this).find('video').length > 0 ) {
+            $(this).find('video').get(0).pause();
+          }
+        });
       });
-      $('[data-pricing-plan]').click( function(){
-      getStartedForm.find('#get-started-form-package').val( $(this).attr('data-pricing-plan') );
-      getStartedForm.find('#modal-get-started-package').html( $(this).attr('data-pricing-plan') );
+      jQuery(window).load(function(){
       });
-      });
+
+    //script(type='text/javascript').
+      if !user
+      li(class=(title == 'Login') ? 'active' : undefined)
+      a(href='/login') Login
+      li(class=(title == 'Create Account') ? 'active' : undefined)
+      a(href='/signup') Create Account
+      else
+      li.dropdown(class=(title == 'Account Management') ? 'active' : undefined)
+      a.dropdown-toggle(href='#', data-toggle='dropdown')
+      if user.profile.picture
+      img(src=user.profile.picture)
+      else
+      img(src=user.gravatar(60))
+      span= user.profile.name || user.email || user.id
+      i.caret
+      ul.dropdown-menu
+      li
+      a(href='/account') My Account
+      li.divider
+      li
+      a(href='/logout') Logout
+
+    //script(type='text/javascript').
+      CRISP_WEBSITE_ID = "2d20f1a1-1ba1-44cb-a39f-59a7a6869eb5";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.im/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+
+    //script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-85398370-1', 'auto');
+      ga('send', 'pageview');
+
+
