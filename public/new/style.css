@@ -1548,7 +1548,7 @@ body:not(.device-sm):not(.device-xs):not(.device-xxs) #primary-menu.style-2.cent
 		height: 100px;
 	}
 
-	#header.split-menu #logo a.standard-logo { display: inline-block; }
+	#header.split-menu #logo a.standard-logo { display: block; }
 
 }
 
