@@ -83,12 +83,12 @@ Main components
   height: 50px;
   line-height: 50px;
   padding: 0 28px 0 16px;
-  background-color: #4e5359;
+  background-color: #EFEEEE;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #ffffff;
+  color: #6a7989;
   white-space: nowrap;
-  border-bottom: 1px solid #555b61;
+  
   text-overflow: ellipsis;
 }
 .cd-faq-categories a::before, .cd-faq-categories a::after {
@@ -161,7 +161,7 @@ Main components
     transition: opacity 0.2s;
   }
   .cd-faq-categories .selected {
-    background: #42464b !important;
+    background: rgba(66, 70, 75, 0.29) !important;
   }
   .cd-faq-categories .selected::before {
     opacity: 1;
