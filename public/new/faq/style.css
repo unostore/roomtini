@@ -328,7 +328,7 @@ Main components
     display: block;
   }
   .cd-faq-group > li {
-    background: #EFEEEE;
+    background: #fbfbfb;
     margin-bottom: 6px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
     -webkit-transition: box-shadow 0.2s;
