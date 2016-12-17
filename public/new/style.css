@@ -1029,7 +1029,7 @@ body.stretched #header.full-header .container {
 
 #logo a.standard-logo { display: block; }
 
-#logo a.retina-logo { display: none; }
+#logo a.retina-logo { display: block; }
 
 
 /* ----------------------------------------------------------------
