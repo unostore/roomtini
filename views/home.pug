@@ -37,6 +37,7 @@ html(dir='ltr', lang='en-US')
     link(href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700", rel="stylesheet", type="text/css")
   
     link(rel="stylesheet", type="text/css", href="/new/faq/style.css")
+    link(href="https://fonts.googleapis.com/css?family=Lato",rel="stylesheet")
     //
       Document Title
       =============================================
@@ -104,7 +105,8 @@ html(dir='ltr', lang='en-US')
       padding: 0px;
       margin: 0px;
       height: 650px;
-          margin-bottom: 10px;
+      margin-bottom: 40px;
+      border-radius:5px !important;
       }
       .property-img {
       height: 230px; width: 100%;
@@ -118,6 +120,7 @@ html(dir='ltr', lang='en-US')
       padding-bottom: 13px;
       color: #4a4a4a;
       height: 270px;
+      font-family:Lato;
       }
       .property-button {
       height: 54px;
@@ -174,16 +177,26 @@ html(dir='ltr', lang='en-US')
       .cd-faq-group {
         list-style-type: none;
       }
+      .cd-faq-group > li {        
+        border-radius: 4px;
+      }
       .cd-faq-content p {
         font-size: 14px;
-        font-family: 'Open Sans';
+        font-family: 'Lato';
       }
 
       .cd-faq-trigger {
-        font-size: 17px;
-        font-family: 'Open Sans';
-        font-weight: 350;
+        font-family: 'Lato';
+        font-weight: bold;
+        color: #6a7989 !important;
       }
+      .lato {
+        font-family:Lato;
+      }
+      .one-page-menu > li > a > div {
+        font-weight: bold;
+      }
+      *{font-family:Lato;}
   body.stretched
     //
       Document Wrapper
@@ -263,7 +276,7 @@ html(dir='ltr', lang='en-US')
             // #primary-menu end
       // #header end
       section#slider.full-screen.slider-parallax
-        .slider-parallax-inner(style="background: url('/new/4517757-san-francisco-wallpapers.jpg') center center no-repeat; background-size: cover;")
+        .slider-parallax-inner(style="background: url('/new/45.jpg') center center no-repeat; background-size: cover;")
           .vertical-middle(style='z-index: 2;')
             .container.dark.clearfix
               .row.clearfix
@@ -303,7 +316,7 @@ html(dir='ltr', lang='en-US')
           .clear
           #section-first_para.page-section.nopadding.nomargin
             .container.topmargin.bottommargin-lg.center.clearfix
-              h3.ls1.t400(style='font-size: 32px; margin-bottom: 10px;') Making City Living Amazingly Affordable
+              h3.ls1.t400(style='font-size: 40px; margin-bottom: 10px;font-family:Lato;') Making City Living Amazingly Affordable
               p.lead.divcenter(style='max-width: 600px')
                 | We are on a journey to make city living affordable again. Bringing in residents full of increasing Culture, diversity, and Energy back into the city!
               a.button.button-circle.capitalize(href='#section-map', data-scrollto='#section-map') Explore Locations
@@ -332,8 +345,8 @@ html(dir='ltr', lang='en-US')
           .clear
           #section-third_para.page-section.nopadding.nomargin
             .container.topmargin.bottommargin-lg.center.clearfix
-              h3.ls1.t400(style='font-size: 32px; margin-bottom: 10px;') Rent is too Dang High!
-              p.lead.divcenter(style='max-width: 600px') We at Roomtini create solutions to give renters more for less ...
+              h3.t400(style='font-size: 40px; margin-bottom: 10px;font-family: Lato;') Rent is too Dang High!
+              p.lead.divcenter(style='max-width: 600px;font-family: Lato;') We at Roomtini create solutions to give renters more for less ...
           .clear
           // Properties Section
           #section-fourth_para.page-section.nopadding.nomargin
@@ -343,10 +356,10 @@ html(dir='ltr', lang='en-US')
                   a#play-hero-video.big-video-button.bottommargin(href='https://www.youtube.com/watch?v=oJRl_G0KqOw', data-lightbox='iframe')
                     i.icon-line-play
                 .emphasis-title.divcenter(style='max-width: 450px;')
-                  h1.t700.font-body.ls1(style='font-size: 34px;') 181 Fremont
-                  h4#g181 View Gallery
+                  h1.t700.font-body.ls1(style='font-size: 34px;font-family:Lato') 181 Fremont
+                  h4#g181(style='font-family:Lato;') View Gallery
                 .clear
-                a.button.button-border.button-light.button-circle.popup-iframe-typeform(href='https://jo279.typeform.com/to/FmAr3H', target='_blank') Book a Tour!
+                a.button.button-border.button-light.button-circle.popup-iframe-typeform(href='https://jo279.typeform.com/to/FmAr3H', style='font-family:Lato;') Book a Tour!
               .video-wrap(style='z-index: 1;')
                 .video-overlay(style='background-color: rgba(0,0,0,0.7);')
             .col-md-6.col-xs-12.col-sm-12.nopadding.full-screen.force-full-screen.dark(style="background-image: url('/new/LSeven.jpg'); background-size: cover;background-position: center; ")
@@ -355,10 +368,10 @@ html(dir='ltr', lang='en-US')
                   a#play-hero-video.big-video-button.bottommargin(href='http://vimeo.com/117770305', data-lightbox='iframe')
                     i.icon-line-play
                 .emphasis-title.divcenter(style='max-width: 450px;')
-                  h1.t700.font-body.ls1(style='font-size: 34px;') L Seven
-                  h4#gLS View Gallery
+                  h1.t700.font-body.ls1(style='font-size: 34px;font-family:Lato;') L Seven
+                  h4#gLS(style='font-family:Lato;') View Gallery
                 .clear
-                a.button.button-border.button-light.button-circle.popup-iframe-typeform(href='https://jo279.typeform.com/to/BakX72', target='_blank') Book a Tour!
+                a.button.button-border.button-light.button-circle.popup-iframe-typeform(href='https://jo279.typeform.com/to/BakX72', style='font-family:Lato;') Book a Tour!
               .video-wrap(style='z-index: 1;')
                 .video-overlay(style='background-color: rgba(0,0,0,0.7);')
           .clear
@@ -366,7 +379,7 @@ html(dir='ltr', lang='en-US')
           .clear
           //#section-faqs.section.page-section.nomargin(style='backkground-color:white; border-bottom: 1px solid #E5E5E5;')
             .container.topmargin-sm.clearfix
-              h2.center.font-body.bottommargin-lg Frequently Asked Questions
+              h2.t400.center.font-body.bottommargin-lg(style='font-family:Lato !important;font-size:40px;') | Frequently Asked Questions
               .col-md-8.col-md-offset-2.col-sm-6.bottommargin-sm.col-sm-offset-3.col-xs-12
                 .panel.panel-default
                   .panel-heading
@@ -456,9 +469,9 @@ html(dir='ltr', lang='en-US')
 
 
           #section-faqs.section.page-section.nomargin(style='background-color:white; border-bottom: 1px solid #E5E5E5;')
-            h2.center.font-body.bottommargin-lg Frequently Asked Questions        
+            h2.t400.center.font-body.bottommargin-lg(style='font-family:Lato;font-size:40px') Frequently Asked Questions        
             section.cd-faq
-              ul.cd-faq-categories
+              ul.cd-faq-categories(style='margin-bottom:0px;')
                 li
                   a.selected(href="#faq-general", style="text-decoration: none;") General
                 |               
@@ -732,14 +745,14 @@ html(dir='ltr', lang='en-US')
           #section-map.page-section(style='padding-top: 0px;')
             .container.topmargin.bottommargin-lg.center.clearfix
               div
-                h3(style='text-align: center;') FEATURED LOCATIONS
+                h3.t400(style='text-align: center;font-family:Lato;font-size:40px;margin-bottom:80px') Featured Locations
                 .col-md-4.col-sm-6.col-xs-12
                   .pricing-box(style='height: auto')
                     div
                       img.property-img(src='/new/181Fremont.jpg')
                     .property-info
-                      h4 181 Fremont Apartments
-                      p
+                      h4(style='font-family:Lato;') 181 Fremont Apartments
+                      p(style='font-family:Lato;')
                         | 181 Fremont's top 17 stories encompass residences from two-bedrooms to the full-floor Penthouse—each with spectacular Bay and City views.
                     .property-button
                       a(href='https://jo279.typeform.com/to/FmAr3H') Book a tour!
@@ -748,8 +761,8 @@ html(dir='ltr', lang='en-US')
                     div
                       img.property-img(src='/new/LSeven.jpg')
                     .property-info
-                      h4 L Seven Apartments
-                      p
+                      h4(style='font-family:Lato;') L Seven Apartments
+                      p(style='font-family:Lato;')
                         | Brand new studio, 1 and 2 bedroom apartments and lofts in San Francisco. Our downtown SOMA location is just four blocks from the Civic Center & UN Plaza Bart Station and walking distance to major employers including Zynga, Adobe, Twitter, Thumbtack, and more.
                     .property-button
                       a(href='https://jo279.typeform.com/to/BakX72') Book a tour!
@@ -758,7 +771,7 @@ html(dir='ltr', lang='en-US')
           .line.topmargin-lg.bottommargin-lg
           #section-contact.page-section
             .container.topmargin.bottommargin-lg.center.clearfix
-              h2.bottommargin Get in Touch.
+              h1.t400.bottommargin('font-size:40px;font-family:Lato') Get in Touch.
               .row.clearfix(style='')
                 .col-md-6.com-sm-12.col-xs-12.col-md-offset-1
                   .contact-widget
@@ -780,8 +793,8 @@ html(dir='ltr', lang='en-US')
                       .col_full.hidden
                         input#template-contactform-botcheck.sm-form-control(type='text', name='template-contactform-botcheck', value='')
                 .col-md-4.col-xs-12.col-sm-12
-                  h4 Headquarters.
-                  div(style='font-size: 16px; line-height: 1.7;')
+                  h4.lato Headquarters.
+                  div.lato(style='font-size: 16px; line-height: 1.7;')
                     address(style='line-height: 1.7;')
                       | 795 Folsom Ave, Suite 600
                       br
