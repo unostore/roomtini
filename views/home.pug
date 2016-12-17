@@ -40,7 +40,7 @@ html(dir='ltr', lang='en-US')
     //
       Document Title
       =============================================
-    title Roomtini
+    title Roomtini | High class living without the high Price
     style(type='text/css').
       .big-video-button {
       display: inline-block;
@@ -148,6 +148,9 @@ html(dir='ltr', lang='en-US')
       resize: none;
       overflow: hidden;
       word-wrap: break-word;
+      }
+      .hhidden {
+        overflow: hidden;
       }
       #g181,#gLS { cursor: pointer; cursor: hand; color: #267DF4; }
       #applybutton {
@@ -361,7 +364,7 @@ html(dir='ltr', lang='en-US')
           .clear
           // FAQ Section
           .clear
-          //#section-faqs.section.page-section.nomargin(style='border-bottom: 1px solid #E5E5E5;')
+          //#section-faqs.section.page-section.nomargin(style='backkground-color:white; border-bottom: 1px solid #E5E5E5;')
             .container.topmargin-sm.clearfix
               h2.center.font-body.bottommargin-lg Frequently Asked Questions
               .col-md-8.col-md-offset-2.col-sm-6.bottommargin-sm.col-sm-offset-3.col-xs-12
@@ -452,7 +455,7 @@ html(dir='ltr', lang='en-US')
           .clear
 
 
-          #section-faqs.section.page-section.nomargin
+          #section-faqs.section.page-section.nomargin(style='background-color:white; border-bottom: 1px solid #E5E5E5;')
             h2.center.font-body.bottommargin-lg Frequently Asked Questions        
             section.cd-faq
               ul.cd-faq-categories
@@ -926,10 +929,29 @@ html(dir='ltr', lang='en-US')
       }
       jQuery(document).ready( function($){
 
-        $('.popup-iframe-typeform').magnificPopup({
+        /*$('.popup-iframe-typeform').magnificPopup({
             type: 'iframe'
-        });
+        });*/
 
+        $('.popup-iframe-typeform').magnificPopup({
+          type: 'iframe',
+          
+          
+          iframe: {
+             markup: '<div class="mfp-iframe-scaler">'+
+                        '<div class="mfp-close"></div>'+
+                        '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
+                        '<div class="mfp-title">Some caption</div>'+
+                      '</div>'
+          },
+          callbacks: {
+            markupParse: function(template, values, item) {
+             values.title = item.el.attr('title');
+            }
+          }
+          
+          
+        });
       var logo = $('#logo > a > img');
       $(document).scroll(function() {
       $(logo).css({ "margin-top" : $(this).scrollTop()>0 ? "15px":"25px"});

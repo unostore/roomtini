@@ -18,16 +18,20 @@ jQuery(document).ready(function($){
 		if( $(window).width() < MqM) {
 			faqsContainer.scrollTop(0).addClass('slide-in').children('ul').removeClass('selected').end().children(selectedHref).addClass('selected');
 			closeFaqsContainer.addClass('move-left');
-			$('body').addClass('cd-overlay');
+			$('body').addClass('cd-overlay').addClass('hhidden');
+			console.log('low res', $(window).width());
 		} else {
 	        $('body,html').animate({ 'scrollTop': target.offset().top - 30}, 600); 
 		}
+
 	});
 
 	//close faq lateral panel - mobile only
 	$('body').bind('click touchstart', function(event){
 		if( $(event.target).is('body.cd-overlay') || $(event.target).is('.cd-close-panel')) { 
+			//console.log('colose')
 			closePanel(event);
+			$('body').removeClass('hhidden');
 		}
 	});
 	faqsContainer.on('swiperight', function(event){
@@ -38,6 +42,7 @@ jQuery(document).ready(function($){
 	faqTrigger.on('click', function(event){
 		event.preventDefault();
 		$(this).next('.cd-faq-content').slideToggle(200).end().parent('li').toggleClass('content-visible');
+
 	});
 
 	//update category sidebar while scrolling
