@@ -295,6 +295,34 @@ html(dir='ltr', lang='en-US')
         =============================================
       section#content
         .content-wrap
+          #modal-left.modal1.mfp-hide
+            .block.divcenter(style='background-color: #FFF; max-width: 900px;')
+              .row(style='padding: 20px')
+                .col-md-4.col-sm-4.col-xs-12(style='text-align: center')
+                  img(src='/new/n1.jpg', style='height: 200px')
+                  div(style='height: 250px; overflow: hidden')
+                    p
+                    h4(style='text-align: center') Neighbourhood
+                    p
+                    p
+                      | 181 Fremont residents will have the best of the city at arm’s reach, plus incredible access to transportation when it’s time to hit the road and explore other parts of the Bay Area and beyond.
+                .col-md-4.col-sm-4.col-xs-12
+                  img(src='/new/am.jpg', style='height: 200px')
+                  div(style='height: 250px; overflow: hidden')
+                    p
+                    h4(style='text-align: center') Amenities
+                    p
+                    p
+                      | Twenty-five feet tall and enclosed by glass, the residential lobby of 181 Fremont ODADA’s design objective was to evoke a sculptural feel throughout..
+                .col-md-4.col-sm-4.col-xs-12
+                  img(src='/new/res1.jpg', style='height: 200px')
+                  div(style='height: 250px; overflow: hidden')
+                    p
+                    h4(style='text-align: center') Living Areas
+                    p
+                    p
+                      | Polished Italian Calacatta Carrara marble frames each residence entryway, with doors encased in a Paldao wood from New Guinea. A polished brass handle custom-forged by Parisian artisans Série Rare graces the front door of each residence.
+
           // Modal
           #modal-login.modal1.mfp-hide
             .block.divcenter(style='background-color: #FFF; max-width: 400px;')
@@ -357,7 +385,9 @@ html(dir='ltr', lang='en-US')
                     i.icon-line-play
                 .emphasis-title.divcenter(style='max-width: 450px;')
                   h1.t700.font-body.ls1(style='font-size: 34px;font-family:Lato') 181 Fremont
-                  h4#g181(style='font-family:Lato;') View Gallery
+                  h4#g181(style='font-family:Lato;margin-bottom: 0px;', href='#modal-left') View Gallery
+                  a.capitalize(href='#modal-left', data-lightbox='inline', style='font-size: 18px;font-weight:bold;') About 
+
                 .clear
                 a.button.button-border.button-light.button-circle.popup-iframe-typeform(href='https://jo279.typeform.com/to/FmAr3H', style='font-family:Lato;') Book a Tour!
               .video-wrap(style='z-index: 1;')
@@ -369,7 +399,9 @@ html(dir='ltr', lang='en-US')
                     i.icon-line-play
                 .emphasis-title.divcenter(style='max-width: 450px;')
                   h1.t700.font-body.ls1(style='font-size: 34px;font-family:Lato;') L Seven
-                  h4#gLS(style='font-family:Lato;') View Gallery
+                  h4#gLS(style='font-family:Lato;margin-bottom: 0px;') View Gallery
+                  a.capitalize(href='#modal-left', data-lightbox='inline', style='font-size: 18px;font-weight:bold;') About 
+
                 .clear
                 a.button.button-border.button-light.button-circle.popup-iframe-typeform(href='https://jo279.typeform.com/to/BakX72', style='font-family:Lato;') Book a Tour!
               .video-wrap(style='z-index: 1;')
