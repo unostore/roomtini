@@ -375,6 +375,28 @@ html(dir='ltr', lang='en-US')
                 | We are on a journey to make city living affordable again. Bringing in residents full of increasing Culture, diversity, and Energy back into the city!
               a.button.button-circle.capitalize(href='#section-map', data-scrollto='#section-map') Explore Locations
           .clear
+          section.section(style='background-color: white;border-top: 1px solid #E5E5E5;padding-top:100px;')
+            .row
+              .col-md-10.col-md-offset-1.col-sm-12.col-sm-offset-0
+                .col-md-4.col-sm-11.col-xs-10.bb(style='background-color: #673AB7;\
+                outline: 1px solid #EEE;height: 442px')
+                  h1.lato(style='margin:40px;text-align: center;color: #EEE;font') Book a Tour!
+                  p.lato(style='margin-left: 20px;margin-right: 20px;text-align: center;color: #EEE;')
+                    | Transform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security RosaTransform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security Rosa.
+                .col-md-4.col-sm-11.col-xs-10.bb(style='background-color: #8BC34A;\
+                outline: 1px solid #EEE;height: 442px')
+                  h1.lato(style='margin:40px;text-align: center;color: #EEE;') Book a Tour!
+                  p.lato(style='margin-left: 20px;margin-right: 20px;text-align: center;color: #EEE;')
+                    | Transform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security RosaTransform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security Rosa.
+                .col-md-4.col-sm-11.col-xs-10.bb(style='background-color: rgb(26, 136, 188);\
+                outline: 1px solid #EEE;height: 442px')
+                  h1.lato(style='margin:40px;text-align: center;color: #EEE;') Book a Tour!
+                  p.lato(style='margin-left: 20px;margin-right: 20px;text-align: center;color: #EEE;')
+                    | Transform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security RosaTransform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security Rosa.
+
+
+
+
           #section-second_para.section(style='color: #999; background-color: #F8FAFB; border-top: 1px solid #E5E5E5; border-bottom: 1px solid #E5E5E5;')
             .container.clearfix
               .row.topmargin-lg.clearfix
@@ -826,8 +848,8 @@ html(dir='ltr', lang='en-US')
                       a(href='https://jo279.typeform.com/to/BakX72') Book a tour!
                 .col-md-4.col-sm-12.col-xs-12
                   #map.pricing-box(style='height: 556px;')
-          .line.topmargin-lg.bottommargin-lg
-          #section-contact.page-section
+          //.line.topmargin-lg.bottommargin-lg
+          //#section-contact.page-section(style='display: none;')
             .container.topmargin.bottommargin-lg.center.clearfix
               h1.t400.bottommargin('font-size:40px;font-family:Lato') Get in Touch.
               .row.clearfix(style='')
@@ -964,7 +986,7 @@ html(dir='ltr', lang='en-US')
       Footer Scripts
       =============================================
     script(type='text/javascript', src='/new/functions.js')
-    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDUi2u0Dyy7s0cOUpNynJjfgG8MofUiAQ8&callback=initMap', async='', defer='')
+    
     // Core JS file
     script(src='/new/photoswipe.min.js')
     // UI JS file
@@ -973,32 +995,36 @@ html(dir='ltr', lang='en-US')
     script(src="/new/faq/main.js")
 
     script.
-      var map;
-      function initMap() {
-      var places = [{
-      position : { lat: 37.7738069, lng: -122.4088216 },
-      name: 'L Seven Apartments'
-      }, {
-      position : { lat: 37.7897947, lng: -122.3953209 },
-      name: '181 Fremont Street'
-      }]
-      map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 37.773972, lng: -122.431297},
-      zoom: 12,
-      zoomControl: false,
-      scaleControl: false,
-      scrollwheel: false,
-      disableDoubleClickZoom: true
-      });
-      places.forEach(function(p) {
-      var marker = new google.maps.Marker({
-      position: p.position,
-      map: map,
-      title: p.name
-      });
-      });
-      }
+      
       jQuery(document).ready( function($){
+
+        var map;
+        window.initMap = function() {
+          var places = [{
+          position : { lat: 37.7738069, lng: -122.4088216 },
+          name: 'L Seven Apartments'
+          }, {
+          position : { lat: 37.7897947, lng: -122.3953209 },
+          name: '181 Fremont Street'
+          }]
+          
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 37.773972, lng: -122.431297},
+            zoom: 12,
+            zoomControl: false,
+            scaleControl: false,
+            scrollwheel: false,
+            disableDoubleClickZoom: true
+          });
+
+          places.forEach(function(p) {
+            var marker = new google.maps.Marker({
+              position: p.position,
+              map: map,
+              title: p.name
+            });
+          });
+        }
 
         /*$('.popup-iframe-typeform').magnificPopup({
             type: 'iframe'
@@ -1171,3 +1197,5 @@ html(dir='ltr', lang='en-US')
       getStartedForm.find('#modal-get-started-package').html( $(this).attr('data-pricing-plan') );
       });
       });
+
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDUi2u0Dyy7s0cOUpNynJjfgG8MofUiAQ8&callback=initMap', async='', defer='').

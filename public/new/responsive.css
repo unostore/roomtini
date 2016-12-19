@@ -243,6 +243,11 @@
 
 @media (max-width: 991px) {
 
+	.bb {
+		margin: 40px;
+		overflow: hidden;
+	}
+
 	#wrapper {
 		width: 100%;
 		margin: 0;
