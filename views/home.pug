@@ -38,6 +38,7 @@ html(dir='ltr', lang='en-US')
   
     link(rel="stylesheet", type="text/css", href="/new/faq/style.css")
     link(href="https://fonts.googleapis.com/css?family=Lato",rel="stylesheet")
+    link(href="/new/maps.css",rel="stylesheet")
     //
       Document Title
       =============================================
@@ -196,6 +197,9 @@ html(dir='ltr', lang='en-US')
       .one-page-menu > li > a > div {
         font-weight: bold;
       }
+      .fill-denim {
+          background: #50667f;
+      }
       *{font-family:Lato;}
   body.stretched
     //
@@ -276,7 +280,7 @@ html(dir='ltr', lang='en-US')
             // #primary-menu end
       // #header end
       section#slider.full-screen.slider-parallax
-        .slider-parallax-inner(style="background: url('/new/45.jpg') center center no-repeat; background-size: cover;")
+        .slider-parallax-inner(style="background: url('/new/451.jpg') center center no-repeat; background-size: cover;")
           .vertical-middle(style='z-index: 2;')
             .container.dark.clearfix
               .row.clearfix
@@ -375,7 +379,7 @@ html(dir='ltr', lang='en-US')
                 | We are on a journey to make city living affordable again. Bringing in residents full of increasing Culture, diversity, and Energy back into the city!
               a.button.button-circle.capitalize(href='#section-map', data-scrollto='#section-map') Explore Locations
           .clear
-          section.section(style='background-color: white;border-top: 1px solid #E5E5E5;padding-top:100px;')
+          //section.section(style='background-color: white;border-top: 1px solid #E5E5E5;padding-top:100px;')
             .row(style='overflow: hidden;')
               .col-md-10.col-md-offset-1.col-sm-12.col-sm-offset-0
                 .col-md-4.col-sm-11.col-xs-10.bb(style='background-color: #673AB7;\
@@ -825,7 +829,7 @@ html(dir='ltr', lang='en-US')
 
 
 
-          #section-map.page-section(style='padding-top: 0px;')
+          //#section-map.page-section(style='padding-top: 0px;')
             .container.topmargin.bottommargin-lg.center.clearfix
               div
                 h3.t400(style='text-align: center;font-family:Lato;font-size:40px;margin-bottom:80px') Featured Locations
@@ -851,6 +855,10 @@ html(dir='ltr', lang='en-US')
                       a(href='https://jo279.typeform.com/to/BakX72') Book a tour!
                 .col-md-4.col-sm-12.col-xs-12
                   #map.pricing-box(style='height: 556px;')
+          #section-map.col-md-12(style='height: 600px')
+            #map(style="height:100%")
+
+
           //.line.topmargin-lg.bottommargin-lg
           //#section-contact.page-section(style='display: none;')
             .container.topmargin.bottommargin-lg.center.clearfix
@@ -1001,33 +1009,319 @@ html(dir='ltr', lang='en-US')
       
       jQuery(document).ready( function($){
 
-        var map;
-        window.initMap = function() {
-          var places = [{
-          position : { lat: 37.7738069, lng: -122.4088216 },
-          name: 'L Seven Apartments'
-          }, {
-          position : { lat: 37.7897947, lng: -122.3953209 },
-          name: '181 Fremont Street'
-          }]
-          
-          map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: 37.773972, lng: -122.431297},
-            zoom: 12,
-            zoomControl: false,
-            scaleControl: false,
-            scrollwheel: false,
-            disableDoubleClickZoom: true
-          });
-
-          places.forEach(function(p) {
-            var marker = new google.maps.Marker({
-              position: p.position,
-              map: map,
-              title: p.name
-            });
+        function redrawMap(mapProvider, map){
+          $('.map .toggle-navigation').click(function() {
+              $('.map-canvas').toggleClass('results-collapsed');
+              $('.map-canvas .map').one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
+                  if( mapProvider == 'osm' ){
+                      map.invalidateSize();
+                  }
+                  else if( mapProvider == 'google' ){
+                      google.maps.event.trigger(map, 'resize');
+                  }
+              });
           });
         }
+      
+        function drawInfobox(category, infoboxContent, json, i){
+
+            if(json.data[i].color)          { var color = json.data[i].color }
+                else                        { color = '' }
+            if( json.data[i].price )        { var price = '<div class="price">' + json.data[i].price +  '</div>' }
+                else                        { price = '' }
+            if(json.data[i].id)             { var id = json.data[i].id }
+                else                        { id = '' }
+            if(json.data[i].url)            { var url = json.data[i].url }
+                else                        { url = '' }
+            if(json.data[i].type)           { var type = json.data[i].type }
+                else                        { type = '' }
+            if(json.data[i].title)          { var title = json.data[i].title }
+                else                        { title = '' }
+            if(json.data[i].location)       { var location = json.data[i].location }
+                else                        { location = '' }
+            if(json.data[i].gallery[0])     { var gallery = json.data[i].gallery[0] }
+                else                        { gallery[0] = '../img/default-item.jpg' }
+
+            var ibContent = '';
+            ibContent =
+            '<div class="infobox ' + color + '">' +
+                '<div class="inner">' +
+                    '<div class="image">' +
+                        '<div class="item-specific">' + /*drawItemSpecific(category, json, i)*/ '' + '</div>' +
+                        /*'<div class="overlay">' +
+                            '<div class="wrapper">' +
+                                '<a href="#" class="quick-view" data-toggle="modal" data-target="#modal" id="' + id + '">Quick View</a>' +
+                                '<hr>' +
+                                '<a href="' + url +  '" class="detail">Go to Detail</a>' +
+                            '</div>' +
+                        '</div>' +*/
+                        '<a href="' + url +  '" class="description">' +
+                            '<div class="meta">' +
+                                price +
+                                '<h2>' + title +  '</h2>' +
+                                '<figure>' + location +  '</figure>' +
+                                '<i class="fa fa-angle-right"></i>' +
+                            '</div>' +
+                        '</a>' +
+                        '<img src="' + gallery +  '">' +
+                    '</div>' +
+                '</div>' +
+            '</div>';
+
+            return ibContent;
+        }
+
+        function createHomepageGoogleMap(_latitude,_longitude,json) {
+              var mapCenter = new google.maps.LatLng(_latitude,_longitude);
+              var mapOptions = {
+                  zoom: 13,
+                  center: mapCenter,
+                  disableDefaultUI: false,
+                  scrollwheel: false,
+                  styles: [
+                    {stylers: [{ visibility: 'simplified' }]},
+                    {elementType: 'labels', stylers: [{ visibility: 'off' }]}
+                  ] ,
+                  mapTypeControlOptions: {
+                      style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                      position: google.maps.ControlPosition.BOTTOM_CENTER
+                  },
+                  panControl: false,
+                  zoomControl: true,
+                  zoomControlOptions: {
+                      style: google.maps.ZoomControlStyle.LARGE,
+                      position: google.maps.ControlPosition.RIGHT_TOP
+                  }
+              };
+              var mapElement = document.getElementById('map');
+              var map = new google.maps.Map(mapElement, mapOptions);
+              var newMarkers = [];
+              var markerClicked = 0;
+              var activeMarker = false;
+              var lastClicked = false;
+
+              for (var i = 0; i < json.data.length; i++) {
+
+                  // Google map marker content -----------------------------------------------------------------------------------
+
+                  if( json.data[i].color ) var color = json.data[i].color;
+                  else color = '';
+
+                  var markerContent = document.createElement('DIV');
+                  if( json.data[i].featured == 1 ) {
+                      markerContent.innerHTML =
+                          '<div class="map-marker featured' + color + '">' +
+                              '<div class="icon">' +
+                              '<img src="' + json.data[i].type_icon +  '">' +
+                              '</div>' +
+                          '</div>';
+                  }
+                  else {
+                      markerContent.innerHTML =
+                          '<div class="map-marker ' + json.data[i].color + '">' +
+                              '<div class="icon">' +
+                              '<img src="' + json.data[i].type_icon +  '">' +
+                              '</div>' +
+                          '</div>';
+                  }
+
+                  // Create marker on the map ------------------------------------------------------------------------------------
+
+                  var marker = new RichMarker({
+                      position: new google.maps.LatLng( json.data[i].latitude, json.data[i].longitude ),
+                      map: map,
+                      draggable: false,
+                      content: markerContent,
+                      flat: true
+                  });
+
+                  newMarkers.push(marker);
+
+                  // Create infobox for marker -----------------------------------------------------------------------------------
+
+                  var infoboxContent = document.createElement("div");
+                  var infoboxOptions = {
+                      content: infoboxContent,
+                      disableAutoPan: false,
+                      pixelOffset: new google.maps.Size(-18, -42),
+                      zIndex: null,
+                      alignBottom: true,
+                      boxClass: "infobox",
+                      enableEventPropagation: true,
+                      closeBoxMargin: "0px 0px -30px 0px",
+                      closeBoxURL: "http://themestarz.net/html/spotter/assets/img/close.png",
+                      infoBoxClearance: new google.maps.Size(1, 1)
+                  };
+
+                  // Infobox HTML element ----------------------------------------------------------------------------------------
+
+                  var category = json.data[i].category;
+                  infoboxContent.innerHTML = drawInfobox(category, infoboxContent, json, i);
+
+                  // Create new markers ------------------------------------------------------------------------------------------
+
+                  newMarkers[i].infobox = new InfoBox(infoboxOptions);
+
+                  // Show infobox after click ------------------------------------------------------------------------------------
+
+                  google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                      return function() {
+                          google.maps.event.addListener(map, 'click', function(event) {
+                              lastClicked = newMarkers[i];
+                          });
+                          activeMarker = newMarkers[i];
+                          if( activeMarker != lastClicked ){
+                              for (var h = 0; h < newMarkers.length; h++) {
+                                  newMarkers[h].content.className = 'marker-loaded';
+                                  newMarkers[h].infobox.close();
+                              }
+                              newMarkers[i].infobox.open(map, this);
+                              newMarkers[i].infobox.setOptions({ boxClass:'fade-in-marker'});
+                              newMarkers[i].content.className = 'marker-active marker-loaded';
+                              markerClicked = 1;
+                          }
+                      }
+                  })(marker, i));
+
+                  // Fade infobox after close is clicked -------------------------------------------------------------------------
+
+                  google.maps.event.addListener(newMarkers[i].infobox, 'closeclick', (function(marker, i) {
+                      return function() {
+                          activeMarker = 0;
+                          newMarkers[i].content.className = 'marker-loaded';
+                          newMarkers[i].infobox.setOptions({ boxClass:'fade-out-marker' });
+                      }
+                  })(marker, i));
+              }
+
+              // Close infobox after click on map --------------------------------------------------------------------------------
+
+              google.maps.event.addListener(map, 'click', function(event) {
+                  if( activeMarker != false && lastClicked != false ){
+                      if( markerClicked == 1 ){
+                          activeMarker.infobox.open(map);
+                          activeMarker.infobox.setOptions({ boxClass:'fade-in-marker'});
+                          activeMarker.content.className = 'marker-active marker-loaded';
+                      }
+                      else {
+                          markerClicked = 0;
+                          activeMarker.infobox.setOptions({ boxClass:'fade-out-marker' });
+                          activeMarker.content.className = 'marker-loaded';
+                          setTimeout(function() {
+                              activeMarker.infobox.close();
+                          }, 350);
+                      }
+                      markerClicked = 0;
+                  }
+                  if( activeMarker != false ){
+                      google.maps.event.addListener(activeMarker, 'click', function(event) {
+                          markerClicked = 1;
+                      });
+                  }
+                  markerClicked = 0;
+              });
+
+              // Create marker clusterer -----------------------------------------------------------------------------------------
+
+              var clusterStyles = [
+                  {
+                      url: 'assets/img/cluster.png',
+                      height: 34,
+                      width: 34
+                  }
+              ];
+
+              var markerCluster = new MarkerClusterer(map, newMarkers, { styles: clusterStyles, maxZoom: 19 });
+              markerCluster.onClick = function(clickedClusterIcon, sameLatitude, sameLongitude) {
+                  return multiChoice(sameLatitude, sameLongitude, json);
+              };
+
+              // Dynamic loading markers and data from JSON ----------------------------------------------------------------------
+
+              google.maps.event.addListener(map, 'idle', function() {
+                  var visibleArray = [];
+                  for (var i = 0; i < json.data.length; i++) {
+                      if ( map.getBounds().contains(newMarkers[i].getPosition()) ){
+                          visibleArray.push(newMarkers[i]);
+                          $.each( visibleArray, function (i) {
+                              setTimeout(function(){
+                                  if ( map.getBounds().contains(visibleArray[i].getPosition()) ){
+                                      if( !visibleArray[i].content.className ){
+                                          visibleArray[i].setMap(map);
+                                          visibleArray[i].content.className += 'bounce-animation marker-loaded';
+                                          //markerCluster.repaint();
+                                      }
+                                  }
+                              }, i * 50);
+                          });
+                      } else {
+                          newMarkers[i].content.className = '';
+                          newMarkers[i].setMap(null);
+                      }
+                  }
+              });
+
+              redrawMap('google', map);
+
+              function is_cached(src, a) {
+                  var image = new Image();
+                  var loadedImage = $('.results li #' + json.data[a].id + ' .image');
+                  image.src = src;
+                  if( image.complete ){
+                      $(".results").each(function() {
+                          loadedImage.removeClass('loading');
+                          loadedImage.addClass('loaded');
+                      });
+                  }
+                  else {
+                      $(".results").each(function() {
+                          $('.results li #' + json.data[a].id + ' .image').addClass('loading');
+                      });
+                      $(image).load(function(){
+                          loadedImage.removeClass('loading');
+                          loadedImage.addClass('loaded');
+                      });
+                  }
+              }
+        }
+
+        var data = {
+        data: [
+            {
+              "title": "181 Fremont Apartments",
+              "location": "181 Fremont St, San Francisco",
+              "latitude": 37.7897947,
+              "longitude": -122.3953209,
+              "url": "#",
+              "type_icon": "/new/apartment-3.png",
+              "rating": 4,
+              "gallery":
+                  [
+                      "/new/1.jpg"
+                  ],
+              "price": "$1200"
+            },
+            {
+              "title": "L Seven Apartments",
+              "location": "1222 Harrison St, San Francisco",
+              "latitude": 37.7738069,
+              "longitude": -122.4088216,
+              "url": "#",
+              "type_icon": "/new/apartment-3.png",
+              "rating": 4,
+              "gallery":
+                  [
+                      "/new/1.jpg"
+                  ],
+              "price": "$1200"
+            }
+          ]
+        };
+
+        var _latitude = 37.773972 || 51.541216;
+        var _longitude = -122.431297 || -0.095678;
+
+        createHomepageGoogleMap(_latitude, _longitude, data);
 
         /*$('.popup-iframe-typeform').magnificPopup({
             type: 'iframe'
@@ -1201,4 +1495,7 @@ html(dir='ltr', lang='en-US')
       });
       });
 
-    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDUi2u0Dyy7s0cOUpNynJjfgG8MofUiAQ8&callback=initMap', async='', defer='').
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDUi2u0Dyy7s0cOUpNynJjfgG8MofUiAQ8').
+    script(src='/new/infobox.js').
+    script(src='/new/richmarker-compiled.js').
+    script(src='/new/markerclusterer.js').
