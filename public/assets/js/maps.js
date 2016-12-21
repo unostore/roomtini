@@ -2,6 +2,10 @@
 var $ = jQuery.noConflict();
 
 var mapStyles = [ {"featureType":"road","elementType":"labels","stylers":[{"visibility":"simplified"},{"lightness":20}]},{"featureType":"administrative.land_parcel","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"on"},{"lightness":10}]},{"featureType":"road.local","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"road.local","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"simplified"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":50}]},{"featureType":"water","elementType":"all","stylers":[{"hue":"#a1cdfc"},{"saturation":30},{"lightness":49}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"hue":"#f49935"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"hue":"#fad959"}]}, {featureType:'road.highway',elementType:'all',stylers:[{hue:'#dddbd7'},{saturation:-92},{lightness:60},{visibility:'on'}]}, {featureType:'landscape.natural',elementType:'all',stylers:[{hue:'#c8c6c3'},{saturation:-71},{lightness:-18},{visibility:'on'}]},  {featureType:'poi',elementType:'all',stylers:[{hue:'#d9d5cd'},{saturation:-70},{lightness:20},{visibility:'on'}]} ];
+var newMapStyles = [
+                    {stylers: [{ visibility: 'simplified' }]},
+                    {elementType: 'labels', stylers: [{ visibility: 'off' }]}
+                  ];
 
 // Set map height to 100% ----------------------------------------------------------------------------------------------
 
@@ -30,7 +34,7 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
             center: mapCenter,
             disableDefaultUI: false,
             scrollwheel: false,
-            styles: mapStyles,
+            styles: newMapStyles,
             mapTypeControlOptions: {
                 style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
                 position: google.maps.ControlPosition.BOTTOM_CENTER
@@ -129,6 +133,7 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
                         newMarkers[i].content.className = 'marker-active marker-loaded';
                         markerClicked = 1;
                     }
+                    map.panTo(marker.getPosition());
                 }
             })(marker, i));
 
@@ -319,7 +324,7 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
 
         // Autocomplete address ----------------------------------------------------------------------------------------
 
-        var input = document.getElementById('location') ;
+        /*var input = document.getElementById('location') ;
         var autocomplete = new google.maps.places.Autocomplete(input, {
             types: ["geocode"]
         });
@@ -348,7 +353,7 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
                     (place.address_components[2] && place.address_components[2].short_name || '')
                 ].join(' ');
             }
-        });
+        });*/
 
 
     }
@@ -509,7 +514,7 @@ function itemDetailMap(json){
         center: mapCenter,
         disableDefaultUI: true,
         scrollwheel: false,
-        styles: mapStyles,
+        styles: newMapStyles,
         panControl: false,
         zoomControl: false,
         draggable: true
@@ -554,7 +559,7 @@ function simpleMap(_latitude, _longitude, draggableMarker){
         center: mapCenter,
         disableDefaultUI: true,
         scrollwheel: false,
-        styles: mapStyles,
+        styles: newMapStyles,
         panControl: false,
         zoomControl: false,
         draggable: true
@@ -612,7 +617,7 @@ function pushItemsToArray(json, a, category, visibleItemsArray){
                             '<i><img src="' + json.data[a].type_icon + '" alt=""></i>' +
                             '<span>' + json.data[a].type + '</span>' +
                         '</div>' +
-                        '<div class="rating" data-rating="' + json.data[a].rating + '"></div>' +
+                        /*'<div class="rating" data-rating="' + json.data[a].rating + '"></div>' +*/
                     '</div>' +
                 '</div>' +
             '</div>' +
