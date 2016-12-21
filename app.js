@@ -177,7 +177,7 @@ app.get('/settings/unlink/:provider', passportConfig.isAuthenticated, userContro
 app.post('/typeforms', userController.postTypeformInfo);
 app.get('/matches', passportConfig.isAuthenticated, userController.get_matches);
 app.get('/roommates', passportConfig.isAuthenticated, userController.get_roommates);
-app.get('/locations', homeController.location);
+app.get('/locations', homeController.locations);
 /**
  * API examples routes.
  */
