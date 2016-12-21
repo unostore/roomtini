@@ -39,4 +39,8 @@ exports.events = (req, res) => {
     title: 'Events'
   });
 };
-
+exports.location = (req, res) => {
+  res.render('locations', {
+    title: 'Locations'
+  });
+};
