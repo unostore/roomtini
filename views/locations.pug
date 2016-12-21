@@ -884,15 +884,15 @@ block content
       //if lte IE 9
         script(type='text/javascript', src='assets/js/ie-scripts.js')
         script.
-  var _latitude = 51.541216;
-  var _longitude = -0.095678;
-  var jsonPath = 'assets/json/real-estate.json.txt';
-  $.getJSON(jsonPath)
-  .done(function(json) {
-  createHomepageGoogleMap(_latitude,_longitude,json);
-  })
-  .fail(function( jqxhr, textStatus, error ) {
-  console.log(error);
-  })
-  ;
+          var _latitude = 51.541216;
+          var _longitude = -0.095678;
+          var jsonPath = 'assets/json/real-estate.json.txt';
+          $.getJSON(jsonPath)
+          .done(function(json) {
+          createHomepageGoogleMap(_latitude,_longitude,json);
+          })
+          .fail(function( jqxhr, textStatus, error ) {
+          console.log(error);
+          })
+          ;
 
