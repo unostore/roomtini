@@ -40,8 +40,7 @@ exports.events = (req, res) => {
   });
 };
 
-exports.locations = (req, res) => {
->>>>>>> origin/master
+exports.location = (req, res) => {
   res.render('locations', {
     title: 'Locations'
   });
