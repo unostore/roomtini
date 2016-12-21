@@ -39,7 +39,7 @@ exports.events = (req, res) => {
     title: 'Events'
   });
 };
-exports.locations = (req, res) => {
+exports.explore_locations = (req, res) => {
   res.render('locations', {
     title: 'Locations'
   });
