@@ -39,7 +39,9 @@ exports.events = (req, res) => {
     title: 'Events'
   });
 };
+
 exports.locations = (req, res) => {
+>>>>>>> origin/master
   res.render('locations', {
     title: 'Locations'
   });
