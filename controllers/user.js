@@ -44,6 +44,12 @@ exports.get_matches = (req, res, done) => {
       }); 
 };
 
+exports.locations = (req, res, done) => {
+  res.render('properties', {
+    title: 'Locations'
+  });
+};
+
 exports.get_roommates = (req, res, done) => {
 
   User.findById(req.user.id)

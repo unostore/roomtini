@@ -596,3 +596,271 @@
   position: absolute;
   top: -4px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.map-canvas.list-width-10 .items-list {
+  width: 10%;
+}
+.map-canvas.list-width-10 .map {
+  width: 90%;
+}
+.map-canvas.list-width-20 .items-list {
+  width: 20%;
+}
+.map-canvas.list-width-20 .map {
+  width: 80%;
+}
+.map-canvas.list-width-30 .items-list {
+  width: 30%;
+}
+.map-canvas.list-width-30 .map {
+  width: 70%;
+}
+.map-canvas.list-width-40 .items-list {
+  width: 40%;
+}
+.map-canvas.list-width-40 .map {
+  width: 60%;
+}
+.map-canvas.list-width-50 .items-list {
+  width: 50%;
+}
+.map-canvas.list-width-50 .map {
+  width: 50%;
+}
+.map-canvas.list-width-60 .items-list {
+  width: 60%;
+}
+.map-canvas.list-width-60 .map {
+  width: 40%;
+}
+.map-canvas.list-width-70 .items-list {
+  width: 70%;
+}
+.map-canvas.list-width-70 .map {
+  width: 30%;
+}
+.map-canvas.list-width-80 .items-list {
+  width: 80%;
+}
+
+.items-list {
+  -moz-transition: all 0.4s cubic-bezier(0.42, 0, 0.06, 0.99) 0s;
+  -webkit-transition: all 0.4s cubic-bezier(0.42, 0, 0.06, 0.99);
+  -webkit-transition-delay: 0s;
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.06, 0.99) 0s;
+  background-color: #f4f4f2;
+  float: left;
+  width: 35%;
+  padding: 20px 0px 20px 20px;
+  height: 100%;
+  overflow: hidden;
+}
+.items-list header {
+  padding: 0;
+  margin-bottom: 10px;
+}
+.items-list header h3 {
+  margin-bottom: 15px;
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+.items-list .inner {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.items-list .inner .filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+.items-list .inner .filter header .show-more {
+  font-size: 12px;
+  margin-right: 25px;
+}
+.items-list .inner .filter form {
+  padding: 0;
+}
+.items-list .inner .filter form .form-group {
+  display: block;
+  float: none;
+  margin-bottom: 10px;
+}
+.items-list .inner .filter .advanced-search h4 {
+  margin-top: 0;
+}
+.items-list .inner .filter .advanced-search ul {
+  margin-bottom: 0;
+  padding-bottom: 20px;
+}
+.items-list .inner .filter .advanced-search ul li {
+  display: inline-block;
+  width: 30%;
+}
+.items-list .inner .filter .main-search .col-xs-1, .items-list .inner .filter .main-search .col-sm-1, .items-list .inner .filter .main-search .col-md-1, .items-list .inner .filter .main-search .col-lg-1, .items-list .inner .filter .main-search .col-xs-2, .items-list .inner .filter .main-search .col-sm-2, .items-list .inner .filter .main-search .col-md-2, .items-list .inner .filter .main-search .col-lg-2, .items-list .inner .filter .main-search .col-xs-3, .items-list .inner .filter .main-search .col-sm-3, .items-list .inner .filter .main-search .col-md-3, .items-list .inner .filter .main-search .col-lg-3, .items-list .inner .filter .main-search .col-xs-4, .items-list .inner .filter .main-search .col-sm-4, .items-list .inner .filter .main-search .col-md-4, .items-list .inner .filter .main-search .col-lg-4, .items-list .inner .filter .main-search .col-xs-5, .items-list .inner .filter .main-search .col-sm-5, .items-list .inner .filter .main-search .col-md-5, .items-list .inner .filter .main-search .col-lg-5, .items-list .inner .filter .main-search .col-xs-6, .items-list .inner .filter .main-search .col-sm-6, .items-list .inner .filter .main-search .col-md-6, .items-list .inner .filter .main-search .col-lg-6, .items-list .inner .filter .main-search .col-xs-7, .items-list .inner .filter .main-search .col-sm-7, .items-list .inner .filter .main-search .col-md-7, .items-list .inner .filter .main-search .col-lg-7, .items-list .inner .filter .main-search .col-xs-8, .items-list .inner .filter .main-search .col-sm-8, .items-list .inner .filter .main-search .col-md-8, .items-list .inner .filter .main-search .col-lg-8, .items-list .inner .filter .main-search .col-xs-9, .items-list .inner .filter .main-search .col-sm-9, .items-list .inner .filter .main-search .col-md-9, .items-list .inner .filter .main-search .col-lg-9, .items-list .inner .filter .main-search .col-xs-10, .items-list .inner .filter .main-search .col-sm-10, .items-list .inner .filter .main-search .col-md-10, .items-list .inner .filter .main-search .col-lg-10, .items-list .inner .filter .main-search .col-xs-11, .items-list .inner .filter .main-search .col-sm-11, .items-list .inner .filter .main-search .col-md-11, .items-list .inner .filter .main-search .col-lg-11, .items-list .inner .filter .main-search .col-xs-12, .items-list .inner .filter .main-search .col-sm-12, .items-list .inner .filter .main-search .col-md-12, .items-list .inner .filter .main-search .col-lg-12 {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.items-list .inner .filter .main-search .row {
+  margin-right: -5px;
+  margin-left: -5px;
+}
+.items-list .inner .scroller {
+  padding-top: 2px;
+  padding-right: 30px;
+}
+.items-list .inner .buttons .icon {
+  margin-left: 10px;
+  margin-right: 0;
+}
+.items-list .inner .buttons .icon i {
+  cursor: pointer;
+  color: #8d8d8d;
+  font-size: 14px;
+  vertical-align: middle;
+}
+.items-list .inner .buttons .icon.active i {
+  color: #ff513f;
+}
+.items-list .inner .buttons span {
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.items-list .inner .results {
+  height: 100%;
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.items-list .inner .results li .item {
+  -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  -moz-transition: 0.4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-color: #fff;
+  cursor: pointer;
+  display: table;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.items-list .inner .results li .item.item-hide {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+.items-list .inner .results li .item.item-show {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+.items-list .inner .results li .item:hover h3 {
+  color: #ff513f;
+}
+.items-list .inner .results li .item .image.loaded .inner {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+.items-list .inner .results li .item .image.loading .inner {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+.items-list .inner .results li .item .image .inner {
+  -moz-transition: 0.4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  overflow: hidden;
+}
+.items-list .inner .results li .item .wrapper .info {
+  border-top: none;
+  margin-top: 0;
+}
+.items-list .inner .results li .item .wrapper .item-specific {
+  margin-top: 3px;
+}
+.items-list .inner .results li .item .wrapper .item-specific span {
+  font-size: 11px;
+  margin-right: 10px;
+}
+.items-list .inner .results li .item .wrapper .item-specific span img {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  margin-right: 5px;
+  vertical-align: baseline;
+}
+.items-list .inner .results li .item .wrapper .type {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  font-size: 11px;
+}
+
+  .map-canvas.list-width-10 .items-list {
+    width: 15%;
+  }
+  .map-canvas.list-width-10 .map {
+    width: 85%;
+  }
+  .map-canvas.list-width-20 .items-list {
+    width: 25%;
+  }
+  .map-canvas.list-width-20 .map {
+    width: 75%;
+  }
+  .map-canvas.list-width-30 .items-list {
+    width: 35%;
+  }
+  .map-canvas.list-width-30 .map {
+    width: 65%;
+  }
+  .map-canvas.list-width-40 .items-list {
+    width: 45%;
+  }
+  .map-canvas.list-width-40 .map {
+    width: 55%;
+  }
+  .map-canvas.list-width-50 .items-list {
+    width: 55%;
+  }
+  .map-canvas.list-width-50 .map {
+    width: 45%;
+  }
+  .map-canvas.list-width-60 .items-list {
+    width: 65%;
+  }
+  .map-canvas.list-width-60 .map {
+    width: 35%;
+  }
+  .map-canvas.list-width-70 .items-list {
+    width: 75%;
+  }
+  .map-canvas.list-width-70 .map {
+    width: 25%;
+  }
+  .map-canvas.list-width-80 .items-list {
+    width: 85%;
+  }
+  .map-canvas.list-width-80 .map {
+    width: 15%;
+  }
