@@ -351,7 +351,9 @@
 	}
 
 	#logo a.standard-logo { display: inline-block; }
-
+	#primary-menu > ul > li > a {
+		color: black;
+	}
 	#primary-menu {
 		display: block;
 		float: none;
@@ -1805,7 +1807,7 @@ only screen and (                min-resolution: 2dppx) {
 
 	#logo a.retina-logo { display: block; }
 
-	#header.split-menu #logo a.retina-logo { display: block; }
+	#header.split-menu #logo a.retina-logo { display: inline-block; }
 
 	.owl-carousel.owl-loading,
 	.preloader,
@@ -1861,5 +1863,8 @@ only screen and (                min-resolution: 192dpi) and (max-width: 991px),
 only screen and (                min-resolution: 2dppx) and (max-width: 991px) {
 	#logo a.standard-logo { display: none; }
 	#logo a.retina-logo { display: inline-block; }
+	#primary-menu > ul > li > a {
+		color: black;
+	}
 }
 
