@@ -9,7 +9,8 @@ html(lang='en-US')
     link(rel='stylesheet', href='/assets/css/bootstrap-select.min.css', type='text/css')
     link(rel='stylesheet', href='/assets/css/owl.carousel.css', type='text/css')
     link(rel='stylesheet', href='/assets/css/jquery.mCustomScrollbar.css', type='text/css')
-    
+    link(rel='stylesheet', href='/assets/css/jquery.nouislider.min.css', type='text/css')
+
     link(rel='stylesheet', href='/assets/css/colors/pink.css', type='text/css')
     link(href='https://fonts.googleapis.com/css?family=Lato', rel='stylesheet')
     link(rel='stylesheet', type='text/css', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css')
@@ -861,6 +862,11 @@ html(lang='en-US')
       }
       #header.sticky-header:not(.static-sticky) #top-cart .top-cart-content { top: 40px; }
       #header.sticky-header.sticky-style-2 #primary-menu { border-top: 0; }
+      .noUi-target {
+            border-radius: 0px; 
+            border: 0px solid #D3D3D3; 
+            box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB;
+      }
     link(rel='stylesheet', type='text/css', href='/assets/css/responsive.css')
   body#page-top.map-fullscreen.page-homepage.navigation-off-canvas(onunload='')
     // Outer Wrapper
@@ -981,7 +987,27 @@ html(lang='en-US')
                 // /.search-bar
               // end Map
               // Items List
-              .items-list
+              .items-list 
+                .filter
+                    header.clearfix
+                      h3.pull-left Search
+                    .row
+                      .col-md-6.col-sm-6
+                        .form-group
+                          label(for='type') Apartment Type
+                          select#type
+                            option(value='all', selected='') All
+                            option(value='converted') Converted
+                            option(value='master') Master
+                      .col-md-6.col-sm-6
+                        .form-group
+                          label Price
+                          #price-slider.ui-slider(data-value-min='1000', data-value-max='5000', data-step='500', data-value-type='price', data-currency='$', data-currency-placement='before')
+                            .values.clearfix
+                              input.value-min(name='value-min[]', readonly='')
+                              input.value-max(name='value-max[]', readonly='')
+                            .element   
+
                 .inner
                   ul.results.list
                 // results
@@ -1014,81 +1040,185 @@ html(lang='en-US')
     script(type='text/javascript', src='/assets/js/markerclusterer.js')
     script(type='text/javascript', src='/assets/js/custom.js')
     script(type='text/javascript', src='/assets/js/maps.js')
-    script(type='text/javascript', src='/assets/js/plugins.js')
-    script(type='text/javascript', src='/assets/js/functions.js')
+    //script(type='text/javascript', src='/assets/js/plugins.js')
+    //script(type='text/javascript', src='/assets/js/functions.js')
     //if lte IE 9
       script(type='text/javascript', src='assets/js/ie-scripts.js')
     script.
-      var _latitude = 51.541216;
-      var _longitude = -0.095678;
-      var jsonPath = 'http://themestarz.net/html/spotter/assets/json/items.json.txt';
-      var data = {
-      data: [
-      {
-      "id": 1,
-      "category": "real_estate",
-      "title": "181 Fremont Apartments",
-      "location": "181 Fremont St, San Francisco",
-      "latitude": 37.7897947,
-      "longitude": -122.3953209,
-      "url": "#",
-      "type_icon": "/assets/icons/real-estate/apartment-3.png",
-      "rating": 4,
-      "type": "Apartment",
-      "gallery": [
-      "../assets/img/1.jpg"
-      ],
-      "price": "$1200",
-      "item_specific": {
-      "bedrooms": 2,
-      "bathrooms": 2,
-      "rooms": 4,
-      "garages": 1,
-      "area": 240
-      }
-      },
-      {
-      "id": 2,
-      "category": "real_estate",
-      "title": "L Seven Apartments",
-      "location": "1222 Harrison St, San Francisco",
-      "latitude": 37.7738069,
-      "longitude": -122.4088216,
-      "url": "#",
-      "type_icon": "/assets/icons/real-estate/apartment-3.png",
-      "rating": 4,
-      "type": "Apartment",
-      "gallery": [
-      "../assets/img/1.jpg"
-      ],
-      "price": "$1200",
-      "item_specific": {
-      "bedrooms": 2,
-      "bathrooms": 2,
-      "rooms": 4,
-      "garages": 1,
-      "area": 240
-      }
-      }
-      ]
-      };
-      var _latitude = 37.773972 || 51.541216;
-      var _longitude = -122.431297 || -0.095678;
-      // Load JSON data and create Google Maps
-      createHomepageGoogleMap(_latitude, _longitude, data);
-      // Set if language is RTL and load Owl Carousel
-      $(window).load(function(){
-      var rtl = false; // Use RTL
-      initializeOwl(rtl);
-      });
-      var logo = $('#logo > a > img');
-      var button = $('.one-page-menu');
-      var b = $('.menu-item-emphasis')
-      $(document).scroll(function() {
-      $(logo).css({ "margin-top" : $(this).scrollTop()>0 ? "10px":"25px"});
-      $(button).css({ "margin-top" : $(this).scrollTop()>0 ? "10px":"0px"});
-      $(b).css({ "margin-top" : $(this).scrollTop()>0 ? "-10px":"0px"});
-      });
-      //autoComplete();
+        var data = window.data = {
+        data: [
+        {
+        "id": 1,
+        "category": "real_estate",
+        "title": "181 Fremont Apartments",
+        "location": "181 Fremont St, San Francisco",
+        "latitude": 37.7897947,
+        "longitude": -122.3953209,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/1.jpg",
+        "/assets/img/1.jpg",
+        "/assets/img/1.jpg",
+        "/assets/img/1.jpg"
+        ],
+        "price": "$1200",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 4,
+        "garages": 1,
+        "area": 240
+        },
+        "features": ['Free Parking', 'Wi-Fi'],
+        "descriptions": "Curabitur odio nibh, luctus non pulvinar a, ultricies ac diam. Donec neque massa, viverra interdum eros ut, imperdiet pellentesque mauris. Proin sit amet scelerisque risus. Donec semper semper erat ut mollis. Curabitur suscipit, justo eu dignissim lacinia, ante sapien pharetra duin consectetur eros augue sed ex. Donec a odio rutrum, hendrerit sapien vitae, euismod arcu."
+        },
+        {
+        "id": 2,
+        "category": "real_estate",
+        "title": "L Seven Apartments",
+        "location": "1222 Harrison St, San Francisco",
+        "latitude": 37.7738069,
+        "longitude": -122.4088216,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/1.jpg"
+        ],
+        "price": "$1200",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 4,
+        "garages": 1,
+        "area": 240
+        },
+        "features": ['Free Parking', 'Wi-Fi'],
+        "descriptions": "Curabitur odio nibh, luctus non pulvinar a, ultricies ac diam. Donec neque massa, viverra interdum eros ut, imperdiet pellentesque mauris. Proin sit amet scelerisque risus. Donec semper semper erat ut mollis. Curabitur suscipit, justo eu dignissim lacinia, ante sapien pharetra duin consectetur eros augue sed ex. Donec a odio rutrum, hendrerit sapien vitae, euismod arcu."
+        },
+        {
+        "id": 3,
+        "category": "real_estate",
+        "title": "L Seven Apartments 2",
+        "location": "1222 Harrison St, San Francisco 2",
+        "latitude": 37.7634536,
+        "longitude": -122.4288216,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/1.jpg"
+        ],
+        "price": "$2200",
+        "item_specific": {
+        "bedrooms": 6,
+        "bathrooms": 2,
+        "rooms": 4,
+        "garages": 1,
+        "area": 240
+        },
+        "features": ['Free Parking', 'Wi-Fi'],
+        "descriptions": "Curabitur odio nibh, luctus non pulvinar a, ultricies ac diam. Donec neque massa, viverra interdum eros ut, imperdiet pellentesque mauris. Proin sit amet scelerisque risus. Donec semper semper erat ut mollis. Curabitur suscipit, justo eu dignissim lacinia, ante sapien pharetra duin consectetur eros augue sed ex. Donec a odio rutrum, hendrerit sapien vitae, euismod arcu."
+        }
+        ]
+        };
+        var _latitude = 37.773972 || 51.541216;
+        var _longitude = -122.431297 || -0.095678;
+        // Load JSON data and create Google Maps
+        createHomepageGoogleMap(_latitude, _longitude, data);
+        // Set if language is RTL and load Owl Carousel
+        $(window).load(function(){
+        var rtl = false; // Use RTL
+        initializeOwl(rtl);
+        });
+        var logo = $('#logo > a > img');
+        var button = $('.one-page-menu');
+        var b = $('.menu-item-emphasis');
+        $(document).scroll(function() {
+        $(logo).css({ "margin-top" : $(this).scrollTop()>0 ? "10px":"25px"});
+        $(button).css({ "margin-top" : $(this).scrollTop()>0 ? "10px":"0px"});
+        $(b).css({ "margin-top" : $(this).scrollTop()>0 ? "-10px":"0px"});
+        });
+        //autoComplete();
+        /*var filterMarkers = function (category) {
+        console.log(category)
+        //showing all markers
+        for (var i = 0; i < window.___visibleArray.length; i++) {
+        window.___visibleArray[i].setVisible(true);
+        $('.items-list .results #'+window.___visibleArray[i].json.id).css('display', 'block');
+        }
+        if(category == 'all') return true;
+        //filter markers
+        for (var i = 0; i < window.___visibleArray.length; i++) {
+        // If is same category or category not picked
+        if (window.___visibleArray[i].json.bedroom_type.indexOf(category) > -1) {
+        window.___visibleArray[i].setVisible(true);
+        $('.items-list .results #'+window.___visibleArray[i].json.id).css('display', 'block');
+        }
+        // Categories don't match
+        else {
+        window.___visibleArray[i].setVisible(false);
+        $('.items-list .results #'+window.___visibleArray[i].json.id).css('display', 'none');
+        }
+        }
+        }
+        $('#price-slider').on('change', function(w, range){
+        for (var i = 0; i < window.___visibleArray.length; i++) {
+        var price = window.___visibleArray[i].json.price.substring(1, window.___visibleArray[i].json.price.length);
+        console.log(price)
+        if (price > range[0] && price < range[1]) {
+        window.___visibleArray[i].setVisible(true);
+        }
+        else {
+        window.___visibleArray[i].setVisible(false);
+        }
+        }
+        });*/
+        var filter = function(category, price_range) {
+        var filteredMarkers = [];
+        for (var i = 0; i < window.___visibleArray.length; i++) {
+        window.___visibleArray[i].setVisible(true);
+        $('.items-list .results #'+window.___visibleArray[i].json.id).css('display', 'block');
+        }
+        for (var i = 0; i < window.___visibleArray.length; i++) {
+        var bedroom_type = window.___visibleArray[i].json.bedroom_type;
+        var price = window.___visibleArray[i].json.price.substring(1, window.___visibleArray[i].json.price.length);
+        //console.log(category == 'all' ? true : bedroom_type.indexOf(category) > -1)
+        //console.log((price > price_range[0] && price < price_range[1]))
+        // If is same category or category not picked
+        if (    (category == 'all' ? true : bedroom_type.indexOf(category) > -1)
+        &&  (price > price_range[0] && price < price_range[1])
+        ) {
+        window.___visibleArray[i].setVisible(true);
+        $('.items-list .results #'+window.___visibleArray[i].json.id).css('display', 'block');
+        filteredMarkers.push(window.___visibleArray[i]);
+        //console.log('show');
+        }
+        // Categories don't match
+        else {
+        window.___visibleArray[i].setVisible(false);
+        $('.items-list .results #'+window.___visibleArray[i].json.id).css('display', 'none');
+        //console.log('hide');
+        }
+        }
+        window.m.repaint();
+        //window.___markerCluster.clearMarkers();
+        //window.___markerCluster.addMarkers(filteredMarkers);
+        };
+        $('#type, #price-slider').on('change', function() {
+        var category = $('#type').val(); console.log(category);
+        var price_range = $('#price-slider').val();
+        filter(category, price_range.map(function (x) {  return parseInt(x, 10); }))
+        });
+
+
     //if lte IE 9
       script(type='text/javascript', src='assets/js/ie-scripts.js')

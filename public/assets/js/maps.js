@@ -24,6 +24,7 @@ if( $body.hasClass('map-fullscreen') ) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function createHomepageGoogleMap(_latitude,_longitude,json){
+
     $.get("assets/external/_infobox.js", function() {
         gMap();
     });
@@ -52,7 +53,7 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
 
         var mapCenter = new google.maps.LatLng(_latitude,_longitude);
         var mapOptions = {
-            zoom: isMobile.any() ? 12 : 14,
+            zoom: isMobile.any() ? 11 : 14,
             center: mapCenter,
             disableDefaultUI: false,
             scrollwheel: false,
@@ -70,15 +71,20 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
         };
         var mapElement = document.getElementById('map');
         var map = new google.maps.Map(mapElement, mapOptions);
+        window.__map = map;
         var newMarkers = [];
         var markerClicked = 0;
         var activeMarker = false;
         var lastClicked = false;
 
+
+        //var _json = {};
+        //json.data = json.data.filter(function(x) { return x.bedroom_type == window.__saad; });
+        //var json = _json;
+
         for (var i = 0; i < json.data.length; i++) {
-
+            //if(json.data[i].bedroom_type != 'Master') continue;
             // Google map marker content -----------------------------------------------------------------------------------
-
             if( json.data[i].color ) var color = json.data[i].color;
             else color = '';
 
@@ -107,11 +113,11 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
                 map: map,
                 draggable: false,
                 content: markerContent,
-                flat: true
+                flat: true,
+                json: json.data[i]
             });
-
+            
             newMarkers.push(marker);
-
             // Create infobox for marker -----------------------------------------------------------------------------------
 
             var infoboxContent = document.createElement("div");
@@ -207,17 +213,25 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
             }
         ];
 
-        var markerCluster = new MarkerClusterer(map, newMarkers, { styles: clusterStyles, maxZoom: 19 });
+        var markerCluster = window.m = new MarkerClusterer(map, newMarkers, { styles: clusterStyles, maxZoom: 19, ignoreHidden: true });
         markerCluster.onClick = function(clickedClusterIcon, sameLatitude, sameLongitude) {
             return multiChoice(sameLatitude, sameLongitude, json);
         };
 
+        
         // Dynamic loading markers and data from JSON ----------------------------------------------------------------------
-
+        Array.prototype.contains = function (v) {
+            return this.indexOf(v) > -1;
+        }
         google.maps.event.addListener(map, 'idle', function() {
             var visibleArray = [];
             for (var i = 0; i < json.data.length; i++) {
-                if ( map.getBounds().contains(newMarkers[i].getPosition()) ){
+                var price = newMarkers[i].json.price.substring(1, newMarkers[i].json.price.length); 
+                var bedroom_type = newMarkers[i].json.bedroom_type;
+                if ( map.getBounds().contains(newMarkers[i].getPosition()) 
+                    && $('#type').val() == 'all' ? true : newMarkers[i].json.bedroom_type.indexOf($('#type').val()) > -1
+                    && (price > parseInt(($('#price-slider').val())[0]) && price < parseInt($('#price-slider').val()[1]))
+                    ) {
                     visibleArray.push(newMarkers[i]);
                     $.each( visibleArray, function (i) {
                         setTimeout(function(){
@@ -235,15 +249,23 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
                     newMarkers[i].setMap(null);
                 }
             }
+            //markerclusterer.repaint();
+            //window.___markerCluster = markerCluster;
+           
+            window.___visibleArray = visibleArray;
+
 
             var visibleItemsArray = [];
             $.each(json.data, function(a) {
-                if( map.getBounds().contains( new google.maps.LatLng( json.data[a].latitude, json.data[a].longitude ) ) ) {
+                if( map.getBounds().contains( new google.maps.LatLng( json.data[a].latitude, json.data[a].longitude ) ) 
+                    && $('#type').val() == 'all' ? true : json.data[a].bedroom_type.indexOf($('#type').val()) > -1
+                    && (price > parseInt(($('#price-slider').val())[0]) && price < parseInt($('#price-slider').val()[1]))
+                    ) {
                     var category = json.data[a].category;
                     pushItemsToArray(json, a, category, visibleItemsArray);
                 }
             });
-
+            
             // Create list of items in Results sidebar ---------------------------------------------------------------------
 
             $('.items-list .results').html( visibleItemsArray );

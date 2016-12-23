@@ -17,7 +17,7 @@ $(document).ready(function($) {
 
     adaptBackgroundHeight();
 
-    $('.quick-view, .results .item').live('click',  function(){
+    $('.quick-view').live('click',  function(){
         var id = $(this).attr('id');
         quickView(id);
         return false;
@@ -180,7 +180,7 @@ $(document).ready(function($) {
 
     $('body').addClass('page-fade-in');
 
-    $('a').on('click', function (e) {
+    /*$('a').on('click', function (e) {
         var attr = $(this).attr('href');
         //alert( $(this).attr('href') );
         if ( attr.indexOf('#') != 0 ) {
@@ -195,7 +195,7 @@ $(document).ready(function($) {
         else if ( $(this).attr('href') == '#' ) {
             e.preventDefault();
         }
-    });
+    });*/
 
 //  Dropzone -----------------------------------------------------------------------------------------------------------
 
@@ -229,7 +229,7 @@ $(document).ready(function($) {
     });
 
 //  No UI Slider -------------------------------------------------------------------------------------------------------
-
+    
     if( $('.ui-slider').length > 0 ){
         $('.ui-slider').each(function(){
             var step;
@@ -250,21 +250,25 @@ $(document).ready(function($) {
                     'min': valueMin,
                     'max': valueMax
                 },
-                step: step
+                step: step,
+                format: wNumb({
+                    decimals: 0,
+                    thousand: '',
+                })
             });
             if( $(this).attr('data-value-type') == 'price' ) {
                 if( $(this).attr('data-currency-placement') == 'before' ) {
-                    $(this).Link('lower').to( $(this).children('.values').children('.value-min'), null, wNumb({ prefix: $(this).attr('data-currency'), decimals: 0, thousand: '.' }));
-                    $(this).Link('upper').to( $(this).children('.values').children('.value-max'), null, wNumb({ prefix: $(this).attr('data-currency'), decimals: 0, thousand: '.' }));
+                    $(this).Link('lower').to( $(this).children('.values').children('.value-min'), null, wNumb({ prefix: $(this).attr('data-currency'), decimals: 0, thousand: ',' }));
+                    $(this).Link('upper').to( $(this).children('.values').children('.value-max'), null, wNumb({ prefix: $(this).attr('data-currency'), decimals: 0, thousand: ',' }));
                 }
                 else if( $(this).attr('data-currency-placement') == 'after' ){
-                    $(this).Link('lower').to( $(this).children('.values').children('.value-min'), null, wNumb({ postfix: $(this).attr('data-currency'), decimals: 0, thousand: ' ' }));
-                    $(this).Link('upper').to( $(this).children('.values').children('.value-max'), null, wNumb({ postfix: $(this).attr('data-currency'), decimals: 0, thousand: ' ' }));
+                    $(this).Link('lower').to( $(this).children('.values').children('.value-min'), null, wNumb({ postfix: $(this).attr('data-currency'), decimals: 2, thousand: ' ' }));
+                    $(this).Link('upper').to( $(this).children('.values').children('.value-max'), null, wNumb({ postfix: $(this).attr('data-currency'), decimals: 2, thousand: ' ' }));
                 }
             }
             else {
-                $(this).Link('lower').to( $(this).children('.values').children('.value-min'), null, wNumb({ decimals: 0 }));
-                $(this).Link('upper').to( $(this).children('.values').children('.value-max'), null, wNumb({ decimals: 0 }));
+                $(this).Link('lower').to( $(this).children('.values').children('.value-min'), null, wNumb({ decimals: 2 }));
+                $(this).Link('upper').to( $(this).children('.values').children('.value-max'), null, wNumb({ decimals: 2 }));
             }
         });
     }
@@ -456,7 +460,8 @@ function equalHeight(container){
 // Initialize Owl carousel ---------------------------------------------------------------------------------------------
 
 function initializeOwl(_rtl){
-    $.getScript( "assets/js/owl.carousel.min.js", function( data, textStatus, jqxhr ) {
+    $.getScript( "/assets/js/owl.carousel.min.js", function( data, textStatus, jqxhr ) {
+        console.log('initializeOwl')
         if ($('.owl-carousel').length > 0) {
             if ($('.carousel-full-width').length > 0) {
                 setCarouselWidth();
@@ -550,12 +555,30 @@ function drawItemSpecific(category, json, a){
 
 function quickView(id){
     $.ajax({
-        type: 'POST',
-        url: 'assets/external/_modal.html',
-        data: id,
+        type: 'GET',
+        url: '/assets/external/_modal.html',
+        //data: id,
         success: function (data) {
-            // Create HTML element with loaded data
-            $('body').append(data);
+
+
+            var props = (window.data.data.filter(function(x){ return id == x.id; })).pop();
+            console.log(props)
+            var $html = $(data);
+            $html.find('#priceModal').text(props.price);
+            $html.find('#featuresModal').empty();
+            props.features.forEach(function(f){
+                $html.find('#featuresModal').append('<li>'+f+'</li>')
+            });
+            $html.find('#title').text(props.title);
+            $html.find('#location').text(props.location);
+            $html.find('#descriptions').text(props.descriptions);
+            $html.find('#item_specific').empty();
+            for(var key in props.item_specific) {
+                $html.find('#item_specific').append('<dt>'+key+'</dt>');
+                $html.find('#item_specific').append('<dd>'+props.item_specific[key]+'</dd>');
+            }
+            $('body').append($html);
+
         }
     });
 }
