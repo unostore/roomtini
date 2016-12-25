@@ -1862,7 +1862,7 @@ only screen and (        min-device-pixel-ratio: 2) and (max-width: 991px),
 only screen and (                min-resolution: 192dpi) and (max-width: 991px),
 only screen and (                min-resolution: 2dppx) and (max-width: 991px) {
 	#logo a.standard-logo { display: none; }
-	#logo a.retina-logo { display: inline-block; }
+	#logo a.retina-logo { display: block; }
 	#primary-menu > ul > li > a {
 		color: black;
 	}
