@@ -53,7 +53,7 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
 
         var mapCenter = new google.maps.LatLng(_latitude,_longitude);
         var mapOptions = {
-            zoom: isMobile.any() ? 11 : 14,
+            zoom: isMobile.any() ? 11 : 13,
             center: mapCenter,
             disableDefaultUI: false,
             scrollwheel: false,
@@ -218,48 +218,111 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
             return multiChoice(sameLatitude, sameLongitude, json);
         };
 
-        
+        markerCluster.setIgnoreHidden(true);
         // Dynamic loading markers and data from JSON ----------------------------------------------------------------------
         Array.prototype.contains = function (v) {
             return this.indexOf(v) > -1;
         }
-        google.maps.event.addListener(map, 'idle', function() {
+        google.maps.event.addListener(map, 'idle', function() {console.log('idle')
             var visibleArray = [];
+            var price_slider_min = parseInt(($('#price-slider').val())[0]);
+            var price_slider_max = parseInt(($('#price-slider').val())[1]);
+            
+
+            var type_dropdown = $('#type').val();
+
+            //console.log(type_dropdown);
             for (var i = 0; i < json.data.length; i++) {
-                var price = newMarkers[i].json.price.substring(1, newMarkers[i].json.price.length); 
+                
+                 
                 var bedroom_type = newMarkers[i].json.bedroom_type;
-                if ( map.getBounds().contains(newMarkers[i].getPosition()) 
-                    && $('#type').val() == 'all' ? true : newMarkers[i].json.bedroom_type.indexOf($('#type').val()) > -1
-                    && (price > parseInt(($('#price-slider').val())[0]) && price < parseInt($('#price-slider').val()[1]))
+                var price = parseInt(newMarkers[i].json.price.substring(1, newMarkers[i].json.price.length));
+
+                
+
+                //console.log('min', price_slider_min);
+                //console.log('max', price_slider_max);
+                //console.log('price', (price >= price_slider_min && price <= price_slider_max)
+                  //&& ($('#type').val() == 'all' ? true : newMarkers[i].json.bedroom_type.indexOf($('#type').val()) > -1));
+                //console.log('bounds', map.getBounds().contains(newMarkers[i].getPosition()));
+
+                /*console.log(map.getBounds().contains(newMarkers[i].getPosition())
+                    && (price >= price_slider_min && price <= price_slider_max)
+
+                    && type_dropdown == 'all' ? true : bedroom_type.indexOf(type_dropdown) > -1);*/
+
+                    console.log('bb', map.getBounds().contains(newMarkers[i].getPosition()))
+                    console.log('b', type_dropdown == 'all' ? true : bedroom_type.indexOf(type_dropdown) > -1);
+                    console.log('p', (price >= price_slider_min && price <= price_slider_max))
+                    console.log(bedroom_type)
+                    console.log(price)
+                    console.log(map.getBounds().contains(newMarkers[i].getPosition()) &&
+                        (type_dropdown == 'all' ? true : bedroom_type.indexOf(type_dropdown) > -1) &&
+                        (price >= price_slider_min && price <= price_slider_max))
+                    console.log('-------------------------------------------------------------')
+                //console.log('price', false && true && (price >= price_slider_min && price <= price_slider_max));
+
+                if ( map.getBounds().contains(newMarkers[i].getPosition()) &&
+                    (type_dropdown == 'all' ? true : bedroom_type.indexOf(type_dropdown) > -1) &&
+                    (price >= price_slider_min && price <= price_slider_max)
                     ) {
+                    //console.log('true');
                     visibleArray.push(newMarkers[i]);
                     $.each( visibleArray, function (i) {
+                        var bedroom_type = visibleArray[i].json.bedroom_type;
+                        var price = parseInt(visibleArray[i].json.price.substring(1, visibleArray[i].json.price.length));
                         setTimeout(function(){
-                            if ( map.getBounds().contains(visibleArray[i].getPosition()) ){
+                            if ( map.getBounds().contains(visibleArray[i].getPosition()) &&
+                                (type_dropdown == 'all' ? true : bedroom_type.indexOf(type_dropdown) > -1) &&
+                                (price >= price_slider_min && price <= price_slider_max)
+
+
+                                ){
                                 if( !visibleArray[i].content.className ){
+                                    newMarkers[i].setVisible(true)
                                     visibleArray[i].setMap(map);
                                     visibleArray[i].content.className += 'bounce-animation marker-loaded';
                                     markerCluster.repaint();
+                                    //window.m.repaint();
                                 }
                             }
                         }, i * 50);
                     });
                 } else {
+                    //console.log('false');
                     newMarkers[i].content.className = '';
                     newMarkers[i].setMap(null);
+                    newMarkers[i].setVisible(false)
                 }
             }
-            //markerclusterer.repaint();
-            //window.___markerCluster = markerCluster;
-           
-            window.___visibleArray = visibleArray;
+            //window.m.setMap(null);
+            /*window.m = new MarkerClusterer(map, visibleArray, { styles: clusterStyles, maxZoom: 19, ignoreHidden: true });
+            window.m.onClick = function(clickedClusterIcon, sameLatitude, sameLongitude) {
+                return multiChoice(sameLatitude, sameLongitude, json);
+            };
 
+            window.m.setIgnoreHidden(true);
+
+            window.m.repaint();
+*/
+           /* setTimeout(function() {
+                //google.maps.event.trigger(map, 'idle');
+               //window.m.repaint();
+            }, 1000)*/;
+            //window.___markerCluster = markerCluster;
+            //markerCluster.setMap(null);
+            //var markerCluster = window.m = new MarkerClusterer(map, visibleArray, { styles: clusterStyles, maxZoom: 19, ignoreHidden: true });
+            //markerCluster.repaint();
+            window.___visibleArray = visibleArray;
+            console.log('___visibleArray',___visibleArray)
 
             var visibleItemsArray = [];
             $.each(json.data, function(a) {
-                if( map.getBounds().contains( new google.maps.LatLng( json.data[a].latitude, json.data[a].longitude ) ) 
-                    && $('#type').val() == 'all' ? true : json.data[a].bedroom_type.indexOf($('#type').val()) > -1
-                    && (price > parseInt(($('#price-slider').val())[0]) && price < parseInt($('#price-slider').val()[1]))
+                var bedroom_type = json.data[a].bedroom_type;
+                var price = parseInt(json.data[a].price.substring(1, json.data[a].price.length));
+                if( map.getBounds().contains( new google.maps.LatLng( json.data[a].latitude, json.data[a].longitude )) &&
+                    (type_dropdown == 'all' ? true : bedroom_type.indexOf(type_dropdown) > -1) &&
+                    (price >= price_slider_min && price <= price_slider_max)
                     ) {
                     var category = json.data[a].category;
                     pushItemsToArray(json, a, category, visibleItemsArray);
@@ -330,25 +393,25 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
             var locationCenter = new google.maps.LatLng( position.coords.latitude, position.coords.longitude);
             map.setCenter( locationCenter );
             map.setZoom(14);
-			
-			var markerContent = document.createElement('DIV');
-			markerContent.innerHTML =
-				'<div class="map-marker">' +
-					'<div class="icon">' +
-					'</div>' +
-				'</div>';
+            
+            var markerContent = document.createElement('DIV');
+            markerContent.innerHTML =
+                '<div class="map-marker">' +
+                    '<div class="icon">' +
+                    '</div>' +
+                '</div>';
 
-			// Create marker on the map ------------------------------------------------------------------------------------
+            // Create marker on the map ------------------------------------------------------------------------------------
 
-			var marker = new RichMarker({
-				position: locationCenter,
-				map: map,
-				draggable: false,
-				content: markerContent,
-				flat: true
-			});
+            var marker = new RichMarker({
+                position: locationCenter,
+                map: map,
+                draggable: false,
+                content: markerContent,
+                flat: true
+            });
 
-			marker.content.className = 'marker-loaded';
+            marker.content.className = 'marker-loaded';
 
             var geocoder = new google.maps.Geocoder();
             geocoder.geocode({

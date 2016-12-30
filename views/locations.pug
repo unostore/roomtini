@@ -869,7 +869,7 @@ html(lang='en-US')
       }
       @media (max-width: 992px) {
             .has-parallax {
-            height: 200px !important;
+            height: 300px !important;
             }
       }
     link(rel='stylesheet', type='text/css', href='/assets/css/responsive.css')
@@ -1045,7 +1045,7 @@ html(lang='en-US')
     script(type='text/javascript', src='/assets/js/markerclusterer.js')
     script(type='text/javascript', src='/assets/js/custom.js')
     script(type='text/javascript', src='/assets/js/maps.js')
-    script(type='text/javascript', src='/assets/js/plugins.js')
+    //script(type='text/javascript', src='/assets/js/plugins.js')
     script(type='text/javascript', src='/assets/js/functions.js')
     //if lte IE 9
       script(type='text/javascript', src='assets/js/ie-scripts.js')
@@ -1222,7 +1222,9 @@ html(lang='en-US')
         $('#type, #price-slider').on('change', function() {
         var category = $('#type').val(); console.log(category);
         var price_range = $('#price-slider').val();
-        filter(category, price_range.map(function (x) {  return parseInt(x, 10); }))
+        //filter(category, price_range.map(function (x) {  return parseInt(x, 10); }));
+        //console.log(window.___visibleArray , 'saad')
+        google.maps.event.trigger(window.__map, 'idle');
         });
 
 
