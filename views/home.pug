@@ -380,17 +380,19 @@ html(dir='ltr', lang='en-US')
               a.button.button-circle.capitalize(href='#section-map', data-scrollto='#section-map') Explore Locations
 
           .clear
-          .section.notopmargin.nobottommargin
-            .container.clearfix
-              .col_half.nobottommargin.topmargin-lg
-                img.center-block(src='images/wall.jpg', alt='Image')
-              .col_half.nobottommargin.topmargin-lg.col_last
-                .heading-block.topmargin-lg
-                  h2 Typically Responsive
-                  span Our App scales beautifully to different Devices.
+          .section.nobottommargin(style='padding-bottom: 150px;')
+            .hidden-sm.hidden-xs(style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: transparent url('images/wall.jpg') bottom right no-repeat;")
+            .container.clearfix(style='z-index: 1;')
+              .col-md-6.nobottommargin
+                .heading-block.topmargin-sm
+                  h2 Awesome Scalable Apps
+                  span Our Template acts & behaves truly as a Canvas.
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem maiores pariatur voluptatem placeat laborum iste accusamus nam unde, iure id.
                 p
                   | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet cumque, perferendis accusamus porro illo exercitationem molestias, inventore obcaecati ut omnis voluptatibus ratione odio amet magnam quidem tempore necessitatibus quaerat, voluptates excepturi voluptatem, veritatis qui temporibus.
-                a.button.button-border.button-rounded.button-large.button-dark.noleftmargin(href='#') View Gallery          
+                a.button.button-border.button-rounded.button-large.button-dark.noleftmargin(href='#') Start Trial
+          
           .clear
           #section-third_para.page-section.nopadding.nomargin
             .container.topmargin.bottommargin-lg.center.clearfix
