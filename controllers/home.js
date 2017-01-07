@@ -45,3 +45,9 @@ exports.location = (req, res) => {
     title: 'Locations'
   });
 };
+
+exports.181Fremont = (req, res) => {
+  res.render('181Fremont', {
+    title: '181 Fremont'
+  });
+};

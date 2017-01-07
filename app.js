@@ -178,6 +178,7 @@ app.post('/typeforms', userController.postTypeformInfo);
 app.get('/matches', passportConfig.isAuthenticated, userController.get_matches);
 app.get('/roommates', passportConfig.isAuthenticated, userController.get_roommates);
 app.get('/locations', homeController.location);
+app.get('/locations/181Fremont', homeController.181Fremont);
 /**
  * API examples routes.
  */
