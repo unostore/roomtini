@@ -17,7 +17,7 @@ $(document).ready(function($) {
 
     adaptBackgroundHeight();
 
-    $('.quick-view').live('click',  function(){
+    $('.quick-view, .results .item').live('click',  function(){
         var id = $(this).attr('id');
         quickView(id);
         return false;
