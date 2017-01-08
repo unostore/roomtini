@@ -521,16 +521,16 @@ function drawItemSpecific(category, json, a){
         if( category == 'real_estate' ){
             if( json.data[a].item_specific ){
                 if( json.data[a].item_specific.bedrooms ){
-                    itemSpecific += '<span title="Bedrooms"><img src="assets/img/bedrooms.png">' + json.data[a].item_specific.bedrooms + '</span>';
+                    itemSpecific += '<span title="Bedrooms"><img src="/assets/img/bedrooms.png">' + json.data[a].item_specific.bedrooms + '</span>';
                 }
                 if( json.data[a].item_specific.bathrooms ){
-                    itemSpecific += '<span title="Bathrooms"><img src="assets/img/bathrooms.png">' + json.data[a].item_specific.bathrooms + '</span>';
+                    itemSpecific += '<span title="Bathrooms"><img src="/assets/img/bathrooms.png">' + json.data[a].item_specific.bathrooms + '</span>';
                 }
                 if( json.data[a].item_specific.area ){
-                    itemSpecific += '<span title="Area"><img src="assets/img/area.png">' + json.data[a].item_specific.area + '<sup>2</sup></span>';
+                    itemSpecific += '<span title="Area"><img src="/assets/img/area.png">' + json.data[a].item_specific.area + '<sup>2</sup></span>';
                 }
                 if( json.data[a].item_specific.garages ){
-                    itemSpecific += '<span title="Garages"><img src="assets/img/garages.png">' + json.data[a].item_specific.garages + '</span>';
+                    itemSpecific += '<span title="Garages"><img src="/assets/img/garages.png">' + json.data[a].item_specific.garages + '</span>';
                 }
                 return itemSpecific;
             }
