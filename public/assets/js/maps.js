@@ -25,7 +25,7 @@ if( $body.hasClass('map-fullscreen') ) {
 
 function createHomepageGoogleMap(_latitude,_longitude,json){
 
-    $.get("assets/external/_infobox.js", function() {
+    $.get("/assets/external/_infobox.js", function() {
         gMap();
     });
     function gMap(){
@@ -207,7 +207,7 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
 
         var clusterStyles = [
             {
-                url: 'assets/img/cluster.png',
+                url: '/assets/img/cluster.png',
                 height: 34,
                 width: 34
             }
