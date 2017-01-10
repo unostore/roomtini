@@ -405,10 +405,10 @@ function rating(element){
 // Owl Carousel in Modal Window ----------------------------------------------------------------------------------------
 
 function drawOwlCarousel(_rtl){
-    $.getScript( "/assets/js/owl.carousel.min.js", function( data, textStatus, jqxhr ) {
+    $.getScript( "assets/js/owl.carousel.min.js", function( data, textStatus, jqxhr ) {
         $(".image .gallery").owlCarousel({
             rtl: _rtl,
-            items: 3,
+            items: 1,
             nav: true,
             navText: ["",""],
             responsiveBaseElement: ".image"
