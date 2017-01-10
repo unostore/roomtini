@@ -408,7 +408,7 @@ function drawOwlCarousel(_rtl){
     $.getScript( "/assets/js/owl.carousel.min.js", function( data, textStatus, jqxhr ) {
         $(".image .gallery").owlCarousel({
             rtl: _rtl,
-            items: 1,
+            items: 3,
             nav: true,
             navText: ["",""],
             responsiveBaseElement: ".image"
