@@ -577,6 +577,10 @@ function quickView(id){
                 $html.find('#item_specific').append('<dt>'+key+'</dt>');
                 $html.find('#item_specific').append('<dd>'+props.item_specific[key]+'</dd>');
             }
+            $html.find('#galleryModal').empty();
+            props.gallery.forEach(function(g){
+                $html.find('#galleryModal').append('<img src="' + g + '">');
+            });
             $('body').append($html);
 
         }
