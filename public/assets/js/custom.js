@@ -27,7 +27,7 @@ $(document).ready(function($) {
 
     if( $('.items-list').length > 0 ){
         $(".items-list").mCustomScrollbar({
-            mouseWheel:{ scrollAmount: 350 }
+            mouseWheel:{ scrollAmount: 150 }
         });
     }
 
