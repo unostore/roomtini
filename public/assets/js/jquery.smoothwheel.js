@@ -11,7 +11,7 @@
     var self = this, container, running=false, currentY = 0, targetY = 0, oldY = 0, maxScrollTop= 0, minScrollTop, direction, onRenderCallback=null,
             fricton = 1.50, // higher value for slower deceleration
             vy = 0,
-            stepAmt = 1.5,
+            stepAmt = 1.0,
             minMovement= 0.1,
             ts=0.1;
 
