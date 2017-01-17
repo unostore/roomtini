@@ -20647,3 +20647,8 @@ body.navigation-top-header .header .wrapper .toggle-navigation {
     opacity: 0;
   }
 }
+
+.stretched #gotoTop {
+    bottom: 30px;
+    right: 100px;
+}
