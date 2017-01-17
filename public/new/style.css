@@ -13525,3 +13525,7 @@ body:not(.no-transition) #wrapper,
 	padding:0!important
 }
 
+.stretched #gotoTop {
+    bottom: 30px;
+    right: 100px;
+}
