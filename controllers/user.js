@@ -528,8 +528,8 @@ exports.postTypeformInfo = (req, res) => {
   for(var i of comfortable_gender_list)
     if(req.body.hasOwnProperty(i) && req.body[i] == 'on') comfortable_genders.push(i);
 
-  for(let s of survey_list)
-    if(req.body.hasOwnProperty(s) && req.body[s] == 'on') survey.push(s);
+  //for(let s of survey_list)
+    //if(req.body.hasOwnProperty(s) && req.body[s] == 'on') survey.push(s);
   
   /*User.findById(req.user.id, (err, user) => {
     if (err) { return next(err); }
