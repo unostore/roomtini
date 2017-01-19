@@ -463,7 +463,42 @@ exports.getAccount = (req, res) => {
                   ,'Wholesale'
                   ,'Wine & Spirits'
                   ,'Wireless'
-                  ,'Writing & Editing']
+                  ,'Writing & Editing'],
+        placem:   ['Carmal Rincon 2,000'
+                  ,'L Seven 1,800'
+                  ,'Strata 1,750'
+                  ,'399 Fremont 1,800'
+                  ,'Alchemy 1,960'
+                  ,'AVA 55 Ninth 1,750'
+                  ,'Eviva Mission Bay 1,900'
+                  ,'The Venn 1,700'
+                  ,'The Gantry 1,700'
+                  ,'Mosso 1,700'
+                  ,'388 Beale 1,700'
+                  ,'The Duboce 1,700'
+                  ,'Channel at Mission Bay 1,700'
+                  ,'The Venue 1,700'
+                  ,'The Civic 1,700'
+                  ,'Soma at 788 1,700'
+                  ,'Argenta 1,700'
+                  ,'Soma Residences 1,800'
+                  ,'One Henry Adams 1,800'
+                  ,'Nema 1,800'
+                  ,'MB360 1,900'
+                  ,'Jasper 1,900'
+                  ,'Avalon at Mission Bay 1,900'
+                  ,'333 Fremont 1,800'
+                  ,'Avalon Hayes Valley, 1,800'
+                  ,'100 Van Ness 1,800'
+                  ,'2175 Market Street 1,800'
+                  ,'Olume 1,900'
+                  ,'Solaire 1,900'
+                  ,'Vara 1,950'
+                  ,'Azure 1,850'
+                  ,'Trinity Place 1,850'
+                  ,'Edgewater 1,800'
+                  ,'Soma Square 1,900']
+                  
       });
     }
     
@@ -535,6 +570,7 @@ exports.postTypeformInfo = (req, res) => {
 
   var t = {};
   t['29879066'] = hobbies;
+  t['29877946'] = req.body.placem;
   t['29878581'] = req.body.phone;
   t['29879208'] = scale[req.body.cleanliness_scale];
   t['29877951'] = req.body.age;
