@@ -294,7 +294,7 @@ exports.getAccount = (req, res) => {
         predefined_css: user.typeform['29879066'] && (user.typeform['29879066'].filter(function(o){ return o !== 'swimming' && o !== 'surfing' && o !== 'basketball'; })).length > 0 ? 'display: inline-block; margin-top:15px' : 'display: none; margin-top:15px',
         //predefined_css: user.typeform['29879066'].filter(function(o){ return o !== 'swimming' && o !== 'surfing' && o !== 'basketball'; }).lenght > 0 ? 'display: inline-block; margin-top:15px' : 'display: inline-block; margin-top:15px',
         title: 'Account Management',
-        space: ['Split Bedroom', 'Converted Living Room', 'Private Bedroom'],
+        space: ['Master Bedroom Own Bath', 'Converted Living Room Shared Bath', 'Bedroom Shared Bath'],
         age : ['18-24', '25-34', '35-49', '50-64', '65+'],
         work_time_list: ['7-9 AM', '10-1 PM', '2-6 PM', '7-11 PM'],
         weekend_list: ['Go out with Friends', 'Stay inside', 'Work', 'Invite Friends Over'],
