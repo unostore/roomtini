@@ -303,7 +303,7 @@ exports.getAccount = (req, res) => {
         hobbies: ['swimming', 'surfing', 'basketball'],
         comfortable_gender: ['Straight', 'Bi', 'Gay', 'Other', 'All'],
         next_event: ['Berlin', 'London', 'Barcelona', 'New York'],
-        survey: ['L Seven', '181 Fremont'],
+        //survey: ['L Seven', '181 Fremont'],
         move_in_date_flexible: ['1-5 Days', '6-10 Days', '11-15 Days' ,'16-20 Days' ,'21-35 Days' ,'26-31 Days'],
         countries: ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas"
         ,"Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil","British Virgin Islands"
@@ -517,7 +517,7 @@ exports.postTypeformInfo = (req, res) => {
   var comfortable_genders = [];
   var scale = {}; scale['one'] = 1 ; scale['two'] = 2 ; scale['three'] = 3 ; scale['four'] = 4 ; scale['five'] = 5 ; scale['six'] = 6 ; scale['seven'] = 7 ; scale['eight'] = 8 ; scale['nine'] = 9 ; scale['ten'] = 10; 
   var comfortable_gender_list = ['Straight', 'Bi', 'Gay', 'Other', 'All'];
-  let survey_list = ['L Seven', '181 Fremont']
+  //let survey_list = ['L Seven', '181 Fremont']
   let survey = [];
 
   if(req.body.hasOwnProperty('swimming') && req.body.swimming == 'on') hobbies.push('swimming');
@@ -595,7 +595,7 @@ exports.postTypeformInfo = (req, res) => {
   t["34719475"] = req.body.facebook;
   t["34719491"] = req.body.linkedin;
   
-  t['37603382'] = survey;
+  //t['37603382'] = survey;
 
   User.findOneAndUpdate({_id: req.user.id}, {$set:{typeform: t }}, function(err, doc) {
     if(err) {
