@@ -570,7 +570,7 @@ exports.postTypeformInfo = (req, res) => {
 
   var t = {};
   t['29879066'] = hobbies;
-  t['29877946'] = req.body.placemaster;
+  t['41100085'] = req.body.placemaster;
   t['29878581'] = req.body.phone;
   t['29879208'] = scale[req.body.cleanliness_scale];
   t['29877951'] = req.body.age;
