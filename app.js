@@ -75,7 +75,7 @@ app.use(favicon(__dirname + '/public/images/favicon.ico'));
 /**
  * Connect to MongoDB.
  */
-mongoose.connect('mongodb://saad:saad@ds045011.mlab.com:45011/meanjs' || process.env.MONGOLAB_URI || process.env.MONGODB_URI);
+mongoose.connect('mongodb://roomtini:testingbob@ds117819.mlab.com:17819/roomtini' || process.env.MONGOLAB_URI || process.env.MONGODB_URI);
 mongoose.connection.on('connected', () => {
   console.log('%s MongoDB connection established!', chalk.green('✓'));
 });
