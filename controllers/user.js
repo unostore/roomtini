@@ -464,7 +464,8 @@ exports.getAccount = (req, res) => {
                   ,'Wine & Spirits'
                   ,'Wireless'
                   ,'Writing & Editing'],
-        placem:   ['Carmal Rincon 2,000'
+        placem:   ['N/A'
+                  ,'Carmal Rincon 2,000'
                   ,'L Seven 1,800'
                   ,'Strata 1,750'
                   ,'399 Fremont 1,800'
@@ -498,7 +499,8 @@ exports.getAccount = (req, res) => {
                   ,'Trinity Place 1,850'
                   ,'Edgewater 1,800'
                   ,'Soma Square 1,900'],
-        placec:   ['Carmal Rincon 1,200'
+        placec:   ['N/A'
+                  ,'Carmal Rincon 1,200'
                   ,'L Seven 1,200'
                   ,'Strata 1,250'
                   ,'399 Fremont 1,500'
@@ -532,7 +534,8 @@ exports.getAccount = (req, res) => {
                   ,'Trinity Place 1,400'
                   ,'Edgewater 1,400'
                   ,'Soma Square 1,400'],
-        placesi:   ['Carmal Rincon 1,700'
+        placesi:   ['N/A'
+                  ,'Carmal Rincon 1,700'
                   ,'L Seven 1,500'
                   ,'Strata 1,550'
                   ,'399 Fremont 1,600'
