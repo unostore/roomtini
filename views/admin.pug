@@ -919,7 +919,7 @@ html.app(lang='en')
       var list1 = u.filter(function(j){ return j.apartment && j.property; });
       var list2 = u.filter(function(i){ return !(i.apartment && i.property); });
       var list2_survey_list = list2.reduce(function(a, b) {
-      return a.concat(b.typeform['37603382']);
+      return a.concat(b.typeform['41100085']);
       }, []);
       var list2_survey_list = list2_survey_list.filter(function (item, pos) {return list2_survey_list.indexOf(item) == pos});
       //console.log('list2_survey_list', list2_survey_list);
@@ -930,7 +930,7 @@ html.app(lang='en')
       var properties = properties.filter(function (item, pos) {return properties.indexOf(item) == pos});
       $('#nestable1,#nestable2').empty();
       list2.forEach(function(i) {
-      var tooltip = i.typeform['37603382'].reduce(function(a, b) { return a == '' ? a + b : a + ' | ' + b; }, '');
+      var tooltip = i.typeform['41100085'].reduce(function(a, b) { return a == '' ? a + b : a + ' | ' + b; }, '');
       $('#nestable2')
       .prepend('<li class="dd-item mjs-nestedSortable-no-nesting" data-balloon="'+tooltip+'" data-balloon-pos="up" data-html="true" id="user_'+i._id+'"> <div class="dd-handle">'+i.typeform["29877943"] + " " + i.typeform["29878535"] +'</div> </li>');
       });
@@ -953,10 +953,10 @@ html.app(lang='en')
       .prepend('<li class="dd-item" id="apartment_'+o.apartment.split('_')[1]+'"><div class="dd-handle aa" ><i class="fa fa-caret-down"></i><span class="name">'+o.apartment.split('_')[0]+'</span><span class="pull-right"><a href="#"><i class="fa fa-pencil fa-fw m-r-xs"></i></a><a href="#"><i class="fa fa-times fa-fw m-r-xs"></i></a></span></div><ol></ol></li>');
       list_update();
       }
-      /*var tooltip = o.typeform['37603382'].reduce(function(a, b) { return a == '' ? a + b : a + ' | ' + b; }, '');*/
+      /*var tooltip = o.typeform['41100085'].reduce(function(a, b) { return a == '' ? a + b : a + ' | ' + b; }, '');*/
       var _tool = '';
-      if(o.typeform['37603382'])
-      var _tool = o.typeform['37603382'].reduce(function(a, b) { return a == '' ? a + b : a + ' | ' + b; }, '');
+      if(o.typeform['41100085'])
+      var _tool = o.typeform['41100085'].reduce(function(a, b) { return a == '' ? a + b : a + ' | ' + b; }, '');
       $($($('#nestable1 #property_'+(o.property.split('_'))[1] + ' #apartment_'+(o.apartment.split('_'))[1]))
       .find('ol:first'))
       .prepend('<li class="dd-item mjs-nestedSortable-no-nesting" data-balloon="'+_tool+'" data-balloon-pos="up" title="'+_tool+'" id="user_'+o._id+'"> <div class="dd-handle">'+o.typeform["29877943"] + " " + o.typeform["29878535"] +'</div> </li>');
