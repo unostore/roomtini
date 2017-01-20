@@ -497,7 +497,75 @@ exports.getAccount = (req, res) => {
                   ,'Azure 1,850'
                   ,'Trinity Place 1,850'
                   ,'Edgewater 1,800'
-                  ,'Soma Square 1,900']
+                  ,'Soma Square 1,900'],
+        placec:   ['Carmal Rincon 1,200'
+                  ,'L Seven 1,200'
+                  ,'Strata 1,250'
+                  ,'399 Fremont 1,500'
+                  ,'Alchemy 1,660'
+                  ,'AVA 55 Ninth 1,250'
+                  ,'Eviva Mission Bay 1,700'
+                  ,'The Venn 1,300'
+                  ,'The Gantry 1,200'
+                  ,'Mosso 1,200'
+                  ,'388 Beale 1,200'
+                  ,'The Duboce 1,200'
+                  ,'Channel at Mission Bay 1,200'
+                  ,'The Venue 1,200'
+                  ,'The Civic 1,200'
+                  ,'Soma at 788 1,200'
+                  ,'Argenta 1,200'
+                  ,'Soma Residences 1,500'
+                  ,'One Henry Adams 1,400'
+                  ,'Nema 1,500'
+                  ,'MB360 1,500'
+                  ,'Jasper 1,500'
+                  ,'Avalon at Mission Bay 1,500'
+                  ,'333 Fremont 1,500'
+                  ,'Avalon Hayes Valley, 1,400'
+                  ,'100 Van Ness 1,500'
+                  ,'2175 Market Street 1,500'
+                  ,'Olume 1,500'
+                  ,'Solaire 1,500'
+                  ,'Vara 1,450'
+                  ,'Azure 1,450'
+                  ,'Trinity Place 1,400'
+                  ,'Edgewater 1,400'
+                  ,'Soma Square 1,400'],
+        placesi:   ['Carmal Rincon 1,700'
+                  ,'L Seven 1,500'
+                  ,'Strata 1,550'
+                  ,'399 Fremont 1,600'
+                  ,'Alchemy 1,650'
+                  ,'AVA 55 Ninth 1,550'
+                  ,'Eviva Mission Bay 1,500'
+                  ,'The Venn 1,400'
+                  ,'The Gantry 1,500'
+                  ,'Mosso 1,400'
+                  ,'388 Beale 1,500'
+                  ,'The Duboce 1,500'
+                  ,'Channel at Mission Bay 1,525'
+                  ,'The Venue 1,500'
+                  ,'The Civic 1,500'
+                  ,'Soma at 788 1,500'
+                  ,'Argenta 1,500'
+                  ,'Soma Residences 1,600'
+                  ,'One Henry Adams 1,600'
+                  ,'Nema 1,600'
+                  ,'MB360 1,650'
+                  ,'Jasper 1,600'
+                  ,'Avalon at Mission Bay 1,600'
+                  ,'333 Fremont 1,500'
+                  ,'Avalon Hayes Valley, 1,500'
+                  ,'100 Van Ness 1,500'
+                  ,'2175 Market Street 1,600'
+                  ,'Olume 1,700'
+                  ,'Solaire 1,700'
+                  ,'Vara 1,650'
+                  ,'Azure 1,550'
+                  ,'Trinity Place 1,550'
+                  ,'Edgewater 1,500'
+                  ,'Soma Square 1,600']
                   
       });
     }
@@ -570,7 +638,9 @@ exports.postTypeformInfo = (req, res) => {
 
   var t = {};
   t['29879066'] = hobbies;
-  t['41100085'] = req.body.placemaster;
+  t['41100088'] = req.body.placemaster;
+  t['41100085'] = req.body.placeconverted;
+  t['41100089'] = req.body.placesingle;
   t['29878581'] = req.body.phone;
   t['29879208'] = scale[req.body.cleanliness_scale];
   t['29877951'] = req.body.age;

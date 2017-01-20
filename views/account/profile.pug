@@ -367,10 +367,26 @@ html(dir='ltr', lang='en-US')
                             .col-md-4.col-sm-12
                               label(for='placemaster') What place do you perfer?*:
                             .col-md-8.col-sm-12
-                              //input#placemaster.sm-form-control(type='text', name='placemaster')  
+                              input#placemaster.sm-form-control(type='text', name='placemaster')  
                               select(class='sm-form-control show-tick', name='placemaster')
                                 for _item in placem
-                                  option(selected=typeform['41100085'] == _item) #{_item}                                  
+                                  option(selected=typeform['41100085'] == _item) #{_item}
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='placeconverted') What place do you perfer?*:              
+                            .col-md-8.col-sm-12
+                              input#placeconverted.sm-form-control(type='text', name='placeconverted')  
+                              select(class='sm-form-control show-tick', name='placeconverted')
+                                for _item in placec
+                                  option(selected=typeform['41100088'] == _item) #{_item} 
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='placesingle') What place do you perfer?*:  
+                            .col-md-8.col-sm-12
+                              input#placesingle.sm-form-control(type='text', name='placesingle')  
+                              select(class='sm-form-control show-tick', name='placesingle')
+                                for _item in placesi
+                                  option(selected=typeform['41100089'] == _item) #{_item}                                  
                           .row(style='margin-top:30px')
                             .col-md-4.col-sm-12
                               label(for='rating') Overall, how satisfied were you with the event?*:
