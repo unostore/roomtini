@@ -518,7 +518,7 @@ exports.postTypeformInfo = (req, res) => {
   var scale = {}; scale['one'] = 1 ; scale['two'] = 2 ; scale['three'] = 3 ; scale['four'] = 4 ; scale['five'] = 5 ; scale['six'] = 6 ; scale['seven'] = 7 ; scale['eight'] = 8 ; scale['nine'] = 9 ; scale['ten'] = 10; 
   var comfortable_gender_list = ['Straight', 'Bi', 'Gay', 'Other', 'All'];
   //let survey_list = ['L Seven', '181 Fremont']
-  let survey = [];
+  //let survey = [];
 
   if(req.body.hasOwnProperty('swimming') && req.body.swimming == 'on') hobbies.push('swimming');
   if(req.body.hasOwnProperty('surfing') && req.body.surfing == 'on') hobbies.push('surfing');

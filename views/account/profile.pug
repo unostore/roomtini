@@ -330,19 +330,19 @@ html(dir='ltr', lang='en-US')
                                   option(selected=typeform['29877951'] == item) #{item} 
 
 
-                          .row(style='margin-top:30px')
-                            .col-md-4.col-sm-12
-                              label(for='age') Where would you like to stay?*:
-                            .col-md-8.col-sm-12
+                          //.row(style='margin-top:30px')
+                            //.col-md-4.col-sm-12
+                              //label(for='age') Where would you like to stay?*:
+                            //.col-md-8.col-sm-12
                               //input#age.form-control(type='text', name='survey')    
                               //select(class='sm-form-control show-tick', name='survey')
                                 //for item in survey
                                   //option(selected=(typeform['37603382'].indexOf(item) > -1) ? true : false) #{item}  
 
 
-                              for items in survey
-                                div
-                                  input.checkbox-style(name=items, type='checkbox', id=items, checked=typeform['37603382'].includes(items))
+                              //for items in survey
+                                //div
+                                  //input.checkbox-style(name=items, type='checkbox', id=items, checked=typeform['37603382'].includes(items))
                                   label.checkbox-style-2-label.checkbox-small(for=items) #{items}
 
 
