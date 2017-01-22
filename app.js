@@ -240,6 +240,14 @@ app.get('/auth/linkedin/callback', passport.authenticate('linkedin', { failureRe
   res.redirect(req.session.returnTo || '/');
 });
 
+process.on('uncaughtException', function (err) {
+        // handle the error safely
+        console.log(err);
+        winston.error('uncaughtException', {raw: (err instanceof Error ? err.message : JSON.stringify(err) ) });
+    });
+
+    
+
 /**
  * OAuth authorization routes. (API examples)
  */
