@@ -289,6 +289,15 @@ app.use(function(req, res, next){
 
   // default to plain-text. send()
   res.type('txt').send('Not found');
+  if(user.typeform['29879066'] == undefined) {
+          req.logout();
+          User.remove({ _id: req.user.id }, function(err) {
+            if (!err) {
+              res.redirect('/signup')
+            }
+          });
+        }
+  
 });
 /**
  * Start Express server.
