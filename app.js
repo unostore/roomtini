@@ -243,7 +243,7 @@ app.get('/auth/linkedin/callback', passport.authenticate('linkedin', { failureRe
 process.on('uncaughtException', function (err) {
         // handle the error safely
         console.log(err);
-        winston.error('uncaughtException', {raw: (err instanceof Error ? err.message : JSON.stringify(err) ) });
+        //winston.error('uncaughtException', {raw: (err instanceof Error ? err.message : JSON.stringify(err) ) });
     });
 
     
