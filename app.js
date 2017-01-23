@@ -314,11 +314,8 @@ http.createServer(function (req, res) {
     res.end();
 }).listen(80);
 
-http.createServer(function (req, res) {
-    res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
-    res.end();
-}).listen(443);
 
-//https.createServer(options, app).listen(443);
+
+https.createServer(options, app).listen(443);
 
 module.exports = app;
