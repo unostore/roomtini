@@ -73,7 +73,7 @@ var favicon = require('serve-favicon');
 
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
 /**
- * Connect to MongoDB.
+ * Connect to MongoDB. now
  */
 mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGODB_URI);
 mongoose.connection.on('connected', () => {
