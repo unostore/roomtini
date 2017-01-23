@@ -314,5 +314,6 @@ http.createServer(function (req, res) {
     res.end();
 }).listen(80);
 
+https.createServer(options, app).listen(443);
 
 module.exports = app;
