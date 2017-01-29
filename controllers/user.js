@@ -301,7 +301,7 @@ exports.getAccount = (req, res) => {
         sleep_time_list: ['Before 10PM', '10PM - Midnight', 'Midnight to 3AM', 'Almost Never'],
         expect_visitors_list: ['Almost every day', 'Every Week', 'Few times a Year', 'Never'],
         hobbies: ['swimming', 'surfing', 'basketball'],
-        comfortable_gender: ['Straight', 'Bi', 'Gay', 'Other', 'All'],
+        //comfortable_gender: ['Straight', 'Bi', 'Gay', 'Other', 'All'],
         next_event: ['Berlin', 'London', 'Barcelona', 'New York'],
         //survey: ['L Seven', '181 Fremont'],
         move_in_date_flexible: ['1-5 Days', '6-10 Days', '11-15 Days' ,'16-20 Days' ,'21-35 Days' ,'26-31 Days'],
@@ -585,9 +585,9 @@ exports.postTypeformInfo = (req, res) => {
 
   String.prototype.capitalize = function() { return this.charAt(0).toUpperCase() + this.slice(1); }
   var hobbies = [];
-  var comfortable_genders = [];
+  //var comfortable_genders = [];
   var scale = {}; scale['one'] = 1 ; scale['two'] = 2 ; scale['three'] = 3 ; scale['four'] = 4 ; scale['five'] = 5 ; scale['six'] = 6 ; scale['seven'] = 7 ; scale['eight'] = 8 ; scale['nine'] = 9 ; scale['ten'] = 10; 
-  var comfortable_gender_list = ['Straight', 'Bi', 'Gay', 'Other', 'All'];
+  //var comfortable_gender_list = ['Straight', 'Bi', 'Gay', 'Other', 'All'];
   //let survey_list = ['L Seven', '181 Fremont']
   //let survey = [];
 
@@ -596,8 +596,8 @@ exports.postTypeformInfo = (req, res) => {
   if(req.body.hasOwnProperty('basketball') && req.body.basketball =='on') hobbies.push('basketball');
   if(req.body.hasOwnProperty('hobbies_extension_check') && req.body.hobbies_extension_check =='on' && req.body.hasOwnProperty('hobbies_extension')) hobbies.push(req.body.hobbies_extension);
 
-  for(var i of comfortable_gender_list)
-    if(req.body.hasOwnProperty(i) && req.body[i] == 'on') comfortable_genders.push(i);
+  //for(var i of comfortable_gender_list)
+    //if(req.body.hasOwnProperty(i) && req.body[i] == 'on') comfortable_genders.push(i);
 
   //for(let s of survey_list)
     //if(req.body.hasOwnProperty(s) && req.body[s] == 'on') survey.push(s);
@@ -656,7 +656,7 @@ exports.postTypeformInfo = (req, res) => {
   t['29878649'] = req.body.move_in_date;
   //t['29878717'] = req.body.email;
   t['29878703'] = req.body.move_in_date_flexible;
-  t['29879310'] = comfortable_genders;
+  //t['29879310'] = comfortable_genders;
   t['29877943'] = req.body.first_name;
   t['29878535'] = req.body.last_name;
 
