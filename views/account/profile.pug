@@ -1,0 +1,605 @@
+doctype html
+html(dir='ltr', lang='en-US')
+  head
+    meta(http-equiv='content-type', content='text/html; charset=utf-8')
+    meta(name='author', content='SemiColonWeb')
+    //
+      Stylesheets
+      =============================================
+    link(href='http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='../css/bootstrap.css', type='text/css')
+    link(rel='stylesheet', href='../style.css', type='text/css')
+    link(rel='stylesheet', href='../css/dark.css', type='text/css')
+    link(rel='stylesheet', href='../css/font-icons.css', type='text/css')
+    link(rel='stylesheet', href='../css/animate.css', type='text/css')
+    link(rel='stylesheet', href='../css/magnific-popup.css', type='text/css')
+    link(rel='stylesheet', href='../css/calendar.css', type='text/css')
+    link(rel='stylesheet', href='../css/responsive.css', type='text/css')
+
+    link(rel='stylesheet', href='../css/components/bs-rating.css', type='text/css')
+
+    link(rel='stylesheet', href='../css/datepicker.css', type='text/css')
+    link(rel='stylesheet', href='../css/components/timepicker.css', type='text/css')
+    link(rel='stylesheet', href='../css/components/daterangepicker.css', type='text/css')
+
+    link(rel='stylesheet', href='../css/components/bs-select.css', type='text/css')
+
+    // Range Slider CSS
+    link(rel='stylesheet', href='../css/components/ion.rangeslider.css', type='text/css')
+
+    link(rel='stylesheet', href='../css/components/radio-checkbox.css', type='text/css')
+
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    //if lt IE 9
+      script(src='http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js')
+    //
+      Document Title
+      =============================================
+    title Profile | Roomtini
+    style.
+      #vertical-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 240px;
+        z-index: 99;
+        background: #F9F9F9;
+        border-right: 1px solid #EEE;
+        height: 100%;
+        overflow: auto;
+        padding: 140px 0 40px;
+        -webkit-transition: padding .4s ease;
+        -o-transition: padding .4s ease;
+        transition: padding .4s ease;
+      }
+      .checkbox-style {
+        margin-left: 6px !important;
+        margin-top: 8px !important;
+        z-index: 99999 !important;
+      }
+      .sticky-header + #vertical-nav { padding-top: 100px; }
+      #vertical-nav nav ul {
+      margin-bottom: 0;
+      list-style: none;
+      }
+      #vertical-nav nav li a {
+      display: block;
+      padding: 10px 30px;
+      color: #333;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-family: 'Raleway', sans-serif;
+      }
+      #vertical-nav nav li i {
+      font-size: 14px;
+      width: 16px;
+      text-align: center;
+      }
+      #vertical-nav nav li i:not(.icon-angle-down) {
+      margin-right: 8px;
+      position: relative;
+      top: 1px;
+      }
+      #vertical-nav nav li a i.icon-angle-down {
+      width: auto;
+      margin-left: 5px;
+      }
+      #vertical-nav nav li:hover > a,
+      #vertical-nav nav li.current > a,
+      #vertical-nav nav li.active > a {
+      background-color: #FFF;
+      color: #1ABC9C;
+      }
+      #vertical-nav nav ul ul { display: none; }
+      #vertical-nav nav ul ul a {
+      font-size: 12px;
+      letter-spacing: 1px;
+      padding-left: 45px;
+      font-family: 'Lato', sans-serif;
+      }
+      #vertical-nav nav ul ul a i.icon-angle-down { font-size: 12px; }
+      #vertical-nav nav ul ul ul a { padding-left: 60px; }
+      #vertical-nav nav ul ul ul ul a { padding-left: 75px; }
+      @media (min-width: 992px) {
+      #header { z-index: 199; }
+      #page-title,
+      #content,
+      #footer { margin-left: 240px; }
+      #page-title .container,
+      #content .container,
+      #footer .container {
+      width: auto;
+      padding: 0 60px;
+      }
+      #vertical-nav .container {
+      width: 100%;
+      padding: 0;
+      }
+      #page-title .breadcrumb { right: 60px !important; }
+      }
+      @media (max-width: 991px) {
+      #vertical-nav {
+      position: relative;
+      width: 100%;
+      z-index: auto;
+      border: none;
+      border-bottom: 1px solid #EEE;
+      height: auto;
+      padding: 0;
+      }
+      #vertical-nav .container { padding: 10px 20px; }
+      #vertical-nav nav li a { padding: 10px 0; }
+      #vertical-nav nav li:hover > a,
+      #vertical-nav nav li.current > a,
+      #vertical-nav nav li.active > a { background-color: transparent; }
+      #vertical-nav nav ul ul a { padding-left: 15px; }
+      #vertical-nav nav ul ul ul a { padding-left: 30px; }
+      #vertical-nav nav ul ul ul ul a { padding-left: 45px; }
+      }
+  body.stretched
+    //
+      Document Wrapper
+      =============================================
+    #wrapper.clearfix
+      //
+        Header
+        =============================================
+      header#header.full-header
+        #header-wrap
+          .container.clearfix
+            #primary-menu-trigger
+              i.icon-reorder
+            //
+              Logo
+              =============================================
+            #logo
+              a.standard-logo(href='/', data-dark-logo='new/roomtini_logo.png')
+                img(src='new/roomtini_logo.png', alt='Roomtini Logo')
+              a.retina-logo(href='/', data-dark-logo='new/roomtini_logo.png')
+                img(src='new/roomtini_logo.png', alt='Roomtini Logo')
+            // #logo end
+            #top-account.dropdown
+              a.btn.btn-default.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
+                i.icon-user
+              ul.dropdown-menu.dropdown-menu-right(aria-labelledby='dropdownMenu1')
+                li
+                  a(href='#')=((user.profile && user.profile.name) || user.email || user.id)
+                li.divider(role='separator')
+                li
+                  a(href='/settings')
+                    i.icon-settings(style="margin-right:2px; margin-left: 0px")
+                    |  Account
+                li
+                  a(href='/account')
+                    i.icon-user(style="margin-right:2px; margin-left: 0px")
+                    |  Profile
+                //li
+                  //a(href='/billings')
+                    //i.icon-money(style="margin-right:2px; margin-left: 0px")
+                    //|  Billings
+                li
+                  a(href='/logout')
+                    i.icon-signout(style="margin-right:2px; margin-left: 0px")
+                    |  Logout 
+                    
+      // #header end
+      #vertical-nav
+        .container.clearfix
+          nav
+            ul
+              li
+                a(href='/settings')
+                  i.icon-settings
+                  | Account
+              li.active.sub-menu
+                a(href='#')
+                  i.icon-briefcase
+                  | Matching
+                ul(style='display: block;')
+                  li.active
+                    a(href='/account') Profile
+                  li
+                    a(href='/matches') Possible Candidates
+                  li
+                    a(href='/roommates') Roommates
+
+
+              //li
+                //a(href='/Billings')
+                  //i.icon-money
+                  //| Billings
+              li
+                a(href='/logout')
+                  i.icon-signout
+                  | Lougout
+            
+      //
+        Page Title
+        =============================================
+      
+      // #page-title end
+      //
+        Content
+        =============================================
+      section#content
+        .container.clearfix
+            .row.clearfix
+              .col-sm-9
+                .row
+                  if messages.errors
+                    .alert.alert-danger.fade.in
+                      button.close(type='button', data-dismiss='alert')
+                        i.fa.fa-times-circle-o
+                      for error in messages.errors
+                        div= error.msg
+                  if messages.info
+                    .alert.alert-info.fade.in
+                      button.close(type='button', data-dismiss='alert')
+                        i.fa.fa-times-circle-o
+                      for info in messages.info
+                        div= info.msg
+                  if messages.success
+                    .alert.alert-success.fade.in
+                      button.close(type='button', data-dismiss='alert')
+                        i.fa.fa-times-circle-o
+                      for success in messages.success
+                        div= success.msg
+
+            .row.clearfix.content-wrap
+              .col-sm-12.nobottommargin
+                .nobottommargin
+                  img.alignleft.img-circle.img-thumbnail.notopmargin.nobottommargin(src=user.gravatar(), alt='Avatar', style='max-width: 84px;')
+                  .heading-block.noborder
+                    h3=typeform['29877943'] + " " + typeform['29878535']
+                  .clear
+                  .row.clearfix
+                    .col-md-12
+                     .row(style="padding-top:20px")
+                      .col-md-offset-1.col-md-9
+                        form.nobottommargin(action='typeforms', method='post')
+                          input(type='hidden', name='_csrf', value=_csrf)
+                          .row
+                            h3.col-md-12.col-sm-12 Profile Information
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='hobbies') What Sports really Interest you?:
+                            .col-md-8.col-sm-12
+                              for items in hobbies
+                                div
+                                  input.checkbox-style(name=items, type='checkbox', id=items, checked=typeform['29879066'].includes(items.toLowerCase()))
+                                  label.checkbox-style-2-label.checkbox-small(for=items) #{items}
+                              div
+                                  input.checkbox-style(name='hobbies_extension_check', type='checkbox', id='hobbies_extension_check', checked=(typeform['29879066'].filter(function(o){ return o !== 'swimming' && o !== 'surfing' && o !== 'basketball'; })).length > 0 ? true : false)
+                                  label.checkbox-style-2-label.checkbox-small(for='hobbies_extension_check') Other  
+                              input.sm-form-control(type='text', name='hobbies_extension', style=predefined_css, id='hobbies_extension', value=typeform['29879066'].filter(function(o){ return o !== 'swimming' && o !== 'surfing' && o !== 'basketball'; })[0])  
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='phone') Phone?*:
+                            .col-md-8.col-sm-12
+                              input#phone.sm-form-control(type='text', name='phone', value=typeform['29878581'])
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='preferred_space') Which Space would you Prefer?*:
+                            .col-md-8.col-sm-12
+                              //input#preferred_space.form-control(type='text', name='preferred_space')   
+                              select(class='sm-form-control show-tick', name='preferred_space')
+                                for _item in space
+                                  option(selected=typeform['29877944'] == _item) #{_item} 
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='first_name') First Name:
+                            .col-md-8.col-sm-12
+                              input#first_name.sm-form-control(type='text', name='first_name', value=typeform['29877943']) 
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='last_name') Last Name:
+                            .col-md-8.col-sm-12
+                              input#last_name.sm-form-control(type='text', name='last_name', value=typeform['29878535'])     
+
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='login-form-username') What is your gender?*:
+                            .col-md-8.col-sm-12
+                              .col-sm-3
+                                label.radio
+                                  input(type='radio', name='gender', value='male', data-toggle='radio', checked=typeform['29877946'].toLowerCase() == 'male')
+                                  span Male
+                              .col-sm-3
+                                label.radio.col-sm-3
+                                  input(type='radio', name='gender', value='female', data-toggle='radio', checked=typeform['29877946'].toLowerCase() == 'female')
+                                  span Female
+                              //.col-sm-3
+                                //label.radio.col-sm-3
+                                  //input(type='radio', name='gender', value='other', data-toggle='radio', checked=typeform['29877946'].toLowerCase() == 'other')
+                                  span Other
+
+                          //.row(style='margin-top:30px')
+                            //.col-md-4.col-sm-12
+                              //label(for='email') What is your Email?:
+                            //.col-md-8.col-sm-12
+                              //input#email.required.sm-form-control(type='email', name='email', value=typeform['29878717'], aria-required='true') 
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='age') How old are you?*:
+                            .col-md-8.col-sm-12
+                              //input#age.form-control(type='text', name='age')    
+                              select(class='sm-form-control show-tick', name='age')
+                                for item in age
+                                  option(selected=typeform['29877951'] == item) #{item} 
+
+
+                          //.row(style='margin-top:30px')
+                            //.col-md-4.col-sm-12
+                              //label(for='age') Where would you like to stay?*:
+                            //.col-md-8.col-sm-12
+                              //input#age.form-control(type='text', name='survey')    
+                              //select(class='sm-form-control show-tick', name='survey')
+                                //for item in survey
+                                  //option(selected=(typeform['37603382'].indexOf(item) > -1) ? true : false) #{item}  
+
+
+                              //for items in survey
+                                //div
+                                  //input.checkbox-style(name=items, type='checkbox', id=items, checked=typeform['37603382'].includes(items))
+                                  label.checkbox-style-2-label.checkbox-small(for=items) #{items}
+
+
+                                  
+
+
+
+
+
+                                  
+
+
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='country') Where are you from?*:
+                            .col-md-8.col-sm-12
+                              //input#country.sm-form-control(type='text', name='country')  
+                              select(class='sm-form-control show-tick', name='country')
+                                for _item in countries
+                                  option(selected=typeform['29877953'] == _item) #{_item}
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='placemaster') What place do you perfer? (Master)*:
+                            .col-md-8.col-sm-12
+                              select(class='sm-form-control show-tick', name='placemaster')
+                                for _item in placem
+                                  option(selected=typeform['41100085'] == _item) #{_item}
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='placeconverted') What place do you perfer? (Converted)*:              
+                            .col-md-8.col-sm-12 
+                              select(class='sm-form-control show-tick', name='placeconverted')
+                                for _item in placec
+                                  option(selected=typeform['41100088'] == _item) #{_item} 
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='placesingle') What place do you perfer? (Single)*:  
+                            .col-md-8.col-sm-12s 
+                              select(class='sm-form-control show-tick', name='placesingle')
+                                for _item in placesi
+                                  option(selected=typeform['41100089'] == _item) #{_item}                                  
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='rating') Overall, how satisfied were you with the event?*:
+                            .col-md-8.col-sm-12
+                              //input#rating.form-control(type='text', name='rating')  
+                              input.rating(name='rating', type='number', max='5', data-step='1', data-stars='5', data-size='sm', data-glyphicon='false', data-rating-class='fontawesome-icon', value=typeform['29877937'].toString())
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='occupation') Which industry do you work in?*:
+                            .col-md-8.col-sm-12
+                              //input#occupation.form-control(type='text', name='occupation') 
+                              select(class='sm-form-control show-tick', name='industry')
+                                for items in industry
+                                  option(selected=typeform['29877954'] == items) #{items} 
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='move_in_date') Earliest Move in date?*:
+                            .col-md-8.col-sm-12
+                              //input#move_in_date.form-control(type='text', name='move_in_date')
+                              .input-group
+                                input(class='sm-form-control tleft default' type='text', value=typeform['29878649'], placeholder='MM-DD-YYYY', name='move_in_date')
+                                span.input-group-addon(style='padding: 9px 12px;')
+                                  i.icon-calendar2      
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='move_in_date_flexible') How flexible is your move in date from the date you selected?:
+                            .col-md-8.col-sm-12
+                              //input#move_in_date_flexible.form-control(type='text', name='move_in_date_flexible') 
+                              select(class='sm-form-control show-tick', name='move_in_date_flexible')
+                                for items in move_in_date_flexible
+                                  option(selected=typeform['29878703'] == items) #{items} 
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='cleanliness_scale') How tidy and clean are you?*:
+                            .col-md-8.col-sm-12
+                              input.cleanliness_scale.form-control(name='cleanliness_scale', value=typeform['29879208'], data-from=typeform['29879208']) 
+                          //.row(style='margin-top:30px')
+                            //.col-md-4.col-sm-12
+                             // label(for='comfortable_gender') Comfortable / perferred living with?:
+                            //.col-md-8.col-sm-12
+                              //input#comfortable_gender.form-control(type='text', name='comfortable_gender')  
+                              //for items in comfortable_gender
+                                //div
+                                  //input.checkbox-style(name='comfortable_gender', type='checkbox', id={items})
+                                  //label.checkbox-style-2-label.checkbox-small(for='bi') #{items} 
+                              //for items in comfortable_gender
+                                //div
+                                  //input.checkbox-style(name=items, type='checkbox', id=items, checked=typeform['29879310'].includes(items))
+                                  //label.checkbox-style-2-label.checkbox-small(for=items) #{items}
+                                      
+                          
+
+
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='next_event') How many Days do you cook a week?*:
+                            .col-md-8.col-sm-12
+                              input.cook_in_a_week.form-control(name='cook', value=typeform['34693974'], data-from=typeform['34693974'])  
+
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='next_event') What time do you go to work?*:
+                            .col-md-8.col-sm-12   
+                              select(class='sm-form-control show-tick', name='working_time')
+                                for items in work_time_list
+                                  option(selected=typeform['34694137'] == items) #{items} 
+                                  
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='next_event') What best describes your weekend?*:
+                            .col-md-8.col-sm-12   
+                              select(class='sm-form-control show-tick', name='weekend')
+                                for items in weekend_list
+                                  option(selected=typeform['34694257'] == items) #{items} 
+
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='next_event') What time do you go to sleep?*:
+                            .col-md-8.col-sm-12   
+                              select(class='sm-form-control show-tick', name='sleep')
+                                for items in sleep_time_list
+                                  option(selected=typeform['34694303'] == items) #{items}         
+
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='next_event') Do you expect a lot of Visitors?*:
+                            .col-md-8.col-sm-12   
+                              select(class='sm-form-control show-tick', name='expect_visitors')
+                                for items in expect_visitors_list
+                                  option(selected=typeform['34694062'] == items) #{items}
+
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='first_name') Please provide a link to your facebook profile below (if you don't have one, you can leave blank):
+                            .col-md-8.col-sm-12
+                              input.sm-form-control(type='text', name='facebook', value=typeform['34719475']) 
+                          
+                          .row(style='margin-top:30px')
+                            .col-md-4.col-sm-12
+                              label(for='first_name') Please provide a link to your Linkedin profile below (if you don't have one, you can leave blank):
+                            .col-md-8.col-sm-12
+                              input.sm-form-control(type='text', name='linkedin', value=typeform['34719491'])
+
+
+                          .row
+                            .col-md-8.col-sm-12.col-md-offset-4(style='margin-top:30px')
+                              button.button.button-rounded.button-reveal.button-black.tright(type='submit', style='margin: 0px')
+                                i.icon-angle-right
+                                span Update Profile
+            
+            
+              
+      // #content end
+      //
+        Footer
+        =============================================
+      //
+        <footer id="footer" class="dark">
+        </footer>
+    // #wrapper end
+    //
+      Go To Top
+      =============================================
+    #gotoTop.icon-angle-up
+    //
+      External JavaScripts
+      =============================================
+    script(type='text/javascript', src='../js/jquery.js')
+    script(type='text/javascript', src='../js/plugins.js') 
+    script(type='text/javascript', src='../js/components/star-rating.js')
+
+    // Date & Time Picker JS
+    script(type='text/javascript', src='../js/components/moment.js')
+    script(type='text/javascript', src='../js/components/datepicker.js')
+    script(type='text/javascript', src='../js/components/timepicker.js')
+    // Include Date Range Picker
+    script(type='text/javascript', src='../js/components/daterangepicker.js')
+
+    script(type='text/javascript', src='../js/components/bs-select.js')
+
+    // Range Slider Plugin
+    script(type='text/javascript', src='js/components/rangeslider.min.js')
+
+    //
+      Footer Scripts
+      =============================================
+    script(type='text/javascript', src='../js/functions.js')
+    script(type='text/javascript').
+      jQuery(document).ready(function($) {
+        
+        $( '#vertical-nav nav ul li:has(ul)' ).addClass('sub-menu');
+
+        $( '#vertical-nav nav ul li:has(ul) > a' ).append( ' <i class="icon-angle-down"></i>' );
+        
+        $( '#vertical-nav nav ul li:has(ul) > a' ).click( function(e){
+          var element = $(this);
+          $( '#vertical-nav nav ul li' ).not(element.parents()).removeClass('active');
+          
+          element.parent().children('ul').slideToggle( function() {
+            $(this).find('ul').hide();
+            $(this).find('li.active').removeClass('active');
+          });
+        
+          $( '#vertical-nav nav ul li > ul' ).not(element.parent().children('ul')).not(element.parents('ul')).slideUp();
+          
+          element.parent('li:has(ul)').toggleClass('active');
+          
+          e.preventDefault();
+        });
+
+        $('.default').datepicker({
+          autoclose: true,
+          startDate: "today",
+          todayHighlight: true,
+          format: "dd-mm-yyyy"
+        });
+
+       // $('.selectsplitter').selectsplitter();
+
+       $(".cleanliness_scale").ionRangeSlider({
+          min: 0,
+          max: 10,
+          step: 1,
+          values: [
+            "zero", "one",
+            "two", "three",
+            "four", "five",
+            "six", "seven",
+            "eight", "nine",
+            "ten"
+          ],
+          grid: true,
+        });
+
+        $(".cook_in_a_week").ionRangeSlider({
+          min: 0,
+          max: 7,
+          step: 1,
+          values: [
+            "zero", "one",
+            "two", "three",
+            "four", "five",
+            "six", "seven"
+          ],
+          grid: true,
+        });
+
+        $('#hobbies_extension_check').change(function(){
+          if(this.checked)
+              $('#hobbies_extension').css('display', 'inline-block');
+          else
+              $('#hobbies_extension').css('display', 'none');
+        });
+
+         $.ajax({
+            
+        });
+
+      });

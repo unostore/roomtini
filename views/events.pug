@@ -1,0 +1,449 @@
+doctype html
+html(dir='ltr', lang='en-US')
+  head
+    meta(http-equiv='content-type', content='text/html; charset=utf-8')
+    meta(name='Saad', content='SemiColonWeb')
+    //
+      Stylesheets
+      =============================================
+    link(href='http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='../css/bootstrap.css', type='text/css')
+    link(rel='stylesheet', href='../style.css', type='text/css')
+    link(rel='stylesheet', href='../css/dark.css', type='text/css')
+    link(rel='stylesheet', href='../css/font-icons.css', type='text/css')
+    link(rel='stylesheet', href='../css/animate.css', type='text/css')
+    link(rel='stylesheet', href='../css/magnific-popup.css', type='text/css')
+    link(rel='stylesheet', href='../css/responsive.css', type='text/css')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    //if lt IE 9
+      script(src='http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js')
+    //
+      Document Title
+      =============================================
+    title Profile | Roomtini
+  body.stretched
+    //
+      Document Wrapper
+      =============================================
+    #wrapper.clearfix
+      //
+        Header
+        =============================================
+      header#header.full-header
+        #header-wrap
+          .container.clearfix
+            #primary-menu-trigger
+              i.icon-reorder
+            //
+              Logo
+              =============================================
+            #logo
+              a.standard-logo(href='/', data-dark-logo='images/canvasone-dark@2x.png')
+                img(src='images/canvasone-dark@2x.png', alt='Roomtini Logo')
+              a.retina-logo(href='/', data-dark-logo='images/canvasone-dark@2x.png')
+                img(src='images/canvasone-dark@2x.png', alt='Roomtini Logo')
+            // #logo end
+            #top-account.dropdown
+              a.btn.btn-default.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
+                i.icon-user
+              ul.dropdown-menu.dropdown-menu-right(aria-labelledby='dropdownMenu1')
+                li
+                  a(href='#')=((user.profile && user.profile.name) || user.email || user.id)
+                li.divider(role='separator')
+                li
+                  a(href='/logout')
+                    | Logout 
+                    i.icon-signout
+            //
+              Primary Navigation
+              =============================================
+            nav#primary-menu
+            // #primary-menu end
+      // #header end
+      //
+        Content
+        =============================================
+      section#content
+      .content-wrap
+        .container.clearfix
+          .row.clearfix
+            .col-sm-9
+              img.alignleft.img-circle.img-thumbnail.notopmargin.nobottommargin(src='images/icons/avatar.jpg', alt='Avatar', style='max-width: 84px;')
+              .heading-block.noborder
+                h3 SemiColonWeb
+                span Your Profile Bio
+              .clear
+              .row.clearfix
+                .col-md-12
+                  #tabs-profile.tabs.tabs-alt.clearfix
+                    ul.tab-nav.clearfix
+                      li
+                        a(href='#tab-feeds')
+                          i.icon-rss2
+                          |  Feeds
+                      li
+                        a(href='#tab-posts')
+                          i.icon-pencil2
+                          |  Posts
+                      li
+                        a(href='#tab-replies')
+                          i.icon-reply
+                          |  Replies
+                      li
+                        a(href='#tab-connections')
+                          i.icon-users
+                          |  Roommates
+                    .tab-container
+                      #tab-feeds.tab-content.clearfix
+                        p
+                          | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium harum ea quo! Nulla fugiat earum, sed corporis amet iste non, id facilis dolorum, suscipit, deleniti ea. Nobis, temporibus magnam doloribus. Reprehenderit necessitatibus esse dolor tempora ea unde, itaque odit. Quos.
+                        .table-responsive
+                          table.table.table-bordered.table-striped
+                            colgroup
+                              col.col-xs-1
+                              col.col-xs-7
+                            thead
+                              tr
+                                th Time
+                                th Activity
+                            tbody
+                              tr
+                                td
+                                  code 5/23/2016
+                                td Payment for VPS2 completed
+                              tr
+                                td
+                                  code 5/23/2016
+                                td Logged in to the Account at 16:33:01
+                              tr
+                                td
+                                  code 5/22/2016
+                                td Logged in to the Account at 09:41:58
+                              tr
+                                td
+                                  code 5/21/2016
+                                td Logged in to the Account at 17:16:32
+                              tr
+                                td
+                                  code 5/18/2016
+                                td Logged in to the Account at 22:53:41
+                      #tab-posts.tab-content.clearfix
+                        .row.topmargin-sm.clearfix
+                          .col-xs-12.bottommargin-sm
+                            .ipost.clearfix
+                              .row.clearfix
+                                .col-sm-4
+                                  .entry-image
+                                    a(href='images/portfolio/full/17.jpg', data-lightbox='image')
+                                      img.image_fade(src='images/blog/grid/17.jpg', alt='Standard Post with Image')
+                                .col-sm-8
+                                  .entry-title
+                                    h3
+                                      a(href='blog-single.html') This is a Standard post with a Preview Image
+                                  ul.entry-meta.clearfix
+                                    li
+                                      i.icon-calendar3
+                                      |  10th Feb 2014
+                                    li
+                                      a(href='blog-single.html#comments')
+                                        i.icon-comments
+                                        |  13
+                                    li
+                                      a(href='#')
+                                        i.icon-camera-retro
+                                  .entry-content
+                                    p
+                                      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.
+                          .col-xs-12.bottommargin-sm
+                            .ipost.clearfix
+                              .row.clearfix
+                                .col-sm-4
+                                  .entry-image
+                                    iframe(src='', width='500', height='281', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
+                                .col-sm-8
+                                  .entry-title
+                                    h3
+                                      a(href='blog-single.html') This is a Standard post with a Embed Video
+                                  ul.entry-meta.clearfix
+                                    li
+                                      i.icon-calendar3
+                                      |  10th Feb 2014
+                                    li
+                                      a(href='blog-single.html#comments')
+                                        i.icon-comments
+                                        |  13
+                                    li
+                                      a(href='#')
+                                        i.icon-camera-retro
+                                  .entry-content
+                                    p
+                                      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.
+                          .col-xs-12.bottommargin-sm
+                            .ipost.clearfix
+                              .row.clearfix
+                                .col-sm-4
+                                  .entry-image
+                                    .fslider(data-arrows='false')
+                                      .flexslider
+                                        .slider-wrap
+                                          .slide
+                                            img.image_fade(src='images/blog/grid/10.jpg', alt='Standard Post with Gallery')
+                                          .slide
+                                            img.image_fade(src='images/blog/grid/20.jpg', alt='Standard Post with Gallery')
+                                          .slide
+                                            img.image_fade(src='images/blog/grid/21.jpg', alt='Standard Post with Gallery')
+                                .col-sm-8
+                                  .entry-title
+                                    h3
+                                      a(href='blog-single.html') This is a Standard post with a Slider Gallery
+                                  ul.entry-meta.clearfix
+                                    li
+                                      i.icon-calendar3
+                                      |  10th Feb 2014
+                                    li
+                                      a(href='blog-single.html#comments')
+                                        i.icon-comments
+                                        |  13
+                                    li
+                                      a(href='#')
+                                        i.icon-camera-retro
+                                  .entry-content
+                                    p
+                                      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.
+                      #tab-replies.tab-content.clearfix
+                        .clear.topmargin-sm
+                        ol.commentlist.noborder.nomargin.nopadding.clearfix
+                          li#li-comment-1.comment.even.thread-even.depth-1
+                            #comment-1.comment-wrap.clearfix
+                              .comment-meta
+                                .comment-author.vcard
+                                  span.comment-avatar.clearfix
+                                    img.avatar.avatar-60.photo.avatar-default(alt='', src='/images/gravatar.png', height='60', width='60')
+                              .comment-content.clearfix
+                                .comment-author
+                                  | John Doe
+                                  span
+                                    a(href='#', title='Permalink to this comment') April 24, 2012 at 10:46 am
+                                p
+                                  | Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+                                a.comment-reply-link(href='#')
+                                  i.icon-reply
+                              .clear
+                            ul.children
+                              li#li-comment-3.comment.byuser.comment-author-_smcl_admin.odd.alt.depth-2
+                                #comment-3.comment-wrap.clearfix
+                                  .comment-meta
+                                    .comment-author.vcard
+                                      span.comment-avatar.clearfix
+                                        img.avatar.avatar-40.photo(alt='', src='/images/gravatar.png', height='40', width='40')
+                                  .comment-content.clearfix
+                                    .comment-author
+                                      a.url(href='#', rel='external nofollow') SemiColon
+                                      span
+                                        a(href='#', title='Permalink to this comment') April 25, 2012 at 1:03 am
+                                    p Nullam id dolor id nibh ultricies vehicula ut id elit.
+                                    a.comment-reply-link(href='#')
+                                      i.icon-reply
+                                  .clear
+                          li#li-comment-2.comment.byuser.comment-author-_smcl_admin.even.thread-odd.thread-alt.depth-1
+                            .comment-wrap.clearfix
+                              .comment-meta
+                                .comment-author.vcard
+                                  span.comment-avatar.clearfix
+                                    img.avatar.avatar-60.photo(alt='', src='/images/gravatar.png', height='60', width='60')
+                              .comment-content.clearfix
+                                .comment-author
+                                  a.url(href='') Roomtini
+                                  span
+                                    a(href='#', title='Permalink to this comment') April 25, 2012 at 1:03 am
+                                p Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+                                a.comment-reply-link(href='#')
+                                  i.icon-reply
+                              .clear
+                      #tab-connections.tab-content.clearfix
+                        .row.topmargin-sm
+                          .col-md-3.col-sm-6.bottommargin
+                            .team
+                              .team-image
+                                img(src='images/team/3.jpg', alt='John Doe')
+                              .team-desc
+                                .team-title
+                                  h4 John Doe
+                                  span CEO
+                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-facebook(href='#')
+                                  i.icon-facebook
+                                  i.icon-facebook
+                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-twitter(href='#')
+                                  i.icon-twitter
+                                  i.icon-twitter
+                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-gplus(href='#')
+                                  i.icon-gplus
+                                  i.icon-gplus
+                          .col-md-3.col-sm-6.bottommargin
+                            .team
+                              .team-image
+                                img(src='images/team/2.jpg', alt='Josh Clark')
+                              .team-desc
+                                .team-title
+                                  h4 Josh Clark
+                                  span Co-Founder
+                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-facebook(href='#')
+                                  i.icon-facebook
+                                  i.icon-facebook
+                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-twitter(href='#')
+                                  i.icon-twitter
+                                  i.icon-twitter
+                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-gplus(href='#')
+                                  i.icon-gplus
+                                  i.icon-gplus
+                          .col-md-3.col-sm-6.bottommargin
+                            .team
+                              .team-image
+                                img(src='images/team/8.jpg', alt='Mary Jane')
+                              .team-desc
+                                .team-title
+                                  h4 Mary Jane
+                                  span Sales
+                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-facebook(href='#')
+                                  i.icon-facebook
+                                  i.icon-facebook
+                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-twitter(href='#')
+                                  i.icon-twitter
+                                  i.icon-twitter
+                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-gplus(href='#')
+                                  i.icon-gplus
+                                  i.icon-gplus
+                          .col-md-3.col-sm-6
+                            .team
+                              .team-image
+                                img(src='images/team/4.jpg', alt='Nix Maxwell')
+                              .team-desc
+                                .team-title
+                                  h4 Nix Maxwell
+                                  span Support
+                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-facebook(href='#')
+                                  i.icon-facebook
+                                  i.icon-facebook
+                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-twitter(href='#')
+                                  i.icon-twitter
+                                  i.icon-twitter
+                                a.social-icon.inline-block.si-small.si-light.si-rounded.si-gplus(href='#')
+                                  i.icon-gplus
+                                  i.icon-gplus
+            .line.visible-xs-block
+            .col-sm-3.clearfix
+              .list-group
+                a.list-group-item.clearfix(href='#')
+                  | Profile 
+                  i.icon-user.pull-right
+                a.list-group-item.clearfix(href='#')
+                  | Events & Activities 
+                  i.icon-laptop2.pull-right
+                a.list-group-item.clearfix(href='#')
+                  | Messages 
+                  i.icon-envelope2.pull-right
+                a.list-group-item.clearfix(href='#')
+                  | Billing 
+                  i.icon-credit-cards.pull-right
+                a.list-group-item.clearfix(href='/settings')
+                  | Settings 
+                  i.icon-cog.pull-right
+                a.list-group-item.clearfix(href='#')
+                  | Logout 
+                  i.icon-line2-logout.pull-right
+              .fancy-title.topmargin.title-border
+                h4 About Me
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum laboriosam, dignissimos veniam obcaecati. Quasi eaque, odio assumenda porro explicabo laborum!
+              .fancy-title.topmargin.title-border
+                h4 Social Profiles
+              a.social-icon.si-facebook.si-small.si-rounded.si-light(href='#', title='Facebook')
+                i.icon-facebook
+                i.icon-facebook
+              a.social-icon.si-gplus.si-small.si-rounded.si-light(href='#', title='Google+')
+                i.icon-gplus
+                i.icon-gplus
+              a.social-icon.si-dribbble.si-small.si-rounded.si-light(href='#', title='Dribbble')
+                i.icon-dribbble
+                i.icon-dribbble
+              a.social-icon.si-flickr.si-small.si-rounded.si-light(href='#', title='Flickr')
+                i.icon-flickr
+                i.icon-flickr
+              a.social-icon.si-linkedin.si-small.si-rounded.si-light(href='#', title='LinkedIn')
+                i.icon-linkedin
+                i.icon-linkedin
+              a.social-icon.si-twitter.si-small.si-rounded.si-light(href='#', title='Twitter')
+                i.icon-twitter
+                i.icon-twitter
+      // #content end
+      //
+        Footer
+        =============================================
+      footer#footer.dark
+        //
+          Copyrights
+          =============================================
+        #copyrights
+          .container.clearfix
+            .col_half
+              | Copyrights © 2016 All Rights Reserved by Roomtini Inc.
+              br
+              .copyright-links
+                a(href='#') Terms of Use
+                |  / 
+                a(href='#') Privacy Policy
+            .col_half.col_last.tright
+              .fright.clearfix
+                a.social-icon.si-small.si-borderless.si-facebook(href='#')
+                  i.icon-facebook
+                  i.icon-facebook
+                a.social-icon.si-small.si-borderless.si-twitter(href='#')
+                  i.icon-twitter
+                  i.icon-twitter
+                a.social-icon.si-small.si-borderless.si-gplus(href='#')
+                  i.icon-gplus
+                  i.icon-gplus
+                a.social-icon.si-small.si-borderless.si-pinterest(href='#')
+                  i.icon-pinterest
+                  i.icon-pinterest
+                a.social-icon.si-small.si-borderless.si-vimeo(href='#')
+                  i.icon-vimeo
+                  i.icon-vimeo
+                a.social-icon.si-small.si-borderless.si-github(href='#')
+                  i.icon-github
+                  i.icon-github
+                a.social-icon.si-small.si-borderless.si-yahoo(href='#')
+                  i.icon-yahoo
+                  i.icon-yahoo
+                a.social-icon.si-small.si-borderless.si-linkedin(href='#')
+                  i.icon-linkedin
+                  i.icon-linkedin
+              .clear
+              i.icon-envelope2
+              |  questions@roomtini.com 
+              span.middot ·
+              i.icon-headphones
+              |  +91-11-6541-6369 
+              span.middot ·
+              i.icon-skype2
+              |  RoomtiniOnSkype
+        // #copyrights end
+      // #footer end
+    // #wrapper end
+    //
+      Go To Top
+      =============================================
+    #gotoTop.icon-angle-up
+    //
+      External JavaScripts
+      =============================================
+    script(type='text/javascript', src='../js/jquery.js')
+    script(type='text/javascript', src='../js/plugins.js')
+    //
+      Footer Scripts
+      =============================================
+    script(type='text/javascript', src='../js/functions.js')
+    script.
+      jQuery( "#tabs-profile" ).on( "tabsactivate", function( event, ui ) {
+      jQuery( '.flexslider .slide' ).resize();
+      });

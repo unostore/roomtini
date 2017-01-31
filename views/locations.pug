@@ -1,0 +1,4009 @@
+doctype html
+html(lang='en-US')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(href='assets/fonts/font-awesome.css', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='/assets/bootstrap/css/bootstrap.css', type='text/css')
+    link(rel='stylesheet', href='/assets/css/bootstrap-select.min.css', type='text/css')
+    link(rel='stylesheet', href='/assets/css/owl.carousel.css', type='text/css')
+    link(rel='stylesheet', href='/assets/css/jquery.mCustomScrollbar.css', type='text/css')
+    link(rel='stylesheet', href='/assets/css/jquery.nouislider.min.css', type='text/css')
+
+    link(rel='stylesheet', href='/assets/css/colors/pink.css', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Lato', rel='stylesheet')
+    link(rel='stylesheet', type='text/css', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css')
+    link(rel='stylesheet', type='text/css', href='/assets/css/font-icons.css')
+    link(rel='stylesheet', type='text/css', href='/assets/css/et-line.css')
+    link(rel='stylesheet', type='text/css', href='/assets/css/fonts.css')
+    link(rel='stylesheet', type='text/css', href='/assets/css/animate.css')
+    title Roomtini | High class living without the High Price
+    link(rel='stylesheet', type='text/css', href='/assets/css/_sstyle.css')
+    style.
+      * {
+      font-family: Lato !important;
+      }
+      #header-wrap {
+      background-color: #142736;
+      }
+      .header-stick { margin-top: -50px !important; }
+      .content-wrap .header-stick { margin-top: -80px !important; }
+      #header {
+      position: relative;
+      background-color: #FFF;
+      border-bottom: 1px solid #F5F5F5;
+      }
+      #header .container { position: relative; }
+      #header.transparent-header {
+      background: transparent;
+      border-bottom: none;
+      z-index: 199;
+      }
+      #header.semi-transparent { background-color: rgba(255,255,255,0.8); }
+      #header.transparent-header.floating-header { margin-top: 60px; }
+      #header.transparent-header.floating-header .container {
+      width: 1220px;
+      background-color: #FFF;
+      padding: 0 40px;
+      border-radius: 2px;
+      }
+      #header.transparent-header.floating-header.sticky-header .container {
+      width: 1170px;
+      padding: 0 15px;
+      }
+      #header.transparent-header + #slider,
+      #header.transparent-header + #page-title.page-title-parallax,
+      #header.transparent-header + #google-map,
+      #slider + #header.transparent-header {
+      top: -100px;
+      margin-bottom: -100px;
+      }
+      #header.transparent-header.floating-header + #slider,
+      #header.transparent-header.floating-header + #google-map {
+      top: -160px;
+      margin-bottom: -160px;
+      }
+      #header.transparent-header + #page-title.page-title-parallax .container {
+      z-index: 5;
+      padding-top: 100px;
+      }
+      #header.full-header { border-bottom-color: #EEE; }
+      body.stretched #header.full-header .container {
+      width: 100%;
+      padding: 0 30px;
+      }
+      #header.transparent-header.full-header #header-wrap {
+      background-color: #142736;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      }
+      #slider + #header.transparent-header.full-header #header-wrap {
+      border-top: 1px solid rgba(0,0,0,0.1);
+      border-bottom: none;
+      }
+      .owl-carousel .owl-item img {
+      height: 300px !important;
+      }
+      /* ----------------------------------------------------------------
+      Logo
+      -----------------------------------------------------------------*/
+      #logo {
+      position: relative;
+      float: left;
+      font-family: 'Raleway', sans-serif;
+      font-size: 36px;
+      line-height: 100%;
+      margin-right: 40px;
+      }
+      #header.full-header #logo {
+      padding-right: 30px;
+      margin-right: 30px;
+      border-right: 1px solid #EEE;
+      }
+      #header.transparent-header.full-header #logo { border-right-color: rgba(0,0,0,0.1); }
+      #logo a {
+      display: block;
+      color: #000;
+      }
+      #logo img {
+      display: block;
+      max-width: 100%;
+      }
+      #logo a.standard-logo { display: block; }
+      #logo a.retina-logo { display: none; }
+      /* ----------------------------------------------------------------
+      Header Right Area
+      -----------------------------------------------------------------*/
+      .header-extras {
+      float: right;
+      margin: 30px 0 0;
+      }
+      .header-extras li {
+      float: left;
+      margin-left: 20px;
+      height: 40px;
+      overflow: hidden;
+      list-style: none;
+      }
+      .header-extras li i { margin-top: 3px !important; }
+      .header-extras li:first-child { margin-left: 0; }
+      .header-extras li .he-text {
+      float: left;
+      padding-left: 10px;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 1.43;
+      }
+      .header-extras li .he-text span {
+      display: block;
+      font-weight: 400;
+      color: #1ABC9C;
+      }
+      /* ----------------------------------------------------------------
+      Primary Menu
+      -----------------------------------------------------------------*/
+      #primary-menu { float: right; }
+      #primary-menu ul.mobile-primary-menu { display: none; }
+      #header.full-header #primary-menu > ul {
+      float: left;
+      padding-right: 15px;
+      margin-right: 15px;
+      border-right: 1px solid #EEE;
+      }
+      #header.transparent-header.full-header #primary-menu > ul { border-right-color: rgba(0,0,0,0.1); }
+      #primary-menu-trigger,
+      #page-submenu-trigger {
+      opacity: 0;
+      pointer-events: none;
+      cursor: pointer;
+      font-size: 14px;
+      position: absolute;
+      top: 50%;
+      margin-top: -25px;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      -webkit-transition: opacity .3s ease;
+      -o-transition: opacity .3s ease;
+      transition: opacity .3s ease;
+      }
+      #primary-menu ul {
+      list-style: none;
+      margin: 0;
+      }
+      #primary-menu > ul { float: left; }
+      #primary-menu ul li { position: relative; }
+      #primary-menu ul li.mega-menu { position: inherit; }
+      #primary-menu ul > li {
+      float: left;
+      margin-left: 2px;
+      }
+      #primary-menu > ul > li:first-child { margin-left: 0; }
+      #primary-menu ul li > a {
+      display: block;
+      line-height: 22px;
+      padding: 39px 15px;
+      color: #444;
+      font-weight: bold;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-family: 'Raleway', sans-serif;
+      -webkit-transition: margin .4s ease, padding .4s ease;
+      -o-transition: margin .4s ease, padding .4s ease;
+      transition: margin .4s ease, padding .4s ease;
+      }
+      #primary-menu ul li > a span { display: none; }
+      #primary-menu ul li > a i {
+      position: relative;
+      top: -1px;
+      font-size: 14px;
+      width: 16px;
+      text-align: center;
+      margin-right: 6px;
+      vertical-align: top;
+      }
+      #primary-menu ul li > a i.icon-angle-down:last-child {
+      font-size: 12px;
+      margin: 0 0 0 5px;
+      }
+      #primary-menu ul li:hover > a,
+      #primary-menu ul li.current > a { color: #1ABC9C; }
+      #primary-menu > ul > li.sub-menu > a > div { }
+      body.no-superfish #primary-menu li:hover > ul:not(.mega-menu-column),
+      body.no-superfish #primary-menu li:hover > .mega-menu-content { display: block; }
+      #primary-menu ul ul:not(.mega-menu-column),
+      #primary-menu ul li .mega-menu-content {
+      display: none;
+      position: absolute;
+      width: 220px;
+      background-color: #FFF;
+      box-shadow: 0px 13px 42px 11px rgba(0, 0, 0, 0.05);
+      border: 1px solid #EEE;
+      border-top: 2px solid #1ABC9C;
+      height: auto;
+      z-index: 199;
+      top: 100%;
+      left: 0;
+      margin: 0;
+      }
+      #primary-menu ul ul:not(.mega-menu-column) ul {
+      top: -2px !important;
+      left: 218px;
+      }
+      #primary-menu ul ul.menu-pos-invert:not(.mega-menu-column),
+      #primary-menu ul li .mega-menu-content.menu-pos-invert {
+      left: auto;
+      right: 0;
+      }
+      #primary-menu ul ul:not(.mega-menu-column) ul.menu-pos-invert { right: 218px; }
+      #primary-menu ul ul li {
+      float: none;
+      margin: 0;
+      }
+      #primary-menu ul ul li:first-child { border-top: 0; }
+      #primary-menu ul ul li > a {
+      font-size: 12px;
+      font-weight: 600;
+      color: #666;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border: 0;
+      letter-spacing: 0;
+      font-family: 'Lato', sans-serif;
+      -webkit-transition: all .2s ease-in-out;
+      -o-transition: all .2s ease-in-out;
+      transition: all .2s ease-in-out;
+      }
+      #primary-menu ul ul li > a i { vertical-align: middle; }
+      #primary-menu ul ul li:hover > a {
+      background-color: #F9F9F9;
+      padding-left: 18px;
+      color: #1ABC9C;
+      }
+      #primary-menu ul ul > li.sub-menu > a,
+      #primary-menu ul ul > li.sub-menu:hover > a {
+      background-image: url("images/icons/submenu.png");
+      background-position: right center;
+      background-repeat: no-repeat;
+      }
+      /* ----------------------------------------------------------------
+      Mega Menu
+      -----------------------------------------------------------------*/
+      #primary-menu ul li .mega-menu-content,
+      #primary-menu ul li.mega-menu-small .mega-menu-content {
+      width: 720px;
+      max-width: 400px;
+      }
+      #primary-menu ul li.mega-menu .mega-menu-content,
+      .floating-header.sticky-header #primary-menu ul li.mega-menu .mega-menu-content {
+      margin: 0 15px;
+      width: 1140px;
+      max-width: none;
+      }
+      .floating-header #primary-menu ul li.mega-menu .mega-menu-content {
+      margin: 0;
+      width: 1220px;
+      }
+      body.stretched .container-fullwidth #primary-menu ul li.mega-menu .mega-menu-content { margin: 0 60px; }
+      body.stretched #header.full-header #primary-menu ul li.mega-menu .mega-menu-content { margin: 0 30px; }
+      #primary-menu ul li.mega-menu .mega-menu-content.style-2 { padding: 0 10px; }
+      #primary-menu ul li .mega-menu-content ul {
+      display: block;
+      position: relative;
+      top: 0;
+      min-width: inherit;
+      border: 0;
+      box-shadow: none;
+      background-color: transparent;
+      }
+      #primary-menu ul li .mega-menu-content ul:not(.megamenu-dropdown) {
+      display: block !important;
+      opacity: 1 !important;
+      top: 0;
+      left: 0;
+      }
+      #primary-menu ul li .mega-menu-content ul.mega-menu-column {
+      float: left;
+      margin: 0;
+      }
+      #primary-menu ul li .mega-menu-content ul.mega-menu-column.col-5 { width: 20%; }
+      #primary-menu ul li .mega-menu-content ul:not(.mega-menu-column) { width: 100%; }
+      #primary-menu ul li .mega-menu-content ul.mega-menu-column:not(:first-child) { border-left: 1px solid #F2F2F2; }
+      #primary-menu ul li .mega-menu-content.style-2 ul.mega-menu-column { padding: 30px 20px; }
+      #primary-menu ul li .mega-menu-content.style-2 ul.mega-menu-column > li.mega-menu-title { margin-top: 20px; }
+      #primary-menu ul li .mega-menu-content.style-2 ul.mega-menu-column > li.mega-menu-title:first-child { margin-top: 0; }
+      #primary-menu ul li .mega-menu-content.style-2 ul.mega-menu-column > li.mega-menu-title > a {
+      font-size: 13px;
+      font-weight: bold;
+      font-family: 'Raleway', sans-serif;
+      letter-spacing: 1px;
+      text-transform: uppercase !important;
+      margin-bottom: 15px;
+      color: #444;
+      padding: 0 !important;
+      line-height: 1.3 !important;
+      }
+      #primary-menu ul li .mega-menu-content.style-2 ul.mega-menu-column > li.mega-menu-title:hover > a { background-color: transparent; }
+      #primary-menu ul li .mega-menu-content.style-2 ul.mega-menu-column > li.mega-menu-title > a:hover { color: #1ABC9C; }
+      #primary-menu ul li .mega-menu-content.style-2 ul.mega-menu-column > li.mega-menu-title.sub-menu > a,
+      #primary-menu ul li .mega-menu-content.style-2 ul.mega-menu-column > li.mega-menu-title.sub-menu:hover > a { background: none; }
+      #primary-menu ul li .mega-menu-content.style-2 li { border: 0; }
+      #primary-menu ul li .mega-menu-content.style-2 ul li > a {
+      padding-left: 5px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      }
+      #primary-menu ul li .mega-menu-content.style-2 ul li > a:hover { padding-left: 12px; }
+      .mega-menu-column .entry-meta {
+      margin: 8px -10px 0 0 !important;
+      border: none !important;
+      padding: 0 !important;
+      }
+      .mega-menu-column .entry-meta li {
+      float: left !important;
+      border: none !important;
+      margin: 0 10px 0 0 !important;
+      }
+      /* Primary Menu - Style 2
+      -----------------------------------------------------------------*/
+      #primary-menu.style-2 {
+      float: none;
+      max-width: none;
+      border-top: 1px solid #F5F5F5;
+      }
+      #primary-menu.style-2 > div > ul { float: left; }
+      #primary-menu.style-2 > div > ul > li > a {
+      padding-top: 19px;
+      padding-bottom: 19px;
+      }
+      #logo + #primary-menu.style-2 { border-top: 0; }
+      #primary-menu.style-2 > div #top-search,
+      #primary-menu.style-2 > div #top-cart,
+      #primary-menu.style-2 > div #side-panel-trigger {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      }
+      body:not(.device-sm):not(.device-xs):not(.device-xxs) #primary-menu.style-2.center > ul,
+      body:not(.device-sm):not(.device-xs):not(.device-xxs) #primary-menu.style-2.center > div {
+      float: none;
+      display: inline-block !important;
+      width: auto;
+      text-align: left;
+      }
+      /* Primary Menu - Style 3
+      -----------------------------------------------------------------*/
+      #primary-menu.style-3 > ul > li > a {
+      margin: 28px 0;
+      padding-top: 11px;
+      padding-bottom: 11px;
+      border-radius: 2px;
+      }
+      #primary-menu.style-3 > ul > li:hover > a {
+      color: #444;
+      background-color: #F5F5F5;
+      }
+      #primary-menu.style-3 > ul > li.current > a {
+      color: #FFF;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+      background-color: #1ABC9C;
+      }
+      /* Primary Menu - Style 4
+      -----------------------------------------------------------------*/
+      #primary-menu.style-4 > ul > li > a {
+      margin: 28px 0;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 2px;
+      border: 1px solid transparent;
+      }
+      #primary-menu.style-4 > ul > li:hover > a,
+      #primary-menu.style-4 > ul > li.current > a { border-color: #1ABC9C; }
+      /* Primary Menu - Style 5
+      -----------------------------------------------------------------*/
+      #primary-menu.style-5 > ul {
+      padding-right: 10px;
+      margin-right: 5px;
+      border-right: 1px solid #EEE;
+      }
+      #primary-menu.style-5 > ul > li:not(:first-child) { margin-left: 15px; }
+      #primary-menu.style-5 > ul > li > a {
+      padding-top: 25px;
+      padding-bottom: 25px;
+      line-height: 14px;
+      }
+      #primary-menu.style-5 > ul > li > a i {
+      display: block;
+      width: auto;
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1;
+      }
+      /* Primary Menu - Style 6
+      -----------------------------------------------------------------*/
+      #primary-menu.style-6 ul > li > a { position: relative; }
+      #primary-menu.style-6 > ul > li > a:after,
+      #primary-menu.style-6 > ul > li.current > a:after,
+      #primary-menu.style-6 > div > ul > li > a:after,
+      #primary-menu.style-6 > div > ul > li.current > a:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 0;
+      border-top: 2px solid #1ABC9C;
+      -webkit-transition: width .3s ease;
+      -o-transition: width .3s ease;
+      transition: width .3s ease;
+      }
+      #primary-menu.style-6 > ul > li.current > a:after,
+      #primary-menu.style-6 > ul > li:hover > a:after,
+      #primary-menu.style-6 > div > ul > li.current > a:after,
+      #primary-menu.style-6 > div > ul > li:hover > a:after { width: 100%; }
+      /* Primary Menu - Sub Title
+      -----------------------------------------------------------------*/
+      #primary-menu.sub-title > ul > li,
+      #primary-menu.sub-title.style-2 > div > ul > li {
+      background: url("images/icons/menu-divider.png") no-repeat right center;
+      margin-left: 1px;
+      }
+      #primary-menu.sub-title ul li:first-child {
+      padding-left: 0;
+      margin-left: 0;
+      }
+      #primary-menu.sub-title > ul > li > a,
+      #primary-menu.sub-title > div > ul > li > a {
+      line-height: 14px;
+      padding: 27px 20px 32px;
+      text-transform: uppercase;
+      border-top: 5px solid transparent;
+      }
+      #primary-menu.sub-title > ul > li > a span,
+      #primary-menu.sub-title > div > ul > li > a span {
+      display: block;
+      margin-top: 10px;
+      line-height: 12px;
+      font-size: 11px;
+      font-weight: 400;
+      color: #888;
+      text-transform: capitalize;
+      }
+      #primary-menu.sub-title > ul > li:hover > a,
+      #primary-menu.sub-title > ul > li.current > a,
+      #primary-menu.sub-title > div > ul > li:hover > a,
+      #primary-menu.sub-title > div > ul > li.current > a {
+      background-color: #1ABC9C;
+      color: #FFF;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+      border-top-color: rgba(0,0,0,0.1);
+      }
+      #primary-menu.sub-title > ul > li:hover > a span,
+      #primary-menu.sub-title > ul > li.current > a span,
+      #primary-menu.sub-title.style-2 > div > ul > li:hover > a span,
+      #primary-menu.sub-title.style-2 > div > ul > li.current > a span { color: #EEE; }
+      #primary-menu.sub-title.style-2 ul ul span { display: none; }
+      /* Primary Menu - Style 2 with Sub Title
+      -----------------------------------------------------------------*/
+      #primary-menu.sub-title.style-2 > div > ul > li { background-position: left center; }
+      #primary-menu.sub-title.style-2 > div #top-search,
+      #primary-menu.sub-title.style-2 > div #top-cart,
+      #primary-menu.sub-title.style-2 > div #side-panel-trigger {
+      float: right;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      }
+      #primary-menu.sub-title.style-2 div ul li:first-child,
+      #primary-menu.sub-title.style-2 > div > ul > li:hover + li,
+      #primary-menu.sub-title.style-2 > div > ul > li.current + li { background-image: none; }
+      #primary-menu.sub-title.style-2 > div > ul > li > a {
+      padding-top: 17px;
+      padding-bottom: 22px;
+      }
+      /* Primary Menu - Split Menu
+      -----------------------------------------------------------------*/
+      @media (min-width: 992px) {
+      #header.split-menu #logo {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      margin: 0;
+      float: none;
+      height: 100px;
+      }
+      #header.split-menu #logo a.standard-logo { display: block; }
+      }
+      #header.split-menu #primary-menu {
+      float: none;
+      margin: 0;
+      }
+      #header.split-menu #primary-menu > ul { z-index: 199; }
+      #header.split-menu #primary-menu > ul:first-child { float: left; }
+      #header.split-menu #primary-menu > ul:last-child { float: right; }
+      /* Primary Menu - Overlay Menu
+      -----------------------------------------------------------------*/
+      @media (min-width: 992px) {
+      .overlay-menu:not(.top-search-open) #primary-menu-trigger {
+      opacity: 1;
+      pointer-events: auto;
+      left: auto;
+      right: 75px;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      margin-top: -10px;
+      }
+      .overlay-menu:not(.top-search-open) .full-header #primary-menu-trigger { right: 90px; }
+      .overlay-menu #primary-menu > #overlay-menu-close {
+      opacity: 0;
+      pointer-events: none;
+      position: fixed;
+      top: 25px;
+      left: auto;
+      right: 25px;
+      width: 48px;
+      height: 48px;
+      line-height: 48px;
+      font-size: 24px;
+      text-align: center;
+      color: #444;
+      z-index: 300;
+      -webkit-transform: translateY(-80px);
+      -ms-transform: translateY(-80px);
+      -o-transform: translateY(-80px);
+      transform: translateY(-80px);
+      -webkit-transition: opacity .4s ease, transform .45s .15s ease;
+      -o-transition: opacity .4s ease, transform .45s .15s ease;
+      transition: opacity .4s ease, transform .45s .15s ease;
+      }
+      .overlay-menu #primary-menu > ul {
+      opacity: 0 !important;
+      pointer-events: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100% !important;
+      z-index: 299;
+      background: rgba(255,255,255,0.95);
+      -webkit-transition: opacity .7s ease;
+      -o-transition: opacity .7s ease;
+      transition: opacity .7s ease;
+      }
+      .overlay-menu #primary-menu > ul.show {
+      opacity: 1 !important;
+      display: inherit !important;
+      pointer-events: auto;
+      }
+      .overlay-menu #primary-menu > ul.show ~ #overlay-menu-close {
+      opacity: 1;
+      -webkit-transition: opacity .7s .4s ease, transform .45s .15s ease;
+      -o-transition: opacity .7s .4s ease, transform .45s .15s ease;
+      transition: opacity .7s .4s ease, transform .45s .15s ease;
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0);
+      pointer-events: auto;
+      }
+      .overlay-menu #primary-menu > ul > li {
+      float: none;
+      text-align: center;
+      max-width: 400px;
+      margin: 0 auto;
+      }
+      .overlay-menu #primary-menu > ul > li > a {
+      font-size: 24px;
+      padding-top: 19px;
+      padding-bottom: 19px;
+      letter-spacing: 2px;
+      text-transform: none;
+      opacity: 0;
+      -webkit-transform: translateY(-80px);
+      -ms-transform: translateY(-80px);
+      -o-transform: translateY(-80px);
+      transform: translateY(-80px);
+      -webkit-transition: opacity .7s .15s ease, transform .45s .15s ease, color .2s linear;
+      -o-transition: opacity .7s .15s ease, transform .45s .15s ease, color .2s linear;
+      transition: opacity .7s .15s ease, transform .45s .15s ease, color .2s linear;
+      }
+      .overlay-menu #primary-menu > ul.show > li > a {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0);
+      }
+      }
+      /* ----------------------------------------------------------------
+      Top Search
+      -----------------------------------------------------------------*/
+      #top-search,
+      #top-cart,
+      #side-panel-trigger,
+      #top-account {
+      float: right;
+      margin: 40px 0 40px 15px;
+      }
+      #top-cart { position: relative; }
+      #top-search a,
+      #top-cart a,
+      #side-panel-trigger a,
+      #top-account a {
+      display: block;
+      position: relative;
+      width: 14px;
+      height: 14px;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      color: #333;
+      -webkit-transition: color .3s ease-in-out;
+      -o-transition: color .3s ease-in-out;
+      transition: color .3s ease-in-out;
+      }
+      #top-search a { z-index: 11; }
+      #top-search a i {
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-transition: opacity .3s ease;
+      -o-transition: opacity .3s ease;
+      transition: opacity .3s ease;
+      }
+      body.top-search-open #top-search a i.icon-search3,
+      #top-search a i.icon-line-cross { opacity: 0; }
+      body.top-search-open #top-search a i.icon-line-cross {
+      opacity: 1;
+      z-index: 11;
+      font-size: 16px;
+      }
+      #top-cart a:hover { color: #1ABC9C; }
+      #top-search form {
+      opacity: 0;
+      z-index: -2;
+      position: absolute;
+      width: 100% !important;
+      height: 100% !important;
+      padding: 0 15px;
+      margin: 0;
+      top: 0;
+      left: 0;
+      -webkit-transition: opacity .3s ease-in-out;
+      -o-transition: opacity .3s ease-in-out;
+      transition: opacity .3s ease-in-out;
+      }
+      body.top-search-open #top-search form {
+      opacity: 1;
+      z-index: 10;
+      }
+      #top-search form input {
+      box-shadow: none !important;
+      pointer-events: none;
+      border-radius: 0;
+      border: 0;
+      outline: 0 !important;
+      font-size: 32px;
+      padding: 10px 80px 10px 0;
+      height: 100%;
+      background-color: transparent;
+      color: #333;
+      font-weight: 700;
+      margin-top: 0 !important;
+      font-family: 'Raleway', sans-serif;
+      letter-spacing: 2px;
+      }
+      body:not(.device-sm):not(.device-xs):not(.device-xxs) #header.full-header #top-search form input { padding-left: 40px; }
+      body:not(.device-sm):not(.device-xs):not(.device-xxs) .container-fullwidth #top-search form input { padding-left: 60px; }
+      body.top-search-open #top-search form input { pointer-events: auto; }
+      body:not(.device-sm):not(.device-xs):not(.device-xxs) #header.transparent-header:not(.sticky-header):not(.full-header):not(.floating-header) #top-search form input { border-bottom: 2px solid rgba(0,0,0,0.1); }
+      #top-search form input::-moz-placeholder {
+      color: #555;
+      opacity: 1;
+      text-transform: uppercase;
+      }
+      #top-search form input:-ms-input-placeholder {
+      color: #555;
+      text-transform: uppercase;
+      }
+      #top-search form input::-webkit-input-placeholder {
+      color: #555;
+      text-transform: uppercase;
+      }
+      #primary-menu .container #top-search form input,
+      .sticky-header #top-search form input { border: none !important; }
+      #header-wrap > .container { border-bottom: 1px solid rgba(255,255,255,0.2); }
+      #primary-menu > ul > li > a {
+      font-size: 13px;
+      padding-left: 20px;
+      padding-right: 20px;
+      font-weight: bold !important;
+      text-transform: capitalize;
+      font-family: 'Poppins', sans-serif !important;
+      color: #fff;
+      }
+      @media (min-width: 992px) {
+      #primary-menu > ul > li.menu-item-emphasis > a {
+      padding-top: 9px;
+      padding-bottom: 9px;
+      border-radius: 20px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      }
+      #header.sticky-header #primary-menu > ul > li.menu-item-emphasis > a {
+      padding-top: 9px !important;
+      padding-bottom: 9px !important;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      }
+      #header:not(.sticky-header) #primary-menu > ul > li.menu-item-emphasis > a {
+      background-color: white;
+      color: black;
+      text-shadow: none;
+      }
+      #header:not(.sticky-header) #primary-menu > ul > li.menu-item-emphasis > a:hover {
+      background-color: #FFF;
+      color: #142736 !important;
+      }
+      #header.sticky-header #primary-menu > ul > li.menu-item-emphasis > a {
+      /*background-color: #267DF4;*/
+      background-color: #50667f;
+      color: #FFF;
+      }
+      #primary-menu ul ul:not(.mega-menu-column) {
+      width: 260px;
+      padding: 20px;
+      border: 1px solid #EEE !important;
+      border-radius: 0 0 3px 3px;
+      left: -20px;
+      }
+      #primary-menu ul ul li > a {
+      font-size: 14px;
+      font-weight: 400;
+      text-transform: capitalize;
+      padding: 12px 20px;
+      font-family: 'Poppins', sans-serif !important;
+      }
+      #primary-menu ul ul li:hover > a { padding-left: 25px; }
+      }
+      #header.sticky-header:not(.static-sticky),
+      #header.sticky-header:not(.static-sticky) #header-wrap,
+      #header.sticky-header:not(.static-sticky):not(.sticky-style-2):not(.sticky-style-3) #logo img { height: 80px; }
+      #header.sticky-header:not(.static-sticky) #primary-menu > ul > li > a {
+      padding-top: 29px;
+      padding-bottom: 29px;
+      }
+      #header.sticky-header:not(.static-sticky) #top-search,
+      #header.sticky-header:not(.static-sticky) #top-cart,
+      #header.sticky-header:not(.static-sticky) #side-panel-trigger {
+      margin-top: 30px !important;
+      margin-bottom: 30px !important;
+      }
+      #header.sticky-header:not(.static-sticky) #top-cart .top-cart-content,
+      #header.sticky-header:not(.static-sticky) #primary-menu.sub-title.style-2 > div #top-cart .top-cart-content { top: 50px; }
+      /* ----------------------------------------------------------------
+      Sticky Header
+      -----------------------------------------------------------------*/
+      #header,
+      #header-wrap,
+      #logo img {
+      height: 100px;
+      -webkit-transition: height .4s ease, opacity .3s ease;
+      -o-transition: height .4s ease, opacity .3s ease;
+      transition: height .4s ease, opacity .3s ease;
+      }
+      #header.sticky-style-2 { height: 161px; }
+      #header.sticky-style-3 { height: 181px; }
+      #header.sticky-style-2 #header-wrap { height: 60px; }
+      #header.sticky-style-3 #header-wrap { height: 80px; }
+      #primary-menu > ul > li > ul,
+      #primary-menu > ul > li > .mega-menu-content,
+      #primary-menu > ul > li.mega-menu > .mega-menu-content {
+      -webkit-transition: top .4s ease;
+      -o-transition: top .4s ease;
+      transition: top .4s ease;
+      }
+      #top-search,
+      #top-cart {
+      -webkit-transition: margin .4s ease, opacity .3s ease;
+      -o-transition: margin .4s ease, opacity .3s ease;
+      transition: margin .4s ease, opacity .3s ease;
+      }
+      body:not(.top-search-open) #header-wrap #logo,
+      body:not(.top-search-open) #primary-menu > ul,
+      body:not(.top-search-open) #primary-menu > .container > ul,
+      body:not(.top-search-open) #top-cart,
+      body:not(.top-search-open) #side-panel-trigger,
+      body:not(.top-search-open) #top-account {
+      opacity: 1;
+      -webkit-transition: height .4s ease, margin .4s ease, opacity .2s .2s ease;
+      -o-transition: height .4s ease, margin .4s ease, opacity .2s .2s ease;
+      transition: height .4s ease, margin .4s ease, opacity .2s .2s ease;
+      }
+      body.top-search-open #header-wrap #logo,
+      body.top-search-open #primary-menu > ul,
+      body.top-search-open #primary-menu > .container > ul,
+      body.top-search-open #top-cart,
+      body.top-search-open #side-panel-trigger,
+      body.top-search-open #top-account { opacity: 0; }
+      #header.sticky-header.semi-transparent { background-color: transparent; }
+      #header-wrap {
+      position: relative;
+      z-index: 199;
+      -webkit-backface-visibility: hidden;
+      }
+      #header.sticky-header #header-wrap {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #142736;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+      #header.semi-transparent.sticky-header #header-wrap { background-color: rgba(255,255,255,0.8) }
+      #header.sticky-header:not(.static-sticky),
+      #header.sticky-header:not(.static-sticky) #header-wrap,
+      #header.sticky-header:not(.static-sticky):not(.sticky-style-2):not(.sticky-style-3) #logo img { height: 80px; }
+      #header.sticky-header:not(.static-sticky) #primary-menu > ul > li > a {
+      padding-top: 19px;
+      padding-bottom: 19px;
+      }
+      #header.sticky-header:not(.static-sticky).sticky-style-2,
+      #header.sticky-header:not(.static-sticky).sticky-style-3 { height: 161px; }
+      #header.sticky-header:not(.static-sticky).sticky-style-2 #primary-menu,
+      #header.sticky-header:not(.static-sticky).sticky-style-3 #primary-menu { border-top: 0; }
+      #header.sticky-header:not(.static-sticky) #top-search,
+      #header.sticky-header:not(.static-sticky) #top-cart,
+      #header.sticky-header:not(.static-sticky) #side-panel-trigger {
+      margin-top: 20px !important;
+      margin-bottom: 20px !important;
+      }
+      #header.sticky-header:not(.static-sticky) #top-account {
+      margin-top: 12px !important;
+      margin-bottom: 13px !important;
+      }
+      #header.sticky-header:not(.static-sticky) #top-cart .top-cart-content { top: 40px; }
+      #header.sticky-header.sticky-style-2 #primary-menu { border-top: 0; }
+      .noUi-target {
+            border-radius: 0px; 
+            border: 0px solid #D3D3D3; 
+            box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB;
+      }
+      @media (max-width: 992px) {
+            .has-parallax {
+            height: 300px !important;
+            }
+      }
+    link(rel='stylesheet', type='text/css', href='/assets/css/responsive.css')
+  body#page-top.map-fullscreen.page-homepage.navigation-off-canvas(onunload='')
+    // Outer Wrapper
+    #outer-wrapper
+      // Inner Wrapper
+      #inner-wrapper
+        // Navigation
+        //
+          <div class="header">
+          <div class="wrapper">
+          <div class="brand">
+          <a href="index-directory.html"><img src="assets/img/logo.png" alt="logo"></a>
+          </div>
+          <nav class="navigation-items">
+          <div class="wrapper">
+          <ul class="main-navigation navigation-top-header"></ul>
+          <ul class="user-area">
+          <li><a href="sign-in.html">Sign In</a></li>
+          <li><a href="register.html"><strong>Register</strong></a></li>
+          </ul>
+          <a href="submit.html" class="submit-item">
+          <div class="content"><span>Submit Your Item</span></div>
+          <div class="icon">
+          <i class="fa fa-plus"></i>
+          </div>
+          </a>
+          <div class="toggle-navigation">
+          <div class="icon">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          </div>
+          </div>
+          </div>
+          </nav>
+          </div>
+          </div>
+        header#header.split-menu.transparent-header.dark(data-sticky-class='not-dark', data-responsive-class='not-dark')
+          #header-wrap(style='')
+            .container.clearfix
+              #primary-menu-trigger
+                i.icon-reorder(style="    font-family: 'font-icons' !important; color: white;")
+              #logo
+                a.standard-logo(href='/', data-dark-logo='/assets/img/roomtini_logo_dark.png')
+                  img(src='/assets/img/roomtini_logo_dark.png', alt='Canvas Logo', style='height: 45px; width: 200px; margin-top: 25px;')
+                a.retina-logo(href='/', data-dark-logo='/assets/img/roomtini_logo_dark.png', style='display:black')
+                  img(src='/assets/img/roomtini_logo_dark.png', alt='Canvas Logo', style='height: 45px; width: 200px; margin-top: 25px;')
+              nav#primary-menu.with-arrows.clearfix.not-dark
+                ul.one-page-menu.sf-js-enabled(data-easing='easeInOutExpo', data-speed='1250', data-offset='160', style='touch-action: pan-y;')
+                ul.one-page-menu.sf-js-enabled(data-easing='easeInOutExpo', data-speed='1250', data-offset='100', style='touch-action: pan-y;')
+                  li
+                    a(href='/', data-href='/')
+                      div Home
+                  li
+                    a(href='/login')
+                      div Login
+                  li#applybutton.menu-item-emphasis
+                    a#applynow(href='/signup')
+                      div Apply Now
+        // end Navigation
+        // Page Canvas
+        #page-canvas
+          // Off Canvas Navigation
+          nav.off-canvas-navigation
+            header Navigation
+            .main-navigation.navigation-off-canvas
+          // end Off Canvas Navigation
+          // Page Content
+          #page-content(style='padding-bottom: 0px')
+            // Map Canvas
+            .map-canvas.list-width-30
+              // Map
+              .map
+                .toggle-navigation
+                  .icon
+                    .line
+                    .line
+                    .line
+                // /.toggle-navigation
+                #map.has-parallax
+                // /#map
+                //
+                  <div class="search-bar horizontal">
+                  <form class="main-search border-less-inputs" role="form" method="post">
+                  <div class="input-row">
+                  <div class="form-group">
+                  <input type="text" class="form-control" id="keyword" placeholder="Enter Keyword">
+                  </div>
+                  <div class="form-group">
+                  <div class="input-group location">
+                  <input type="text" class="form-control" id="location" placeholder="Enter Location">
+                  <span class="input-group-addon"><i class="fa fa-map-marker geolocation" data-toggle="tooltip" data-placement="bottom" title="Find my position"></i></span>
+                  </div>
+                  </div>
+                  <div class="form-group">
+                  <select name="category" multiple title="Select Category" data-live-search="true">
+                  <option value="1">Stores</option>
+                  <option value="2" class="sub-category">Apparel</option>
+                  <option value="3" class="sub-category">Computers</option>
+                  <option value="4" class="sub-category">Nature</option>
+                  <option value="5">Tourism</option>
+                  <option value="6">Restaurant & Bars</option>
+                  <option value="7" class="sub-category">Bars</option>
+                  <option value="8" class="sub-category">Vegetarian</option>
+                  <option value="9" class="sub-category">Steak & Grill</option>
+                  <option value="10">Sports</option>
+                  <option value="11" class="sub-category">Cycling</option>
+                  <option value="12" class="sub-category">Water Sports</option>
+                  <option value="13" class="sub-category">Winter Sports</option>
+                  </select>
+                  </div>
+                  <div class="form-group">
+                  <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                  </div>
+                  </div>
+                  </form>
+                  </div>
+                // /.search-bar
+              // end Map
+              // Items List
+              .items-list 
+                .filter
+                    header.clearfix
+                      h3.pull-left Search
+                    .row
+                      .col-md-6.col-sm-6
+                        .form-group
+                          label(for='type') Room Type
+                          select#type
+                            option(value='master', selected='') Master
+                            option(value='single') Single
+                            option(value='converted') Converted
+                      .col-md-6.col-sm-6
+                        .form-group
+                          label Price
+                          #price-slider.ui-slider(data-value-min='1000', data-value-max='2100', data-step='100', data-value-type='price', data-currency='$', data-currency-placement='before')
+                            .values.clearfix
+                              input.value-min(name='value-min[]', readonly='')
+                              input.value-max(name='value-max[]', readonly='')
+                            .element   
+
+                .inner
+                  ul.results.list
+                // results
+              // end Items List
+            // end Map Canvas
+        // end Page Canvas
+        // Page Footer
+        footer#page-footer
+          .inner(style='padding-top: 0px')
+            // /.footer-top
+            .footer-bottom(style='margin-top: 0px;')
+              .container
+                span.left Copyrights © 2017 All Rights Reserved by Roomtini
+            // /.footer-bottom
+        // end Page Footer
+      // end Inner Wrapper
+    // end Outer Wrapper
+    script(type='text/javascript', src='/assets/js/jquery-2.1.0.min.js')
+    script(type='text/javascript', src='/assets/js/before.load.js')
+    script(type='text/javascript', src='/assets/js/jquery-migrate-1.2.1.min.js')
+    script(type='text/javascript', src='/assets/bootstrap/js/bootstrap.min.js')
+    script(type='text/javascript', src='/assets/js/smoothscroll.js')
+    script(type='text/javascript', src='/assets/js/bootstrap-select.min.js')
+    script(type='text/javascript', src='/assets/js/jquery.hotkeys.js')
+    script(type='text/javascript', src='/assets/js/jquery.nouislider.all.min.js')
+    script(type='text/javascript', src='/assets/js/jquery.mCustomScrollbar.concat.min.js')
+    script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDUi2u0Dyy7s0cOUpNynJjfgG8MofUiAQ8')
+    script(type='text/javascript', src='/assets/js/infobox.js')
+    script(type='text/javascript', src='/assets/js/richmarker-compiled.js')
+    script(type='text/javascript', src='/assets/js/markerclusterer.js')
+    script(type='text/javascript', src='/assets/js/custom.js')
+    script(type='text/javascript', src='/assets/js/maps.js')
+    //script(type='text/javascript', src='/assets/js/plugins.js')
+    script(type='text/javascript', src='/assets/js/functions.js')
+    //if lte IE 9
+      script(type='text/javascript', src='assets/js/ie-scripts.js')
+    script.
+
+        var data = window.data = {
+        data: [
+        {
+        "id": 1,
+        "category": "real_estate",
+        "title": "Carmal Rincon",
+        "location": "88 Howard St, San Francisco, CA 94105",
+        "latitude": 37.7897947,
+        "longitude": -122.3953209,
+        "url": "",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/carmalrincon.jpg",
+        "/assets/img/carmalrincon1.jpg",
+        "/assets/img/carmalrincon2.jpg"
+        ],
+        "price": "$1200",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "area": 900
+        },
+        "features": ['Roof Top Patio', 'Key less Entry', 'hardwood floors ', 'On-site grocery store'],
+        "descriptions": "Premium amenities and exceptional service in and exceptional backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 2,
+        "category": "real_estate",
+        "title": "L Seven Apartments",
+        "location": "1222 Harrison St, San Francisco",
+        "latitude": 37.7738069,
+        "longitude": -122.4088216,
+        "url": "/181fremont",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/lseven.jpg",
+        "/assets/img/lseven1.jpg",
+        "/assets/img/lseven2.jpg"
+        ],
+        "price": "$1200",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 240
+        },
+        "features": ['Game Lounge', 'Front Loading Washers', 'Panoramic views of SF', '9ft Cielings', 'Hardwood Floors', 'Pet Park', 'State of the Art Fitness Center', 'BBQ Terrace', 'Roof Top Deck'],
+        "descriptions": "Modern Luxury apartments built in 2016/17. Featuring state of the art applicances, game rooms, and Rooftop BBQ grills"
+        },
+        {
+        "id": 3,
+        "category": "real_estate",
+        "title": "Strata",
+        "location": "1201 4th St, San Francisco",
+        "latitude": 37.772716,
+        "longitude": -122.39123,
+        "url": "",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/strata.jpg",
+        "/assets/img/strata1.jpg",
+        "/assets/img/strata2.jpg"
+        ],
+        "price": "$1700",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ["Hardwood Kitchen Flooring", "Granite Countertop", "Outdoor barbecue & Picnic Area", "Billiard room", "Fitness Center"],
+        "descriptions": "Premium amenities and exceptional service in and exceptional backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 4,
+        "category": "real_estate",
+        "title": "399 Fremont",
+        "location": "399 Fremont St, San Francisco",
+        "latitude": 37.7810144,
+        "longitude": -122.4045166,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/399fremont.jpg",
+        "/assets/img/399fremont2.jpg",
+        "/assets/img/399fremont3.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 2,
+        "garages": 0,
+        "area": 990
+        },
+        "features": ['Quartz Countertops', 'Yoga Studio', 'Pool', 'Sky Lounge', 'Private outdoor Pet Park', 'Curated Art Collection'],
+        "descriptions": "Premium amenities and exceptional service in and exceptional backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 5,
+        "category": "real_estate",
+        "title": "Alchemy",
+        "location": "200 Buchanan St, San Francisco",
+        "latitude": 37.7718173,
+        "longitude": -122.4266556,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/alchemy.jpg",
+        "/assets/img/alchemy2.jpg",
+        "/assets/img/alchemy3.jpg"
+        ],
+        "price": "$1660",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Gigabit Internet', 'Quartz Countertops','Luxe Soaking Tubs','Wood Style Flooring','Rooftop w/ Outdoor Kitchen','Yoga Studio','Plum Orchard'],
+        "descriptions": "Premium amenities and exceptional service in and exceptional backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 6,
+        "category": "real_estate",
+        "title": "AVA 55 Ninth",
+        "location": " 55 9th St, San Francisco",
+        "latitude": 37.7771168,
+        "longitude": -122.4151658,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/ava55ninth.jpg",
+        "/assets/img/ava55ninth1.jpg",
+        "/assets/img/ava55ninth2.jpg"
+        ],
+        "price": "$1250",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 2,
+        "garages": 0,
+        "area": 950
+        },
+        "features": ['Outdoor Movie Screen', 'Close to BART', 'Fitness Center', 'Premium Washer/Dryer in Unit'],
+        "descriptions": "Premium amenities and exceptional service in and exceptional backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 7,
+        "category": "real_estate",
+        "title": "Eviva Mission Bay",
+        "location": "1360 Berry Street, San Francisco",
+        "latitude": 37.7727523,
+        "longitude": -122.3997569,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/eviva.jpg",
+        "/assets/img/eviva1.jpg",
+        "/assets/img/eviva2.jpg"
+        ],
+        "price": "$1700",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 240
+        },
+        "features": ['Quartz Countertops', 'Keyless Entry', 'Stainless Steel Appliance','Outdoor Terrace w/ Grill','Fitness Center'],
+        "descriptions": "Premium amenities and exceptional service in and exceptional backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 8,
+        "category": "real_estate",
+        "title": "The Venn",
+        "location": "1844 Market St, San Francisco",
+        "latitude": 37.7715031,
+        "longitude": -122.4266222,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/thevenn.jpg",
+        "/assets/img/thevenn2.jpg",
+        "/assets/img/thevenn3.jpg"
+        ],
+        "price": "$1300",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Sky Terrace', 'Courtyard','Fitness Center', 'Bike Storage','Stainless Steel Glass top Range'],
+        "descriptions": "Premium amenities and exceptional service in and exceptional backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 9,
+        "category": "real_estate",
+        "title": "The Gantry",
+        "location": "2121 3rd St, San Francisco",
+        "latitude": 37.7626982,
+        "longitude": -122.390415,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/thegantry.jpg",
+        "/assets/img/thegantry1.jpg",
+        "/assets/img/thegantry2.jpg"
+        ],
+        "price": "$1300",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['85 Walk Score', 'Stainless Steel Appliances', 'Granite Countertops', 'Fitness Studio', 'Dog Run', 'Courtyard','Washer/Dryer'],
+        "descriptions": "Premium amenities and exceptional service in and exceptional backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 10,
+        "category": "real_estate",
+        "title": "Mosso",
+        "location": "900 Folsom St, San Francisco",
+        "latitude": 37.7800691,
+        "longitude": -122.4062814,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/mosso.jpg",
+        "/assets/img/mosso12.jpg",
+        "/assets/img/mosso2.jpg"
+        ],
+        "price": "$1200",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Washer/Dryer', 'Bike Storage','Solarium','Rooftop','Quartz Countertops','Bike Storage', 'Dog Wash'],
+        "descriptions": "Premium amenities and exceptional service in and exceptional backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 11,
+        "category": "real_estate",
+        "title": "388 Beale",
+        "location": "900 Folsom St, San Francisco",
+        "latitude": 37.787645,
+        "longitude": -122.3942451,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/388beale.jpg",
+        "/assets/img/388beale12.jpg",
+        "/assets/img/388beale2.jpg"
+        ],
+        "price": "$1200",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Fitness Center', 'Jacuzzi','Wood Burning Fireplace','Sun Deck','Stainless Steel Appliances'],
+        "descriptions": "Premium amenities and exceptional service in and exceptional backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 12,
+        "category": "real_estate",
+        "title": "The Duboce",
+        "location": "2198 Market St, San Francisco, ",
+        "latitude": 37.766527,
+        "longitude": -122.430769,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/theduboce.jpg",
+        "/assets/img/theduboce1.jpg",
+        "/assets/img/theduboce2.jpg"
+        ],
+        "price": "$1200",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Quartz countertops','Roof Deck','Sun Deck','Fire Pit','Courtyard'],
+        "descriptions": "Premium amenities and exceptional service in and exceptional backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 13,
+        "category": "real_estate",
+        "title": "Channel at Mission Bay",
+        "location": "185 Channel St., San Francisco, ",
+        "latitude": 37.7732635,
+        "longitude": -122.3929193,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/channel.jpg",
+        "/assets/img/channel1.jpg",
+        "/assets/img/channel2.jpg"
+        ],
+        "price": "$1200",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Fitness Center', 'Freshwater Pool', 'Outdoor Terrace', 'Lounge','Quartz Countertops','Keyless Entry','Carpeted Bedrooms','Washer/Dryer'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 14,
+        "category": "real_estate",
+        "title": "The Venue",
+        "location": "1155 4th St, San Francisco, ",
+        "latitude": 37.7732635,
+        "longitude": -122.3929193,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/venue.jpg",
+        "/assets/img/venue1.jpg",
+        "/assets/img/venue2.jpg"
+        ],
+        "price": "$1200",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Quartz Countertops', 'Stainless steel appliances', 'Courtyard with BBQ','Fitness center'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 15,
+        "category": "real_estate",
+        "title": "The Civic",
+        "location": "101 Polk St, San Francisco, ",
+        "latitude": 37.7777493,
+        "longitude": -122.4205842,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/thecivic.jpg",
+        "/assets/img/thecivic1.jpg",
+        "/assets/img/thecivic2.jpg"
+        ],
+        "price": "$1200",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Gas stoves', 'Stainless Steel Appliances','Walk in Showers','Roof Deck w/ Grill','Fitness Center'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 16,
+        "category": "real_estate",
+        "title": "SOMA at 788",
+        "location": "788 Harrison St, San Francisco, ",
+        "latitude": 37.7810199,
+        "longitude": -122.3993652,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/somaat788.jpg",
+        "/assets/img/somaat7881.jpg",
+        "/assets/img/somaat7882.jpg"
+        ],
+        "price": "$1200",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Hard Surface Floor', 'Sundeck w/ Grill','Fitness Center','Dog Park','Washer/ Dryer'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 17,
+        "category": "real_estate",
+        "title": "Argenta",
+        "location": "1 Polk St, San Francisco, ",
+        "latitude": 37.7851638,
+        "longitude": -122.4180655,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/argenta.jpg",
+        "/assets/img/argenta1.jpg",
+        "/assets/img/argenta2.jpg"
+        ],
+        "price": "$1200",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Marble countertops', 'Hardwood Floors','Stainless Steel Applicances','Fitness Center'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 18,
+        "category": "real_estate",
+        "title": "Soma Residences",
+        "location": "1045 Mission St, San Francisco, ",
+        "latitude": 37.7802712,
+        "longitude": -122.418021,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/somaresidences.jpg",
+        "/assets/img/somaresidences2.jpg",
+        "/assets/img/somaresidences3.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Laundry Room', 'Fitness Center', 'Outside of Union Square'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 19,
+        "category": "real_estate",
+        "title": "One Henry Adams",
+        "location": "1 Henry Adams St, San Francisco, ",
+        "latitude": 37.7696326,
+        "longitude": -122.4055422,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/1henryadams.jpg",
+        "/assets/img/1henryadams1.jpg",
+        "/assets/img/1henryadams2.jpg"
+        ],
+        "price": "$1400",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Quartz countertops', 'Stainless Steel Appliances','Rooftop Terrace','Fitness Center', 'Pet Grooming Facility','Game Room', 'RoofTop Grill'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 20,
+        "category": "real_estate",
+        "title": "NEMA",
+        "location": " 8 10th St, San Francisco ",
+        "latitude": 37.7761323,
+        "longitude": -122.4173365,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/nema.jpg",
+        "/assets/img/nema2.jpg",
+        "/assets/img/nema3.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Quartz Countertops', 'Washer Dryer', 'Stainless Steel Appliances', 'Soaking Tub', 'Keyless Entry'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 21,
+        "category": "real_estate",
+        "title": "MB360",
+        "location": " 1200 4th St, San Francisco ",
+        "latitude": 37.7728003,
+        "longitude": -122.4002996,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/mb360.jpg",
+        "/assets/img/mb3601.jpg",
+        "/assets/img/mb3602.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Outdoor Pool', 'Courtyard', 'Quartz Countertops','Hardwood Floors','Washer/Dryer','Pool','Outdoor Grill','Fitness Center'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 22,
+        "category": "real_estate",
+        "title": "Jasper",
+        "location": " 45 Lansing St, San Francisco ",
+        "latitude": 37.7876819,
+        "longitude": -122.4096144,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/jasper.jpg",
+        "/assets/img/jasper1.jpg",
+        "/assets/img/jasper2.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Gas Stovetops', 'Caesarstone Countertops', 'Stainless steel Appliances', 'Washer/Dryer','Hardwood Floor', 'Soaking Tub', 'Keyless Entry', 'Fiber Optic'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 23,
+        "category": "real_estate",
+        "title": "Avalon at Mission Bay",
+        "location": " 255 King St, San Francisco ",
+        "latitude": 37.7650659,
+        "longitude": -122.4220085,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/avalon.jpg",
+        "/assets/img/avalon1.jpg",
+        "/assets/img/avalon2.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Hardwood Floors', 'Stainless Steel Appliances','Marble Countertops','Climbing Wall','Fitness Center','Courtyard w/ Grill'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 24,
+        "category": "real_estate",
+        "title": "333 Fremont",
+        "location": " 333 Fremont St, San Francisco ",
+        "latitude": 37.7876776,
+        "longitude": -122.3948933,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/333fremont.jpg",
+        "/assets/img/333fremont1.jpg",
+        "/assets/img/333fremont2.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Gas range stove', 'Stainless steel appliances','Granite countertops','Bicycle Storage'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 25,
+        "category": "real_estate",
+        "title": "Avalon Hayes Valley",
+        "location": " 325 Octavia Blvd, San Francisco ",
+        "latitude": 37.7749736,
+        "longitude": -122.4251364,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/avalonhayesvalley.jpg",
+        "/assets/img/avalonhayesvalley1.jpg",
+        "/assets/img/avalonhayesvalley2.jpg"
+        ],
+        "price": "$1400",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Quartz Countertops', 'Washer/Dryer','Walk in Closet','On-Site Restaurant','Fitness Center','Rooftop Terrace','Fireplace Lounge'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 26,
+        "category": "real_estate",
+        "title": "100 Van Ness",
+        "location": " 100 Van Ness Ave, San Francisco ",
+        "latitude": 37.776731,
+        "longitude": -122.4192514,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/100vanness.jpg",
+        "/assets/img/100vanness1.jpg",
+        "/assets/img/100vanness2.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Rooftop Deck', 'Fitness Center','Library/Business Center','Wine Storage','Bike Storage','Stone Countertops','Washer/Dryer','Gas Stove'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 27,
+        "category": "real_estate",
+        "title": "2175 Market Street",
+        "location": " 2175 Market St, San Francisco ",
+        "latitude": 37.7663615,
+        "longitude": -122.4322384,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/2175marketstreet.jpg",
+        "/assets/img/2175marketstreet1.jpg",
+        "/assets/img/2175marketstreet2.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Ceasarstone countertops', 'Landscaped Roof Deck','Bike Storage','Fitness Center','Washer/Dryer'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 28,
+        "category": "real_estate",
+        "title": "Olume",
+        "location": " 1401 Mission St, San Francisco ",
+        "latitude": 37.7749572,
+        "longitude": -122.4181814,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/olume.jpg",
+        "/assets/img/olume1.jpg",
+        "/assets/img/olume2.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Quartz Countertops', 'Pet Park', 'Rooftop Deck','Fitness Center','Washer/Dryer','Bike Storage'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 29,
+        "category": "real_estate",
+        "title": "Solaire",
+        "location": " 299 Fremont St, San Francisco ",
+        "latitude": 37.7884298,
+        "longitude": -122.3959081,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/solaire.jpg",
+        "/assets/img/solaire1.jpg",
+        "/assets/img/solaire2.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Yoga Studio', 'Lounge','Rooftop Deck','Fitness Center','Hardwood Flooring','Washer/Dryer'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 30,
+        "category": "real_estate",
+        "title": "Vara",
+        "location": " 1600 15th St, San Francisco ",
+        "latitude": 37.766788,
+        "longitude": -122.420332,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/vara.jpg",
+        "/assets/img/vara1.jpg",
+        "/assets/img/vara2.jpg"
+        ],
+        "price": "$1450",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Stainless Steel Appliances', 'Washer/Dryer','Bike Storage','Quartz countertop','Fitness Center','Courtyard w/ Grill'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 31,
+        "category": "real_estate",
+        "title": "Azure",
+        "location": " 690 Long Bridge St, San Francisco ",
+        "latitude": 37.7728271,
+        "longitude": -122.3952709,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/azure.jpg",
+        "/assets/img/azure1.jpg",
+        "/assets/img/azure2.jpg"
+        ],
+        "price": "$1450",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Washer/Dryer', 'Fitness Center','Electric Car Charging','On-site Dog Park'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 32,
+        "category": "real_estate",
+        "title": "Trinity Place",
+        "location": " 1188 Mission St, San Francisco ",
+        "latitude": 37.7778712,
+        "longitude": -122.4152536,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/trinity.jpg",
+        "/assets/img/trinity2.jpg",
+        "/assets/img/trinity3.jpg"
+        ],
+        "price": "$1400",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Fitness Center', 'Wood Style Floors','Granite Countertops'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 33,
+        "category": "real_estate",
+        "title": "Edgewater",
+        "location": " 355 Berry St, San Francisco ",
+        "latitude": 37.772461,
+        "longitude": -122.396997,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/edgewater.jpg",
+        "/assets/img/edgewater1.jpg",
+        "/assets/img/edgewater2.jpg"
+        ],
+        "price": "$1400",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Washer/Dryer', 'Fitness Center','Coffee Lounge','Outdoor Grill','Quartz Countertops'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 34,
+        "category": "real_estate",
+        "title": "Soma Square",
+        "location": " 1 St Francis Pl, San Francisco ",
+        "latitude": 37.7836381,
+        "longitude": -122.3977265,
+        "url": "#",
+        "bedroom_type": ['converted'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/somasquare.jpeg",
+        "/assets/img/somasquare1.jpg",
+        "/assets/img/somasquare2.jpg"
+        ],
+        "price": "$1400",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Wood Burning Fireplace', 'Washer/Dryer','Granite Countertop','Fitness Center','Swimming Pool'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 35,
+        "category": "real_estate",
+        "title": "Carmal Rincon",
+        "location": "88 Howard St, San Francisco",
+        "latitude": 37.7897947,
+        "longitude": -122.3953209,
+        "url": "",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/carmalrincon.jpg",
+        "/assets/img/carmalrincon1.jpg",
+        "/assets/img/carmalrincon2.jpg"
+        ],
+        "price": "$2000",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 240
+        },
+        "features": ['Roof Top Patio', 'Key less Entry', 'hardwood floors ', 'On-site grocery store'],
+        "descriptions": "Premium amenities and exceptional service in and exceptional backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 36,
+        "category": "real_estate",
+        "title": "L Seven Apartments",
+        "location": "1222 Harrison St, San Francisco",
+        "latitude": 37.7738069,
+        "longitude": -122.4088216,
+        "url": "locations/181fremont",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+       "gallery": [
+        "/assets/img/lseven.jpg",
+        "/assets/img/lseven1.jpg",
+        "/assets/img/lseven2.jpg"
+        ],
+        "price": "$1800",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 240
+        },
+        "features": ['Game Lounge', 'Front Loading Washers', 'Panoramic views of SF', '9ft Cielings', 'Hardwood Floors', 'Pet Park', 'State of the Art Fitness Center', 'BBQ Terrace', 'Roof Top Deck'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 37,
+        "category": "real_estate",
+        "title": "Strata",
+        "location": "1201 4th St, San Francisco",
+        "latitude": 37.772716,
+        "longitude": -122.39123,
+        "url": "",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/strata.jpg",
+        "/assets/img/strata1.jpg",
+        "/assets/img/strata2.jpg"
+        ],
+        "price": "$1750",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ["Hardwood Kitchen Flooring", "Granite Countertop", "Outdoor barbecue & Picnic Area", "Billiard room", "Fitness Center"],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 371111,
+        "category": "real_estate",
+        "title": "399 Fremont",
+        "location": "399 Fremont St, San Francisco",
+        "latitude": 37.7810144,
+        "longitude": -122.4045166,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/399fremont.jpg",
+        "/assets/img/399fremont1.jpg",
+        "/assets/img/399fremont2.jpg"
+        ],
+        "price": "$1800",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 2,
+        "garages": 0,
+        "area": 990
+        },
+        "features": ['Quartz Countertops', 'Yoga Studio', 'Pool', 'Sky Lounge', 'Private outdoor Pet Park', 'Curated Art Collection'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 38,
+        "category": "real_estate",
+        "title": "Alchemy",
+        "location": "200 Buchanan St, San Francisco",
+        "latitude": 37.7718173,
+        "longitude": -122.4266556,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/alchemy.jpg",
+        "/assets/img/alchemy1.jpg",
+        "/assets/img/alchemy2.jpg"
+        ],
+        "price": "$1960",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Gigabit Internet', 'Quartz Countertops','Luxe Soaking Tubs','Wood Style Flooring','Rooftop w/ Outdoor Kitchen','Yoga Studio','Plum Orchard'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 39,
+        "category": "real_estate",
+        "title": "AVA 55 Ninth",
+        "location": " 55 9th St, San Francisco",
+        "latitude": 37.7771168,
+        "longitude": -122.4151658,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/ava55ninth.jpg",
+        "/assets/img/ava55ninth1.jpg",
+        "/assets/img/ava55ninth2.jpg"
+        ],
+        "price": "$1750",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 2,
+        "garages": 0,
+        "area": 950
+        },
+        "features": ['Outdoor Movie Screen', 'Close to BART', 'Fitness Center', 'Premium Washer/Dryer in Unit'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 40,
+        "category": "real_estate",
+        "title": "Eviva Mission Bay",
+        "location": "1360 Berry Street, San Francisco",
+        "latitude": 37.7727523,
+        "longitude": -122.3997569,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/eviva.jpg",
+        "/assets/img/eviva1.jpg",
+        "/assets/img/eviva2.jpg"
+        ],
+        "price": "$1900",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 240
+        },
+        "features": ['Quartz Countertops', 'Keyless Entry', 'Stainless Steel Appliance','Outdoor Terrace w/ Grill','Fitness Center'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 41,
+        "category": "real_estate",
+        "title": "The Venn",
+        "location": "1844 Market St, San Francisco",
+        "latitude": 37.7715031,
+        "longitude": -122.4266222,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/thevenn.jpg",
+        "/assets/img/thevenn1.jpg",
+        "/assets/img/thevenn2.jpg"
+        ],
+        "price": "$1700",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Sky Terrace', 'Courtyard','Fitness Center', 'Bike Storage','Stainless Steel Glass top Range'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 42,
+        "category": "real_estate",
+        "title": "The Gantry",
+        "location": "2121 3rd St, San Francisco",
+        "latitude": 37.7626982,
+        "longitude": -122.390415,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/thegantry.jpg",
+        "/assets/img/thegantry1.jpg",
+        "/assets/img/thegantry2.jpg"
+        ],
+        "price": "$1700",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['85 Walk Score', 'Stainless Steel Appliances', 'Granite Countertops', 'Fitness Studio', 'Dog Run', 'Courtyard','Washer/Dryer'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 43,
+        "category": "real_estate",
+        "title": "Mosso",
+        "location": "900 Folsom St, San Francisco",
+        "latitude": 37.7800691,
+        "longitude": -122.4062814,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/mosso.jpg",
+        "/assets/img/mosso12.jpg",
+        "/assets/img/mosso2.jpg"
+        ],
+        "price": "$1700",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Washer/Dryer', 'Bike Storage','Solarium','Rooftop','Quartz Countertops','Bike Storage', 'Dog Wash'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 44,
+        "category": "real_estate",
+        "title": "388 Beale",
+        "location": "900 Folsom St, San Francisco",
+        "latitude": 37.787645,
+        "longitude": -122.3942451,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/388beale.jpg",
+        "/assets/img/388beale12.jpg",
+        "/assets/img/388beale2.jpg"
+        ],
+        "price": "$1700",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Fitness Center', 'Jacuzzi','Wood Burning Fireplace','Sun Deck','Stainless Steel Appliances'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 45,
+        "category": "real_estate",
+        "title": "The Duboce",
+        "location": "2198 Market St, San Francisco, ",
+        "latitude": 37.766527,
+        "longitude": -122.430769,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/theduboce.jpg",
+        "/assets/img/theduboce1.jpg",
+        "/assets/img/theduboce2.jpg"
+        ],
+        "price": "$1700",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Quartz countertops','Roof Deck','Sun Deck','Fire Pit','Courtyard'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 46,
+        "category": "real_estate",
+        "title": "Channel at Mission Bay",
+        "location": "185 Channel St., San Francisco, ",
+        "latitude": 37.7732635,
+        "longitude": -122.3929193,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/channel.jpg",
+        "/assets/img/channel1.jpg",
+        "/assets/img/channel2.jpg"
+        ],
+        "price": "$1700",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Fitness Center', 'Freshwater Pool', 'Outdoor Terrace', 'Lounge','Quartz Countertops','Keyless Entry','Carpeted Bedrooms','Washer/Dryer'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 47,
+        "category": "real_estate",
+        "title": "The Venue",
+        "location": "1155 4th St, San Francisco, ",
+        "latitude": 37.7732635,
+        "longitude": -122.3929193,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/venue.jpg",
+        "/assets/img/venue1.jpg",
+        "/assets/img/venue2.jpg"
+        ],
+        "price": "$1700",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Quartz Countertops', 'Stainless steel appliances', 'Courtyard with BBQ','Fitness center'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 48,
+        "category": "real_estate",
+        "title": "The Civic",
+        "location": "101 Polk St, San Francisco, ",
+        "latitude": 37.7777493,
+        "longitude": -122.4205842,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/thecivic.jpg",
+        "/assets/img/thecivic1.jpg",
+        "/assets/img/thecivic2.jpg"
+        ],
+        "price": "$1700",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Gas stoves', 'Stainless Steel Appliances','Walk in Showers','Roof Deck w/ Grill','Fitness Center'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 49,
+        "category": "real_estate",
+        "title": "SOMA at 788",
+        "location": "788 Harrison St, San Francisco, ",
+        "latitude": 37.7810199,
+        "longitude": -122.3993652,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/somaat788.jpg",
+        "/assets/img/somaat7881.jpg",
+        "/assets/img/somaat7882.jpg"
+        ],
+        "price": "$1700",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Hard Surface Floor', 'Sundeck w/ Grill','Fitness Center','Dog Park','Washer/ Dryer'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 50,
+        "category": "real_estate",
+        "title": "Argenta",
+        "location": "1 Polk St, San Francisco, ",
+        "latitude": 37.7851638,
+        "longitude": -122.4180655,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/argenta.jpg",
+        "/assets/img/argenta1.jpg",
+        "/assets/img/argenta2.jpg"
+        ],
+        "price": "$1700",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Marble countertops', 'Hardwood Floors','Stainless Steel Applicances','Fitness Center'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 50,
+        "category": "real_estate",
+        "title": "Soma Residences",
+        "location": "1045 Mission St, San Francisco, ",
+        "latitude": 37.7802712,
+        "longitude": -122.418021,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/somaresidences.jpg",
+        "/assets/img/somaresidences1.jpg",
+        "/assets/img/somaresidences2.jpg"
+        ],
+        "price": "$1800",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Laundry Room', 'Fitness Center', 'Outside of Union Square'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 51,
+        "category": "real_estate",
+        "title": "One Henry Adams",
+        "location": "1 Henry Adams St, San Francisco, ",
+        "latitude": 37.7696326,
+        "longitude": -122.4055422,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/1henryadams.jpg",
+        "/assets/img/1henryadams1.jpg",
+        "/assets/img/1henryadams2.jpg"
+        ],
+        "price": "$1800",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Quartz countertops', 'Stainless Steel Appliances','Rooftop Terrace','Fitness Center', 'Pet Grooming Facility','Game Room', 'RoofTop Grill'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 52,
+        "category": "real_estate",
+        "title": "NEMA",
+        "location": " 8 10th St, San Francisco ",
+        "latitude": 37.7761323,
+        "longitude": -122.4173365,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/nema.jpg",
+        "/assets/img/nema1.jpg",
+        "/assets/img/nema2.jpg"
+        ],
+        "price": "$1900",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Quartz Countertops', 'Washer Dryer', 'Stainless Steel Appliances', 'Soaking Tub', 'Keyless Entry'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 53,
+        "category": "real_estate",
+        "title": "MB360",
+        "location": " 1200 4th St, San Francisco ",
+        "latitude": 37.7728003,
+        "longitude": -122.4002996,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/mb360.jpg",
+        "/assets/img/mb3601.jpg",
+        "/assets/img/mb3602.jpg"
+        ],
+        "price": "$1900",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Outdoor Pool', 'Courtyard', 'Quartz Countertops','Hardwood Floors','Washer/Dryer','Pool','Outdoor Grill','Fitness Center'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 54,
+        "category": "real_estate",
+        "title": "Jasper",
+        "location": " 45 Lansing St, San Francisco ",
+        "latitude": 37.7876819,
+        "longitude": -122.4096144,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/jasper.jpg",
+        "/assets/img/jasper1.jpg",
+        "/assets/img/jasper2.jpg"
+        ],
+        "price": "$1900",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Gas Stovetops', 'Caesarstone Countertops', 'Stainless steel Appliances', 'Washer/Dryer','Hardwood Floor', 'Soaking Tub', 'Keyless Entry', 'Fiber Optic'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 55,
+        "category": "real_estate",
+        "title": "Avalon at Mission Bay",
+        "location": " 255 King St, San Francisco ",
+        "latitude": 37.7650659,
+        "longitude": -122.4220085,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/avalon.jpg",
+        "/assets/img/avalon1.jpg",
+        "/assets/img/avalon2.jpg"
+        ],
+        "price": "$1900",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Hardwood Floors', 'Stainless Steel Appliances','Marble Countertops','Climbing Wall','Fitness Center','Courtyard w/ Grill'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 56,
+        "category": "real_estate",
+        "title": "333 Fremont",
+        "location": " 333 Fremont St, San Francisco ",
+        "latitude": 37.7876776,
+        "longitude": -122.3948933,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/333fremont.jpg",
+        "/assets/img/333fremont1.jpg",
+        "/assets/img/333fremont2.jpg"
+        ],
+        "price": "$1800",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Gas range stove', 'Stainless steel appliances','Granite countertops','Bicycle Storage'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 57,
+        "category": "real_estate",
+        "title": "Avalon Hayes Valley",
+        "location": " 325 Octavia Blvd, San Francisco ",
+        "latitude": 37.7749736,
+        "longitude": -122.4251364,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/avalonhayesvalley.jpg",
+        "/assets/img/avalonhayesvalley1.jpg",
+        "/assets/img/avalonhayesvalley2.jpg"
+        ],
+        "price": "$1800",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Quartz Countertops', 'Washer/Dryer','Walk in Closet','On-Site Restaurant','Fitness Center','Rooftop Terrace','Fireplace Lounge'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 58,
+        "category": "real_estate",
+        "title": "100 Van Ness",
+        "location": " 100 Van Ness Ave, San Francisco ",
+        "latitude": 37.776731,
+        "longitude": -122.4192514,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/100vanness.jpg",
+        "/assets/img/100vanness1.jpg",
+        "/assets/img/100vanness2.jpg"
+        ],
+        "price": "$1800",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Rooftop Deck', 'Fitness Center','Library/Business Center','Wine Storage','Bike Storage','Stone Countertops','Washer/Dryer','Gas Stove'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 59,
+        "category": "real_estate",
+        "title": "2175 Market Street",
+        "location": " 2175 Market St, San Francisco ",
+        "latitude": 37.7663615,
+        "longitude": -122.4322384,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/2175marketstreet.jpg",
+        "/assets/img/2175marketstreet1.jpg",
+        "/assets/img/2175marketstreet2.jpg"
+        ],
+        "price": "$1800",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Ceasarstone countertops', 'Landscaped Roof Deck','Bike Storage','Fitness Center','Washer/Dryer'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 60,
+        "category": "real_estate",
+        "title": "Olume",
+        "location": " 1401 Mission St, San Francisco ",
+        "latitude": 37.7749572,
+        "longitude": -122.4181814,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/olume.jpg",
+        "/assets/img/olume1.jpg",
+        "/assets/img/olume2.jpg"
+        ],
+        "price": "$1900",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Quartz Countertops', 'Pet Park', 'Rooftop Deck','Fitness Center','Washer/Dryer','Bike Storage'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 61,
+        "category": "real_estate",
+        "title": "Solaire",
+        "location": " 299 Fremont St, San Francisco ",
+        "latitude": 37.7884298,
+        "longitude": -122.3959081,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/solaire.jpg",
+        "/assets/img/solaire1.jpg",
+        "/assets/img/solaire2.jpg"
+        ],
+        "price": "$1900",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Yoga Studio', 'Lounge','Rooftop Deck','Fitness Center','Hardwood Flooring','Washer/Dryer'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 62,
+        "category": "real_estate",
+        "title": "Vara",
+        "location": " 1600 15th St, San Francisco ",
+        "latitude": 37.766788,
+        "longitude": -122.420332,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/vara.jpg",
+        "/assets/img/vara1.jpg",
+        "/assets/img/vara2.jpg"
+        ],
+        "price": "$1950",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Stainless Steel Appliances', 'Washer/Dryer','Bike Storage','Quartz countertop','Fitness Center','Courtyard w/ Grill'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 63,
+        "category": "real_estate",
+        "title": "Azure",
+        "location": " 690 Long Bridge St, San Francisco ",
+        "latitude": 37.7728271,
+        "longitude": -122.3952709,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/azure.jpg",
+        "/assets/img/azure1.jpg",
+        "/assets/img/azure2.jpg"
+        ],
+        "price": "$1850",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Washer/Dryer', 'Fitness Center','Electric Car Charging','On-site Dog Park'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 64,
+        "category": "real_estate",
+        "title": "Trinity Place",
+        "location": " 1188 Mission St, San Francisco ",
+        "latitude": 37.7778712,
+        "longitude": -122.4152536,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/trinity.jpg",
+        "/assets/img/trinity1.jpg",
+        "/assets/img/trinity2.jpg"
+        ],
+        "price": "$1850",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Fitness Center', 'Wood Style Floors','Granite Countertops'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 65,
+        "category": "real_estate",
+        "title": "Edgewater",
+        "location": " 355 Berry St, San Francisco ",
+        "latitude": 37.772461,
+        "longitude": -122.396997,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/edgewater.jpg",
+        "/assets/img/edgewater1.jpg",
+        "/assets/img/edgewater2.jpg"
+        ],
+        "price": "$1800",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Washer/Dryer', 'Fitness Center','Coffee Lounge','Outdoor Grill','Quartz Countertops'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 66,
+        "category": "real_estate",
+        "title": "Soma Square",
+        "location": " 1 St Francis Pl, San Francisco ",
+        "latitude": 37.7836381,
+        "longitude": -122.3977265,
+        "url": "#",
+        "bedroom_type": ['master'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/somasquare.jpeg",
+        "/assets/img/somasquare1.jpg",
+        "/assets/img/somasquare2.jpg"
+        ],
+        "price": "$1900",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Wood Burning Fireplace', 'Washer/Dryer','Granite Countertop','Fitness Center','Swimming Pool'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 67,
+        "category": "real_estate",
+        "title": "Carmal Rincon",
+        "location": "88 Howard St, San Francisco",
+        "latitude": 37.7897947,
+        "longitude": -122.3953209,
+        "url": "",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/carmalrincon.jpg",
+        "/assets/img/carmalrincon2.jpg",
+        "/assets/img/carmalrincon3.jpg"
+        ],
+        "price": "$1700",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 240
+        },
+        "features": ['Roof Top Patio', 'Key less Entry', 'hardwood floors ', 'On-site grocery store'],
+        "descriptions": "Premium amenities and exceptional service in and exceptional backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 68,
+        "category": "real_estate",
+        "title": "L Seven Apartments",
+        "location": "1222 Harrison St, San Francisco",
+        "latitude": 37.7738069,
+        "longitude": -122.4088216,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/lseven.jpg",
+        "/assets/img/lseven1.jpg",
+        "/assets/img/lseven2.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 240
+        },
+        "features": ['Game Lounge', 'Front Loading Washers', 'Panoramic views of SF', '9ft Ceilings', 'Hardwood Floors', 'Pet Park', 'State of the Art Fitness Center', 'BBQ Terrace', 'Roof Top Deck'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 69,
+        "category": "real_estate",
+        "title": "Strata",
+        "location": "1201 4th St, San Francisco",
+        "latitude": 37.772716,
+        "longitude": -122.39123,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/strata.jpg",
+        "/assets/img/strata1.jpg",
+        "/assets/img/strata2.jpg"
+        ],
+        "price": "$1550",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ["Hardwood Kitchen Flooring", "Granite Countertop", "Outdoor barbecue & Picnic Area", "Billiard room", "Fitness Center"],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 70,
+        "category": "real_estate",
+        "title": "399 Fremont",
+        "location": "399 Fremont St, San Francisco",
+        "latitude": 37.7810144,
+        "longitude": -122.4045166,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/399fremont.jpg",
+        "/assets/img/399fremont1.jpg",
+        "/assets/img/399fremont2.jpg"
+        ],
+        "price": "$1600",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 2,
+        "garages": 0,
+        "area": 990
+        },
+        "features": ['Quartz Countertops', 'Yoga Studio', 'Pool', 'Sky Lounge', 'Private outdoor Pet Park', 'Curated Art Collection'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 71,
+        "category": "real_estate",
+        "title": "Alchemy",
+        "location": "200 Buchanan St, San Francisco",
+        "latitude": 37.7718173,
+        "longitude": -122.4266556,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/alchemy.jpg",
+        "/assets/img/alchemy1.jpg",
+        "/assets/img/alchemy2.jpg"
+        ],
+        "price": "$1650",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Gigabit Internet', 'Quartz Countertops','Luxe Soaking Tubs','Wood Style Flooring','Rooftop w/ Outdoor Kitchen','Yoga Studio','Plum Orchard'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 72,
+        "category": "real_estate",
+        "title": "AVA 55 Ninth",
+        "location": " 55 9th St, San Francisco",
+        "latitude": 37.7771168,
+        "longitude": -122.4151658,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/ava55ninth.jpg",
+        "/assets/img/ava55ninth1.jpg",
+        "/assets/img/ava55ninth2.jpg"
+        ],
+        "price": "$1550",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 2,
+        "garages": 0,
+        "area": 950
+        },
+        "features": ['Outdoor Movie Screen', 'Close to BART', 'Fitness Center', 'Premium Washer/Dryer in Unit'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 73,
+        "category": "real_estate",
+        "title": "Eviva Mission Bay",
+        "location": "1360 Berry Street, San Francisco",
+        "latitude": 37.7727523,
+        "longitude": -122.3997569,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/eviva.jpg",
+        "/assets/img/eviva1.jpg",
+        "/assets/img/eviva2.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 240
+        },
+        "features": ['Quartz Countertops', 'Keyless Entry', 'Stainless Steel Appliance','Outdoor Terrace w/ Grill','Fitness Center'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 74,
+        "category": "real_estate",
+        "title": "The Venn",
+        "location": "1844 Market St, San Francisco",
+        "latitude": 37.7715031,
+        "longitude": -122.4266222,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/thevenn.jpg",
+        "/assets/img/thevenn1.jpg",
+        "/assets/img/thevenn2.jpg"
+        ],
+        "price": "$1400",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Sky Terrace', 'Courtyard','Fitness Center', 'Bike Storage','Stainless Steel Glass top Range'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 75,
+        "category": "real_estate",
+        "title": "The Gantry",
+        "location": "2121 3rd St, San Francisco",
+        "latitude": 37.7626982,
+        "longitude": -122.390415,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/thegantry.jpg",
+        "/assets/img/thegantry1.jpg",
+        "/assets/img/thegantry2.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['85 Walk Score', 'Stainless Steel Appliances', 'Granite Countertops', 'Fitness Studio', 'Dog Run', 'Courtyard','Washer/Dryer'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 76,
+        "category": "real_estate",
+        "title": "Mosso",
+        "location": "900 Folsom St, San Francisco",
+        "latitude": 37.7800691,
+        "longitude": -122.4062814,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/mosso.jpg",
+        "/assets/img/mosso12.jpg",
+        "/assets/img/mosso2.jpg"
+        ],
+        "price": "$1400",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Washer/Dryer', 'Bike Storage','Solarium','Rooftop','Quartz Countertops','Bike Storage', 'Dog Wash'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 77,
+        "category": "real_estate",
+        "title": "388 Beale",
+        "location": "900 Folsom St, San Francisco",
+        "latitude": 37.787645,
+        "longitude": -122.3942451,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/388beale.jpg",
+        "/assets/img/388beale12.jpg",
+        "/assets/img/388beale2.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Fitness Center', 'Jacuzzi','Wood Burning Fireplace','Sun Deck','Stainless Steel Appliances'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 78,
+        "category": "real_estate",
+        "title": "The Duboce",
+        "location": "2198 Market St, San Francisco, ",
+        "latitude": 37.766527,
+        "longitude": -122.430769,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/theduboce.jpg",
+        "/assets/img/theduboce1.jpg",
+        "/assets/img/theduboce2.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Quartz countertops','Roof Deck','Sun Deck','Fire Pit','Courtyard'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 79,
+        "category": "real_estate",
+        "title": "Channel at Mission Bay",
+        "location": "185 Channel St., San Francisco, ",
+        "latitude": 37.7732635,
+        "longitude": -122.3929193,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/channel.jpg",
+        "/assets/img/channel1.jpg",
+        "/assets/img/channel2.jpg"
+        ],
+        "price": "$1525",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Fitness Center', 'Freshwater Pool', 'Outdoor Terrace', 'Lounge','Quartz Countertops','Keyless Entry','Carpeted Bedrooms','Washer/Dryer'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 80,
+        "category": "real_estate",
+        "title": "The Venue",
+        "location": "1155 4th St, San Francisco, ",
+        "latitude": 37.7732635,
+        "longitude": -122.3929193,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/venue.jpg",
+        "/assets/img/venue1.jpg",
+        "/assets/img/venue2.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Quartz Countertops', 'Stainless steel appliances', 'Courtyard with BBQ','Fitness center'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 81,
+        "category": "real_estate",
+        "title": "The Civic",
+        "location": "101 Polk St, San Francisco, ",
+        "latitude": 37.7777493,
+        "longitude": -122.4205842,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/thecivic.jpg",
+        "/assets/img/thecivic1.jpg",
+        "/assets/img/thecivic2.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Gas stoves', 'Stainless Steel Appliances','Walk in Showers','Roof Deck w/ Grill','Fitness Center'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 82,
+        "category": "real_estate",
+        "title": "SOMA at 788",
+        "location": "788 Harrison St, San Francisco, ",
+        "latitude": 37.7810199,
+        "longitude": -122.3993652,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/somaat788.jpg",
+        "/assets/img/somaat7881.jpg",
+        "/assets/img/somaat7882.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Hard Surface Floor', 'Sundeck w/ Grill','Fitness Center','Dog Park','Washer/ Dryer'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 83,
+        "category": "real_estate",
+        "title": "Argenta",
+        "location": "1 Polk St, San Francisco, ",
+        "latitude": 37.7851638,
+        "longitude": -122.4180655,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/argenta.jpg",
+        "/assets/img/argenta1.jpg",
+        "/assets/img/argenta2.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Marble countertops', 'Hardwood Floors','Stainless Steel Appliances','Fitness Center'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 84,
+        "category": "real_estate",
+        "title": "Soma Residences",
+        "location": "1045 Mission St, San Francisco, ",
+        "latitude": 37.7802712,
+        "longitude": -122.418021,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/somaresidences.jpg",
+        "/assets/img/somaresidences2.jpg",
+        "/assets/img/somaresidences3.jpg"
+        ],
+        "price": "$1600",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Laundry Room', 'Fitness Center', 'Outside of Union Square'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 85,
+        "category": "real_estate",
+        "title": "One Henry Adams",
+        "location": "1 Henry Adams St, San Francisco, ",
+        "latitude": 37.7696326,
+        "longitude": -122.4055422,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/1henryadams.jpg",
+        "/assets/img/1henryadams2.jpg",
+        "/assets/img/1henryadams3.jpg"
+        ],
+        "price": "$1600",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Quartz countertops', 'Stainless Steel Appliances','Rooftop Terrace','Fitness Center', 'Pet Grooming Facility','Game Room', 'RoofTop Grill'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 86,
+        "category": "real_estate",
+        "title": "NEMA",
+        "location": " 8 10th St, San Francisco ",
+        "latitude": 37.7761323,
+        "longitude": -122.4173365,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/nema.jpg",
+        "/assets/img/nema2.jpg",
+        "/assets/img/nema3.jpg"
+        ],
+        "price": "$1600",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Quartz Countertops', 'Washer Dryer', 'Stainless Steel Appliances', 'Soaking Tub', 'Keyless Entry'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 87,
+        "category": "real_estate",
+        "title": "MB360",
+        "location": " 1200 4th St, San Francisco ",
+        "latitude": 37.7728003,
+        "longitude": -122.4002996,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/mb360.jpg",
+        "/assets/img/mb3601.jpg",
+        "/assets/img/mb3602.jpg"
+        ],
+        "price": "$1650",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Outdoor Pool', 'Courtyard', 'Quartz Countertops','Hardwood Floors','Washer/Dryer','Pool','Outdoor Grill','Fitness Center'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 88,
+        "category": "real_estate",
+        "title": "Jasper",
+        "location": " 45 Lansing St, San Francisco ",
+        "latitude": 37.7876819,
+        "longitude": -122.4096144,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/jasper.jpg",
+        "/assets/img/jasper1.jpg",
+        "/assets/img/jasper2.jpg"
+        ],
+        "price": "$1600",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Gas Stovetops', 'Caesarstone Countertops', 'Stainless steel Appliances', 'Washer/Dryer','Hardwood Floor', 'Soaking Tub', 'Keyless Entry', 'Fiber Optic'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 89,
+        "category": "real_estate",
+        "title": "Avalon at Mission Bay",
+        "location": " 255 King St, San Francisco ",
+        "latitude": 37.7650659,
+        "longitude": -122.4220085,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/avalon.jpg",
+        "/assets/img/avalon1.jpg",
+        "/assets/img/avalon2.jpg"
+        ],
+        "price": "$1600",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Hardwood Floors', 'Stainless Steel Appliances','Marble Countertops','Climbing Wall','Fitness Center','Courtyard w/ Grill'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 90,
+        "category": "real_estate",
+        "title": "333 Fremont",
+        "location": " 333 Fremont St, San Francisco ",
+        "latitude": 37.7876776,
+        "longitude": -122.3948933,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/333fremont.jpg",
+        "/assets/img/333fremont1.jpg",
+        "/assets/img/333fremont2.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Gas range stove', 'Stainless steel appliances','Granite countertops','Bicycle Storage'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 91,
+        "category": "real_estate",
+        "title": "Avalon Hayes Valley",
+        "location": " 325 Octavia Blvd, San Francisco ",
+        "latitude": 37.7749736,
+        "longitude": -122.4251364,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/avalonhayesvalley.jpg",
+        "/assets/img/avalonhayesvalley1.jpg",
+        "/assets/img/avalonhayesvalley2.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Quartz Countertops', 'Washer/Dryer','Walk in Closet','On-Site Restaurant','Fitness Center','Rooftop Terrace','Fireplace Lounge'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 92,
+        "category": "real_estate",
+        "title": "100 Van Ness",
+        "location": " 100 Van Ness Ave, San Francisco ",
+        "latitude": 37.776731,
+        "longitude": -122.4192514,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/100vanness.jpg",
+        "/assets/img/100vanness1.jpg",
+        "/assets/img/100vanness2.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Rooftop Deck', 'Fitness Center','Library/Business Center','Wine Storage','Bike Storage','Stone Countertops','Washer/Dryer','Gas Stove'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 93,
+        "category": "real_estate",
+        "title": "2175 Market Street",
+        "location": " 2175 Market St, San Francisco ",
+        "latitude": 37.7663615,
+        "longitude": -122.4322384,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/2175marketstreet.jpg",
+        "/assets/img/2175marketstreet1.jpg",
+        "/assets/img/2175marketstreet2.jpg"
+        ],
+        "price": "$1600",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Ceasarstone countertops', 'Landscaped Roof Deck','Bike Storage','Fitness Center','Washer/Dryer'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 94,
+        "category": "real_estate",
+        "title": "Olume",
+        "location": " 1401 Mission St, San Francisco ",
+        "latitude": 37.7749572,
+        "longitude": -122.4181814,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/olume.jpg",
+        "/assets/img/olume1.jpg",
+        "/assets/img/olume2.jpg"
+        ],
+        "price": "$1700",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Quartz Countertops', 'Pet Park', 'Rooftop Deck','Fitness Center','Washer/Dryer','Bike Storage'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 95,
+        "category": "real_estate",
+        "title": "Solaire",
+        "location": " 299 Fremont St, San Francisco ",
+        "latitude": 37.7884298,
+        "longitude": -122.3959081,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/solaire.jpg",
+        "/assets/img/solaire1.jpg",
+        "/assets/img/solaire2.jpg"
+        ],
+        "price": "$1700",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Yoga Studio', 'Lounge','Rooftop Deck','Fitness Center','Hardwood Flooring','Washer/Dryer'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 96,
+        "category": "real_estate",
+        "title": "Vara",
+        "location": " 1600 15th St, San Francisco ",
+        "latitude": 37.766788,
+        "longitude": -122.420332,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/vara.jpg",
+        "/assets/img/vara2.jpg",
+        "/assets/img/vara3.jpg"
+        ],
+        "price": "$1650",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Stainless Steel Appliances', 'Washer/Dryer','Bike Storage','Quartz countertop','Fitness Center','Courtyard w/ Grill'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 97,
+        "category": "real_estate",
+        "title": "Azure",
+        "location": " 690 Long Bridge St, San Francisco ",
+        "latitude": 37.7728271,
+        "longitude": -122.3952709,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/azure.jpg",
+        "/assets/img/azure2.jpg",
+        "/assets/img/azure3.jpg"
+        ],
+        "price": "$1550",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Washer/Dryer', 'Fitness Center','Electric Car Charging','On-site Dog Park'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 98,
+        "category": "real_estate",
+        "title": "Trinity Place",
+        "location": " 1188 Mission St, San Francisco ",
+        "latitude": 37.7778712,
+        "longitude": -122.4152536,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/trinity.jpg",
+        "/assets/img/trinity2.jpg",
+        "/assets/img/trinity3.jpg"
+        ],
+        "price": "$1550",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Fitness Center', 'Wood Style Floors','Granite Countertops'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 99,
+        "category": "real_estate",
+        "title": "Edgewater",
+        "location": " 355 Berry St, San Francisco ",
+        "latitude": 37.772461,
+        "longitude": -122.396997,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/edgewater.jpg",
+        "/assets/img/edgewater1.jpg",
+        "/assets/img/edgewater2.jpg"
+        ],
+        "price": "$1500",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Washer/Dryer', 'Fitness Center','Coffee Lounge','Outdoor Grill','Quartz Countertops'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        },
+        {
+        "id": 100,
+        "category": "real_estate",
+        "title": "Soma Square",
+        "location": " 1 St Francis Pl, San Francisco ",
+        "latitude": 37.7836381,
+        "longitude": -122.3977265,
+        "url": "#",
+        "bedroom_type": ['single'],
+        "type_icon": "/assets/icons/real-estate/apartment-3.png",
+        "rating": 4,
+        "type": "Apartment",
+        "gallery": [
+        "/assets/img/somasquare.jpeg",
+        "/assets/img/somasquare1.jpg",
+        "/assets/img/somasquare2.jpg"
+        ],
+        "price": "$1600",
+        "item_specific": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "rooms": 3,
+        "garages": 0,
+        "area": 900
+        },
+        "features": ['Wood Burning Fireplace', 'Washer/Dryer','Granite Countertop','Fitness Center','Swimming Pool'],
+        "descriptions": "Luxury apartments with premium features. Location is surrounded by all the modern conveniences. All of this against the backdrop of San Francisco's magnificent beauty."
+        }
+        ]
+        };
+        var _latitude = 37.773972 || 51.541216;
+        var _longitude = -122.431297 || -0.095678;
+        // Load JSON data and create Google Maps
+        createHomepageGoogleMap(_latitude, _longitude, data);
+        // Set if language is RTL and load Owl Carousel
+        $(window).load(function(){
+        var rtl = false; // Use RTL
+        initializeOwl(rtl);
+        });
+        var logo = $('#logo > a > img');
+        var button = $('.one-page-menu');
+        var b = $('.menu-item-emphasis');
+        $(document).scroll(function() {
+        $(logo).css({ "margin-top" : $(this).scrollTop()>0 ? "10px":"25px"});
+        $(button).css({ "margin-top" : $(this).scrollTop()>0 ? "10px":"0px"});
+        $(b).css({ "margin-top" : $(this).scrollTop()>0 ? "-10px":"0px"});
+        });
+        //autoComplete();
+        /*var filterMarkers = function (category) {
+        console.log(category)
+        //showing all markers
+        for (var i = 0; i < window.___visibleArray.length; i++) {
+        window.___visibleArray[i].setVisible(true);
+        $('.items-list .results #'+window.___visibleArray[i].json.id).css('display', 'block');
+        }
+        if(category == 'all') return true;
+        //filter markers
+        for (var i = 0; i < window.___visibleArray.length; i++) {
+        // If is same category or category not picked
+        if (window.___visibleArray[i].json.bedroom_type.indexOf(category) > -1) {
+        window.___visibleArray[i].setVisible(true);
+        $('.items-list .results #'+window.___visibleArray[i].json.id).css('display', 'block');
+        }
+        // Categories don't match
+        else {
+        window.___visibleArray[i].setVisible(false);
+        $('.items-list .results #'+window.___visibleArray[i].json.id).css('display', 'none');
+        }
+        }
+        }
+        $('#price-slider').on('change', function(w, range){
+        for (var i = 0; i < window.___visibleArray.length; i++) {
+        var price = window.___visibleArray[i].json.price.substring(1, window.___visibleArray[i].json.price.length);
+        console.log(price)
+        if (price > range[0] && price < range[1]) {
+        window.___visibleArray[i].setVisible(true);
+        }
+        else {
+        window.___visibleArray[i].setVisible(false);
+        }
+        }
+        });*/
+        var filter = function(category, price_range) {
+        var filteredMarkers = [];
+        for (var i = 0; i < window.___visibleArray.length; i++) {
+        window.___visibleArray[i].setVisible(true);
+        $('.items-list .results #'+window.___visibleArray[i].json.id).css('display', 'block');
+        }
+        for (var i = 0; i < window.___visibleArray.length; i++) {
+        var bedroom_type = window.___visibleArray[i].json.bedroom_type;
+        var price = window.___visibleArray[i].json.price.substring(1, window.___visibleArray[i].json.price.length);
+        //console.log(category == 'all' ? true : bedroom_type.indexOf(category) > -1)
+        //console.log((price > price_range[0] && price < price_range[1]))
+        // If is same category or category not picked
+        if (    (category == 'all' ? true : bedroom_type.indexOf(category) > -1)
+        &&  (price > price_range[0] && price < price_range[1])
+        ) {
+        window.___visibleArray[i].setVisible(true);
+        $('.items-list .results #'+window.___visibleArray[i].json.id).css('display', 'block');
+        filteredMarkers.push(window.___visibleArray[i]);
+        //console.log('show');
+        }
+        // Categories don't match
+        else {
+        window.___visibleArray[i].setVisible(false);
+        $('.items-list .results #'+window.___visibleArray[i].json.id).css('display', 'none');
+        //console.log('hide');
+        }
+        }
+        window.m.repaint();
+        //window.___markerCluster.clearMarkers();
+        //window.___markerCluster.addMarkers(filteredMarkers);
+        };
+        $('#type, #price-slider').on('change', function() {
+        var category = $('#type').val(); console.log(category);
+        var price_range = $('#price-slider').val();
+        //filter(category, price_range.map(function (x) {  return parseInt(x, 10); }));
+        //console.log(window.___visibleArray , 'saad')
+        google.maps.event.trigger(window.__map, 'idle');
+        });
+
+
+    //if lte IE 9
+      script(type='text/javascript', src='assets/js/ie-scripts.js')
