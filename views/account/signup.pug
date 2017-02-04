@@ -144,6 +144,16 @@ html(dir='ltr', lang='en-US')
                     input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password', required)
                   .col_full.nobottommargin
                     button#register-form-submit.button.button-3d.button-black.nomargin(name='register-form-submit', value='register', type='submit' ) Register Now
+                .line.line-sm
+                  .center
+                    h4(style='margin-bottom: 15px;') or Sign up with:
+                    a.button.button-rounded.si-facebook.si-colored(href='/auth/facebook', style='text-transform: none;')
+                      i.icon-facebook
+                      | Facebook
+                    span.hidden-xs or
+                    a.button.button-rounded.si-twitter.si-colored(href='/auth/linkedin', style='text-transform: none;')
+                      i.icon-linkedin
+                      | Linkedin
               .acctitle
                 i.acc-closed.icon-lock3
                 i.acc-open.icon-unlock
@@ -160,6 +170,16 @@ html(dir='ltr', lang='en-US')
                   .col_full.nobottommargin
                     button#login-form-submit.button.button-3d.button-black.nomargin(name='login-form-submit', value='login') Login
                     a.fright(href='#') Forgot Password?
+                .line.line-sm
+                  .center
+                    h4(style='margin-bottom: 15px;') or Login with:
+                    a.button.button-rounded.si-facebook.si-colored(href='/auth/facebook', style='text-transform: none;')
+                      i.icon-facebook
+                      | Facebook
+                    span.hidden-xs or
+                    a.button.button-rounded.si-twitter.si-colored(href='/auth/linkedin', style='text-transform: none;')
+                      i.icon-linkedin
+                      | Linkedin
       // #content end
       //
 
