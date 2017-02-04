@@ -7,7 +7,6 @@ const userSchema = new mongoose.Schema({
   password: String,
   passwordResetToken: String,
   passwordResetExpires: Date,
-
   facebook: String,
   twitter: String,
   google: String,
@@ -26,7 +25,31 @@ const userSchema = new mongoose.Schema({
   },
   apartment:{ type: String, default: null },
   property: { type: String, default: null },
-  typeform: {},
+  typeform: {
+    "29879066" : { type: Array, default: [] }, //hobbies
+    "41100088" : { type: String, default: "" }, //place master
+    "41100085" : { type: String, default: "" }, //place converted
+    "41100089" : { type: String, default: "" }, //place single
+    "29878581" : { type: String, default: "" }, //place master
+    "29879208" : { type: Number, default: 0 },  //place master
+    "29877951" : { type: String, default: "" }, //age
+    "29877944" : { type: String, default: "" }, //preferred space
+    "29877946" : { type: String, default: "" }, //gender
+    "29877953" : { type: String, default: "" }, //country
+    "29877937" : { type: Number, default: 0 }, //rating
+    "29877954" : { type: String, default: "" }, //industry
+    "29878649" : { type: String, default: "" }, //move in date
+    "29878703" : { type: String, default: "" }, //move in date fliexible
+    "29877943" : { type: String, default: "" }, //first name
+    "29878535" : { type: String, default: "" }, //last name
+    "34694257" : { type: String, default: "" }, //weekend
+    "34694303" : { type: String, default: "" }, //sleep
+    "34694062" : { type: String, default: "" }, //expect visitors
+    "34693974" : { type: String, default: "" }, //cook
+    "34694137" : { type: String, default: "" }, //working time
+    "34719475" : { type: String, default: "" }, //facebook
+    "34719491" : { type: String, default: "" }, //linkedin
+  }
   /*typeform: {
     "29877944": String,
     "29877937": String,
@@ -87,3 +110,4 @@ userSchema.methods.gravatar = function (size = 200) {
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
+
