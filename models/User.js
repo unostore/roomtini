@@ -49,7 +49,7 @@ const userSchema = new mongoose.Schema({
     "34694137" : { type: String, default: "" }, //working time
     "34719475" : { type: String, default: "" }, //facebook
     "34719491" : { type: String, default: "" }, //linkedin
-  }
+  },
   /*typeform: {
     "29877944": String,
     "29877937": String,
