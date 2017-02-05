@@ -39,6 +39,24 @@ html(dir='ltr', lang='en-US')
                 a(href='/')
                   img(src='images/canvasone-dark@2x.png', alt='Can Logo')
               .panel.panel-default.divcenter.noradius.noborder(style='max-width: 400px;')
+                if messages.errors
+                    .alert.alert-danger.fade.in
+                      button.close(type='button', data-dismiss='alert')
+                        i.fa.fa-times-circle-o
+                      for error in messages.errors
+                        div= error.msg
+                  if messages.info
+                    .alert.alert-info.fade.in
+                      button.close(type='button', data-dismiss='alert')
+                        i.fa.fa-times-circle-o
+                      for info in messages.info
+                        div= info.msg
+                  if messages.success
+                    .alert.alert-success.fade.in
+                      button.close(type='button', data-dismiss='alert')
+                        i.fa.fa-times-circle-o
+                      for success in messages.success
+                        div= success.msg
                 .panel-body(style='padding: 40px;')
                   form.nobottommargin(method='POST')
                     input(type='hidden', name='_csrf', value=_csrf)
