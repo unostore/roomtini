@@ -247,7 +247,7 @@ html(dir='ltr', lang='en-US')
                       button.close(type='button', data-dismiss='alert')
                         i.fa.fa-times-circle-o
                       for success in messages.success
-                        div= success.msg
+                        div= JSON.stringify(success)
 
             .row.clearfix.content-wrap
               .col-sm-12.nobottommargin
