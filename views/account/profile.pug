@@ -226,26 +226,26 @@ html(dir='ltr', lang='en-US')
       section#content
         .container.clearfix
             .row.clearfix
-              .col-sm-9
+              .col-sm-12
                 .row
                   if messages.errors
                     .alert.alert-danger.fade.in
                       button.close(type='button', data-dismiss='alert')
                         i.fa.fa-times-circle-o
                       for error in messages.errors
-                        div= error.msg
+                        div= error
                   if messages.info
                     .alert.alert-info.fade.in
                       button.close(type='button', data-dismiss='alert')
                         i.fa.fa-times-circle-o
                       for info in messages.info
-                        div= info.msg
+                        div= info
                   if messages.success
                     .alert.alert-success.fade.in
                       button.close(type='button', data-dismiss='alert')
                         i.fa.fa-times-circle-o
                       for success in messages.success
-                        div= success.msg
+                        div= success
 
             .row.clearfix.content-wrap
               .col-sm-12.nobottommargin
