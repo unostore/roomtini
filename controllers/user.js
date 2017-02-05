@@ -641,32 +641,32 @@ exports.postTypeformInfo = (req, res) => {
 
   var t = {};
   t['29879066'] = hobbies;
-  t['41100088'] = req.body.placemaster;
-  t['41100085'] = req.body.placeconverted;
-  t['41100089'] = req.body.placesingle;
-  t['29878581'] = req.body.phone;
-  t['29879208'] = scale[req.body.cleanliness_scale];
-  t['29877951'] = req.body.age;
-  t['29877944'] = req.body.preferred_space;
+  t['41100088'] = req.body.placemaster || '';
+  t['41100085'] = req.body.placeconverted || '';
+  t['41100089'] = req.body.placesingle || '';
+  t['29878581'] = req.body.phone || '';
+  t['29879208'] = scale[req.body.cleanliness_scale] || 0;
+  t['29877951'] = req.body.age || '';
+  t['29877944'] = req.body.preferred_space || '';
   //t['29877945'] = req.body.next_event;
-  t['29877946'] = req.body.gender.capitalize();
-  t['29877953'] = req.body.country;
-  t['29877937'] = parseInt(req.body.rating);
-  t['29877954'] = req.body.industry;
-  t['29878649'] = req.body.move_in_date;
+  t['29877946'] = (req.body.gender && req.body.gender.capitalize()) || 'Male';
+  t['29877953'] = req.body.country || '';
+  t['29877937'] = parseInt(req.body.rating) || 0;
+  t['29877954'] = req.body.industry || '';
+  t['29878649'] = req.body.move_in_date || '';
   //t['29878717'] = req.body.email;
-  t['29878703'] = req.body.move_in_date_flexible;
+  t['29878703'] = req.body.move_in_date_flexible || '';
   //t['29879310'] = comfortable_genders;
-  t['29877943'] = req.body.first_name;
-  t['29878535'] = req.body.last_name;
+  t['29877943'] = req.body.first_name || '';
+  t['29878535'] = req.body.last_name || '';
 
-  t['34694257'] = req.body.weekend;
-  t["34694303"] = req.body.sleep;
-  t["34694062"] = req.body.expect_visitors;
-  t["34693974"] = scale[req.body.cook];
-  t["34694137"] = req.body.working_time;
-  t["34719475"] = req.body.facebook;
-  t["34719491"] = req.body.linkedin;
+  t['34694257'] = req.body.weekend || '';
+  t["34694303"] = req.body.sleep || '';
+  t["34694062"] = req.body.expect_visitors || '';
+  t["34693974"] = scale[req.body.cook] || 0;
+  t["34694137"] = req.body.working_time || '';
+  t["34719475"] = req.body.facebook || '';
+  t["34719491"] = req.body.linkedin || '';
   
   //t['37603382'] = survey;
 
