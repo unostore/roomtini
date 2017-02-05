@@ -20,7 +20,7 @@ const sass = require('node-sass-middleware');
 const multer = require('multer');
 const upload = multer({ dest: path.join(__dirname, 'uploads') });
 const config = require('./config/config');
-const User = require('../models/User');
+const User = require('./models/User');
 
 /**
  * Load environment variables from .env file, where API keys and passwords are configured.
