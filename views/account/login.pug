@@ -16,12 +16,23 @@ html(dir='ltr', lang='en-US')
     link(rel='stylesheet', href='css/magnific-popup.css', type='text/css')
     link(rel='stylesheet', href='css/responsive.css', type='text/css')
     meta(name='viewport', content='width=device-width, initial-scale=1')
+
     //
       if lt IE 9script(src='http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js')
     //
       Document Title
       =============================================
     title Login | Roomtini
+    style.
+
+      @media (max-width: 991px) {
+        .container {
+          width: 100% !important;
+        }
+      }
+
+
+
   body.stretched
     //
       Document Wrapper
@@ -34,10 +45,10 @@ html(dir='ltr', lang='en-US')
         .content-wrap.nopadding
           .section.nopadding.nomargin(style='width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: #444;')
           .section.nobg.full-screen.nopadding.nomargin
-            .container.vertical-middle.divcenter.clearfix
+            .container.divcenter.clearfix
               .row.center
                 a(href='/')
-                  img(src='images/canvasone-dark@2x.png', alt='Can Logo')
+                  img(src='images/canvasone-dark@2x.png', alt='Can Logo', style='width: 300px;margin: 20px;')
               .panel.panel-default.divcenter.noradius.noborder(style='max-width: 400px;')
                 if messages.errors
                   .alert.alert-danger.fade.in
