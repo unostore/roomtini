@@ -677,7 +677,8 @@ exports.postTypeformInfo = (req, res) => {
           return res.redirect('/account');
     }
     else {
-      console.log('redirecting', doc)
+      console.log('redirecting', doc);
+      req.flash('success', { msg: 'Profile information has been updated.' });
       res.redirect('/account');
     }
   });
