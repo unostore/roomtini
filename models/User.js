@@ -34,7 +34,7 @@ const userSchema = new mongoose.Schema({
     "29879208" : { type: Number, default: 0 },  //place master
     "29877951" : { type: String, default: "" }, //age
     "29877944" : { type: String, default: "" }, //preferred space
-    "29877946" : { type: String, default: "" }, //gender
+    "29877946" : { type: String, default: "Male" }, //gender
     "29877953" : { type: String, default: "" }, //country
     "29877937" : { type: Number, default: 0 }, //rating
     "29877954" : { type: String, default: "" }, //industry
