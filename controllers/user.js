@@ -207,7 +207,7 @@ exports.postLogin = (req, res, next) => {
   passport.authenticate('local', (err, user, info) => {
     if (err) { return next(err); }
     if (!user) {
-      req.flash('errors', info);
+      req.flash('errors', info.msg);
       return res.redirect('/login');
     }
     req.logIn(user, (err) => {
