@@ -26,11 +26,17 @@ html(dir='ltr', lang='en-US')
     style.
 
       .container {
-        top: 30%;
+        top: 50%;
+        transform: translate(0%, -50%) !important;
       }
       @media (max-width: 991px) {
         .container {
           width: 100% !important;
+          -webkit-transform: none !important; /* Safari and Chrome */
+             -moz-transform: none !important; /* Firefox */
+              -ms-transform: none !important; /* IE 9 */
+               -o-transform: none !important; /* Opera */
+                  transform: none !important;
         }
       }
 
