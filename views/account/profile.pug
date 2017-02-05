@@ -235,7 +235,7 @@ html(dir='ltr', lang='en-US')
                       button.close(type='button', data-dismiss='alert')
                         i.fa.fa-times-circle-o
                       for error in messages.errors
-                        div= error.msg
+                        div= error
                   if messages.info
                     .alert.alert-info.fade.in
                       button.close(type='button', data-dismiss='alert')
@@ -247,7 +247,7 @@ html(dir='ltr', lang='en-US')
                       button.close(type='button', data-dismiss='alert')
                         i.fa.fa-times-circle-o
                       for success in messages.success
-                        div= JSON.stringify(success)
+                        div= success.msg
 
             .row.clearfix.content-wrap
               .col-sm-12.nobottommargin
