@@ -40,11 +40,11 @@ html(dir='ltr', lang='en-US')
                   img(src='images/canvasone-dark@2x.png', alt='Can Logo')
               .panel.panel-default.divcenter.noradius.noborder(style='max-width: 400px;')
                 if messages.errors
-                    .alert.alert-danger.fade.in
-                      button.close(type='button', data-dismiss='alert')
-                        i.fa.fa-times-circle-o
-                      for error in messages.errors
-                        div= error.msg
+                  .alert.alert-danger.fade.in
+                    button.close(type='button', data-dismiss='alert')
+                      i.fa.fa-times-circle-o
+                    for error in messages.errors
+                      div= error.msg
                   if messages.info
                     .alert.alert-info.fade.in
                       button.close(type='button', data-dismiss='alert')
