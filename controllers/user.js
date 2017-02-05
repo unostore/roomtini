@@ -673,12 +673,12 @@ exports.postTypeformInfo = (req, res) => {
   User.findOneAndUpdate({_id: req.user.id}, {$set:{typeform: t }}, function(err, doc) {
     if(err) {
       console.log('err', err)
-      req.flash('errors', { msg: 'Something went wrong' });
+      req.flash('errors', 'Something went wrong');
           return res.redirect('/account');
     }
     else {
       console.log('redirecting', doc);
-      req.flash('success', { msg: 'Profile information has been updated.' });
+      req.flash('success', 'Profile information has been updated.');
       res.redirect('/account');
     }
   });
