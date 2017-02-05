@@ -20,6 +20,7 @@ const sass = require('node-sass-middleware');
 const multer = require('multer');
 const upload = multer({ dest: path.join(__dirname, 'uploads') });
 const config = require('./config/config');
+const User = require('../models/User');
 
 /**
  * Load environment variables from .env file, where API keys and passwords are configured.
@@ -220,8 +221,24 @@ app.get('/auth/instagram/callback', passport.authenticate('instagram', { failure
   res.redirect(req.session.returnTo || '/');
 });
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
-app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login' }), (req, res) => {
-  res.redirect(req.session.returnTo || '/');
+app.get('/auth/facebook/callback', 
+  passport.authenticate('facebook', { failureRedirect: '/login' }), (req, res) => {
+  
+  User.findById(req.user.id, (err, user) => {
+    if(!err) {
+      if(user.typeform['29879066'] == [] && user.typeform['29877943'] == '') {
+        res.redirect('/contact');
+      }
+      else {
+        res.redirect('/');
+      }
+    } 
+    else {
+      console.log('--------------------------------- user not found------------------------------');
+      done();
+    }       
+  });
+  
 });
 app.get('/auth/github', passport.authenticate('github'));
 app.get('/auth/github/callback', passport.authenticate('github', { failureRedirect: '/login' }), (req, res) => {
