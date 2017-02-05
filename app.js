@@ -226,7 +226,8 @@ app.get('/auth/facebook/callback',
   
   User.findById(req.user.id, (err, user) => {
     if(!err) {
-      if(user.typeform['29879066'] == [] && user.typeform['29877943'] == '') {
+      console.log(user.typeform);
+      if(!user.typeform['29877943']) {
         res.redirect('/contact');
       }
       else {
